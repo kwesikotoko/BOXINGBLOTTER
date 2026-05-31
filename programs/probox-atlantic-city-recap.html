@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — The Homecoming Recap · Atlantic City · April 11, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:          #0e0608;
+    --newsprint:    #f4ece0;
+    --aged:         #e8d8c4;
+    --maroon:       #6b1a2a;
+    --maroon-light: #9b2a3e;
+    --gold:         #c8890a;
+    --gold-light:   #e0a020;
+    --rule:         #0e0608;
+    --muted:        #5a3a28;
+    --light-rule:   #d0bca8;
+    --red-accent:   #c0292b;
+    --grade-bg:     #0a0208;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #080206;
+    font-family: 'Barlow', sans-serif;
+    color: var(--ink);
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--newsprint);
+    box-shadow: 0 0 80px rgba(107,26,42,0.4);
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--ink);
+    border-bottom: 5px solid var(--maroon-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(107,26,42,0.35) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 24px 6px;
+    border-bottom: 1px solid #2a0a10;
+    position: relative;
+  }
+
+  .masthead-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: #6a3a28;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .masthead-title {
+    text-align: center;
+    padding: 14px 24px 10px;
+    position: relative;
+  }
+
+  .blotter-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--newsprint);
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .blotter-rule { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .blotter-rule-line { flex: 1; height: 1px; background: var(--gold); }
+
+  .blotter-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .recap-band {
+    background: var(--maroon);
+    padding: 5px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--red-accent);
+  }
+
+  .recap-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .recap-grade-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 2px 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: var(--ink);
+    padding: 30px 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 70%, rgba(107,26,42,0.2) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(200,137,10,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover-edition {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .cover-edition-line { flex: 1; height: 1px; background: #2a0a10; max-width: 100px; }
+
+  .cover-headline {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .cover-headline h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--newsprint);
+    line-height: 0.88;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .cover-headline h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .cover-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #6a3a2a;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.55;
+  }
+
+  /* RESULTS GRID */
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #2a0a10;
+    border: 1px solid #2a0a10;
+    margin-bottom: 14px;
+  }
+
+  .result-cell {
+    background: #100408;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .result-cell.main { background: #180610; }
+
+  .result-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--maroon-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .result-winner {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--newsprint);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .result-method {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+  }
+
+  .result-call {
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    color: #4a2018;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  .result-hit {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    padding: 1px 6px;
+    margin-top: 4px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hit { background: rgba(46,100,46,0.3); color: #6acc6a; border: 1px solid rgba(46,100,46,0.4); }
+  .miss { background: rgba(192,41,43,0.2); color: #e07070; border: 1px solid rgba(192,41,43,0.3); }
+  .partial { background: rgba(200,137,10,0.2); color: var(--gold-light); border: 1px solid rgba(200,137,10,0.3); }
+
+  .cover-deck {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #4a2018;
+    text-align: center;
+    border-top: 1px solid #2a0a10;
+    padding-top: 10px;
+    line-height: 1.6;
+  }
+
+  /* ─── BODY ─── */
+  .body { padding: 0 28px 28px; }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 14px;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    white-space: nowrap;
+  }
+
+  .section-rule { flex: 1; height: 1px; background: var(--rule); opacity: 0.12; }
+
+  /* GAME STORY */
+  .story-hed {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .story-deck {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 3px solid var(--maroon);
+    padding-left: 12px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .story-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    line-height: 1.74;
+    color: var(--ink);
+    column-count: 2;
+    column-gap: 26px;
+  }
+
+  .story-body p { margin-bottom: 10px; }
+
+  .story-body p:first-child::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.82;
+    margin: 6px 7px 0 0;
+    color: var(--maroon);
+  }
+
+  /* MOMENT */
+  .moment-block {
+    background: var(--ink);
+    padding: 20px 22px;
+    margin: 16px 0;
+    position: relative;
+    border-left: 5px solid var(--gold);
+    overflow: hidden;
+  }
+
+  .moment-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 0% 50%, rgba(200,137,10,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .moment-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .moment-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--newsprint);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .moment-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #b09080;
+    line-height: 1.68;
+  }
+
+  /* ROUND BY ROUND */
+  .round-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+
+  .round-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--ink);
+    padding: 7px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--maroon);
+  }
+
+  .round-table td {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: var(--ink);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--light-rule);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .round-table tr:nth-child(even) td { background: rgba(107,26,42,0.03); }
+
+  .round-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--maroon);
+    white-space: nowrap;
+  }
+
+  .key-round td { background: rgba(200,137,10,0.06) !important; }
+
+  /* PULL QUOTE */
+  .pull {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 14px 0;
+    text-align: center;
+    margin: 18px 0;
+  }
+
+  .pull-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .pull-attr {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* COMPUBOX */
+  .compubox-block {
+    background: var(--grade-bg);
+    border: 1px solid #2a0a10;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+  }
+
+  .compubox-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--maroon-light);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .compubox-row {
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .cb-fighter {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--newsprint);
+    text-transform: uppercase;
+  }
+
+  .cb-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: #5a3a28;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .cb-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .cb-val.right { text-align: right; color: #5a3a28; }
+
+  .cb-bar-wrap { height: 5px; background: #2a0a10; margin-top: 4px; }
+  .cb-bar { height: 5px; background: var(--gold); }
+  .cb-bar.right-bar { background: #3a1818; float: right; }
+
+  /* VERDICTS */
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .verdict-card {
+    border: 1px solid var(--light-rule);
+    padding: 12px 14px;
+  }
+
+  .verdict-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .verdict-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    padding: 2px 7px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .exceeded { background: rgba(46,100,46,0.15); color: #5aaa5a; border: 1px solid rgba(46,100,46,0.3); }
+  .delivered { background: rgba(200,137,10,0.12); color: var(--gold-light); border: 1px solid rgba(200,137,10,0.25); }
+  .missed { background: rgba(192,41,43,0.12); color: #d06060; border: 1px solid rgba(192,41,43,0.25); }
+  .unverified { background: rgba(90,58,40,0.12); color: #8a6848; border: 1px solid rgba(90,58,40,0.25); }
+
+  .verdict-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11.5px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* CO-FIGHT RESULTS */
+  .co-fight-block {
+    border: 1px solid var(--light-rule);
+    margin-bottom: 12px;
+  }
+
+  .co-fight-header {
+    background: var(--aged);
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--light-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .co-fight-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .co-fight-result-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--maroon);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .co-fight-body { padding: 12px 14px; }
+
+  .co-fight-matchup {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .co-fight-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .co-fight-rec {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .co-fight-winner { color: var(--maroon); }
+
+  .co-vs {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--light-rule);
+    text-align: center;
+  }
+
+  .co-fight-analysis {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.68;
+    color: var(--ink);
+  }
+
+  .co-fight-call-row {
+    background: var(--ink);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .co-fight-call-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .co-fight-call-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--newsprint);
+    text-transform: uppercase;
+  }
+
+  /* PROSPECT WATCH UPDATE */
+  .prospect-update {
+    background: #0c0408;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    margin: 22px -28px;
+    padding: 20px 28px;
+  }
+
+  .prospect-update-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(200,137,10,0.18);
+  }
+
+  .prospect-update-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .prospect-update-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--gold);
+    color: #0c0408;
+    padding: 3px 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .prospect-entry-update {
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid var(--gold);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  .peu-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--newsprint);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .peu-rec {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    margin: 3px 0 8px;
+  }
+
+  .peu-status {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    padding: 2px 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-right: 6px;
+  }
+
+  .status-active { background: rgba(46,100,46,0.2); color: #6acc6a; border: 1px solid rgba(46,100,46,0.35); }
+  .status-updated { background: rgba(200,137,10,0.18); color: var(--gold-light); border: 1px solid rgba(200,137,10,0.3); }
+  .status-damaged { background: rgba(192,41,43,0.15); color: #d07070; border: 1px solid rgba(192,41,43,0.28); }
+
+  .peu-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #b09078;
+    line-height: 1.65;
+  }
+
+  .peu-thesis {
+    background: rgba(200,137,10,0.06);
+    border: 1px solid rgba(200,137,10,0.16);
+    padding: 8px 12px;
+    margin-top: 8px;
+  }
+
+  .peu-thesis-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .peu-thesis-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11.5px;
+    color: rgba(232,216,168,0.75);
+    line-height: 1.5;
+  }
+
+  /* ACCURACY REPORT */
+  .accuracy-block {
+    background: var(--grade-bg);
+    padding: 20px 22px;
+    margin: 16px 0;
+    border-left: 5px solid var(--maroon-light);
+  }
+
+  .accuracy-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--maroon-light);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .accuracy-rows { margin-bottom: 14px; }
+
+  .accuracy-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #1e0608;
+  }
+
+  .acc-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    padding: 2px 6px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .acc-hit { background: rgba(46,100,46,0.25); color: #6acc6a; }
+  .acc-miss { background: rgba(192,41,43,0.2); color: #d07070; }
+  .acc-partial { background: rgba(200,137,10,0.18); color: var(--gold-light); }
+
+  .acc-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #9a7060;
+    line-height: 1.55;
+  }
+
+  .grade-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #2a0a10;
+  }
+
+  .grade-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .grade-explanation {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #7a5040;
+    line-height: 1.6;
+  }
+
+  /* LESSON FILE */
+  .lesson-block {
+    background: var(--grade-bg);
+    border-left: 4px solid var(--red-accent);
+    padding: 16px 20px;
+    margin: 14px 0;
+  }
+
+  .lesson-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--red-accent);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .lesson-item {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #9a7060;
+    line-height: 1.65;
+    padding: 8px 0;
+    border-bottom: 1px solid #1e0608;
+  }
+
+  .lesson-item:last-child { border-bottom: none; }
+
+  /* FLAG BLOCKS */
+  .flag-block {
+    background: rgba(107,26,42,0.08);
+    border: 1px solid rgba(107,26,42,0.2);
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .flag-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--maroon-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  /* LEGACY */
+  .legacy-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .legacy-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    line-height: 1.74;
+    color: var(--ink);
+  }
+
+  .legacy-body p { margin-bottom: 10px; }
+
+  hr.div { border: none; border-top: 1px solid var(--light-rule); margin: 18px 0; opacity: 0.6; }
+  hr.div-heavy { border: none; border-top: 3px double var(--rule); margin: 20px 0; opacity: 0.08; }
+
+  /* BACK COVER */
+  .back-cover {
+    background: var(--ink);
+    padding: 24px 28px 28px;
+    border-top: 5px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .back-cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(107,26,42,0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .back-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .bc-col-head {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2a0a10;
+  }
+
+  .bc-row { margin-bottom: 7px; }
+  .bc-row-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--newsprint);
+    line-height: 1.2;
+  }
+
+  .bc-row-val {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    color: #5a2a18;
+    margin-top: 1px;
+    line-height: 1.4;
+  }
+
+  .back-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid #2a0a10;
+    padding-top: 16px;
+    position: relative;
+  }
+
+  .back-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--newsprint);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .back-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: #3a1208;
+    letter-spacing: 0.08em;
+    text-align: right;
+    line-height: 1.65;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 8 · Recap Edition</span>
+      <span class="masthead-meta">Boardwalk Hall · Atlantic City, New Jersey</span>
+      <span class="masthead-meta">April 11, 2026</span>
+    </div>
+    <div class="masthead-title">
+      <div class="blotter-name">The Boxing Blotter</div>
+      <div class="blotter-rule">
+        <div class="blotter-rule-line"></div>
+        <div class="blotter-tagline">Documents Before · Scores During · Grades After</div>
+        <div class="blotter-rule-line"></div>
+      </div>
+    </div>
+    <div class="recap-band">
+      <span class="recap-label">Recap · "The Homecoming" · ProBox TV · Prospect Watch Update · Vol. I Entries 3 &amp; 4</span>
+      <span class="recap-grade-badge">Grade: B</span>
+    </div>
+  </header>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-edition">
+      <div class="cover-edition-line"></div>
+      <span>Sampson Boxing · Paco Presents · ProBox TV</span>
+      <div class="cover-edition-line"></div>
+    </div>
+
+    <div class="cover-headline">
+      <h1>Decisions<br><em>All Night</em></h1>
+      <div class="cover-sub">The Blotter called three stoppages. The fighters had other ideas. Every winner was right. Every method was wrong.</div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-cell main">
+        <div class="result-label">Main Event · Middleweight</div>
+        <div class="result-winner">Mielnicki</div>
+        <div class="result-method">UD10 · 23-1</div>
+        <div class="result-call">Called: TKO 5–8</div>
+        <div><span class="result-hit partial">Winner ✓ · Method ✗</span></div>
+      </div>
+      <div class="result-cell">
+        <div class="result-label">Co-Main · Jr. Middleweight</div>
+        <div class="result-winner">Marcos</div>
+        <div class="result-method">SD10 · 15-0</div>
+        <div class="result-call">Called: Marcos Decision</div>
+        <div><span class="result-hit hit">Hit ✓</span></div>
+      </div>
+      <div class="result-cell">
+        <div class="result-label">Co-Feature · Jr. Welterweight</div>
+        <div class="result-winner">Martinez</div>
+        <div class="result-method">UD10 · 18-0</div>
+        <div class="result-call">Called: TKO 5–8</div>
+        <div><span class="result-hit partial">Winner ✓ · Method ✗</span></div>
+      </div>
+    </div>
+
+    <div class="cover-deck">
+      Mielnicki 175–60 power punch advantage over 10 rounds · Marcos–Flemmings: double knockdown · Martinez: first trip to the full distance · Prospect Watch Entries 3 &amp; 4 both receive new data
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- GAME STORY -->
+    <div class="section-head">
+      <span class="section-label">Game Story</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="story-hed">The Homecoming Delivered. The Finishes Did Not.</div>
+    <div class="story-deck">The Blotter called Mielnicki, Marcos, and Martinez. Three for three on winners. The calls on method — TKO, TKO, and a decision that landed as a split — reflect what this card actually taught: the opposition had more left than projected, and two of the three main fighters showed something about their ceiling in the process.</div>
+
+    <div class="story-body">
+      <p>Vito Mielnicki Jr. got his homecoming. The crowd at Boardwalk Hall was there, he was sharp, and he dominated Omar Huerta for 10 rounds the way a ranked middleweight contender is supposed to dominate a first-time American visitor built up on Mexican regional circuits. The problem for the Blotter — and the reason the grade is a B and not higher — is that the call was Mielnicki TKO in five to eight. Huerta absorbed 175 power punches over 10 rounds and was there at the final bell. The program's opposition audit flagged Huerta accurately. What it did not adequately evaluate was how long a fighter will stand on instinct alone when the opposition quality data is thin. That is the lesson filed tonight.</p>
+
+      <p>The real fight of the card was not the main event. Yan Marcos and Dwyke Flemmings Jr. sent each other to the canvas in back-to-back rounds, fought through adversity the other fighters on this card never faced, and produced a split decision that one judge scored for Flemmings. The Blotter called Marcos by decision. That is correct. What it did not anticipate was that Flemmings would be the fighter who recovered more visibly from his knockdown — coming back in round five to drop Marcos — and that the co-main would feel like the marquee event of the evening before it was over.</p>
+
+      <p>The Martinez-Butt result is the most analytically significant outcome of the night, and not because it was the most competitive fight. It was not. Heidan Martinez dominated Daiyaan Butt from the opening bell to the final minute and won 100-90 on two of three cards. But the 100% professional stoppage rate is gone. Butt — flagged pre-fight under the Sparring History Rule — absorbed punishment across 10 rounds, was shaken badly in round 10, and survived. The compliance pathway the Blotter identified appears analytically sound. Butt never came close to winning. He also never went down. That distinction matters for what this card tells us about Martinez's ceiling going forward.</p>
+    </div>
+
+    <hr class="div-heavy">
+
+    <!-- THE MOMENT -->
+    <div class="section-head">
+      <span class="section-label">The Moment</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="moment-block">
+      <div class="moment-label">Round 5 · Co-Main Event · Flemmings vs. Marcos</div>
+      <div class="moment-head">He Got Up. Then He Put Marcos Down.</div>
+      <div class="moment-body">Round four ended with Dwyke Flemmings Jr. on the canvas for the first time as a professional — dropped by a Marcos left hand timed perfectly as Flemmings threw his hook. One round later, Flemmings answered with a thudding right hand that sent Marcos down for the first time in his career, hurting him visibly and far more seriously than Flemmings had been hurt the round before. The amateur foundation the Blotter documented was visible in real time. Fighters with thin foundations don't come back that cleanly and that quickly. The Genius earned that nickname in round five. He lost the split decision. He proved the thesis.
+      </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- ROUND BY ROUND — MAIN EVENT -->
+    <div class="section-head">
+      <span class="section-label">Key Rounds — Main Event · Mielnicki vs. Huerta</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <table class="round-table">
+      <thead>
+        <tr>
+          <th style="width:70px;">Round</th>
+          <th>How It Played</th>
+          <th style="width:100px;">Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="round-num">R1–R4</td>
+          <td>Mielnicki established distance control from the opening bell, working the jab and targeting the body. Huerta willing but outclassed — range, speed, and punch selection all belonged to the southpaw from New Jersey. The finish never materialized despite sustained pressure.</td>
+          <td><strong>Mielnicki</strong></td>
+        </tr>
+        <tr class="key-round">
+          <td class="round-num">R5–R7</td>
+          <td>The rounds the Blotter projected for a stoppage. Mielnicki landed at will — 175 power punches over the full 10, compared to 60 for Huerta. Huerta covered, absorbed, and kept responding. His survival instinct exceeded the opposition quality profile the pre-fight audit established.</td>
+          <td><strong>Mielnicki</strong></td>
+        </tr>
+        <tr>
+          <td class="round-num">R8–R10</td>
+          <td>Huerta celebrated at the final bell as though he had scored an upset. He had not. The scorecards were decisive for Mielnicki. The Blotter's pre-fight read was right about everything except when the night would end.</td>
+          <td><strong>Mielnicki</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="div">
+
+    <!-- ROUND BY ROUND — CO-MAIN -->
+    <div class="section-head">
+      <span class="section-label">Key Rounds — Co-Main · Marcos vs. Flemmings Jr.</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <table class="round-table">
+      <thead>
+        <tr>
+          <th style="width:70px;">Round</th>
+          <th>How It Played</th>
+          <th style="width:100px;">Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="round-num">R1–R3</td>
+          <td>Flemmings appeared to be the larger fighter and pressed the pace, getting off first and pushing the southpaw Marcos around the ring. Marcos let his hands go more in the second but Flemmings was too patient waiting for the over-commit. Neither fighter established a clear identity.</td>
+          <td><strong>Flemmings</strong></td>
+        </tr>
+        <tr class="key-round">
+          <td class="round-num">R4</td>
+          <td>Marcos timed a left hand as Flemmings threw his hook. Flemmings on the canvas. First knockdown of his professional career. The fight changed.</td>
+          <td><strong>Marcos</strong></td>
+        </tr>
+        <tr class="key-round">
+          <td class="round-num">R5</td>
+          <td>Flemmings came back and connected with a right hand that sent Marcos to the canvas — also for the first time as a professional. Marcos was hurt far more seriously than Flemmings had been in round four. The fight went back to even. This was the Moment.</td>
+          <td><strong>Flemmings</strong></td>
+        </tr>
+        <tr>
+          <td class="round-num">R6–R10</td>
+          <td>Marcos moved, jabbed, and potshot. Flemmings pressed forward, worked the body, and tried to land the decisive right hand. It did not land clean again. Marcos's footwork and jab were the difference over the final five rounds. The scorecards reflected it, two cards to one.</td>
+          <td><strong>Marcos</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="div">
+
+    <!-- PULL QUOTE -->
+    <div class="pull">
+      <div class="pull-text">"Every fighter has to go through this moment. This is the step where you're at the door — now you just gotta kick it down."</div>
+      <div class="pull-attr">— Dwyke Flemmings Jr. · Fight week, Atlantic City</div>
+    </div>
+
+    <!-- COMPUBOX -->
+    <div class="section-head">
+      <span class="section-label">CompuBox — Main Event</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="compubox-block">
+      <div class="compubox-title">Mielnicki vs. Huerta · 10 Rounds · Source: NY Fights / ProBox TV</div>
+      <div class="compubox-row">
+        <div>
+          <div class="cb-fighter">Mielnicki</div>
+          <div class="cb-val">175</div>
+          <div class="cb-bar-wrap"><div class="cb-bar" style="width:75%;"></div></div>
+        </div>
+        <div class="cb-label">Power Punches<br>Landed</div>
+        <div style="text-align:right;">
+          <div class="cb-fighter" style="text-align:right;">Huerta</div>
+          <div class="cb-val right">60</div>
+          <div class="cb-bar-wrap"><div class="cb-bar right-bar" style="width:26%;"></div></div>
+        </div>
+      </div>
+      <div style="font-family:'Barlow',sans-serif; font-size:11px; color:#5a3a28; margin-top:8px; font-style:italic;">175–60 power punch advantage across 10 rounds. Dominant in volume and accuracy. The manner of the win establishes Mielnicki as a legitimate middleweight contender. CompuBox numbers for co-fights not confirmed in available sourcing — not reported.</div>
+    </div>
+
+    <hr class="div-heavy">
+
+    <!-- PLAYER VERDICTS -->
+    <div class="section-head">
+      <span class="section-label">Player Verdicts</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="verdict-grid">
+      <div class="verdict-card">
+        <div class="verdict-name">Vito Mielnicki Jr.</div>
+        <span class="verdict-badge delivered">Delivered</span>
+        <div class="verdict-text">Dominant at distance. 175 power punches landed. Defended all three regional titles. His rankings — WBO #5, IBF #9, WBC #11 — are not inflated after this performance. The finish the Blotter projected never came, but the performance announced a legitimate contender. The Huerta opposition audit was accurate and the outcome matched it.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-name">Omar Huerta</div>
+        <span class="verdict-badge exceeded">Exceeded</span>
+        <div class="verdict-text">The program documented a thin record and limited opposition. What it could not document was durability against sustained elite pressure. Huerta absorbed 175 power punches across 10 rounds and did not go down. That is real data, even from a loss. His first trip outside Mexico ended in a decision defeat against a ranked contender. He stood through all 30 minutes of it.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-name">Yan Marcos</div>
+        <span class="verdict-badge exceeded">Exceeded</span>
+        <div class="verdict-text">Won the split, won the titles, came off the canvas in round five and boxed his way through the final five rounds with poise. First time Marcos was ever knocked down as a professional. The response — continuing to move, jab, and control the fight's pace against a power-puncher pressing him — is the most credible information on his ceiling to date. Cuban system at work.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-name">Dwyke Flemmings Jr.</div>
+        <span class="verdict-badge exceeded">Exceeded</span>
+        <div class="verdict-text">Lost. Showed everything the Blotter's thesis was built on. Got dropped, got up clean, dropped Marcos back in the next round, pressed the fight through 10 rounds. One judge scored it for him. The amateur foundation is visible under pressure. First loss at 22 years old against a ranked Cuban fighter in a double-knockdown split decision is not a disqualifying event.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-name">Heidan Martinez Morillo</div>
+        <span class="verdict-badge delivered">Delivered</span>
+        <div class="verdict-text">Won clearly. Dominated the scorecards 100-90 on two cards in his first American fight. Could not finish Butt in 10 rounds despite shaking him badly in the final minute. The win was never in doubt after round four. The stoppage was never close. That gap between dominance and finish is the open analytical file going forward.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-name">Daiyaan Butt</div>
+        <span class="verdict-badge exceeded">Exceeded</span>
+        <div class="verdict-text">The Sparring History Flag projected survival reflexes over dominance reflexes. He pressed forward, never landed clean, and absorbed a career-defining beating for 10 rounds. He was shaken badly in round 10 by an uppercut and survived. Never threatened to win. Never went down. The compliance pathway the Blotter flagged appears to be the correct read: excellent preparation for professional punishment, incomplete preparation for professional winning.</div>
+      </div>
+    </div>
+
+    <hr class="div-heavy">
+
+  </div><!-- end body -->
+
+  <!-- PROSPECT WATCH UPDATE -->
+  <div class="prospect-update">
+    <div class="prospect-update-head">
+      <div>
+        <div class="prospect-update-title">Prospect Watch</div>
+        <div style="font-family:'DM Mono',monospace; font-size:9px; color:rgba(200,137,10,0.45); letter-spacing:0.16em; text-transform:uppercase; margin-top:3px;">Vol. I · Entries 3 &amp; 4 · Verification Results · April 11, 2026</div>
+      </div>
+      <div class="prospect-update-badge">Verification Filed</div>
+    </div>
+
+    <!-- ENTRY 3 -->
+    <div class="prospect-entry-update">
+      <div class="peu-name">Heidan "Sugar" Martinez Morillo</div>
+      <div class="peu-rec">18-0 · 17 KOs · Junior Welterweight · 21 years old · Vol. I Entry No. 3</div>
+      <span class="peu-status status-active">Active</span>
+      <span class="peu-status status-updated">Thesis Updated</span>
+
+      <div class="peu-body">
+        <p>The 100% stoppage rate is now 17 out of 18 professional fights — and the fight where it ended was a first-round-through-tenth-round shutout on two of three cards. Martinez went the distance for the first time in his professional career and was never in danger of losing. The Blotter documents both of those facts simultaneously.</p>
+        <p>What tonight confirmed: the power is real, the hand speed is real, the southpaw straight left hand is a legitimate weapon, and Martinez can control a professional fight at the American level against a prepared opponent. What it raised: against 10 rounds of sustained Philadelphia pressure from a fighter who would not fold, the stoppage did not come. Butt was shaken badly in round 10 with 30 seconds remaining and survived. The opposition quality ceiling on Martinez's 17 stoppages was predominantly Dominican and Caribbean circuits. This was the first test against a fighter specifically prepared for him on American soil. He passed the test. The 100% stoppage narrative does not survive it intact.</p>
+      </div>
+      <div class="peu-thesis">
+        <div class="peu-thesis-label">Updated Thesis</div>
+        <div class="peu-thesis-text">18-0, 17 KOs. Dominated first US fight 100-90 on two scorecards. Power and speed are the real article at the American level. Stoppage rate against Caribbean/Dominican opposition does not directly translate. Next verification: Does the finish come against a ranked US contender prepared over a full camp? Or is the ceiling a dominant points fighter who piles up cards at the American level without converting?</div>
+      </div>
+    </div>
+
+    <!-- ENTRY 4 -->
+    <div class="prospect-entry-update">
+      <div class="peu-name">Dwyke "The Genius" Flemmings Jr.</div>
+      <div class="peu-rec">11-1 · 10 KOs · Junior Middleweight · 22 years old · Vol. I Entry No. 4</div>
+      <span class="peu-status status-active">Active</span>
+      <span class="peu-status status-damaged">First Loss Filed</span>
+
+      <div class="peu-body">
+        <p>The undefeated record is gone. The thesis is intact. Flemmings lost a competitive split decision to a ranked Cuban fighter in a double-knockdown war, pressed the fight forward for 10 rounds, and showed the amateur foundation the Blotter documented when it mattered most — getting up from a knockdown and responding with one of his own in the next round.</p>
+        <p>One judge had it 96-92 for Flemmings. The other two had it for Marcos. The Volunteer profile — accepting the harder fight, accepting the adversity — was on display across all 10 rounds. The loss does not close this file. What it does: it raises the verification threshold. The next fight needs to show how Flemmings processes a defeat at 22, whether he stays with the harder path or takes a step back in opposition quality. That decision by his team will tell the Blotter as much as the Marcos fight did.</p>
+      </div>
+      <div class="peu-thesis">
+        <div class="peu-thesis-label">Updated Thesis</div>
+        <div class="peu-thesis-text">11-1, 10 KOs. Lost a split decision to a ranked Cuban fighter in a double knockdown. Got off the canvas cleanly and responded. 80 amateur fights and Junior Olympics silver showed under maximum pressure. Thesis alive. Updated verification threshold: Does Flemmings stay on the hard path after his first loss, or does the team recalibrate toward a softer rebuild? Next fight is as much a management tell as it is a performance test.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK TO BODY -->
+  <div class="body" style="padding-top:22px;">
+
+    <!-- WEIGHT FLAG -->
+    <div class="section-head">
+      <span class="section-label">Weight Discipline Note — Rule 40</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="flag-block">
+      <div class="flag-label">⚑ Weigh-In Flag · Yan Marcos · Unconfirmed</div>
+      The pre-fight weigh-in report noted that one fighter in the co-main event required a second trip to the scales. Dwyke Flemmings Jr. weighed in at 153.6 lbs — under the 154 lb limit. Marcos's exact weight was not confirmed in available sourcing before this recap was filed. The fight proceeded, which confirms Marcos made weight within commission limits. Whether a second attempt was required and at what weight he ultimately came in are not confirmed facts and are not stated as such. This flag is noted for future programs involving Marcos. If confirmed as a miss on first attempt, it becomes a Rule 40 pattern file. It is currently an unverified single anomaly.
+    </div>
+
+    <!-- SPARRING HISTORY FLAG RESOLUTION -->
+    <div class="flag-block">
+      <div class="flag-label">Rule 39 · Sparring History Flag · Daiyaan Butt · Resolved</div>
+      The pre-fight program flagged Butt's documented elite sparring history — specifically the compliance pathway identified by Paulie Malignaggi during broadcast coverage. The theory: survival reflexes developed over elite sparring rooms produce fighters conditioned to absorb punishment without the instinct to finish or dominate. Tonight's result supports it. Butt pressed forward for 10 rounds, was never clean, was shaken badly in round 10, and survived. He was never close to winning. He was also never stopped. The flag produced a useful analytical frame for the result. It is filed as resolved.
+    </div>
+
+    <hr class="div-heavy">
+
+    <!-- ACCURACY REPORT -->
+    <div class="section-head">
+      <span class="section-label">Blueprint Accuracy Report</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="accuracy-block">
+      <div class="accuracy-title">The Homecoming · Atlantic City · April 11, 2026 · Vol. I No. 8</div>
+
+      <div class="accuracy-rows">
+        <div class="accuracy-row">
+          <span class="acc-tag acc-partial">Partial</span>
+          <div class="acc-text"><strong>Mielnicki — Called TKO Rds 5–8. Result: UD10.</strong> Winner correct. Method wrong. The opposition audit called Huerta's thin record accurately. What it did not project: a fighter with limited opposition history sometimes absorbs elite punishment on instinct alone. The 175–60 power punch gap confirms the call on the fight. The finish did not confirm the call on the method.</div>
+        </div>
+        <div class="accuracy-row">
+          <span class="acc-tag acc-hit">Hit</span>
+          <div class="acc-text"><strong>Marcos — Called Decision. Result: SD10.</strong> Winner correct. Method correct. The Cuban technical edge and 36-round experience advantage held over the full 10. The split — one card for Flemmings — reflects how competitive the fight was, which the pre-fight analysis documented. Call stands clean.</div>
+        </div>
+        <div class="accuracy-row">
+          <span class="acc-tag acc-partial">Partial</span>
+          <div class="acc-text"><strong>Martinez — Called TKO Rds 5–8. Result: UD10.</strong> Winner correct. Method wrong. Martinez dominated on cards — 100-90 twice — but could not convert against a fighter flagged pre-fight for the compliance pathway. The Sparring History Flag for Butt was accurate. The call did not weight it heavily enough in projecting the method.</div>
+        </div>
+      </div>
+
+      <div class="grade-row">
+        <div class="grade-letter">B</div>
+        <div class="grade-explanation">Three winners correct. One method correct. Two method misses — both traceable to real analytical gaps, not noise. The Mielnicki miss reflects underweighting durability data on thin opposition records. The Martinez miss reflects underweighting the Sparring History Flag's implication for Butt's chin. No fabricated stats. No reframed calls. The calls are the calls.</div>
+      </div>
+    </div>
+
+    <!-- LESSON FILE -->
+    <div class="section-head">
+      <span class="section-label">Lesson File — New Entries</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="lesson-block">
+      <div class="lesson-label">Permanent Lesson File · April 11, 2026 · Atlantic City</div>
+
+      <div class="lesson-item"><strong>Durability data from thin opposition cannot be projected forward.</strong> Huerta had one career fight past six rounds. The Blotter correctly identified his opposition as overinflated. What it did not account for: absence of durability data is not evidence of fragility. A fighter with no documented chin history has not been proven stoppable. The TKO projection required durability evidence. None existed. The call was a narrative projection, not an evidence-based one. Future calls on method require documented stoppage history or a specific power differential argument before TKO can be projected as the primary outcome.</div>
+
+      <div class="lesson-item"><strong>The Sparring History Flag implies survival, not vulnerability to stoppage.</strong> Butt's compliance pathway was identified correctly — survival reflexes over dominance reflexes. But the Blotter then projected a TKO for Martinez. Those two analytical positions are in tension. If a fighter has developed elite-level survival reflexes through years of sparring with elite professionals, projecting a stoppage requires affirmative evidence that the opponent's power exceeds what the fighter has already absorbed in training. That evidence was not established for Martinez vs. Butt. The flag was right. The call ignored its own implication.</div>
+
+      <div class="lesson-item"><strong>A split decision is not the same as a clear decision — note it explicitly.</strong> The Blotter called Marcos by decision. Marcos won by split decision, 97-91 and 96-92, with one card for Flemmings at 96-92. The method call was correct. The margin call was not examined. When projecting a decision in a genuinely competitive fight, state the projected competitiveness explicitly. A split decision involving a double knockdown is a different analytical result than a wide unanimous decision, even if both are technically "decisions."</div>
+    </div>
+
+    <hr class="div-heavy">
+
+    <!-- LEGACY -->
+    <div class="section-head">
+      <span class="section-label">Legacy</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="legacy-head">What Atlantic City Filed</div>
+    <div class="legacy-body">
+      <p>Vito Mielnicki Jr. is a legitimate middleweight contender. That was the pre-fight claim and the fight confirmed it. He is 23 years old, trained by Ronnie Shields, ranked in three major sanctioning body top 10s, and he put together a technically clean 10-round performance in his own backyard on a nationally broadcast card. The homecoming worked. The next step is a ranked opponent with real professional rounds who does not absorb punishment the way Huerta did. That fight exists in the division. Whether Sampson Lewkowicz books it is the next question this program will ask.</p>
+      <p>Yan Marcos is 15-0 and holds two titles. The Cuban system produced a fighter who came off the canvas, kept boxing, and won a split decision in a war. What the Marcos-Flemmings fight actually did was validate both fighters simultaneously. The Blotter's Prospect Watch entries for both are more credible after April 11 than they were before it.</p>
+      <p>Dwyke Flemmings Jr. lost his first professional fight at 22 years old to a ranked opponent in a double-knockdown split decision. The manner of the loss — getting up clean, dropping Marcos right back, pressing for 10 rounds — is the Volunteer profile documented. What the Blotter watches next is not whether Flemmings wins his next fight. It is who Flemmings fights next.</p>
+      <p>Heidan Martinez is 18-0 with 17 stoppages and his first professional decision. The ceiling question is now on the table. He is 21 years old and the answer has time to arrive. But it has to arrive eventually, and the next opponent will be the first real test of whether the US debut confirmed a future world champion or identified a dominant regional fighter who cannot consistently finish at the top level. The Blotter watches both possibilities with equal attention. That is the scout's job.</p>
+    </div>
+
+  </div><!-- end body -->
+
+  <!-- BACK COVER -->
+  <div class="back-cover">
+    <div class="back-grid">
+      <div>
+        <div class="bc-col-head">Card Results</div>
+        <div class="bc-row">
+          <div class="bc-row-label">Main Event</div>
+          <div class="bc-row-val">Mielnicki UD10 over Huerta · Now 23-1</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Co-Main</div>
+          <div class="bc-row-val">Marcos SD10 over Flemmings Jr. · Now 15-0</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Co-Feature</div>
+          <div class="bc-row-val">Martinez UD10 over Butt · Now 18-0, 17 KOs</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Venue</div>
+          <div class="bc-row-val">Adrian Phillips Theater · Boardwalk Hall · Atlantic City</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Broadcast</div>
+          <div class="bc-row-val">ProBox TV · Free on YouTube</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Source note</div>
+          <div class="bc-row-val">BoxingScene not used as neutral source · ProBox ownership per Rule 31</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="bc-col-head">Accuracy Report</div>
+        <div class="bc-row">
+          <div class="bc-row-label">Mielnicki call</div>
+          <div class="bc-row-val">Winner ✓ · TKO 5-8 ✗ · Went to UD10</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Marcos call</div>
+          <div class="bc-row-val">Decision ✓ · Split (97-91, 96-92, 96-92)</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Martinez call</div>
+          <div class="bc-row-val">Winner ✓ · TKO 5-8 ✗ · Went to UD10</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Grade</div>
+          <div class="bc-row-val">B · 3/3 winners · 1/3 methods · No fabricated data</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">CompuBox</div>
+          <div class="bc-row-val">Mielnicki 175 – Huerta 60 · Power punches</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="bc-col-head">Prospect Watch Update</div>
+        <div class="bc-row">
+          <div class="bc-row-label">Entry No. 3</div>
+          <div class="bc-row-val">Martinez · 18-0, 17 KOs · First UD · Stoppage rate revised · Thesis updated</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Entry No. 4</div>
+          <div class="bc-row-val">Flemmings Jr. · 11-1 · First loss · Double KD split · Thesis intact</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Rule 39 resolved</div>
+          <div class="bc-row-val">Butt compliance pathway confirmed · Survived 10 rounds · Never threatened</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-row-label">Rule 40 flag</div>
+          <div class="bc-row-val">Marcos weigh-in · Unconfirmed · Monitor future programs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      <div class="back-brand">The Boxing Blotter</div>
+      <div class="back-meta">
+        Vol. I · No. 8 · Recap Edition · April 11, 2026<br>
+        Story First Blueprint v3.8 · Scout's Chair Standard<br>
+        Prospect Watch Vol. I · Entries 3 &amp; 4 Updated<br>
+        boxingblotter.com · @boxingblotter
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

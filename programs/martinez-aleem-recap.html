@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story First Blueprint · Recap · Martinez vs Aleem · San Bernardino · March 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dust:#F2E8D9; --ink:#1A1208; --gold:#C8920A; --gold-l:#E8B840;
+  --red:#8B1A0A; --red-l:#C03010;
+  --smoke:#D4C8B0; --muted:#7A6A50; --dark:#2A1E10; --neutral:#1A1208;
+  --mx-red:#CC1414; --al-blue:#1A3A6B;
+  --exceeded:#1A5C2A; --delivered:#1A3A6B; --missed:#8B1A0A; --unverified:#4A3A1A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink)}
+.page{width:8.5in;min-height:11in;margin:0 auto 40px;background:var(--dust);box-shadow:0 8px 48px rgba(0,0,0,0.7);position:relative;overflow:hidden}
+
+/* ===== COVER ===== */
+.cover{background:var(--neutral);min-height:11in;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cv-texture{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 50% at 50% -5%,rgba(200,146,10,0.1),transparent 50%),
+  radial-gradient(ellipse 60% 40% at 0% 100%,rgba(139,26,10,0.08),transparent 50%),
+  linear-gradient(175deg,#2A1E10 0%,#1A1208 50%,#0E0A04 100%)}
+.cv-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(200,146,10,0.02) 0px,rgba(200,146,10,0.02) 1px,transparent 1px,transparent 44px)}
+.cv-stripe{position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(to bottom,var(--mx-red),rgba(139,26,10,0.2))}
+.cv-inner{position:relative;z-index:4;padding:0.5in 0.6in 0.5in 0.75in;display:flex;flex-direction:column;min-height:11in}
+
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.18in;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.cv-brand{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.45em;text-transform:uppercase;color:rgba(200,146,10,0.5);font-weight:500}
+.cv-type{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.18)}
+
+.cv-result-band{background:rgba(200,146,10,0.06);border:1px solid rgba(200,146,10,0.18);padding:10px 16px;margin-bottom:0.2in;display:flex;align-items:center;justify-content:space-between}
+.crb-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.crb-result{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:0.04em;color:white;text-transform:uppercase}
+.crb-scores{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.18em;color:rgba(255,255,255,0.35);font-weight:500}
+
+.cv-winner{font-family:'Oswald',sans-serif;font-weight:700;font-size:88px;line-height:0.85;letter-spacing:-0.01em;text-transform:uppercase;color:white;margin-bottom:6px}
+.cv-winner-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(204,20,20,0.65);margin-bottom:0.05in;display:block;font-weight:500}
+.cv-vs-line{display:flex;align-items:center;gap:14px;margin-bottom:0.05in}
+.cv-vs-rule{flex:1;height:1px;background:rgba(255,255,255,0.06)}
+.cv-vs-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.18)}
+.cv-loser{font-family:'Oswald',sans-serif;font-weight:400;font-size:54px;line-height:0.88;letter-spacing:-0.01em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:4px}
+.cv-loser-sub{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(26,58,107,0.45);margin-bottom:0.2in;display:block;font-weight:400}
+
+.cv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,146,10,0.12);margin-bottom:0.2in}
+.cs-cell{background:rgba(255,255,255,0.02);padding:10px 12px}
+.cs-l{font-family:'IBM Plex Mono',monospace;font-size:6px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(200,146,10,0.4);margin-bottom:5px;display:block;font-weight:600}
+.cs-mx{font-family:'Oswald',sans-serif;font-size:24px;font-weight:600;color:var(--mx-red);display:block;line-height:1}
+.cs-al{font-family:'Oswald',sans-serif;font-size:24px;font-weight:400;color:rgba(26,58,107,0.45);display:block;line-height:1}
+
+.cv-dek{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;line-height:1.84;color:rgba(255,255,255,0.4);margin-bottom:auto}
+.cv-dek strong{font-style:normal;color:rgba(255,255,255,0.72);font-weight:600}
+
+.cv-info{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,146,10,0.1);margin-bottom:0.2in}
+.ci-cell{background:rgba(255,255,255,0.015);padding:9px 12px}
+.ci-l{font-family:'IBM Plex Mono',monospace;font-size:6px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(200,146,10,0.4);margin-bottom:3px;display:block;font-weight:600}
+.ci-v{font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,0.58)}
+
+.cv-foot{border-top:1px solid rgba(200,146,10,0.1);padding-top:12px;display:flex;justify-content:space-between;align-items:flex-end}
+.cf-l{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.1);line-height:2}
+.cf-r{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,146,10,0.06)}
+
+/* ===== PAGE HEADER ===== */
+.ph{background:var(--dark);padding:11px 0.6in 11px 0.75in;display:flex;justify-content:space-between;align-items:center}
+.ph-l{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.ph-r{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.pc{padding:0.36in 0.6in 0.44in 0.75in;background:var(--dust)}
+
+/* ===== TYPOGRAPHY ===== */
+.sec-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:600}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--gold),transparent)}
+.hed{font-family:'Oswald',sans-serif;font-weight:700;font-size:46px;line-height:0.9;text-transform:uppercase;color:var(--ink);margin-bottom:12px;letter-spacing:-0.01em}
+.body-t{font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.84;color:#2A1E10;margin-bottom:12px}
+.body-t strong{font-weight:700;color:var(--ink)}.body-t em{font-style:italic;color:var(--muted)}
+hr.r{border:none;height:1px;background:linear-gradient(to right,transparent,var(--smoke),transparent);margin:16px 0}
+
+/* ===== THE MOMENT ===== */
+.moment{background:var(--dark);padding:0.22in 0.28in;margin:0 -0.6in 18px -0.75in;position:relative;overflow:hidden}
+.moment::before{content:'';position:absolute;left:0;top:0;width:5px;height:100%;background:var(--mx-red)}
+.moment-i{position:relative;z-index:2;padding-left:0.12in}
+.moment-l{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;font-weight:600}
+.moment-h{font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;line-height:0.92;color:white;margin-bottom:8px;letter-spacing:-0.01em;text-transform:uppercase}
+.moment-body{font-family:'Cormorant Garamond',serif;font-size:13.5px;line-height:1.78;color:rgba(255,255,255,0.6)}
+.moment-body strong{color:rgba(255,255,255,0.9);font-weight:700}
+.moment-body em{font-style:italic;color:rgba(255,255,255,0.4)}
+
+/* ===== ROUND BY ROUND ===== */
+.rbr{border:1px solid var(--smoke);overflow:hidden;margin-bottom:18px}
+.rbr-head{background:var(--dark);padding:9px 14px;display:flex;justify-content:space-between}
+.rbr-hl{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rbr-hr{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22)}
+.rbr-row{display:grid;grid-template-columns:36px 1fr 36px;align-items:stretch;border-bottom:1px solid var(--smoke)}
+.rbr-row:last-child{border-bottom:none}
+.rbr-rnum{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:white;background:var(--dark);display:flex;align-items:center;justify-content:center;letter-spacing:0.04em}
+.rbr-desc{font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.65;color:#2A1E10;padding:8px 12px;background:var(--dust)}
+.rbr-desc strong{font-weight:700;color:var(--ink)}.rbr-desc em{font-style:italic;color:var(--muted)}
+.rbr-edge{display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:7.5px;font-weight:600;letter-spacing:0.1em;writing-mode:vertical-rl;text-transform:uppercase;padding:6px 0}
+.edge-mx{background:rgba(204,20,20,0.08);color:var(--mx-red)}
+.edge-al{background:rgba(26,58,107,0.08);color:var(--al-blue)}
+.edge-even{background:rgba(0,0,0,0.04);color:var(--muted)}
+
+/* ===== VERDICTS ===== */
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.verdict{border:1px solid var(--smoke);overflow:hidden}
+.vd-head{padding:8px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--smoke)}
+.vd-name{font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
+.vd-badge{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;padding:3px 8px;font-weight:600}
+.badge-exceeded{background:var(--exceeded);color:white}
+.badge-delivered{background:var(--delivered);color:white}
+.badge-missed{background:var(--missed);color:white}
+.badge-unverified{background:var(--unverified);color:rgba(255,255,255,0.8)}
+.vd-body{padding:9px 12px;font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.72;color:#2A1E10;background:var(--dust)}
+.vd-body strong{font-weight:700;color:var(--ink)}.vd-body em{font-style:italic;color:var(--muted)}
+
+/* ===== BOX SCORE ===== */
+.bscore{border:1px solid var(--smoke);overflow:hidden;margin-bottom:16px}
+.bs-head{background:var(--dark);padding:9px 14px;display:grid;grid-template-columns:1fr repeat(3,auto);gap:24px;align-items:center}
+.bs-hl{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.bs-col{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.28);text-align:right;font-weight:600}
+.bs-row{display:grid;grid-template-columns:1fr repeat(3,auto);gap:24px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--smoke);background:var(--dust)}
+.bs-row:last-child{border-bottom:none}
+.bs-row:nth-child(odd){background:#EDE3D2}
+.bs-fighter{font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;color:var(--ink)}
+.bs-stat{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-align:right;font-weight:600}
+
+/* ===== BLUEPRINT ACCURACY ===== */
+.accuracy{background:var(--dark);padding:0.22in 0.28in;margin:0 -0.6in 18px -0.75in;position:relative}
+.accuracy::before{content:'';position:absolute;left:0;top:0;width:5px;height:100%;background:var(--gold)}
+.acc-i{position:relative;z-index:2;padding-left:0.12in}
+.acc-header{display:flex;align-items:baseline;gap:18px;margin-bottom:12px}
+.acc-l{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.acc-grade{font-family:'Oswald',sans-serif;font-size:56px;line-height:0.9;color:white;font-weight:700}
+.acc-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.42);margin-top:-4px;display:block}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.acc-col-h{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.3em;text-transform:uppercase;font-weight:600;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.acc-item{font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.65;color:rgba(255,255,255,0.52);margin-bottom:6px;padding-left:14px;position:relative}
+.acc-item::before{position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600}
+.acc-item.hit::before{content:'✓';color:rgba(0,107,60,0.8)}
+.acc-item.miss::before{content:'✗';color:rgba(204,26,26,0.7)}
+.acc-item strong{color:rgba(255,255,255,0.82);font-weight:700}
+
+/* ===== LEGACY ===== */
+.legacy{border:1px solid var(--smoke);padding:14px 16px;margin-bottom:16px;background:var(--dust)}
+.legacy-l{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;font-weight:600}
+.legacy-body{font-family:'Cormorant Garamond',serif;font-size:13.5px;line-height:1.84;color:#2A1E10}
+.legacy-body strong{font-weight:700;color:var(--ink)}.legacy-body em{font-style:italic;color:var(--muted)}
+
+/* ===== BACK COVER ===== */
+.back{background:var(--neutral);min-height:11in;position:relative;overflow:hidden}
+.back-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 50% at 50% 100%,rgba(200,146,10,0.06),transparent 55%),
+  linear-gradient(180deg,#1A1208 0%,#0E0A04 100%)}
+.back-inner{position:relative;z-index:4;padding:0.6in 0.6in 0.6in 0.75in;display:flex;flex-direction:column;min-height:11in;justify-content:space-between}
+.back-issue{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.45em;text-transform:uppercase;color:rgba(200,146,10,0.45);margin-bottom:0.3in;display:block;font-weight:600}
+.back-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.72;color:rgba(255,255,255,0.5);max-width:5.5in;margin-bottom:0.12in}
+.back-attrib{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(200,146,10,0.45);font-weight:600}
+.back-title{font-family:'Oswald',sans-serif;font-size:110px;font-weight:700;line-height:0.82;letter-spacing:-0.01em;text-transform:uppercase;color:rgba(255,255,255,0.03);margin-top:auto;margin-bottom:0.2in}
+.back-foot{border-top:1px solid rgba(200,146,10,0.08);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end}
+.bf-l{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.1);line-height:2}
+
+@media print{body{background:white}.page{margin:0;box-shadow:none;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="page cover">
+  <div class="cv-texture"></div>
+  <div class="cv-lines"></div>
+  <div class="cv-stripe"></div>
+  <div class="cv-inner">
+    <div class="cv-top">
+      <span class="cv-brand">Story First Blueprint · Official Recap</span>
+      <span class="cv-type">ProBox TV · NOS Event Center · San Bernardino, CA</span>
+    </div>
+
+    <div class="cv-result-band">
+      <div>
+        <span class="crb-label">Official Result</span>
+        <div class="crb-result">Martinez def. Aleem · Unanimous Decision · 12 Rounds</div>
+      </div>
+      <div style="text-align:right">
+        <span class="crb-label">Scorecards</span>
+        <div class="crb-scores">120-108 · 119-109 · 118-110</div>
+      </div>
+    </div>
+
+    <div class="cv-winner">Lester<br>Martinez</div>
+    <span class="cv-winner-sub">"El Fenix" · Guatemala · WBC Interim Super Middleweight Champion · Now 20-0-1 · 16 KOs</span>
+
+    <div class="cv-vs-line">
+      <div class="cv-vs-rule"></div>
+      <span class="cv-vs-txt">defeated</span>
+      <div class="cv-vs-rule"></div>
+    </div>
+
+    <div class="cv-loser">Immanuwel Aleem</div>
+    <span class="cv-loser-sub">"The Chosen One" · Richmond, VA · Now 22-4-3 · 14 KOs · Went the distance</span>
+
+    <div class="cv-stats">
+      <div class="cs-cell"><span class="cs-l">Method</span><span class="cs-mx" style="font-size:18px;">UD 12</span><span class="cs-al" style="font-size:13px;">No Knockdowns</span></div>
+      <div class="cs-cell"><span class="cs-l">Widest Card</span><span class="cs-mx">120</span><span class="cs-al">108</span></div>
+      <div class="cs-cell"><span class="cs-l">Title Won</span><span class="cs-mx" style="font-size:14px;">WBC Interim</span><span class="cs-al" style="font-size:12px;">168 lb Division</span></div>
+      <div class="cs-cell"><span class="cs-l">History Made</span><span class="cs-mx" style="font-size:13px;">Guatemala's</span><span class="cs-al" style="font-size:12px;">First Champion</span></div>
+    </div>
+
+    <div class="cv-dek">
+      The stoppage never came. Aleem's chin held up all night and Martinez had to earn every round the hard way — volume, pressure, body work, twelve minutes at a time. <strong>He earned all twelve.</strong> The dream that started in the Petén Department of Guatemala, that survived a draw with the champion on the biggest stage of 2025, that was denied a rematch by a sanctioning body's political calculus — that dream landed on a canvas in San Bernardino on the night a country got its first world champion.
+    </div>
+
+    <div class="cv-info">
+      <div class="ci-cell"><span class="ci-l">Venue</span><div class="ci-v">NOS Event Center</div></div>
+      <div class="ci-cell"><span class="ci-l">Date</span><div class="ci-v">March 21, 2026</div></div>
+      <div class="ci-cell"><span class="ci-l">Broadcast</span><div class="ci-v">ProBox TV</div></div>
+      <div class="ci-cell"><span class="ci-l">Next</span><div class="ci-v">Mbilli or Canelo</div></div>
+    </div>
+
+    <div class="cv-foot">
+      <div class="cf-l">
+        Story First Blueprint · Boxing Recap · Martinez vs Aleem<br>
+        NOS Event Center · San Bernardino, California · March 21, 2026<br>
+        Sources: BoxingScene · Boxing News 24 · TSS Boxing · Boxing 247
+      </div>
+      <div class="cf-r">Recap II</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: GAME STORY + THE MOMENT ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Game Story · The Moment</span><span class="ph-r">Story First Blueprint · Recap II</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Game Story</div>
+    <div class="hed">Twelve Rounds.<br>Twelve Answers.<br>One Belt.</div>
+
+    <div class="body-t">
+      The arena was packed with Guatemalans. The national anthem stretched long — the crowd sang every word. Before Lester Martinez threw a single punch he had already done something no fighter from his country had ever done: walked to the center of a ring with a world title genuinely in reach. Then he went and took it.
+    </div>
+    <div class="body-t">
+      The first round belonged to Aleem on activity — jab working, combinations finding a home. Martinez absorbed the early information and waited. In round two he answered with a massive right hand that hurt Aleem badly, followed by an onslaught of power punches that reduced the veteran to demonstrating one thing: his chin. <strong>Aleem's chin was the most important fighter in the building for the rest of the night.</strong> Martinez unloaded everything he had in that second round. Aleem didn't fall.
+    </div>
+    <div class="body-t">
+      From round three onward Martinez controlled the fight through volume and pressure. He set his feet, worked the body, brought the right hand, and piled up rounds. Aleem found moments — a scoring combination in round five, two hard lefts to open round nine — but those stretches were brief and never changed the direction of the fight. By the middle rounds the question was no longer who was winning. It was whether Martinez could find a finish.
+    </div>
+    <div class="body-t">
+      He couldn't. Aleem held together for twelve rounds against a man with an 84% finishing rate and a left hand that had been sharpened specifically against Mbilli seven months ago. <em>The Blueprint called a TKO in rounds seven through nine. The TKO never came.</em> What came instead was something quieter and in its own way more impressive — a dominant points performance from a fighter who kept working when the finish wasn't there, kept stacking rounds, and left San Bernardino with everything he came for except the stoppage.
+    </div>
+    <div class="body-t">
+      His trainer Brian McIntyre said it plainly afterward: <strong>"The kid could've done better. I was looking for the stoppage. Maybe some of his technique broke down a bit. But I'm happy with the win."</strong> That's the champion's corner telling the truth. Martinez won clearly. The scorecards — 120-108, 119-109, 118-110 — confirmed it without ambiguity. The WBC interim belt goes to Guatemala. The mandatory position is secured.
+    </div>
+
+    <div class="moment">
+      <div class="moment-i">
+        <span class="moment-l">The Moment · Round 2</span>
+        <div class="moment-h">He Unloaded Everything.<br>Aleem Stayed Standing.</div>
+        <div class="moment-body">
+          Martinez landed a right hand that hurt Aleem cleanly, then swarmed with power punches from both hands. The veteran was on the ropes, taking damage that should have produced a stoppage. <strong>Aleem's chin absorbed it all.</strong> In his corner between rounds his father-trainer Omar Aleem was urging a desperate response. Aleem answered by coming out for round three and continuing to fight. That survival moment defined the night's narrative — not because Aleem was winning, but because his durability forced Martinez to win a different kind of fight than the Blueprint projected. The stoppage that didn't happen in round two never happened. <em>Martinez still won every metric that mattered. But Aleem's chin earned its own verdict.</em>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 3: ROUND BY ROUND + VERDICTS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Round by Round · Player Verdicts</span><span class="ph-r">Story First Blueprint · Recap II</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Round by Round</div>
+    <div class="rbr">
+      <div class="rbr-head">
+        <span class="rbr-hl">Martinez vs Aleem · 12 Rounds · WBC Interim Super Middleweight</span>
+        <span class="rbr-hr">Blueprint Scoring</span>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">1</div>
+        <div class="rbr-desc">Aleem starts with activity — jab pumping, combinations working to head and body. Martinez absorbs, measures, waits. Aleem earns the opener on output.</div>
+        <div class="rbr-edge edge-al">ALEEM</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:var(--mx-red);">2</div>
+        <div class="rbr-desc"><strong>Martinez lands a massive right, hurts Aleem, unloads an onslaught of power punches on the ropes.</strong> Aleem's chin survives. No knockdown. Martinez's best round — and the moment that defines the fight.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">3</div>
+        <div class="rbr-desc">Martinez establishes pressure and rhythm. Aleem's combinations still find openings but Martinez's output and accuracy begin to take over. The fight settles into its pattern.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">4</div>
+        <div class="rbr-desc">Body work integrated. Martinez works downstairs to complement the right hand upstairs. Aleem staying in range but absorbing more than he's landing. Steady round for the champion.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">5</div>
+        <div class="rbr-desc">Aleem finds a scoring combination — fulfilling his promise of a formidable outing. A knot developing on his forehead from Martinez's uppercut work. Martinez responds with power blows to close the round.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">6</div>
+        <div class="rbr-desc">Uppercut and two flush rights test Aleem again. Aleem's resilience continues — he absorbs and keeps answering. Martinez's pace is relentless. Aleem at round's end gestures as if to say: is that all?</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">7</div>
+        <div class="rbr-desc">Martinez accelerates pressure. The finish the Blueprint projected is not arriving. Martinez keeps working anyway — the plan stays the plan. Steady accumulation. The championship round bank is filling correctly now.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">8</div>
+        <div class="rbr-desc">Martinez leans on his left hand — the same weapon that defined the Mbilli fight. Aleem still countering in spots but output dropping. Martinez in clear command.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">9</div>
+        <div class="rbr-desc"><strong>Aleem's best late-round answer — two hard lefts to open.</strong> Martinez responds immediately with an onslaught in the final half of the round. Aleem showed what he came with. Martinez showed more.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">10</div>
+        <div class="rbr-desc">Championship rounds. Martinez in territory he has now been before — these are the rounds the Mbilli fight denied him. He handles them with the same plan he used in rounds one through nine. Tier II confirmed.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">11</div>
+        <div class="rbr-desc">Aleem lands lefts impressively — the experience showing in the late rounds. But Martinez's output advantage is insurmountable. The scorecards are not close. The Guatemalan crowd feels it.</div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum">12</div>
+        <div class="rbr-desc">Final bell. Both men standing. Martinez raises his hands before the announcement. He already knows. 120-108. 119-109. 118-110. <strong>Guatemala has its first world champion.</strong></div>
+        <div class="rbr-edge edge-mx">MARTINEZ</div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Player Verdicts</div>
+    <div class="verdict-grid">
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(200,146,10,0.06);">
+          <div class="vd-name" style="color:var(--mx-red);">Lester Martinez</div>
+          <span class="vd-badge badge-delivered">DELIVERED</span>
+        </div>
+        <div class="vd-body">Won the belt. Won clearly. Stacked rounds with volume, pressure, and body work exactly as projected. The stoppage didn't come — McIntyre wanted it, Martinez couldn't manufacture it against a chin that refused to cooperate. <strong>Not Exceeded because the method missed. Delivered because the result and the performance were real.</strong> His left hand developed through the later rounds, his championship round bank is no longer artificially capped, and he now holds mandatory position for Mbilli or Canelo. The dream that started in Petén is a belt now. That's delivery.</div>
+      </div>
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(139,26,10,0.04);">
+          <div class="vd-name" style="color:var(--al-blue);">Immanuwel Aleem</div>
+          <span class="vd-badge badge-exceeded">EXCEEDED</span>
+        </div>
+        <div class="vd-body">Lost by wide unanimous decision. Exceeded the Blueprint's expectation anyway. The prediction was that his crisis default — tight guard, short counter — would eventually fail against Martinez's body attack. It didn't fully fail. <strong>His chin absorbed round two's onslaught and kept absorbing for ten more rounds.</strong> He landed well in rounds five and nine, fulfilled his promise of a competitive outing, and demonstrated the durability that has kept him from being stopped in 29 professional fights. He lost. He was not embarrassed. For a 32-year-old veteran absorbing that much power, exceeding expectations is a legitimate verdict.</div>
+      </div>
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(26,43,92,0.04);">
+          <div class="vd-name" style="color:#1A5C2A;">Joshua Kevin Anton</div>
+          <span class="vd-badge badge-unverified">UNVERIFIED</span>
+        </div>
+        <div class="vd-body">Anton vs Abdukakhorov result not confirmed at time of publication. Anton was the penultimate fight on the San Bernardino card — unbeaten southpaw, ProBox prospect, WBC top-15 ambitions. Abdukakhorov was the legitimate test — 22 fights, 179 pro rounds, stopped only once. <em>Verify result via BoxRec before filing this program.</em></div>
+      </div>
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(74,58,26,0.04);">
+          <div class="vd-name" style="color:#4A3A1A;">The Guatemalan Crowd</div>
+          <span class="vd-badge badge-exceeded">EXCEEDED</span>
+        </div>
+        <div class="vd-body">The Blueprint doesn't usually write verdicts for crowds. This one earned it. They packed the NOS Event Center. They sang every word of the extended national anthem before the fight. <strong>They witnessed their country's first world champion.</strong> Boxing programs are written for the scout and the casual fan. The Guatemalan fans in San Bernardino on March 21, 2026 were neither — they were the reason the fight meant what it meant. That deserves acknowledgment.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 4: BOX SCORE + ACCURACY + LEGACY ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Box Score · Blueprint Accuracy · Legacy</span><span class="ph-r">Story First Blueprint · Recap II</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Official Box Score · Verified</div>
+    <div class="bscore">
+      <div class="bs-head">
+        <span class="bs-hl">Main Event · WBC Interim Super Middleweight · 12 Rounds</span>
+        <span class="bs-col">KDs</span>
+        <span class="bs-col">RECORD</span>
+        <span class="bs-col">RESULT</span>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter" style="color:var(--mx-red);">Lester "El Fenix" Martinez</div>
+        <div class="bs-stat" style="color:var(--mx-red);">0</div>
+        <div class="bs-stat" style="color:var(--mx-red);">20-0-1 · 16 KOs</div>
+        <div class="bs-stat" style="color:#1A5C2A;font-size:9px;">W · UD · 120-108 / 119-109 / 118-110</div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter" style="color:var(--al-blue);">Immanuwel "The Chosen One" Aleem</div>
+        <div class="bs-stat" style="color:var(--al-blue);">0</div>
+        <div class="bs-stat" style="color:var(--al-blue);">22-4-3 · 14 KOs</div>
+        <div class="bs-stat" style="color:var(--missed);font-size:9px;">L · UD · Went the full 12</div>
+      </div>
+    </div>
+
+    <div class="accuracy">
+      <div class="acc-i">
+        <div class="acc-header">
+          <span class="acc-l">Blueprint Accuracy Report</span>
+          <div>
+            <div class="acc-grade">B</div>
+            <span class="acc-sub">Winner correct · Method missed · Aleem's chin underestimated</span>
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
+          <div class="acc-col-h" style="color:rgba(0,107,60,0.7);">Hits</div>
+          <div class="acc-item hit"><strong>Winner correct.</strong> Martinez UD called. Martinez UD delivered.</div>
+          <div class="acc-item hit"><strong>Tier II confirmed.</strong> Plan never changed across 12 rounds. Set feet, work body, bring right hand. Identical in round 12 as round 1.</div>
+          <div class="acc-item hit"><strong>CRB gap filled correctly.</strong> Martinez navigated championship rounds 10-12 with the same composure as rounds 1-9. The Mbilli 10-round cap no longer defines his CRB.</div>
+          <div class="acc-item hit"><strong>Body attack confirmed as primary weapon.</strong> Integrated from round three through twelve exactly as projected.</div>
+        </div>
+        <div>
+          <div class="acc-col-h" style="color:rgba(139,26,10,0.7);">Misses</div>
+          <div class="acc-item miss"><strong>Method wrong — called stoppage, fight went 12.</strong> The Blueprint called Martinez TKO rounds 7-9. Aleem went the full 12 rounds. The finish never came. This is the primary miss.</div>
+          <div class="acc-item miss"><strong>Aleem's chin critically underestimated.</strong> One stoppage in 29 professional fights is elite durability. It was not weighted as such in the pre-fight build. A fighter who absorbs a round-two onslaught and keeps answering for ten more rounds has a chin that deserved its own line. It did not get one.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Permanent Lesson File · March 21, 2026</div>
+    <div style="border:1px solid var(--smoke);background:#EDE3D2;padding:12px 14px;margin-bottom:16px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:13.5px;line-height:1.82;color:#2A1E10;">
+        <strong>Chin durability is a distinct metric from crisis execution.</strong> Aleem's crisis default — tight guard, short counter — was correctly identified. His chin's ability to absorb maximum power output over twelve rounds was not separately evaluated. These are different things. A fighter's crisis execution measures what decisions they make when hurt. A fighter's chin durability measures how much they can absorb before those decisions are taken from them. Both must be assessed independently in future pre-fight builds. When a fighter has been stopped only once in 29 professional fights, that durability record carries predictive weight and must be weighted explicitly in the finishing probability projection.
+      </div>
+    </div>
+
+    <div class="sec-label">Legacy</div>
+    <div class="legacy">
+      <span class="legacy-l">What Tonight Means</span>
+      <div class="legacy-body">
+        Guatemala has been waiting for this for the entire history of professional boxing. Costa Rica has had world champions. Nicaragua has. El Salvador has. Every neighbor on the map has raised a flag in this sport. <strong>Tonight Lester Martinez ended the wait.</strong>
+
+        He did it the hard way — not with a single highlight-reel finish, but with twelve rounds of pressure, body work, and the kind of disciplined output that wins championships when the stoppage doesn't materialize. His trainer wanted more. The scorecards said he had already done enough. Three judges, three wide cards, one belt.
+
+        The bigger picture: <em>Martinez is now mandatory for the winner of Mbilli vs Canelo in September.</em> He already went ten rounds with Mbilli in the Fight of the Year and was arguably winning when the bell rang. He now walks into that rematch — or its alternative — as the WBC interim champion rather than the man who drew and got denied. That is a different kind of leverage. The sanctioning body that manipulated his path to this belt now owes him the next fight.
+
+        What the Blueprint said before the first bell: Martinez fights for a nation that has never seen its flag raised in this sport. Tonight that flag went up. Whatever comes next, that cannot be undone. In a worn convention center in San Bernardino, California, while metal chairs clanked and cords were unplugged in the background, Lester Martinez became something his country had never had. He became their champion.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== BACK COVER ===== -->
+<div class="page back">
+  <div class="back-bg"></div>
+  <div class="back-inner">
+    <div>
+      <span class="back-issue">Story First Blueprint · Recap Edition · Card I · March 21, 2026</span>
+      <div class="back-quote">
+        "He did it the hard way. Not with a single highlight-reel finish — with twelve rounds of pressure, body work, and disciplined output. Three judges. Three wide cards. One belt. Guatemala has been waiting for this for the entire history of professional boxing."
+      </div>
+      <div class="back-attrib">— Story First Blueprint · Legacy Section · March 21, 2026</div>
+
+      <div style="margin-top:0.35in;display:grid;grid-template-columns:1fr 1fr;gap:0.3in;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(200,146,10,0.45);font-weight:600;margin-bottom:10px;">Next Up · Martinez</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.82;color:rgba(255,255,255,0.38);">
+            August 28 at the El Chapin festival in Los Angeles — a Guatemalan celebration with Martinez as the centerpiece. Then the mandatory: winner of Mbilli vs Canelo in September. He already knows what Mbilli brings. The WBC interim belt gives him the leverage to demand what he was owed after the draw. Garry Jonas called it right: he's done with venues like this one.
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(200,146,10,0.45);font-weight:600;margin-bottom:10px;">Framework Note · Chin Durability</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.82;color:rgba(255,255,255,0.38);">
+            The miss tonight was Aleem's chin. One stoppage in 29 fights is a durability record that deserved its own line in the pre-fight build. Going forward, chin durability is a standalone metric — separate from crisis execution, separately sourced, separately weighted in every finishing probability projection. The lesson is filed.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:0.3in;border-top:1px solid rgba(200,146,10,0.08);padding-top:0.2in;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(200,146,10,0.45);font-weight:600;margin-bottom:8px;">The Volunteer Profile · Applied</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.82;color:rgba(255,255,255,0.35);">
+          Lester Martinez took the fight that kept him in line for the hardest available challenge — not the comfortable path. He fought Mbilli when Mbilli was the best fighter at 168 pounds on the planet's biggest stage. He came back from a draw that felt like a theft and took the only available route back to mandatory position. He did not manage his brand. He pursued the hardest thing available. The Blueprint recognizes that. It was recognized before Saturday night. It is confirmed now.
+        </div>
+      </div>
+    </div>
+
+    <div class="back-title">El Fenix.</div>
+
+    <div class="back-foot">
+      <div class="bf-l">
+        Story First Blueprint · Boxing Recap · Martinez wins WBC Interim Super Middleweight Title<br>
+        NOS Event Center · San Bernardino, California · March 21, 2026 · ProBox TV<br>
+        Sources: BoxingScene · Boxing News 24 · TSS Boxing · Boxing 247 · Box.Live
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
