@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter · Reporting the Ring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background-color:#F0EAD6;color:#0F0C07;font-family:'Barlow Condensed',sans-serif;-webkit-font-smoothing:antialiased}
+
+.nav{position:sticky;top:0;z-index:50;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
+.nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
+.nav-the{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(192,26,10,0.8)}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-0.01em;color:#F0EAD6;line-height:1}
+.nav-name span{color:#C01A0A}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a:hover{color:#F0EAD6}
+.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:0.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:24px;cursor:pointer}
+
+.hero{background-color:#F0EAD6;padding:72px 32px 60px;text-align:center;border-bottom:3px solid #0F0C07}
+.hero-the{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:#6A6050;margin-bottom:4px}
+.hero-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(56px,12vw,120px);text-transform:uppercase;letter-spacing:-0.02em;line-height:0.88;color:#0F0C07}
+.hero-brand span{color:#C01A0A}
+.hero-tagline{font-family:'DM Mono',monospace;font-size:clamp(10px,1.4vw,12px);letter-spacing:0.28em;text-transform:uppercase;color:#2A1E10;margin-top:26px}
+.hero-rule{width:60px;height:2px;background-color:#C01A0A;margin:22px auto 0}
+.hero-desc{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;line-height:1.75;color:#2A1E10;max-width:540px;margin:20px auto 0}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px;background-color:#F0EAD6}
+.section{padding:56px 0;background-color:#F0EAD6}
+.section-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid #0F0C07;padding-bottom:10px;margin-bottom:28px}
+.section-diamond{width:9px;height:9px;background-color:#C01A0A;transform:rotate(45deg);flex-shrink:0}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:30px;text-transform:uppercase;letter-spacing:0.02em;color:#0F0C07}
+.section-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#6A6050;margin-left:auto}
+
+.archive{display:flex;flex-direction:column;gap:8px}
+
+.prog{
+  display:grid;
+  grid-template-columns:120px 1fr auto;
+  gap:20px;align-items:center;
+  background-color:#ffffff;
+  border:1px solid #D8D0BC;
+  border-left:4px solid #C01A0A;
+  padding:16px 22px;
+}
+.prog.standalone{border-left-color:#9a9080}
+
+.prog-vol{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6A6050;text-transform:uppercase;line-height:1.7}
+.prog-main{min-width:0}
+.prog-fight{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:0.01em;color:#0F0C07;line-height:1.1}
+.prog-meta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#6A6050;margin-top:4px;text-transform:uppercase}
+
+.prog-links{display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex-shrink:0}
+.btn{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;
+  text-transform:uppercase;padding:6px 14px;
+  border:1px solid;text-decoration:none;
+  white-space:nowrap;transition:background 0.18s,color 0.18s;
+  display:inline-block;
+}
+.btn-program{color:#0F0C07;border-color:#0F0C07;background:transparent}
+.btn-program:hover{background-color:#0F0C07;color:#F0EAD6}
+.btn-recap-a{color:#8B1A00;border-color:#C01A0A;background:rgba(192,26,10,0.06)}
+.btn-recap-a:hover{background-color:#C01A0A;color:#F0EAD6}
+.btn-final{color:#2A6B2A;border-color:rgba(42,107,42,0.5);background:rgba(42,107,42,0.06)}
+.btn-final:hover{background-color:#2A6B2A;color:#F0EAD6}
+.btn-pre{color:#8B5E00;border-color:rgba(139,94,0,0.5);background:rgba(139,94,0,0.06)}
+.btn-pre:hover{background-color:#8B5E00;color:#F0EAD6}
+.btn-standalone{color:#6A6050;border-color:rgba(106,96,80,0.4);background:transparent}
+.btn-standalone:hover{background-color:#6A6050;color:#F0EAD6}
+
+.footer{background-color:#0F0C07;text-align:center;padding:48px 32px;border-top:3px solid #C01A0A}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#F0EAD6}
+.footer-brand span{color:#C01A0A}
+.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A6050;margin-top:14px;line-height:2.2}
+.footer-sub a{color:rgba(192,26,10,0.8);text-decoration:none}
+
+@media(max-width:760px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .prog{grid-template-columns:1fr;gap:8px}
+  .prog-links{flex-direction:row;align-items:flex-start;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-the">The</span>
+      <span class="nav-name">Boxing <span>Blotter</span></span>
+    </a>
+    <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="prospect-watch.html">Prospect Watch</a></li>
+      <li><a href="unsung-heroes.html">Unsung Heroes</a></li>
+      <li><a href="p4p.html">P4P</a></li>
+      <li><a href="unfought.html">Unfought</a></li>
+      <li><a href="shop.html" class="soon">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-the">The</div>
+  <h1 class="hero-brand">Boxing <span>Blotter</span></h1>
+  <div class="hero-tagline">Documents Before &nbsp;·&nbsp; Scores During &nbsp;·&nbsp; Grades After</div>
+  <div class="hero-rule"></div>
+  <p class="hero-desc">These fighters don't play this sport — they live it, and we make sure you know their story before the first bell rings. The Boxing Blotter is for fans who want to know what they're watching — and appreciate what it took to get there.</p>
+</header>
+
+<main class="wrap">
+  <section class="section" id="programs">
+    <div class="section-head">
+      <span class="section-diamond"></span>
+      <h2 class="section-title">Programs</h2>
+      <span class="section-kicker">Volume I · 2026</span>
+    </div>
+    <div class="archive">
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 17<br>May 30, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Bivol vs. Eifert</span>
+          <span class="prog-meta">Ekaterinburg, Russia &nbsp;·&nbsp; WBA Light Heavyweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/bivol-eifert.html">Program</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 16<br>May 30, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Foster vs. Ford</span>
+          <span class="prog-meta">Houston, TX &nbsp;·&nbsp; DAZN</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/foster-ford.html">Program</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 15<br>May 29, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Edwards vs. Nqothole</span>
+          <span class="prog-meta">York Hall, London &nbsp;·&nbsp; IBF Flyweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/edwards-nqothole.html">Program</a>
+          <a class="btn btn-final" href="programs/edwards-nqothole-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 14<br>May 23, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Usyk vs. Verhoeven</span>
+          <span class="prog-meta">Giza, Egypt &nbsp;·&nbsp; Heavyweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/usyk-verhoeven.html">Program</a>
+          <a class="btn btn-final" href="programs/usyk-verhoeven-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 13<br>May 22, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Jones vs. Gualtieri</span>
+          <span class="prog-meta">San Jose, CA &nbsp;·&nbsp; Super Middleweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/jones-gualtieri.html">Program</a>
+          <a class="btn btn-final" href="programs/jones-gualtieri-recap.html">Recap · Grade C+</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 12<br>May 9, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Wardley vs. Dubois</span>
+          <span class="prog-meta">Manchester, England &nbsp;·&nbsp; WBO Heavyweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/wardley-dubois.html">Program</a>
+          <a class="btn btn-final" href="programs/wardley-dubois-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 11<br>May 9, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Leo vs. Aleem</span>
+          <span class="prog-meta">Atlanta, GA &nbsp;·&nbsp; IBF Featherweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/leo-aleem.html">Program</a>
+          <a class="btn btn-final" href="programs/leo-aleem-recap.html">Recap · Grade B+</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 10<br>May 2, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Benavidez vs. Zurdo</span>
+          <span class="prog-meta">Las Vegas, NV &nbsp;·&nbsp; WBA/WBO Cruiserweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/benavidez-zurdo.html">Program</a>
+          <a class="btn btn-final" href="programs/benavidez-zurdo-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 9<br>May 2, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Inoue vs. Nakatani</span>
+          <span class="prog-meta">Tokyo, Japan &nbsp;·&nbsp; Super Bantamweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/inoue-nakatani.html">Program</a>
+          <a class="btn btn-final" href="programs/inoue-nakatani-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 8<br>April 11, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">ProBox Atlantic City</span>
+          <span class="prog-meta">Atlantic City, NJ &nbsp;·&nbsp; ProBox TV</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/probox-atlantic-city.html">Program</a>
+          <a class="btn btn-final" href="programs/probox-atlantic-city-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 7<br>April 11, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Fury vs. Makhmudov</span>
+          <span class="prog-meta">London, England &nbsp;·&nbsp; Heavyweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/fury-makhmudov.html">Program</a>
+          <a class="btn btn-final" href="programs/fury-makhmudov-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 6<br>April 5, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Tszyu vs. Nurja</span>
+          <span class="prog-meta">Wollongong, Australia &nbsp;·&nbsp; Super Welterweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/tszyu-nurja.html">Program</a>
+          <a class="btn btn-final" href="programs/tszyu-nurja-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 5<br>April 5, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Zuffa Boxing 5</span>
+          <span class="prog-meta">Las Vegas, NV &nbsp;·&nbsp; Paramount+</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/zuffa-boxing-5.html">Program</a>
+          <a class="btn btn-final" href="programs/zuffa-boxing-5-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 4<br>April 4, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Wilder vs. Chisora</span>
+          <span class="prog-meta">London, England &nbsp;·&nbsp; Heavyweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/wilder-chisora.html">Program</a>
+          <a class="btn btn-final" href="programs/wilder-chisora-recap.html">Recap · Grade C</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 3<br>March 28, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Fundora vs. Thurman</span>
+          <span class="prog-meta">Las Vegas, NV &nbsp;·&nbsp; WBC Super Welterweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/fundora-thurman.html">Program</a>
+          <a class="btn btn-final" href="programs/fundora-thurman-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog standalone">
+        <span class="prog-vol">Standalone<br>March 14, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Barboza vs. Sims</span>
+          <span class="prog-meta">Anaheim, CA &nbsp;·&nbsp; DAZN</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-standalone" href="programs/barboza-sims-recap.html">Recap · Grade B+</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 2<br>March 21, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Martinez vs. Aleem</span>
+          <span class="prog-meta">San Bernardino, CA &nbsp;·&nbsp; ProBox TV</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/martinez-aleem.html">Program</a>
+          <a class="btn btn-final" href="programs/martinez-aleem-recap.html">Recap · Grade B</a>
+        </span>
+      </div>
+
+      <div class="prog">
+        <span class="prog-vol">Vol. I · No. 1<br>March 21, 2026</span>
+        <span class="prog-main">
+          <span class="prog-fight">Adames vs. Williams</span>
+          <span class="prog-meta">Orlando, FL &nbsp;·&nbsp; WBC Middleweight</span>
+        </span>
+        <span class="prog-links">
+          <a class="btn btn-program" href="programs/adames-williams.html">Program</a>
+          <a class="btn btn-recap-a" href="programs/adames-williams-recap.html">Recap · Grade A</a>
+        </span>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Boxing <span>Blotter</span></div>
+  <div class="footer-sub">
+    Documents Before &nbsp;·&nbsp; Scores During &nbsp;·&nbsp; Grades After<br>
+    <a href="https://x.com/boxingblotter">@boxingblotter</a> &nbsp;·&nbsp; boxingblotter.com<br>
+    Story First Blueprint &nbsp;·&nbsp; Scout's Chair Analysis
+  </div>
+</footer>
+
+</body>
+</html>
