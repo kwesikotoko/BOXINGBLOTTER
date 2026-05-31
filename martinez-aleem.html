@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story First Blueprint · Martinez vs Aleem · San Bernardino · March 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dust:#F2E8D9; --ink:#1A1208; --gold:#C8920A; --gold-l:#E8B840;
+  --red:#8B1A0A; --red-l:#C03010;
+  --smoke:#D4C8B0; --muted:#7A6A50; --dark:#2A1E10;
+  --mx-red:#CC1414; --al-blue:#1A3A6B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink)}
+.page{width:8.5in;min-height:11in;margin:0 auto 40px;background:var(--dust);box-shadow:0 8px 48px rgba(0,0,0,0.7);position:relative;overflow:hidden}
+
+/* ===== COVER ===== */
+.cover{background:var(--dark);min-height:11in;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cv-texture{position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 50% -10%,rgba(200,146,10,0.12),transparent 55%),
+  radial-gradient(ellipse 100% 40% at 0% 100%,rgba(139,26,10,0.1),transparent 50%),
+  linear-gradient(175deg,#2A1E10 0%,#1A1208 40%,#0E0A04 100%)}
+.cv-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(200,146,10,0.025) 0px,rgba(200,146,10,0.025) 1px,transparent 1px,transparent 44px)}
+.cv-inner{position:relative;z-index:4;padding:0.55in 0.6in;display:flex;flex-direction:column;min-height:11in}
+
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.42in}
+.cv-brand{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:rgba(200,146,10,0.5);font-weight:500}
+.cv-event{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.2);font-weight:400;text-align:right}
+
+.cv-belt{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,146,10,0.3);padding:6px 18px;display:inline-block;margin-bottom:0.22in;background:rgba(200,146,10,0.05);width:fit-content}
+
+/* FIGHTER DIPTYCH */
+.cv-diptych{display:grid;grid-template-columns:1fr 48px 1fr;align-items:center;gap:0;margin-bottom:0.24in}
+.cv-fighter{display:flex;flex-direction:column}
+.cv-fighter-r{text-align:right}
+.cv-country{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;margin-bottom:6px;display:block;font-weight:500}
+.cv-fname{font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:0.88;text-transform:uppercase;letter-spacing:-0.01em}
+.cv-nickname{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;margin-top:5px;opacity:0.6;display:block}
+.cv-rec{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;margin-top:8px;display:block;opacity:0.45;font-weight:400}
+.cv-vs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:rgba(255,255,255,0.2);text-align:center;line-height:1}
+
+.cv-tape{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(200,146,10,0.15);margin-bottom:0.24in}
+.ct-cell{background:rgba(255,255,255,0.02);padding:9px 10px;text-align:center}
+.ct-l{font-family:'IBM Plex Mono',monospace;font-size:6.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(200,146,10,0.5);margin-bottom:4px;display:block}
+.ct-mx{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--mx-red);display:block;line-height:1}
+.ct-al{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--al-blue);display:block;line-height:1}
+.ct-draw{font-family:'Oswald',sans-serif;font-size:18px;font-weight:500;color:rgba(255,255,255,0.45);display:block;line-height:1}
+
+.cv-dek{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.78;color:rgba(255,255,255,0.42);max-width:5.8in;margin-bottom:auto}
+.cv-dek strong{font-style:normal;color:rgba(255,255,255,0.72);font-weight:600}
+
+.cv-info{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(200,146,10,0.1);margin-bottom:0.22in}
+.ci-cell{background:rgba(255,255,255,0.015);padding:9px 12px}
+.ci-l{font-family:'IBM Plex Mono',monospace;font-size:6.5px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(200,146,10,0.45);margin-bottom:3px;display:block}
+.ci-v{font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,0.65)}
+
+.cv-foot{border-top:1px solid rgba(200,146,10,0.12);padding-top:12px;display:flex;justify-content:space-between;align-items:flex-end}
+.cf-l{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.14);line-height:1.9}
+.cf-r{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,146,10,0.08)}
+
+/* ===== PAGE HEADER ===== */
+.ph{background:var(--dark);padding:11px 0.6in;display:flex;justify-content:space-between;align-items:center}
+.ph-l{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.ph-r{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.22)}
+.pc{padding:0.38in 0.6in 0.46in;background:var(--dust)}
+
+/* ===== TYPOGRAPHY ===== */
+.sec-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:600}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--gold),transparent)}
+.hed{font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;line-height:0.92;text-transform:uppercase;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em}
+.body-t{font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.82;color:#2A1E10;margin-bottom:12px}
+.body-t strong{font-weight:700;color:var(--ink)}.body-t em{font-style:italic;color:var(--muted)}
+hr.r{border:none;height:1px;background:linear-gradient(to right,transparent,var(--smoke),transparent);margin:16px 0}
+
+/* ===== TALE OF THE TAPE ===== */
+.tape{border:1px solid var(--smoke);background:#FAF5EC;overflow:hidden;margin-bottom:18px}
+.tape-head{background:var(--dark);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.th-l{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.th-r{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.tape-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--smoke)}
+.tape-row:last-child{border-bottom:none}
+.tr-mx{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--mx-red);padding:8px 14px;text-align:left;letter-spacing:0.04em}
+.tr-al{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--al-blue);padding:8px 14px;text-align:right;letter-spacing:0.04em}
+.tr-cat{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 10px;white-space:nowrap;font-weight:600}
+
+/* ===== FIGHT SECTIONS ===== */
+.fight-block{border:1px solid var(--smoke);background:#FAF5EC;overflow:hidden;margin-bottom:16px}
+.fb-head{padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--smoke)}
+.fb-fighters{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink)}
+.fb-fighters span{color:var(--muted);font-weight:300;font-size:16px;padding:0 8px}
+.fb-meta{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:1.7}
+.fb-body{padding:10px 14px 13px}
+.fb-story-l{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;display:block;font-weight:600}
+.fb-story{font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.78;color:#2A1E10}
+.fb-story strong{font-weight:700;color:var(--ink)}.fb-story em{font-style:italic;color:var(--muted)}
+.fb-kf{margin-top:9px;padding-top:8px;border-top:1px solid var(--smoke);display:flex;gap:8px;align-items:flex-start}
+.fb-kfl{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);flex-shrink:0;padding-top:2px;font-weight:600}
+.fb-kft{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;line-height:1.65;color:#2A1E10}
+
+/* ===== HOW EACH FIGHTER WINS ===== */
+.how-win{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--smoke);overflow:hidden;margin-bottom:18px}
+.hw-mx{border-right:1px solid var(--smoke);padding:12px 14px;background:#FAF5EC}
+.hw-al{padding:12px 14px;background:#FAF5EC}
+.hw-head{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--smoke)}
+.hw-item{font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.65;color:#2A1E10;margin-bottom:5px;padding-left:10px;position:relative}
+.hw-item::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:9px}
+
+/* ===== THE CALL ===== */
+.call{background:var(--dark);padding:0.26in 0.3in;margin:18px -0.6in 0;position:relative;overflow:hidden}
+.call::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 85% 50%,rgba(200,146,10,0.07),transparent 55%)}
+.call-i{position:relative;z-index:2}
+.call-l{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;font-weight:600}
+.call-h{font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;line-height:0.9;text-transform:uppercase;color:white;margin-bottom:10px;letter-spacing:-0.01em}
+.call-h em{font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--gold-l);font-weight:400}
+.call-body{font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.75;color:rgba(255,255,255,0.68);margin-bottom:14px}
+.call-body strong{color:rgba(255,255,255,0.92);font-weight:700}
+.call-pick{display:flex;align-items:flex-start;gap:22px;padding-top:14px;border-top:1px solid rgba(200,146,10,0.15)}
+.cp-label{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.35);white-space:nowrap;padding-top:6px;flex-shrink:0;font-weight:500}
+.cp-val{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:white;line-height:1}
+.cp-reason{font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.65;color:rgba(255,255,255,0.55);margin-top:4px}
+
+/* ===== UNDERCARD NUGGETS ===== */
+.nugget-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.nugget{border:1px solid var(--smoke);background:#FAF5EC;padding:11px 13px}
+.nug-tag{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;display:block;font-weight:600}
+.nug-match{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;color:var(--ink);margin-bottom:6px;line-height:1.1}
+.nug-txt{font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.68;color:#2A1E10}
+.nug-txt strong{font-weight:700;color:var(--ink)}
+
+@media print{body{background:white}.page{margin:0;box-shadow:none;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="page cover">
+  <div class="cv-texture"></div>
+  <div class="cv-lines"></div>
+  <div class="cv-inner">
+    <div class="cv-top">
+      <span class="cv-brand">Story First Blueprint · Official Program</span>
+      <span class="cv-event">ProBox TV · March 21, 2026 · San Bernardino, CA</span>
+    </div>
+
+    <div class="cv-belt">WBC Interim Super Middleweight Championship · 12 Rounds · 168 lbs</div>
+
+    <div class="cv-diptych">
+      <div class="cv-fighter">
+        <span class="cv-country" style="color:var(--mx-red);">Guatemala · WBC #2 · Ring #4</span>
+        <div class="cv-fname" style="color:white;">Lester<br>Martinez</div>
+        <span class="cv-nickname" style="color:rgba(200,146,10,0.6);">"El Fenix"</span>
+        <span class="cv-rec">19-0-1 · 16 KOs · 84% KO Rate</span>
+      </div>
+      <div class="cv-vs">vs</div>
+      <div class="cv-fighter cv-fighter-r">
+        <span class="cv-country" style="color:var(--al-blue);text-align:right;display:block;">Richmond, VA · WBC #8</span>
+        <div class="cv-fname" style="color:rgba(255,255,255,0.72);text-align:right;">Immanuwel<br>Aleem</div>
+        <span class="cv-nickname" style="color:rgba(255,255,255,0.35);text-align:right;display:block;">"The Chosen One"</span>
+        <span class="cv-rec" style="text-align:right;display:block;">22-3-3 · 14 KOs · 64% KO Rate</span>
+      </div>
+    </div>
+
+    <div class="cv-tape">
+      <div class="ct-cell"><span class="ct-l">Age</span><span class="ct-mx">30</span><span class="ct-al">32</span></div>
+      <div class="ct-cell"><span class="ct-l">Height</span><span class="ct-mx">5'8"</span><span class="ct-al">5'9"</span></div>
+      <div class="ct-cell"><span class="ct-l">Reach</span><span class="ct-mx">71.6"</span><span class="ct-al">70.1"</span></div>
+      <div class="ct-cell"><span class="ct-l">Stance</span><span class="ct-draw">Orthodox</span><span class="ct-draw" style="color:rgba(255,255,255,0.35);">Orthodox</span></div>
+      <div class="ct-cell"><span class="ct-l">Trainer</span><span class="ct-mx" style="font-size:11px;">McIntyre</span><span class="ct-al" style="font-size:11px;">O. Aleem</span></div>
+      <div class="ct-cell"><span class="ct-l">Odds</span><span class="ct-mx">-1700</span><span class="ct-al">+850</span></div>
+    </div>
+
+    <div style="border:1px solid rgba(200,146,10,0.25);background:rgba(200,146,10,0.04);padding:10px 14px;margin-bottom:0.18in;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);font-weight:600;padding-top:2px;white-space:nowrap;">What's<br>At Stake</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);line-height:2;">
+        WBC Interim Super Middleweight Championship<br>
+        Winner: mandatory challenger position — path to Mbilli or Canelo<br>
+        Martinez victory: Guatemala's first-ever world boxing champion<br>
+        Aleem victory: the biggest upset in the 168-pound division in years
+      </div>
+    </div>
+    <div class="cv-dek">
+      He went twelve rounds with the WBC champion in the Fight of the Year. One judge gave him the win. He didn't get the rematch. <strong>Tonight, Lester Martinez fights for the belt that should have been his in September</strong> — and for something bigger than any sanctioning body can give him. A win makes him Guatemala's first-ever world boxing champion. No one from his country has ever done it. He is fighting for a nation that has never seen its flag raised in this sport. Immanuwel Aleem, a fighter who has derailed undefeated trains before, is the last man standing between Martinez and history.
+    </div>
+
+    <div class="cv-info">
+      <div class="ci-cell"><span class="ci-l">Venue</span><div class="ci-v">NOS Event Center</div></div>
+      <div class="ci-cell"><span class="ci-l">Date</span><div class="ci-v">Sat Mar 21, 2026</div></div>
+      <div class="ci-cell"><span class="ci-l">Broadcast</span><div class="ci-v">ProBox TV</div></div>
+      <div class="ci-cell"><span class="ci-l">Winner Gets</span><div class="ci-v">WBC Mandatory</div></div>
+    </div>
+
+    <div class="cv-foot">
+      <div class="cf-l">
+        Story First Blueprint · Boxing Program · Martinez vs Aleem<br>
+        NOS Event Center · San Bernardino, California · March 21, 2026<br>
+        Sources: WBC Boxing · BoxRec · The Ring · BoxingScene · Boxing Social
+      </div>
+      <div class="cf-r">Card I</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: MAIN EVENT ANALYSIS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Martinez vs Aleem · Main Event Analysis</span><span class="ph-r">Story First Blueprint · Card I</span></div>
+  <div class="pc">
+
+    <div class="sec-label">The Story</div>
+    <div class="hed">The Phoenix<br>Needs One More<br>Flight.</div>
+
+    <div class="body-t">
+      In September 2025, <strong>Lester Martinez walked into a 12-round war against WBC champion Christian Mbilli</strong> on the undercard of Canelo vs. Crawford — the biggest fight card of the year. He gave Mbilli the hardest night of his professional life. One judge gave Martinez the win. The other two scored it a draw. The WBC called it Fight of the Year. Then they gave Mbilli a path around a rematch and elevated him to full champion when Crawford was stripped.
+    </div>
+
+    <div class="body-t">
+      Martinez was left holding a result that felt like a theft. He has responded not by sulking but by training harder under Brian "Bomac" McIntyre — the same trainer who guided Terence Crawford to undisputed status. <em>The Martinez camp is built correctly.</em> Tonight's WBC interim belt puts him back in mandatory position — a mandatory that could deliver Mbilli, or possibly Canelo, who remains at 168 pounds as the division's commercial mountain. Every punch Martinez throws in San Bernardino is a punch thrown toward September.
+    </div>
+
+    <hr class="r">
+
+    <div class="sec-label">Tale of the Tape</div>
+    <div class="tape">
+      <div class="tape-head">
+        <span class="th-l">Lester "El Fenix" Martinez</span>
+        <span class="th-r">Immanuwel "The Chosen One" Aleem</span>
+      </div>
+      <div class="tape-row"><div class="tr-mx">19-0-1</div><div class="tr-cat">Record</div><div class="tr-al">22-3-3</div></div>
+      <div class="tape-row"><div class="tr-mx">16 KOs · 84%</div><div class="tr-cat">Stoppage Rate</div><div class="tr-al">14 KOs · 64%</div></div>
+      <div class="tape-row"><div class="tr-mx">30 years</div><div class="tr-cat">Age</div><div class="tr-al">32 years</div></div>
+      <div class="tape-row"><div class="tr-mx">5'8"</div><div class="tr-cat">Height</div><div class="tr-al">5'9"</div></div>
+      <div class="tape-row"><div class="tr-mx">71.6 inches</div><div class="tr-cat">Reach</div><div class="tr-al">70.1 inches</div></div>
+      <div class="tape-row"><div class="tr-mx">Orthodox</div><div class="tr-cat">Stance</div><div class="tr-al">Orthodox</div></div>
+      <div class="tape-row"><div class="tr-mx">Guatemala City</div><div class="tr-cat">Base</div><div class="tr-al">Richmond, Virginia</div></div>
+      <div class="tape-row"><div class="tr-mx">Brian "Bomac" McIntyre</div><div class="tr-cat">Trainer</div><div class="tr-al">Omar Aleem (father)</div></div>
+      <div class="tape-row"><div class="tr-mx">84 rounds pro</div><div class="tr-cat">Pro Rounds</div><div class="tr-al">153 rounds pro</div></div>
+      <div class="tape-row"><div class="tr-mx">WBC #2 · Ring #4</div><div class="tr-cat">Rankings</div><div class="tr-al">WBC #8</div></div>
+      <div class="tape-row"><div class="tr-mx" style="font-size:13px;">THIN · Artificially Capped ⚑</div><div class="tr-cat">CRB Rating</div><div class="tr-al" style="font-size:13px;">MODERATE</div></div>
+    </div>
+
+    <div class="sec-label">The Matchup</div>
+    <div class="body-t">
+      Both fighters are orthodox, similar height, but Martinez carries the longer reach and — critically — the heavier hands. <strong>Martinez is a pressure fighter who sets his feet and unloads combinations.</strong> He works the body early to force the guard down, then brings the right hand behind it. When he hurts someone, he knows how to close. The 84% KO rate is not a statistic — it is a description of how this man operates.
+    </div>
+    <div class="body-t">
+      Aleem's strength is the opposite of what Martinez wants. <strong>Tight guard. Short counters. He doesn't give ground unnecessarily, and when he does, he makes the other man pay for following.</strong> His father-trainer Omar Aleem came into fight week with mystical energy — "We have the divine punch. It will be a mystic impact." That is father-trainer confidence speaking. What Aleem actually has is ring IQ, experience (153 professional rounds to Martinez's 84), and the knowledge that he has stopped undefeated trains before — he TKO'd Ievgen Khytrov in 2017 when Khytrov was being discussed as a GGG opponent.
+    </div>
+    <div class="body-t">
+      The gap: Aleem is 6-3-3 over his last 12 fights spanning a decade. He has been stopped once. He has drawn with names like Winfred Harris Jr., Matt Korobov, and Demond Nicholson. He belongs in this ring. He does not belong on Martinez's level right now.
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Championship Round Bank</div>
+    <div style="border:1px solid var(--smoke);background:#FAF5EC;overflow:hidden;margin-bottom:18px;">
+      <div style="background:var(--dark);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;">The Road to Round 12</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Rounds 9–12 · Opposition Weighted · Amateur Credit Applied</span>
+      </div>
+      <div style="padding:10px 14px 8px;border-bottom:1px solid var(--smoke);">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.75;color:#2A1E10;font-style:italic;">
+          A 12-round championship fight is not twelve equal rounds. Rounds 1–8 are investment. Rounds 9–12 are collection. The Championship Round Bank measures how many times each fighter has been to the collection stage — and whether they were there against opponents who made them earn it.
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--smoke);">
+        <div style="padding:11px 14px;border-right:1px solid var(--smoke);">
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
+            <div style="font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--mx-red);">Martinez</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:600;">THIN · ⚑ ARTIFICIALLY CAPPED</div>
+          </div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.72;color:#2A1E10;">
+            Martinez's championship round bank is the defining context of tonight's fight. His entire professional career produced 84 total rounds — meaning he has averaged just over 4 rounds per fight. His opposition progression through ProBox TV was deliberate and correctly paced. Then came Mbilli. <strong>That fight was scheduled for 10 rounds instead of the championship-standard 12.</strong> Martinez was coming on strong in rounds 8, 9, and 10 — Mbilli himself said afterward "maybe the fight would have been different if we fought for 12 rounds." Two championship rounds that belonged to Martinez's development were removed by a scheduling decision on a broadcaster-driven undercard. His CRB is thin not because of his ability — because of a decision made above his paygrade. The 2012 Youth World Championship silver provides amateur credit. It does not fill a 12-round gap. <em>Tonight is the first time Martinez has ever been scheduled for 12 rounds.</em>
+          </div>
+        </div>
+        <div style="padding:11px 14px;">
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
+            <div style="font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--al-blue);">Aleem</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:600;">MODERATE</div>
+          </div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.72;color:#2A1E10;">
+            153 professional rounds over 14 years. Multiple 12-round contests. Aleem has been to round 11 and 12 before — against Korobov, Nicholson, Harris Jr. Quality-filtered, his bank drops from the raw count because those championship rounds came against opposition outside the elite tier. But the physical experience is real. <strong>He knows what round 11 feels like in his legs, his lungs, and his hands.</strong> His crisis default — tight guard, short counter — has been tested in late rounds against credible opposition. It held. That is the one concrete developmental advantage Aleem carries tonight. Not power. Not ranking. Round count.
+          </div>
+        </div>
+      </div>
+      <div style="padding:9px 14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;padding-top:2px;">The Tension</span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.72;color:#2A1E10;">Martinez is the better fighter entering rounds 1–10. Aleem has been to rounds 11 and 12. That gap closes if Martinez finishes before the championship rounds arrive — which is exactly what his 84% finishing instinct is designed to do. If this fight reaches round 11, both men are in different kinds of territory. Martinez is in rounds he has never seen. Aleem is in rounds he has survived before. <strong>This is why Martinez needs to finish before the bank runs out.</strong></div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">The Judge's Chair</div>
+    <div style="border:1px solid var(--smoke);background:#FAF5EC;overflow:hidden;margin-bottom:18px;">
+      <div style="background:var(--dark);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;">How This Fight Gets Scored</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);">For the casual fan · Score it yourself</span>
+      </div>
+      <div style="padding:12px 14px 10px;border-bottom:1px solid var(--smoke);">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13.5px;line-height:1.82;color:#2A1E10;">
+          Judges score four things in priority order: <strong>clean punches that land with impact</strong>, effective aggression, ring control, and defense. The first criterion carries the most weight. In this fight, the tension is straightforward — Martinez lands harder and finishes; Aleem counters cleanly and moves. The judging risk in a close round is this: <em>counterpunchers get underscored on criterion one more than any other fighter type.</em> A clean Aleem counter that snaps Martinez's head back scores the same as a Martinez combination on the criteria sheet — but the combination looks more impressive from a ringside seat. If this goes deep, watch whether Aleem's sharp counter work is being credited or dismissed as merely defensive.
+        </div>
+      </div>
+      <div style="padding:10px 14px;border-bottom:1px solid var(--smoke);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;padding-top:1px;">Watch For</span>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.78;color:#2A1E10;">
+          <div style="margin-bottom:5px;padding-left:12px;position:relative;"><span style="position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--gold);">—</span>Does Martinez's body attack produce visible reactions? A fighter who winces, drops his guard, or changes his footwork after a body shot is a fighter whose damage judges notice. Silent body work is invisible body work.</div>
+          <div style="margin-bottom:5px;padding-left:12px;position:relative;"><span style="position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--gold);">—</span>Who lands the last clean shot in close rounds? Recency bias is real. Judges are human. The fighter who lands something sharp in the final 20 seconds of a competitive round often gets it on the card.</div>
+          <div style="padding-left:12px;position:relative;"><span style="position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--gold);">—</span>Is Aleem countering or surviving? A counter that lands clean scores on criterion one. A block that absorbs a punch scores on criterion four — the lowest-weighted criterion. There is a difference. Watch his hands, not just his feet.</div>
+        </div>
+      </div>
+      <div style="padding:9px 14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;">Decision Risk</span>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:0.05em;">LOW — if Martinez hurts him. MODERATE — if Aleem survives into round 9.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Crisis Execution Rating</div>
+    <div style="border:1px solid var(--smoke);background:#FAF5EC;overflow:hidden;margin-bottom:18px;">
+      <div style="background:var(--dark);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;">When The Fight Gets Hard — Who Breaks?</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Tier I · Tier II · Tier III · Unverified</span>
+      </div>
+      <div style="padding:10px 14px 6px;border-bottom:1px solid var(--smoke);">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.75;color:#2A1E10;font-style:italic;margin-bottom:8px;">
+          Some fighters have so many tools they can overthink in crunch time — confused about what to use and when. Other fighters, limited in their tools, don't have to think. They just do. The Crisis Execution Rating measures which side of that line a fighter lives on.
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--smoke);">
+        <div style="padding:11px 14px;border-right:1px solid var(--smoke);">
+          <div style="font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--mx-red);margin-bottom:4px;">Martinez <span style="font-size:11px;color:var(--gold);letter-spacing:0.2em;font-family:'IBM Plex Mono',monospace;font-weight:600;">TIER II</span></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.72;color:#2A1E10;">Defined identity execution. Martinez's toolbox is not the widest at 168 pounds — but that is precisely his strength in a crisis. Set the feet. Work the body. Bring the right hand. That is the complete sentence. In round ten of a hard fight he does not deliberate. He does those three things automatically. His 84% finishing rate holds in competitive fights because the plan never changes when the fight gets hard. <strong>The limitation is the weapon.</strong> Historical model: Julio Cesar Chavez Sr.</div>
+        </div>
+        <div style="padding:11px 14px;">
+          <div style="font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--al-blue);margin-bottom:4px;">Aleem <span style="font-size:11px;color:var(--gold);letter-spacing:0.2em;font-family:'IBM Plex Mono',monospace;font-weight:600;">TIER II</span></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.72;color:#2A1E10;">Defined identity by necessity. Aleem's crisis default is the tight guard and the short counter. He has gone there in every difficult moment of 28 professional fights — it has kept him from being stopped in all but one. He does not have Tier I processing speed, but he does not need it. When hurt he goes to the guard. When the guard holds he counter-punches. The question is whether that two-step crisis default can survive the body attack that Martinez uses to compromise it. <strong>The guard that works against most men gets tested here.</strong></div>
+        </div>
+      </div>
+      <div style="padding:9px 14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:600;white-space:nowrap;">Edge</span>
+        <span style="font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:var(--ink);letter-spacing:0.04em;">MARTINEZ — his crisis default is simpler, faster, and built around finishing. Aleem's crisis default is built around surviving.</span>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">How Each Fighter Wins</div>
+    <div class="how-win">
+      <div class="hw-mx">
+        <div class="hw-head" style="color:var(--mx-red);">Martinez wins if:</div>
+        <div class="hw-item">He sets his feet early and forces Aleem to receive body shots in rounds 3–5</div>
+        <div class="hw-item">He converts the body work into right hands upstairs when Aleem's guard drops</div>
+        <div class="hw-item">He controls pace and doesn't let Aleem make this a slow, countering match</div>
+        <div class="hw-item">His 84% finishing instinct activates when he hurts Aleem the first time</div>
+      </div>
+      <div class="hw-al">
+        <div class="hw-head" style="color:var(--al-blue);">Aleem wins if:</div>
+        <div class="hw-item">He uses his footwork to keep Martinez from getting set and loading up</div>
+        <div class="hw-item">He turns Martinez at every opportunity, denying him the stationary platform he needs</div>
+        <div class="hw-item">He lands the sharper, cleaner shots and makes the judges notice the quality differential</div>
+        <div class="hw-item">He finds the one-punch shot — the "divine" right hand — when Martinez comes forward flat</div>
+      </div>
+    </div>
+
+    <div class="call">
+      <div class="call-i">
+        <span class="call-l">Story First Blueprint · The Call</span>
+        <div class="call-h">Martinez by <em>stoppage.</em><br>Guatemala gets its champion.</div>
+        <div class="call-body">
+          Aleem has the experience, the ring IQ, and the father in his corner who genuinely believes in the divine punch. None of that changes the structural reality: <strong>Martinez has 16 stoppages in 20 fights because he can hurt anyone and finish what he starts.</strong> Aleem has been stopped once, but he has never faced pressure like the kind Martinez and Brian McIntyre have built over six years. The body attack will be the story — by round six, Aleem will be making decisions he doesn't want to make. When he opens up to answer the body, the right hand finds him.
+        </div>
+        <div class="call-pick">
+          <span class="cp-label">Blueprint Pick</span>
+          <div>
+            <div class="cp-val" style="color:var(--gold-l);">Martinez TKO · Rounds 7–9</div>
+            <div class="cp-reason">The history of this weight class says pressure fighters with elite finishing instincts at 168 lbs close shows. Aleem survives longer than most — but Martinez is operating at a different tier. And he has a reason. Guatemala has been waiting 100 years for this moment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 3: PENULTIMATE + UNDERCARD NUGGETS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Penultimate Bout · Undercard Nuggets</span><span class="ph-r">Story First Blueprint · Card I</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Co-Main Event</div>
+    <div class="fight-block">
+      <div class="fb-head">
+        <div>
+          <div class="fb-fighters">Joshua Kevin Anton <span>vs</span> Kudratillo Abdukakhorov</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:3px;">Junior Middleweights · 154 lbs · 10 Rounds</div>
+        </div>
+        <div class="fb-meta">ProBox TV<br>San Bernardino, CA<br>Mar 21, 2026</div>
+      </div>
+      <div class="fb-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;border-bottom:1px solid var(--smoke);padding-bottom:12px;">
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:3px;">Joshua Kevin Anton</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">12-0 · 11 KOs · Palmdale, CA · Southpaw · 5'10" · 72" reach · Age 27</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.68;color:#2A1E10;">Unbeaten southpaw from Palmdale fighting for the fifth time on the ProBox platform in 14 months — the kind of consistency that builds momentum. His offense is high-volume and frustrating to opponents: he throws in combination bursts, works behind his jab, and keeps his man guessing. <strong>Anton has his eye on the WBC top 15</strong> — this fight is his application.</div>
+          </div>
+          <div>
+            <div style="font-family:'Oswald',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:3px;">Kudratillo Abdukakhorov</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">22-5 · 14 KOs · Uzbekistan · Orthodox · 5'9" · 67.3" reach · Age 32</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:12.5px;line-height:1.68;color:#2A1E10;">A 280-50 amateur before he ever turned professional. Former IBF interim title challenger — a visa problem kept him from that fight, not skill. Has been stopped exactly once in 27 professional fights. <em>He is the toughest test Anton has ever faced</em>, and the Uzbek knows it: "One punch can change everything. I'm stronger than my opponent." They've sparred before. This time it counts.</div>
+          </div>
+        </div>
+        <span class="fb-story-l">The Story</span>
+        <div class="fb-story">
+          This is the kind of fight the casual fan overlooks and the scout circles. Anton is 12-0 with 11 stoppages against a carefully built ladder of opponents. Tonight the ladder skips three rungs. Abdukakhorov has 179 professional rounds of experience, has been through title-fight level training camps, and carries Uzbek fighting genetics that have produced champions at every weight. <strong>If Anton wins cleanly — not on points in a close fight, but decisively — he joins the real conversation at 154 pounds.</strong> If Abdukakhorov's experience and chin expose a gap in Anton's development, this becomes a valuable lesson. Either way, San Bernardino sees something real in the co-main.
+        </div>
+        <div class="fb-kf">
+          <span class="fb-kfl">Key Factor</span>
+          <span class="fb-kft">Anton's volume southpaw offense against Abdukakhorov's experience and durability. Can Anton sustain his combination output for ten rounds against a man who has never been stopped in five years and 27 fights? The answer tells you exactly where Anton is in his development.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Scout's Nuggets · Undercard Watch</div>
+
+    <div class="nugget-grid">
+      <div class="nugget">
+        <span class="nug-tag">Featherweights · 10 Rounds</span>
+        <div class="nug-match">Albert Gonzalez<br>vs Brandon Chambers</div>
+        <div class="nug-txt">Two featherweights at 10 rounds signals genuine competitive intent from both sides. <strong>Gonzalez is the prospect to watch here</strong> — a California fighter on the ProBox platform with a developing skill set at 126 pounds. The featherweight division is one of the most talented weight classes in boxing right now, and this card is a proving ground. Chambers brings legitimate opposition. Watch how Gonzalez handles rounds 7–10 when the legs fatigue and the combinations get tested.</div>
+      </div>
+      <div class="nugget">
+        <span class="nug-tag">Lightweights · 10 Rounds</span>
+        <div class="nug-match">Anthony Cuba<br>vs Jair Valtierra</div>
+        <div class="nug-txt">Ten rounds for lightweights on an undercard is a statement of intent. Both fighters are in range of meaningful rankings at 135 pounds. <strong>Cuba is the name to file away</strong> — a prospect with power at lightweight who needs this performance to validate his trajectory. Valtierra brings toughness and survival instinct at 130-135. If Cuba handles him cleanly, the fight world notices. Lightweight is one title fight away from a new mandatory challenger position — and someone in this ring could be positioning for exactly that.</div>
+      </div>
+      <div class="nugget">
+        <span class="nug-tag">Junior Middleweights · 6 Rounds</span>
+        <div class="nug-match">Kevin Ceja Ventura<br>vs Aaron Watson</div>
+        <div class="nug-txt">Six-round junior middleweights at the bottom of a ProBox card is where tomorrow's names get built. <strong>Watch Ventura's footwork and punch selection</strong> — a junior middleweight with technical refinement at this stage of a career becomes a different fighter in 18 months. ProBox has shown they develop talent patiently. Ventura is the kind of fighter who could be mentioned in the same sentence as Anton on next year's card if tonight looks right.</div>
+      </div>
+      <div class="nugget">
+        <span class="nug-tag">Women's Junior Bantamweights · 4 Rounds</span>
+        <div class="nug-match">Jocelyn Camarillo<br>vs Isis Sio</div>
+        <div class="nug-txt">Women's boxing at 115 pounds and below is criminally underscovered. <strong>Camarillo is worth your attention.</strong> The junior bantamweight division has no dominant American woman right now — that's an opportunity for someone with the right combination of speed and punch output to own the weight class within two years. Four rounds tells you about heart, reflex, and base-level skill. If Camarillo looks polished, bookmark the name. The scout's job is to find her before anyone else does.</div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--smoke);padding-top:14px;margin-top:4px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;">Full Card · National Orange Show Event Center · San Bernardino, California</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;line-height:1.9;color:#2A1E10;">
+          <strong>Main Event:</strong> Martinez vs Aleem · 12R · Super Middleweight · WBC Interim<br>
+          <strong>Co-Main:</strong> Anton vs Abdukakhorov · 10R · Jr Middleweight<br>
+          <strong>Undercard:</strong> Cuba vs Valtierra · 10R · Lightweight<br>
+          <strong>Undercard:</strong> Gonzalez vs Chambers · 10R · Featherweight
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;line-height:1.9;color:#2A1E10;">
+          <strong>Prelim:</strong> Contreras vs Cantu · 6R · Lightweight<br>
+          <strong>Prelim:</strong> Harris Jr vs Villarraga · 6R · Jr Welterweight<br>
+          <strong>Prelim:</strong> Ceja Ventura vs Watson · 6R · Jr Middleweight<br>
+          <strong>Prelim:</strong> Camarillo vs Sio · 4R · Women's Jr Bantamweight<br>
+          <strong>Prelim:</strong> Coria vs Dante · 4R · Jr Bantamweight
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

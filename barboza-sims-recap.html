@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story First Blueprint · Recap · Barboza Jr. vs Sims Jr. · Anaheim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0A0906; --paper:#F5F0E8; --smoke:#D8D0C0; --muted:#6A6050; --gold-d:#7A5400;
+  --barboza:#1A1A2E; --barboza-acc:#C8A96E;
+  --sims:#1C3A1C; --sims-acc:#7AB87A;
+  --neutral:#1A1614; --red:#CC0000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;color:var(--ink);font-family:'Playfair Display',Georgia,serif}
+.page{width:8.5in;min-height:11in;margin:0 auto 40px;background:var(--paper);box-shadow:0 8px 40px rgba(0,0,0,0.6);position:relative;overflow:hidden}
+
+/* ====== COVER ====== */
+.cover{background:var(--neutral);min-height:11in;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cv-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(200,169,110,0.07),transparent 55%),radial-gradient(ellipse 60% 60% at 10% 80%,rgba(200,169,110,0.04),transparent 50%)}
+.cv-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);background-size:44px 44px}
+.cv-inner{position:relative;z-index:3;padding:0.55in 0.65in;display:flex;flex-direction:column;min-height:11in}
+.cv-ey{font-family:'Fira Code',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:rgba(255,255,255,0.22);border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;margin-bottom:0.4in;display:flex;justify-content:space-between;align-items:center}
+.cv-recap-tag{font-family:'Fira Code',monospace;font-size:8.5px;letter-spacing:0.4em;text-transform:uppercase;padding:4px 14px;border:1px solid rgba(200,169,110,0.3);color:var(--barboza-acc);display:inline-block;margin-bottom:0.16in;width:fit-content}
+.cv-result{margin-bottom:0.18in}
+.cv-winner{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:76px;line-height:0.88;letter-spacing:-0.01em;text-transform:uppercase;color:white}
+.cv-method{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--barboza-acc);margin-top:4px}
+.cv-score-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.07);margin:0.2in 0}
+.cs-cell{background:var(--neutral);padding:10px 14px;text-align:center}
+.cs-l{font-family:'Fira Code',monospace;font-size:7px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:4px;display:block;font-weight:600}
+.cs-v{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:rgba(255,255,255,0.85)}
+.cv-dek{font-family:'Playfair Display',serif;font-style:italic;font-size:14.5px;line-height:1.78;color:rgba(255,255,255,0.52);max-width:5.8in;margin-bottom:auto}
+.cv-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);margin-bottom:0.24in}
+.cc-cell{background:var(--neutral);padding:10px 14px}
+.cc-l{font-family:'Fira Code',monospace;font-size:7px;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:4px;display:block;font-weight:600}
+.cc-n{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:0.03em}
+.cc-rec{font-family:'Fira Code',monospace;font-size:8.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-top:2px}
+.cv-foot{border-top:1px solid rgba(255,255,255,0.06);padding-top:13px;display:flex;justify-content:space-between;align-items:flex-end}
+.cf-l{font-family:'Fira Code',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.16);line-height:1.9}
+.cf-r{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.05)}
+
+/* ====== PAGE HEADER ====== */
+.ph{background:var(--neutral);padding:12px 0.6in;display:flex;justify-content:space-between;align-items:center}
+.ph-l{font-family:'Fira Code',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-weight:600}
+.ph-r{font-family:'Fira Code',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.pc{padding:0.38in 0.6in 0.46in}
+
+/* ====== TYPOGRAPHY ====== */
+.sec-label{font-family:'Fira Code',monospace;font-size:8.5px;letter-spacing:0.42em;text-transform:uppercase;color:var(--gold-d);display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:600}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--gold-d),transparent)}
+.hed{font-family:'Playfair Display',serif;font-weight:900;font-size:40px;line-height:0.94;color:var(--ink);margin-bottom:14px}
+.body{font-family:'Playfair Display',serif;font-size:13px;line-height:1.82;color:#1A1210;margin-bottom:12px}
+.body strong{font-weight:700;color:#000}.body em{font-style:italic;color:#5A4A3A}
+hr.r{border:none;height:1px;background:linear-gradient(to right,transparent,var(--smoke),transparent);margin:16px 0}
+
+/* ====== THE MOMENT ====== */
+.moment{background:var(--neutral);padding:0.26in 0.3in;margin:0 -0.6in 18px;position:relative;overflow:hidden}
+.moment::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 80% 50%,rgba(200,169,110,0.06),transparent 55%)}
+.moment-i{position:relative;z-index:2}
+.moment-l{font-family:'Fira Code',monospace;font-size:8.5px;letter-spacing:0.45em;text-transform:uppercase;color:var(--barboza-acc);margin-bottom:8px;display:block;font-weight:600}
+.moment-h{font-family:'Playfair Display',serif;font-weight:900;font-size:38px;line-height:0.92;color:white;margin-bottom:10px}
+.moment-h em{font-style:italic;color:var(--barboza-acc)}
+.moment-body{font-family:'Playfair Display',serif;font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.72)}
+.moment-body strong{font-weight:700;color:rgba(255,255,255,0.95)}
+
+/* ====== ROUND BY ROUND ====== */
+.rr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.rr-card{border:1px solid var(--smoke);background:#FDFAF4;padding:8px 10px}
+.rr-num{font-family:'Fira Code',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-d);margin-bottom:5px;font-weight:600;display:block}
+.rr-edge{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:4px}
+.rr-note{font-family:'Playfair Display',serif;font-size:10.5px;line-height:1.65;color:#1A1210}
+
+/* ====== VERDICTS ====== */
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.verdict-card{border:1px solid var(--smoke);background:#FDFAF4;padding:10px 12px}
+.v-tag{font-family:'Fira Code',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:6px;font-weight:600}
+.v-exceeded{background:rgba(0,100,0,0.1);color:#004400;border:1px solid rgba(0,100,0,0.2)}
+.v-delivered{background:rgba(0,60,140,0.1);color:#00205B;border:1px solid rgba(0,60,140,0.2)}
+.v-missed{background:rgba(180,0,0,0.1);color:#8B0000;border:1px solid rgba(180,0,0,0.2)}
+.v-unverified{background:rgba(100,100,80,0.1);color:#5A4A3A;border:1px solid rgba(100,100,80,0.2)}
+.v-name{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink);line-height:1;margin-bottom:5px}
+.v-txt{font-family:'Playfair Display',serif;font-size:11.5px;line-height:1.70;color:#1A1210}
+.v-txt strong{font-weight:700;color:#000}
+
+/* ====== BOX SCORE ====== */
+.bs-wrap{border:1px solid var(--smoke);background:#FDFAF4;overflow:hidden;margin-bottom:16px}
+.bs-head{padding:9px 13px;background:white;border-bottom:1px solid var(--smoke);display:flex;justify-content:space-between;align-items:center}
+.bs-hl{font-family:'Fira Code',monospace;font-size:8.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+.bs-hr{font-family:'Fira Code',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#5A4A3A;font-weight:500}
+.bs-table{width:100%;border-collapse:collapse}
+.bs-table th{font-family:'Fira Code',monospace;font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:#5A4A3A;padding:6px 10px;text-align:left;border-bottom:1px solid var(--smoke);font-weight:600;background:white}
+.bs-table td{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;padding:7px 10px;border-bottom:1px solid var(--smoke);color:#1A1210;letter-spacing:0.02em}
+.bs-table tr:last-child td{border-bottom:none}
+.bs-table tr:nth-child(even) td{background:rgba(0,0,0,0.015)}
+.bs-name{font-weight:800;color:#000}
+
+/* ====== ACCURACY REPORT ====== */
+.ar{border:1px solid var(--smoke);background:#FDFAF4;overflow:hidden;margin-bottom:16px}
+.ar-head{padding:10px 13px;background:white;border-bottom:1px solid var(--smoke);display:flex;align-items:center;justify-content:space-between}
+.ar-hl{font-family:'Fira Code',monospace;font-size:8.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+.ar-grade{font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;line-height:1}
+.ar-body{padding:12px 13px}
+.ar-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid var(--smoke)}
+.ar-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ar-check{font-family:'Fira Code',monospace;font-size:11px;width:18px;flex-shrink:0;margin-top:1px}
+.ar-txt{font-family:'Playfair Display',serif;font-size:12px;line-height:1.68;color:#1A1210}
+.ar-txt strong{font-weight:700;color:#000}
+
+/* ====== UNDERCARD ====== */
+.uc-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px}
+.uc-card{border:1px solid var(--smoke);background:#FDFAF4;padding:9px 11px}
+.uc-tag{font-family:'Fira Code',monospace;font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-d);margin-bottom:4px;display:block;font-weight:600}
+.uc-res{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#000;margin-bottom:4px}
+.uc-txt{font-family:'Playfair Display',serif;font-size:11px;line-height:1.65;color:#1A1210}
+
+/* ====== LEGACY ====== */
+.legacy{border-left:4px solid var(--barboza-acc);padding:13px 16px;background:rgba(200,169,110,0.05);margin-bottom:16px}
+.legacy p{font-family:'Playfair Display',serif;font-size:13.5px;line-height:1.75;color:#1A1210}
+.legacy p strong{font-weight:700;color:#000}
+
+/* ====== BACK COVER ====== */
+.bc{background:var(--neutral);min-height:11in;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.bc-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 50% 30%,rgba(200,169,110,0.05),transparent 55%)}
+.bc-i{position:relative;z-index:3;padding:0.65in 0.65in;display:flex;flex-direction:column;min-height:11in}
+.bc-g{width:100%;height:2px;background:linear-gradient(to right,transparent,var(--barboza-acc),transparent);margin-bottom:0.5in}
+.bc-big{font-family:'Playfair Display',serif;font-weight:900;font-size:66px;line-height:0.92;color:white;margin-bottom:18px}
+.bc-big em{font-style:italic;color:var(--barboza-acc)}
+.bc-body{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;line-height:1.82;color:rgba(255,255,255,0.52);max-width:5.5in;margin-bottom:auto}
+.bc-quote{border-left:3px solid var(--barboza-acc);padding:12px 18px;margin-bottom:0.32in;background:rgba(200,169,110,0.04)}
+.bc-q{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.5;color:rgba(255,255,255,0.82);margin-bottom:5px}
+.bc-attr{font-family:'Fira Code',monospace;font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:600}
+.bc-foot{border-top:1px solid rgba(255,255,255,0.06);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end}
+.bc-fl{font-family:'Fira Code',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.16);line-height:1.9}
+.bc-fr{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.05)}
+
+@media print{body{background:white}.page{margin:0;box-shadow:none;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<!-- ====== COVER ====== -->
+<div class="page cover">
+  <div class="cv-bg"></div>
+  <div class="cv-grid"></div>
+  <div class="cv-inner">
+    <div class="cv-ey">
+      <span>Story First Blueprint · Official Recap</span>
+      <span>Honda Center · Anaheim, CA · March 14, 2026</span>
+    </div>
+
+    <div class="cv-recap-tag">Post-Fight Recap · Golden Boy Promotions · DAZN</div>
+
+    <div class="cv-result">
+      <div class="cv-winner" style="color:var(--barboza-acc);">Arnold<br>Barboza Jr.</div>
+      <div class="cv-method">Unanimous Decision · 12 Rounds · Welterweight</div>
+    </div>
+
+    <div class="cv-score-strip">
+      <div class="cs-cell"><span class="cs-l">Judge 1</span><div class="cs-v">117–111</div></div>
+      <div class="cs-cell"><span class="cs-l">Judge 2</span><div class="cs-v">118–110</div></div>
+      <div class="cs-cell"><span class="cs-l">Judge 3</span><div class="cs-v">120–108</div></div>
+    </div>
+
+    <div class="cv-dek">
+      Barboza made his welterweight debut and left no doubt. He controlled distance, neutralized Sims's only path to victory, landed the cleaner shots in nearly every round, and delivered a statement performance that had Ryan Garcia and Devin Haney's names ringing through the Honda Center before the final bell had finished echoing. One judge gave him every round. That is not a close fight wearing a close result's clothes. That is a fighter operating at a different level.
+    </div>
+
+    <div class="cv-cards">
+      <div class="cc-cell">
+        <span class="cc-l" style="color:var(--barboza-acc);">Winner · WBO Global Champion</span>
+        <div class="cc-n" style="color:var(--barboza-acc);">Arnold Barboza Jr.</div>
+        <div class="cc-rec">33-1 · 11 KOs · Long Beach, CA · Orthodox</div>
+      </div>
+      <div class="cc-cell">
+        <span class="cc-l" style="color:rgba(255,255,255,0.35);">Opponent</span>
+        <div class="cc-n" style="color:rgba(255,255,255,0.55);">Kenneth Sims Jr.</div>
+        <div class="cc-rec">22-4-1 · 8 KOs · Chicago, IL · Southpaw / Switched</div>
+      </div>
+    </div>
+
+    <div class="cv-foot">
+      <div class="cf-l">
+        Story First Blueprint · Post-Fight Recap · Barboza vs. Sims Jr.<br>
+        WBO Global Welterweight Championship · 12 Rounds<br>
+        Honda Center · Anaheim, California · March 14, 2026 · DAZN
+      </div>
+      <div class="cf-r">Recap</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== PAGE 2: GAME STORY + THE MOMENT ====== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Barboza Jr. vs. Sims Jr. · Official Recap</span><span class="ph-r">Story First Blueprint</span></div>
+  <div class="pc">
+
+    <div class="sec-label">The Game Story</div>
+    <div class="hed">Levels to This.</div>
+
+    <div class="body">
+      The fight on paper was a coin flip. Two contenders coming off losses at 140, meeting at welterweight for the first time, both needing a win to stay relevant. That is what the odds said. What Barboza said with his feet, his jab, and his right hand was something else entirely.
+    </div>
+
+    <div class="body">
+      From the opening bell, <strong>Barboza controlled the distance.</strong> Sims came in as a southpaw and switched to orthodox partway through round one — an adjustment Barboza never had to make, because he made Sims uncomfortable first. Shorter by an inch but carrying the longer reach, Barboza used that reach to establish a sharp jab that grew more damaging as the rounds accumulated. By the midpoint of the fight, visible swelling had formed under Sims's right eye — the physical ledger of a man being beaten to the punch, round after round.
+    </div>
+
+    <div class="body">
+      Sims's path to winning required getting inside. He never did. <strong>Barboza's footwork and combination timing negated Sims's single biggest weapon</strong> — his ability to work effectively at close quarters, as he showed in his 12-round war with Oscar Duarte last August. That fight never happened Saturday night. This was a different kind of fight: clean, controlled, one-sided, and occasionally boring enough for the Honda Center crowd to let them know it. The boos were real. So was the scorecards.
+    </div>
+
+    <div class="body">
+      In round 11, a head clash opened cuts on both fighters — Barboza from the hairline, Sims near the right eye. Neither cut changed the trajectory of a fight that had been settled for six rounds. In the 12th, Sims landed his best shot of the night — a crushing right to Barboza's face. Barboza absorbed it, looked at Sims, and came straight back at him. In the final minute he snapped Sims's head back with right hands to close the chapter.
+    </div>
+
+    <hr class="r">
+
+    <!-- THE MOMENT -->
+    <div class="moment">
+      <div class="moment-i">
+        <span class="moment-l">⚡ The Moment</span>
+        <div class="moment-h">Round 12 · The Last Right Hand.</div>
+        <div class="moment-body">
+          Sims landed the best punch of his night — a right hand that would have rocked a lesser opponent. Barboza didn't blink. He walked through it, said <strong>"I told you there were levels to this,"</strong> and spent the final minute putting the exclamation point on a performance that was never in doubt. The moment wasn't the punch that landed. It was the answer that came after it.
+        </div>
+      </div>
+    </div>
+
+    <!-- ROUND BY ROUND -->
+    <div class="sec-label" style="margin-top:18px;">Round by Round</div>
+    <div class="rr-grid">
+      <div class="rr-card">
+        <span class="rr-num">Round 1</span>
+        <div class="rr-edge" style="color:var(--barboza-acc);">Barboza</div>
+        <div class="rr-note">Sims opens southpaw, switches to orthodox mid-round. Barboza establishes jab immediately, controls range.</div>
+      </div>
+      <div class="rr-card">
+        <span class="rr-num">Rounds 2–4</span>
+        <div class="rr-edge" style="color:var(--barboza-acc);">Barboza</div>
+        <div class="rr-note">Barboza beats Sims to the punch consistently. Jab + right hand combinations finding a home. Sims unable to close the gap.</div>
+      </div>
+      <div class="rr-card">
+        <span class="rr-num">Rounds 5–7</span>
+        <div class="rr-edge" style="color:var(--barboza-acc);">Barboza</div>
+        <div class="rr-note">Swelling begins under Sims's right eye. Barboza attacks the body with success. Crowd begins to boo — the fight is controlled, not exciting.</div>
+      </div>
+      <div class="rr-card">
+        <span class="rr-num">Rounds 8–10</span>
+        <div class="rr-edge" style="color:var(--barboza-acc);">Barboza</div>
+        <div class="rr-note">Sims shows no urgency. Appears lost — no gear change, no adjustment. Barboza cruises, disguising power shots within combinations.</div>
+      </div>
+      <div class="rr-card">
+        <span class="rr-num">Round 11</span>
+        <div class="rr-edge" style="color:#5A4A3A;">Both cut</div>
+        <div class="rr-note">Head clash — Barboza bleeds from hairline, Sims cut near right eye. Brief uptick in tempo. Neither cut becomes a factor.</div>
+      </div>
+      <div class="rr-card">
+        <span class="rr-num">Round 12</span>
+        <div class="rr-edge" style="color:var(--barboza-acc);">Barboza</div>
+        <div class="rr-note">Sims lands best punch of the fight — crushing right. Barboza shakes it off and closes with right hands. Tells Sims "I told you there were levels to this."</div>
+      </div>
+      <div class="rr-card" style="grid-column:span 2;">
+        <span class="rr-num">Referee · John McCarthy</span>
+        <div class="rr-edge" style="color:#000;font-size:14px;">Official Scorecards: 117-111 · 118-110 · 120-108</div>
+        <div class="rr-note">One judge awarded Barboza all 12 rounds. The most extreme card (120-108) reflected the fight's reality more honestly than the closest card. This was not a close fight.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== PAGE 3: VERDICTS + BOX SCORE ====== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Player Verdicts · Box Score</span><span class="ph-r">Story First Blueprint</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Player Verdicts</div>
+    <div class="verdict-grid">
+
+      <div class="verdict-card">
+        <span class="v-tag v-exceeded">Exceeded</span>
+        <div class="v-name" style="color:var(--barboza-acc);">Arnold Barboza Jr.</div>
+        <div class="v-txt">The pick'em odds implied an even fight. Barboza delivered a dominant welterweight debut, controlling every dimension — footwork, distance, jab, body work, and punch timing. <strong>One judge gave him every round.</strong> He came in longer-reaching despite being shorter, used that reach precisely, and denied Sims the close-quarters battle that was his only path. The post-fight callouts of Garcia and Haney were not arrogance. They were a man who just proved he belongs at that level making his case while the room was still listening.</div>
+      </div>
+
+      <div class="verdict-card">
+        <span class="v-tag v-missed">Missed</span>
+        <div class="v-name" style="color:#8B0000;">Kenneth Sims Jr.</div>
+        <div class="v-txt">Came in with a clear gameplan — get inside, work close quarters, make it a war. Executed none of it. <strong>Sims never made the effort to close the gap</strong> and appeared to be waiting for a fight that Barboza had no intention of giving him. The best punch of his night came in round 12 — too late, and answered immediately. His southpaw-to-orthodox switch in round one suggested uncertainty that never resolved. The crowd's frustration was not with Barboza's performance. It was with Sims's lack of urgency in a crossroads fight.</div>
+      </div>
+
+      <div class="verdict-card">
+        <span class="v-tag v-exceeded">Exceeded</span>
+        <div class="v-name" style="color:#004400;">Oscar Collazo</div>
+        <div class="v-txt">Co-main event. Unified WBA/WBO strawweight champion forced Jesus Haro's corner to stop the fight after six rounds — Haro did not answer the bell for round 7. Collazo invested heavily in the body from round two onward, turning a mobile, fleet-footed opponent into a stationary target by the sixth. <strong>Fourteen fights, eleven stoppages.</strong> The pattern is not a coincidence. Collazo is building one of the most underrated championship résumés in the lighter weight classes.</div>
+      </div>
+
+      <div class="verdict-card">
+        <span class="v-tag v-delivered">Delivered</span>
+        <div class="v-name" style="color:#00205B;">Alexis Rocha</div>
+        <div class="v-txt">Returned after 14+ months out and defeated Joseph "JoJo" Diaz Jr. by unanimous decision (100-90, 98-92, 97-93) at super welterweight. Rocha looked sharp for a fighter with that long a layoff. His post-fight appearance in the ring to call out Barboza was the shrewdest move of the night — Golden Boy has both fighters, and the matchmaking conversation began immediately.</div>
+      </div>
+
+      <div class="verdict-card">
+        <span class="v-tag v-exceeded">Exceeded</span>
+        <div class="v-name" style="color:#004400;">Gabriela Fundora</div>
+        <div class="v-txt">Retained her undisputed flyweight championship with a sixth-round TKO over Viviana Ruiz Corredor. Fundora scored a knockdown in round four with a right hook/left uppercut combination, then broke Corredor down on the ropes with sustained body shots in round six to force the stoppage. Undefeated. Undisputed. Still the name to watch in women's flyweight.</div>
+      </div>
+
+      <div class="verdict-card">
+        <span class="v-tag v-exceeded">Exceeded</span>
+        <div class="v-name" style="color:#004400;">Joel Iriarte</div>
+        <div class="v-txt">Retained the WBA Continental Gold welterweight title with a sixth-round TKO over Rock Dodler Myrthil (17-3-1). Myrthil briefly staggered Iriarte with a right hand in round two — a test the 22-year-old prospect answered cleanly, taking control behind his jab and heavier combinations through the middle rounds. Undefeated, 10-0 with 9 stoppages. Watch the name.</div>
+      </div>
+
+    </div>
+
+    <hr class="r">
+
+    <!-- BOX SCORE — MAIN EVENT -->
+    <div class="sec-label">Official Box Score · Main Event</div>
+    <div class="bs-wrap">
+      <div class="bs-head">
+        <span class="bs-hl">Barboza Jr. vs. Sims Jr. · WBO Global Welterweight</span>
+        <span class="bs-hr">Source: BoxingNews24 · FightMag · Tapology · Verified</span>
+      </div>
+      <table class="bs-table">
+        <thead>
+          <tr>
+            <th>Fighter</th>
+            <th>Result</th>
+            <th>Record</th>
+            <th>Method</th>
+            <th>Rounds</th>
+            <th>Judges</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="bs-name" style="color:var(--barboza-acc);">Arnold Barboza Jr.</span></td>
+            <td><strong style="color:#004400;">WIN</strong></td>
+            <td>33-1, 11 KOs</td>
+            <td>Unanimous Decision</td>
+            <td>12</td>
+            <td>117-111 · 118-110 · 120-108</td>
+          </tr>
+          <tr>
+            <td><span class="bs-name" style="color:#8B0000;">Kenneth Sims Jr.</span></td>
+            <td><strong style="color:#8B0000;">LOSS</strong></td>
+            <td>22-4-1, 8 KOs</td>
+            <td>Unanimous Decision</td>
+            <td>12</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BOX SCORE — FULL CARD -->
+    <div class="sec-label">Full Card Results</div>
+    <div class="bs-wrap">
+      <div class="bs-head">
+        <span class="bs-hl">Honda Center · Anaheim · March 14, 2026 · Golden Boy / DAZN</span>
+        <span class="bs-hr">All results verified</span>
+      </div>
+      <table class="bs-table">
+        <thead>
+          <tr><th>Fighter</th><th>Result</th><th>Fighter</th><th>Method</th><th>Rds</th><th>Division</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="bs-name">Arnold Barboza Jr.</span></td><td><strong style="color:#004400;">W</strong></td><td>Kenneth Sims Jr.</td><td>UD (117-111 · 118-110 · 120-108)</td><td>12</td><td>Welterweight · WBO Global</td></tr>
+          <tr><td><span class="bs-name">Oscar Collazo</span></td><td><strong style="color:#004400;">W</strong></td><td>Jesus Haro</td><td>RTD (R6, 3:00)</td><td>6</td><td>Minimumweight · WBA/WBO</td></tr>
+          <tr><td><span class="bs-name">Alexis Rocha</span></td><td><strong style="color:#004400;">W</strong></td><td>Joseph Diaz Jr.</td><td>UD (100-90 · 98-92 · 97-93)</td><td>10</td><td>Super Welterweight</td></tr>
+          <tr><td><span class="bs-name">Gabriela Fundora</span></td><td><strong style="color:#004400;">W</strong></td><td>Viviana Ruiz Corredor</td><td>TKO (R6, 1:25)</td><td>6</td><td>Flyweight · Undisputed</td></tr>
+          <tr><td><span class="bs-name">Joel Iriarte</span></td><td><strong style="color:#004400;">W</strong></td><td>Rock Dodler Myrthil</td><td>TKO (R6, 2:35)</td><td>6</td><td>Welterweight · WBA Continental</td></tr>
+          <tr><td><span class="bs-name">Grant Flores</span></td><td><strong style="color:#004400;">W</strong></td><td>Rashid Stevens</td><td>UD (77-72 · 78-71 · 79-70)</td><td>8</td><td>Super Welterweight</td></tr>
+          <tr><td><span class="bs-name">Cayden Griffiths</span></td><td><strong style="color:#004400;">W</strong></td><td>Omar Gutierrez Munguia</td><td>KO (R1, 2:09)</td><td>1</td><td>Super Welterweight</td></tr>
+          <tr><td><span class="bs-name">Fabian Guzman</span></td><td><strong style="color:#004400;">W</strong></td><td>Julian Delgado</td><td>UD (77-75 · 79-73 · 79-73)</td><td>8</td><td>Super Lightweight</td></tr>
+          <tr><td><span class="bs-name">Daniel Garcia</span></td><td><strong style="color:#004400;">W</strong></td><td>Blas Ezequiel Caro</td><td>TKO (R2, 2:54)</td><td>2</td><td>Welterweight</td></tr>
+          <tr><td><span class="bs-name">Leonardo Sanchez</span></td><td><strong style="color:#004400;">W</strong></td><td>Cesar Juarez</td><td>TKO (R2, 2:46)</td><td>2</td><td>Super Featherweight</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== PAGE 4: ACCURACY REPORT + LEGACY ====== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Blueprint Accuracy Report · Legacy</span><span class="ph-r">Story First Blueprint</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Blueprint Accuracy Report</div>
+    <div class="ar">
+      <div class="ar-head">
+        <span class="ar-hl">Pre-Fight Program vs. Result · Anaheim Fight Night</span>
+        <div>
+          <div class="ar-grade" style="color:#004400;">B+</div>
+        </div>
+      </div>
+      <div class="ar-body">
+
+        <div class="ar-row">
+          <span class="ar-check" style="color:#004400;">✓</span>
+          <div class="ar-txt"><strong>Winner correctly identified — Barboza.</strong> The Blueprint program made Barboza the pick based on his reach advantage, footwork, and superior punch variety. Result confirmed. Barboza was not just the pick — he covered every dimension of why the pick was made.</div>
+        </div>
+
+        <div class="ar-row">
+          <span class="ar-check" style="color:#004400;">✓</span>
+          <div class="ar-txt"><strong>Fight style correctly characterized.</strong> The program identified Barboza's distance control and jab as his primary weapons and noted that Sims winning required getting inside. Barboza denied that path for all 12 rounds — exactly as the analytical framework projected.</div>
+        </div>
+
+        <div class="ar-row">
+          <span class="ar-check" style="color:#8B0000;">✗</span>
+          <div class="ar-txt"><strong>Margin of victory underestimated.</strong> The program's analysis did not anticipate one judge going 120-108 (Barboza every round). The weight given to Sims's punch output and late-fight resurgence did not materialize. The pre-fight program treated this as more competitive than it was — a minor miss.</div>
+        </div>
+
+        <div class="ar-row">
+          <span class="ar-check" style="color:#5A4A3A;">—</span>
+          <div class="ar-txt"><strong>Anti-redundancy rule applied going forward.</strong> The original pre-fight program contained structural redundancy — the same biographical and motivational details appearing in multiple sections. That is documented. It will not recur. Each subsequent program applies the one-mention rule from first build.</div>
+        </div>
+
+        <div class="ar-row">
+          <span class="ar-check" style="color:#5A4A3A;">—</span>
+          <div class="ar-txt"><strong>Note on what was NOT in the pre-fight program.</strong> The Tale of the Tape did not include height, reach, and stance for both fighters — this was flagged and added as a permanent rule after the Anaheim build. Barboza's height/reach advantage and Sims's stance switch in round one were both analytically significant. The Tale of the Tape rule now requires all three physical attributes for every future program. Applied immediately.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="r">
+
+    <div class="sec-label">Legacy</div>
+
+    <div class="legacy">
+      <p>
+        Barboza enters the welterweight division with a statement. He is 33-1 with 11 knockouts, holds the WBO Global title at 147, and has publicly called out Ryan Garcia, Devin Haney, and Teofimo Lopez — the man who beat him last May. <strong>Alexis Rocha stepped into the ring immediately after the final bell to ask for the fight.</strong> Golden Boy has both. That fight is the most logical next step and may be announced within weeks.
+      </p>
+    </div>
+
+    <div class="body">
+      For Sims, the road gets harder. He is now 22-4-1 — four losses, three of them in significant fights. He was outboxed, not outpunched. He was out-schemed, not out-hearted. Whether that is a meaningful distinction depends on what adjustments he makes next. His corner — family-trained — has been questioned publicly in the aftermath. Whether new eyes in the gym change the trajectory is the only open question worth asking on his behalf.
+    </div>
+
+    <div class="body">
+      The Anaheim card as a whole was a Golden Boy statement of depth. Collazo is becoming one of the most dangerous minimumweight champions in the sport. Fundora is undisputed at flyweight. Iriarte is a 22-year-old prospect with nine stoppages in ten fights. Oscar De La Hoya's promotional house has star power at the top and real talent building beneath it. That infrastructure matters when the big fights need main events to support them.
+    </div>
+
+    <hr class="r">
+
+    <div class="sec-label">What Comes Next</div>
+
+    <div class="body">
+      <strong>Barboza's stated targets:</strong> Ryan Garcia (WBC welterweight) · Devin Haney · Teofimo Lopez (rematch at 147). All three are legitimate conversations. Garcia is the most commercially attractive. Rocha is the most logistically immediate. Lopez is the most personally motivated. Watch which one Golden Boy announces first — it tells you exactly how they see Barboza's value on the marquee.
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== BACK COVER ====== -->
+<div class="page bc">
+  <div class="bc-bg"></div>
+  <div class="bc-i">
+    <div class="bc-g"></div>
+    <div class="bc-big">There Are <em>Levels</em><br>To This.</div>
+
+    <div class="bc-quote">
+      <div class="bc-q">"I told you there were levels to this."</div>
+      <div class="bc-attr">Arnold Barboza Jr. · To Kenneth Sims Jr. · Round 12 · Honda Center · Anaheim · March 14, 2026</div>
+    </div>
+
+    <div class="bc-body">
+      Barboza didn't say it for the crowd. He said it in the ring, to the man across from him, in the final round of a fight that had already been decided. That is the difference between a man performing and a man competing. He came to Anaheim to prove something — not to the audience, but to himself and to the division. The scorecards agreed. So did the watch party of names he called afterward. The welterweight conversation just got more interesting.
+    </div>
+
+    <div class="bc-foot">
+      <div class="bc-fl">
+        Story First Blueprint · Official Recap · Barboza Jr. vs. Sims Jr.<br>
+        Honda Center · Anaheim, California · March 14, 2026<br>
+        Sources: BoxingNews24 · Yahoo Sports · FightMag · Bad Left Hook · FightNews.com · Tapology
+      </div>
+      <div class="bc-fr">Anaheim</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

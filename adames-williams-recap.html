@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story First Blueprint · Recap · Adames vs Williams · Orlando · March 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#F8F6F0; --ink:#0A0A08; --smoke:#E0DDD6; --muted:#6E6B62;
+  --wbc-green:#006B3C; --gold:#B8941A;
+  --ad-red:#CC1A1A; --wi-navy:#1A2B5C;
+  --neutral:#0C0C0A; --dark:#141410;
+  --exceeded:#1A5C2A; --delivered:#1A3A6B; --missed:#8B1A0A; --unverified:#4A3A1A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;font-family:'Libre Baskerville',Georgia,serif;color:var(--ink)}
+.page{width:8.5in;min-height:11in;margin:0 auto 40px;background:var(--paper);box-shadow:0 8px 48px rgba(0,0,0,0.7);position:relative;overflow:hidden}
+
+/* ===== COVER ===== */
+.cover{background:var(--neutral);min-height:11in;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cv-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 40% at 50% 0%,rgba(0,107,60,0.08),transparent 50%),
+  radial-gradient(ellipse 80% 50% at 100% 100%,rgba(204,26,26,0.05),transparent 50%),
+  linear-gradient(180deg,#141410 0%,#0A0A08 100%)}
+.cv-stripe{position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(to bottom,var(--wbc-green) 60%,rgba(0,107,60,0.1))}
+.cv-inner{position:relative;z-index:4;padding:0.5in 0.6in 0.5in 0.75in;display:flex;flex-direction:column;min-height:11in}
+
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.18in;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.cv-brand{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.45em;text-transform:uppercase;color:rgba(0,107,60,0.6);font-weight:700}
+.cv-type{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.18)}
+
+.cv-result-band{background:rgba(0,107,60,0.08);border:1px solid rgba(0,107,60,0.2);padding:10px 16px;margin-bottom:0.22in;display:flex;align-items:center;justify-content:space-between;}
+.crb-label{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.4em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.crb-result{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.06em;color:white}
+.crb-scores{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:0.18em;color:rgba(255,255,255,0.4);font-weight:700}
+
+.cv-winner{font-family:'Bebas Neue',sans-serif;font-size:96px;line-height:0.85;letter-spacing:0.01em;color:white;margin-bottom:6px}
+.cv-winner-sub{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(204,26,26,0.7);margin-bottom:0.05in;display:block;font-weight:700}
+.cv-vs-line{display:flex;align-items:center;gap:14px;margin-bottom:0.05in}
+.cv-vs-rule{flex:1;height:1px;background:rgba(255,255,255,0.06)}
+.cv-vs-txt{font-family:'Libre Baskerville',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.18)}
+.cv-loser{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:0.88;letter-spacing:0.01em;color:rgba(255,255,255,0.3);margin-bottom:4px}
+.cv-loser-sub{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,43,92,0.5);margin-bottom:0.22in;display:block;font-weight:700}
+
+.cv-stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);margin-bottom:0.22in}
+.css-cell{background:rgba(255,255,255,0.02);padding:10px 12px}
+.css-l{font-family:'Space Mono',monospace;font-size:6px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(0,107,60,0.45);margin-bottom:5px;display:block;font-weight:700}
+.css-ad{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--ad-red);display:block;line-height:1}
+.css-wi{font-family:'Bebas Neue',sans-serif;font-size:26px;color:rgba(26,43,92,0.5);display:block;line-height:1}
+
+.cv-dek{font-family:'Libre Baskerville',serif;font-style:italic;font-size:14px;line-height:1.82;color:rgba(255,255,255,0.42);margin-bottom:auto}
+.cv-dek strong{font-style:normal;color:rgba(255,255,255,0.75);font-weight:700}
+
+.cv-info{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,107,60,0.15);margin-bottom:0.2in}
+.ci-cell{background:rgba(255,255,255,0.015);padding:9px 12px}
+.ci-l{font-family:'Space Mono',monospace;font-size:6px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(0,107,60,0.45);margin-bottom:3px;display:block;font-weight:700}
+.ci-v{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:0.04em;color:rgba(255,255,255,0.6)}
+
+.cv-foot{border-top:1px solid rgba(255,255,255,0.05);padding-top:12px;display:flex;justify-content:space-between;align-items:flex-end}
+.cf-l{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.1);line-height:2}
+.cf-r{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.08em;color:rgba(0,107,60,0.06)}
+
+/* ===== PAGE HEADER ===== */
+.ph{background:var(--neutral);padding:11px 0.6in 11px 0.75in;display:flex;justify-content:space-between;align-items:center}
+.ph-l{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.ph-r{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.pc{padding:0.36in 0.6in 0.44in 0.75in;background:var(--paper)}
+
+/* ===== TYPOGRAPHY ===== */
+.sec-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.42em;text-transform:uppercase;color:var(--wbc-green);display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:700}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--wbc-green),transparent)}
+.hed{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:0.9;color:var(--ink);margin-bottom:12px;letter-spacing:0.02em}
+.body-t{font-family:'Libre Baskerville',serif;font-size:13.5px;line-height:1.84;color:#1A1A14;margin-bottom:12px}
+.body-t strong{font-weight:700;color:var(--ink)}.body-t em{font-style:italic;color:var(--muted)}
+hr.r{border:none;height:1px;background:linear-gradient(to right,transparent,var(--smoke),transparent);margin:16px 0}
+
+/* ===== THE MOMENT ===== */
+.moment{background:var(--neutral);padding:0.22in 0.28in;margin:0 -0.6in 18px -0.75in;position:relative;overflow:hidden}
+.moment::before{content:'';position:absolute;left:0;top:0;width:5px;height:100%;background:var(--ad-red)}
+.moment::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 80% 50%,rgba(204,26,26,0.05),transparent)}
+.moment-i{position:relative;z-index:2;padding-left:0.12in}
+.moment-l{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:var(--ad-red);margin-bottom:6px;display:block;font-weight:700}
+.moment-h{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:0.92;color:white;margin-bottom:8px;letter-spacing:0.02em}
+.moment-body{font-family:'Libre Baskerville',serif;font-size:13.5px;line-height:1.78;color:rgba(255,255,255,0.65)}
+.moment-body strong{color:rgba(255,255,255,0.92);font-weight:700}
+.moment-body em{font-style:italic;color:rgba(255,255,255,0.45)}
+
+/* ===== ROUND BY ROUND ===== */
+.rbr{border:1px solid var(--smoke);overflow:hidden;margin-bottom:18px}
+.rbr-head{background:var(--neutral);padding:9px 14px;display:flex;justify-content:space-between}
+.rbr-hl{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.rbr-hr{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.rbr-row{display:grid;grid-template-columns:36px 1fr 36px;align-items:stretch;border-bottom:1px solid var(--smoke)}
+.rbr-row:last-child{border-bottom:none}
+.rbr-rnum{font-family:'Bebas Neue',sans-serif;font-size:20px;color:white;background:var(--dark);display:flex;align-items:center;justify-content:center;letter-spacing:0.04em}
+.rbr-desc{font-family:'Libre Baskerville',serif;font-size:12px;line-height:1.65;color:#1A1A14;padding:8px 12px}
+.rbr-desc strong{font-weight:700;color:var(--ink)}.rbr-desc em{font-style:italic;color:var(--muted)}
+.rbr-edge{display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.1em;writing-mode:vertical-rl;text-transform:uppercase;padding:6px 0}
+.edge-ad{background:rgba(204,26,26,0.08);color:var(--ad-red)}
+.edge-wi{background:rgba(26,43,92,0.08);color:var(--wi-navy)}
+.edge-even{background:rgba(0,0,0,0.04);color:var(--muted)}
+.edge-kd{background:rgba(204,26,26,0.2);color:var(--ad-red);font-size:9px}
+
+/* ===== VERDICTS ===== */
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.verdict{border:1px solid var(--smoke);overflow:hidden}
+.vd-head{padding:8px 12px;display:flex;align-items:center;justify-content:space-between}
+.vd-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em}
+.vd-badge{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;padding:3px 8px;font-weight:700}
+.badge-exceeded{background:var(--exceeded);color:white}
+.badge-delivered{background:var(--delivered);color:white}
+.badge-missed{background:var(--missed);color:white}
+.badge-unverified{background:var(--unverified);color:rgba(255,255,255,0.8)}
+.vd-body{padding:9px 12px;font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.68;color:#1A1A14;background:var(--paper)}
+.vd-body strong{font-weight:700;color:var(--ink)}.vd-body em{font-style:italic;color:var(--muted)}
+
+/* ===== BOX SCORE ===== */
+.bscore{border:1px solid var(--smoke);overflow:hidden;margin-bottom:18px}
+.bs-head{background:var(--neutral);padding:9px 14px;display:grid;grid-template-columns:1fr repeat(4,auto);gap:20px;align-items:center}
+.bs-hl{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.bs-col{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:right;font-weight:700}
+.bs-row{display:grid;grid-template-columns:1fr repeat(4,auto);gap:20px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--smoke)}
+.bs-row:last-child{border-bottom:none}
+.bs-row:nth-child(even){background:rgba(0,0,0,0.02)}
+.bs-fighter{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:0.03em;color:var(--ink)}
+.bs-stat{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-align:right;font-weight:700}
+
+/* ===== BLUEPRINT ACCURACY ===== */
+.accuracy{background:var(--neutral);padding:0.22in 0.28in;margin:0 -0.6in 18px -0.75in;position:relative}
+.accuracy::before{content:'';position:absolute;left:0;top:0;width:5px;height:100%;background:var(--wbc-green)}
+.acc-i{position:relative;z-index:2;padding-left:0.12in}
+.acc-header{display:flex;align-items:baseline;gap:18px;margin-bottom:12px}
+.acc-l{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.acc-grade{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:0.9;color:white}
+.acc-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.45);margin-top:-4px;display:block}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.acc-col-h{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.3em;text-transform:uppercase;font-weight:700;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.acc-hit{color:rgba(0,107,60,0.8)}
+.acc-miss{color:rgba(204,26,26,0.7)}
+.acc-item{font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.65;color:rgba(255,255,255,0.55);margin-bottom:5px;padding-left:12px;position:relative}
+.acc-item::before{position:absolute;left:0;font-family:'Space Mono',monospace;font-size:9px;font-weight:700}
+.acc-item.hit::before{content:'✓';color:rgba(0,107,60,0.8)}
+.acc-item.miss::before{content:'✗';color:rgba(204,26,26,0.7)}
+.acc-item strong{color:rgba(255,255,255,0.82);font-weight:700}
+
+/* ===== LEGACY ===== */
+.legacy{border:1px solid var(--smoke);padding:14px 16px;margin-bottom:18px;background:var(--paper)}
+.legacy-l{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.38em;text-transform:uppercase;color:var(--wbc-green);margin-bottom:10px;display:block;font-weight:700}
+.legacy-body{font-family:'Libre Baskerville',serif;font-size:13.5px;line-height:1.84;color:#1A1A14}
+.legacy-body strong{font-weight:700;color:var(--ink)}.legacy-body em{font-style:italic;color:var(--muted)}
+
+/* ===== FRAMEWORK VALIDATION ===== */
+.fw-val{border:1px solid var(--smoke);overflow:hidden;margin-bottom:18px}
+.fwv-head{background:var(--dark);padding:9px 14px;display:flex;justify-content:space-between;align-items:center}
+.fwv-hl{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.fwv-sub{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.fwv-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:9px 14px;border-bottom:1px solid var(--smoke)}
+.fwv-row:last-child{border-bottom:none}
+.fwv-rule{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-top:2px;font-weight:700}
+.fwv-finding{font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.65;color:#1A1A14}
+.fwv-finding strong{font-weight:700;color:var(--ink)}.fwv-finding em{font-style:italic;color:var(--muted)}
+.fwv-verdict{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;font-weight:700;white-space:nowrap;align-self:start}
+.fwv-confirmed{background:rgba(0,107,60,0.12);color:var(--wbc-green)}
+.fwv-partial{background:rgba(184,148,26,0.12);color:var(--gold)}
+.fwv-refuted{background:rgba(139,26,10,0.12);color:var(--missed)}
+
+/* ===== BACK COVER ===== */
+.back{background:var(--neutral);min-height:11in;position:relative;overflow:hidden}
+.back-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 50% at 50% 100%,rgba(0,107,60,0.07),transparent 55%),
+  linear-gradient(180deg,#0A0A08 0%,#141410 100%)}
+.back-stripe{position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(to bottom,rgba(0,107,60,0.1),var(--wbc-green) 50%,rgba(0,107,60,0.1))}
+.back-inner{position:relative;z-index:4;padding:0.6in 0.6in 0.6in 0.75in;display:flex;flex-direction:column;min-height:11in;justify-content:space-between}
+.back-top{}
+.back-issue{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.45em;text-transform:uppercase;color:rgba(0,107,60,0.5);margin-bottom:0.3in;display:block;font-weight:700}
+.back-quote{font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px;line-height:1.72;color:rgba(255,255,255,0.55);max-width:5.5in;margin-bottom:0.12in}
+.back-attrib{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(0,107,60,0.5);font-weight:700}
+.back-title{font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:0.82;letter-spacing:0.01em;color:rgba(255,255,255,0.04);margin-top:auto;margin-bottom:0.2in}
+.back-foot{border-top:1px solid rgba(255,255,255,0.05);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end}
+.bf-l{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.1);line-height:2}
+.bf-r{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.1em;color:rgba(0,107,60,0.08)}
+
+@media print{body{background:white}.page{margin:0;box-shadow:none;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="page cover">
+  <div class="cv-bg"></div>
+  <div class="cv-stripe"></div>
+  <div class="cv-inner">
+    <div class="cv-top">
+      <span class="cv-brand">Story First Blueprint · Official Recap</span>
+      <span class="cv-type">DAZN · Matchroom Boxing · Caribe Royale · Orlando, FL</span>
+    </div>
+
+    <div class="cv-result-band">
+      <div>
+        <span class="crb-label">Official Result</span>
+        <div class="crb-result">Adames def. Williams · Unanimous Decision · 12 Rounds</div>
+      </div>
+      <div style="text-align:right">
+        <span class="crb-label">Scorecards</span>
+        <div class="crb-scores">118-108 · 117-109 · 117-109</div>
+      </div>
+    </div>
+
+    <div class="cv-winner">Carlos<br>Adames</div>
+    <span class="cv-winner-sub">"El Bronco" · Dominican Republic · WBC Middleweight Champion · 25-1-1 · 18 KOs · Retains</span>
+
+    <div class="cv-vs-line">
+      <div class="cv-vs-rule"></div>
+      <span class="cv-vs-txt">defeated</span>
+      <div class="cv-vs-rule"></div>
+    </div>
+
+    <div class="cv-loser">Austin Williams</div>
+    <span class="cv-loser-sub">"Ammo" · Houston, Texas · Challenger · Now 20-2 · 13 KOs</span>
+
+    <div class="cv-stats-strip">
+      <div class="css-cell">
+        <span class="css-l">Total Landed</span>
+        <span class="css-ad">254</span>
+        <span class="css-wi">127</span>
+      </div>
+      <div class="css-cell">
+        <span class="css-l">Power Punches</span>
+        <span class="css-ad">176</span>
+        <span class="css-wi">89</span>
+      </div>
+      <div class="css-cell">
+        <span class="css-l">Knockdowns</span>
+        <span class="css-ad">1 (R2)</span>
+        <span class="css-wi">0</span>
+      </div>
+      <div class="css-cell">
+        <span class="css-l">Pt Deductions</span>
+        <span class="css-ad">1 (R12 LB)</span>
+        <span class="css-wi">0</span>
+      </div>
+    </div>
+
+    <div class="cv-dek">
+      The blueprint said pressure, body work, wait. <strong>That is exactly what happened — round by round, for twelve rounds, without deviation.</strong> Williams won round one. Adames dropped him in round two. From round four onward this was a championship performance — measured, physical, and relentless. The body attack that showed up in round six to sap Williams's legs was the same body attack that showed up in round twelve. That is what a Deep Championship Round Bank looks like when it runs up against an empty one.
+    </div>
+
+    <div class="cv-info">
+      <div class="ci-cell"><span class="ci-l">Venue</span><div class="ci-v">Caribe Royale</div></div>
+      <div class="ci-cell"><span class="ci-l">Date</span><div class="ci-v">March 21, 2026</div></div>
+      <div class="ci-cell"><span class="ci-l">Broadcast</span><div class="ci-v">DAZN</div></div>
+      <div class="ci-cell"><span class="ci-l">Title Status</span><div class="ci-v">Adames Retains</div></div>
+    </div>
+
+    <div class="cv-foot">
+      <div class="cf-l">
+        Story First Blueprint · Boxing Recap · Adames vs Williams<br>
+        Caribe Royale Resort · Orlando, Florida · March 21, 2026<br>
+        Sources: Yahoo Sports · Boxing Social · BoxRec · Bad Left Hook · BoxingScene
+      </div>
+      <div class="cf-r">Recap I</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: GAME STORY + THE MOMENT ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Game Story · The Moment</span><span class="ph-r">Story First Blueprint · Recap I</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Game Story</div>
+    <div class="hed">The Plan Was<br>The Plan Was<br>The Plan.</div>
+
+    <div class="body-t">
+      Round one belonged to Williams. He came out behind the jab, landed the straight left upstairs, worked the body, and made the champion think. For three minutes Adames looked like a man who had a question he hadn't fully answered yet. Williams took the round on most cards. The 29-year-old challenger was doing what the Blueprint said he could do — controlling range, making Adames uncomfortable with size and the southpaw angle. For exactly three minutes, the upset felt possible.
+    </div>
+    <div class="body-t">
+      Round two ended that conversation. <strong>Double right hands through the centerline — Williams's head never moved — and down he went in the first minute.</strong> The knockdown was not lucky. It was structural. Williams's most documented flaw entering this fight was his refusal to move his head off the center line, and Adames had been studying that flaw since January when the fight was originally scheduled. He found it immediately. Williams survived the round — landed a counter left to close it — but the psychological damage was done before the bell.
+    </div>
+    <div class="body-t">
+      Rounds three through five told the real story. Williams had the tools. He showed them in round three, landing double lefts on the inside, making Adames work. But the tools required him to stand in front of Carlos Adames and exchange. Every time he chose to stand and trade, Adames landed the sharper shots. By round five a right hand opened blood from Williams's nose. <em>The challenger wasn't being outworked — he was being outclassed in the specific skills that championship fighting requires.</em>
+    </div>
+    <div class="body-t">
+      Round six confirmed the outcome if not the scorecards. Adames turned to the body — exactly as projected — and Williams spent most of the round on the ropes, looking fatigued. The Blueprint's Watch For item asked whether the body attack would produce visible reactions. It produced them clearly: Williams's footwork changed, his output dropped, his surges became shorter. Adames landed 254 total punches to Williams's 127. The 2:1 ratio was not a reflection of work rate. It was a reflection of who was dictating where the fight lived and who was trying to survive it.
+    </div>
+    <div class="body-t">
+      From round eight through twelve Adames controlled everything. Williams showed genuine heart — he was still throwing in rounds eleven and twelve with a bloody mouth and fatigued legs — but his surges never changed the dynamic. A point was deducted from Adames in round twelve for a low blow. Williams finished on his feet. <strong>The Green and Gold belt went home with Adames, exactly as the Blueprint called.</strong>
+    </div>
+
+    <div class="moment">
+      <div class="moment-i">
+        <span class="moment-l">The Moment · Round 2 · 1:17</span>
+        <div class="moment-h">The Head Didn't Move.<br>The Right Hand Found It.</div>
+        <div class="moment-body">
+          The Blueprint's Judge's Chair Watch For noted it before the first bell: <em>Williams doesn't move his head off the center line.</em> Adames doubled the right hand — one to set it up, one to finish — and Williams went down. It was not a lucky punch. It was the consequence of a documented structural flaw meeting a champion who had been waiting since January to exploit it. The knockdown defined the rest of the fight. Williams survived, rallied, showed heart. But <strong>the psychological blueprint of the night was written in round two.</strong> From that moment Adames owned the center of the ring and Williams owned the ropes.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 3: ROUND BY ROUND + VERDICTS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Round by Round · Player Verdicts</span><span class="ph-r">Story First Blueprint · Recap I</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Round by Round</div>
+    <div class="rbr">
+      <div class="rbr-head">
+        <span class="rbr-hl">Adames vs Williams · 12 Rounds · WBC Middleweight Title</span>
+        <span class="rbr-hr">Blueprint Scoring</span>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">1</div>
+        <div class="rbr-desc">Williams wins the opener. Jab working, straight left landing upstairs and downstairs, making Adames uncomfortable with size and southpaw angles. Adames lands rights but Williams controls range. Clean first round for the challenger.</div>
+        <div class="rbr-edge edge-wi">WILLIAMS</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:var(--ad-red);">2</div>
+        <div class="rbr-desc"><strong>KNOCKDOWN — 1:17.</strong> Double right hand through the centerline. Williams's head doesn't move. Down he goes. Adames swarms. Williams survives on the ropes, lands a counter left to close the round. Massive round for the champion. Structural flaw exploited immediately.</div>
+        <div class="rbr-edge edge-kd">ADAMES KD</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">3</div>
+        <div class="rbr-desc">Williams bounces back. Double left hands on the inside, drives Adames backward with a strong left. Adames forcing him back by round's end with a body shot. Williams shows he belongs. Close round — credited to Williams for his early work.</div>
+        <div class="rbr-edge edge-wi">WILLIAMS</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">4</div>
+        <div class="rbr-desc">The fight turns here and doesn't turn back. Adames controls the center of the ring, forces Williams — a front-foot fighter — onto the back foot and along the ropes. Williams cannot establish his range. Right hands start scoring at will.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">5</div>
+        <div class="rbr-desc">Adames right hand opens blood from Williams's nose. Williams continues to walk the center line without head movement. Adames is picking his shots with championship economy. Williams throws — not much lands clean.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">6</div>
+        <div class="rbr-desc">Body work activated. Adames turns to hard shots downstairs — the Watch For item confirmed. Williams spends most of the round on the ropes, visibly fatigued by the end. Williams rallies briefly but Adames has his way. The championship round bank gap begins to show.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">7</div>
+        <div class="rbr-desc">Williams attempts to surge, comes forward with ambition. Adames rolls and slips — hands down, head moving — making Williams miss and countering cleanly. Right hands thudding onto the guard. Williams's surges are getting shorter. Survival mode beginning.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">8</div>
+        <div class="rbr-desc">Left uppercut rocks Williams. Williams briefly hurts Adames with a left hand — a glimmer — but Adames responds immediately. No hesitation. Tier II in action: the plan doesn't change when you get hit. Williams is in survival mode by the bell.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">9</div>
+        <div class="rbr-desc">Williams tries. Adames walks him down, jabs, sticks the right cross. Mouthpiece knocked out at some point in the middle rounds. Williams absorbs punishment, keeps throwing, but cannot change the trajectory of the night. Adames in command.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">10</div>
+        <div class="rbr-desc">Championship rounds. Williams is where his CRB said he had never been at this level. Adames is exactly where he has been before — same body attack, same right cross, same patience. The gap between a Deep Bank and a Thin Bank is visible in real time.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">11</div>
+        <div class="rbr-desc">Williams fighting with a bloody mouth. Still throwing. Heart not in question. Effectiveness very much in question. Adames controls, picks his shots, doesn't overextend. Williams shows why he will be back — he never quit. But tonight he was outclassed.</div>
+        <div class="rbr-edge edge-ad">ADAMES</div>
+      </div>
+      <div class="rbr-row">
+        <div class="rbr-rnum" style="background:#1A1A14;">12</div>
+        <div class="rbr-desc">Adames deducted a point for a low blow — the only blemish on the night. Williams galvanized briefly. Adames finishes in complete control. Bell. Three judges: 118-108, 117-109, 117-109. No controversy. No ambiguity. The right man retained.</div>
+        <div class="rbr-edge edge-ad">ADAMES (-1pt)</div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Player Verdicts</div>
+    <div class="verdict-grid">
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(0,107,60,0.06);border-bottom:1px solid var(--smoke);">
+          <div class="vd-name" style="color:var(--ad-red);">Carlos Adames</div>
+          <span class="vd-badge badge-exceeded">EXCEEDED</span>
+        </div>
+        <div class="vd-body">The Blueprint called Adames UD. He won UD. But the margin — 118-108 on one card — was wider than projected. The prediction was correct directionally. The performance exceeded the expectation. <strong>Adames showed more variety than anticipated</strong> — rolling and slipping with hands down (a defensive skill the program didn't fully credit), landing uppercuts to complement the body-right hand combination, and demonstrating championship-level ring generalship that controlled every inch of space from round four onward. He didn't just beat Williams. He schooled him. The CRB gap played out exactly as documented — body attack in round 12 was identical to round one. <em>Tier II confirmed at the highest level.</em></div>
+      </div>
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(139,26,10,0.04);border-bottom:1px solid var(--smoke);">
+          <div class="vd-name" style="color:var(--wi-navy);">Austin Williams</div>
+          <span class="vd-badge badge-missed">MISSED</span>
+        </div>
+        <div class="vd-body">Williams showed up. He won round one. He came back after a round-two knockdown. He was still throwing with heart in rounds eleven and twelve with a bloody mouth. The character was not in question. The capacity was. <strong>His head never moved off the centerline — the exact flaw identified pre-fight — and it cost him the night starting at 1:17 of round two.</strong> From round five onward he was in survival mode, his surges getting shorter each time. The Unverified Crisis Execution tag becomes confirmed Tier III (disengagement subtype) — when the fight got hard he went to the ropes rather than reaching for a solution. At 29 he has time to correct this. Tonight it was a fundamental and fatal liability.</div>
+      </div>
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(0,107,60,0.06);border-bottom:1px solid var(--smoke);">
+          <div class="vd-name" style="color:#1A5C2A;">Omari Jones</div>
+          <span class="vd-badge badge-delivered">DELIVERED</span>
+        </div>
+        <div class="vd-body">80-72, 80-72, 80-72. Won every round on all three cards in his first eight-rounder. Did not get the finish — Gomez proved durable — but the performance was completely one-sided. <strong>Jones jabbed and moved, worked downstairs with both hands, and showed genuine ring generalship in his first extended professional bout.</strong> The CRB bank officially opens tonight: eight rounds, legitimate opposition (23-6-1 with 21 KOs), every round won. Crisis Execution Rating advances from Unverified toward Tier I — the processing speed was visible. Now 6-0. The next test needs to be harder.</div>
+      </div>
+      <div class="verdict">
+        <div class="vd-head" style="background:rgba(74,58,26,0.06);border-bottom:1px solid var(--smoke);">
+          <div class="vd-name" style="color:#4A3A1A;">Teremoana</div>
+          <span class="vd-badge badge-unverified">UNVERIFIED</span>
+        </div>
+        <div class="vd-body">Results not confirmed at time of publication. The Blueprint projected Teremoana vs Harper as appointment television — 9-0, 9 KOs, 100% stoppage rate. Full verdict pending verified result. <em>Check BoxRec for confirmed outcome before filing this program.</em></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 4: BOX SCORE + BLUEPRINT ACCURACY + LEGACY ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Box Score · Blueprint Accuracy · Legacy</span><span class="ph-r">Story First Blueprint · Recap I</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Official Box Score · Verified</div>
+    <div class="bscore">
+      <div class="bs-head">
+        <span class="bs-hl">Main Event · WBC Middleweight Title · 12 Rounds</span>
+        <span class="bs-col">LANDED</span>
+        <span class="bs-col">POWER</span>
+        <span class="bs-col">KD</span>
+        <span class="bs-col">RESULT</span>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter" style="color:var(--ad-red);">Carlos "El Bronco" Adames</div>
+        <div class="bs-stat" style="color:var(--ad-red);">254</div>
+        <div class="bs-stat" style="color:var(--ad-red);">176</div>
+        <div class="bs-stat" style="color:var(--ad-red);">1</div>
+        <div class="bs-stat" style="color:var(--wbc-green);font-size:10px;">W · UD · 118-108/117-109/117-109</div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter" style="color:var(--wi-navy);">Austin "Ammo" Williams</div>
+        <div class="bs-stat" style="color:var(--wi-navy);">127</div>
+        <div class="bs-stat" style="color:var(--wi-navy);">89</div>
+        <div class="bs-stat" style="color:var(--wi-navy);">0</div>
+        <div class="bs-stat" style="color:var(--missed);font-size:10px;">L · UD · Now 20-2</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Undercard Results</div>
+    <div class="bscore" style="margin-bottom:18px;">
+      <div class="bs-head">
+        <span class="bs-hl">Supporting Card · Verified Results</span>
+        <span class="bs-col">ROUNDS</span>
+        <span class="bs-col">METHOD</span>
+        <span class="bs-col" style="min-width:80px;">RESULT</span>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter">Omari Jones vs Christian Gomez</div>
+        <div class="bs-stat">8</div>
+        <div class="bs-stat">UD</div>
+        <div class="bs-stat" style="color:var(--wbc-green);font-size:9px;">Jones W · 80-72 x3 · Now 6-0</div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter">Jaycob Gomez vs Corey Marksman</div>
+        <div class="bs-stat">10</div>
+        <div class="bs-stat">—</div>
+        <div class="bs-stat" style="font-size:9px;color:var(--muted);">Result pending verification</div>
+      </div>
+      <div class="bs-row">
+        <div class="bs-fighter">Teremoana vs Curtis Harper</div>
+        <div class="bs-stat">8</div>
+        <div class="bs-stat">—</div>
+        <div class="bs-stat" style="font-size:9px;color:var(--muted);">Result pending verification</div>
+      </div>
+    </div>
+
+    <div class="accuracy">
+      <div class="acc-i">
+        <div class="acc-header">
+          <span class="acc-l">Blueprint Accuracy Report</span>
+          <div>
+            <div class="acc-grade">A</div>
+            <span class="acc-sub">Winner correct · Margin exceeded expectations · Framework validated</span>
+          </div>
+        </div>
+        <div class="acc-grid">
+          <div>
+            <div class="acc-col-h acc-hit">Hits</div>
+            <div class="acc-item hit"><strong>Winner correct.</strong> Adames UD called. Adames UD delivered.</div>
+            <div class="acc-item hit"><strong>Body attack as decisive factor.</strong> Called rounds 4-8. Confirmed round 6 onward.</div>
+            <div class="acc-item hit"><strong>Decision Risk HIGH.</strong> Fight went to cards. No controversy — but structural risk was real and the projection was honest.</div>
+            <div class="acc-item hit"><strong>CRB gap confirmed.</strong> Deep vs Thin Bank played out in real time from round 5 through round 12.</div>
+            <div class="acc-item hit"><strong>Tier II confirmed for Adames.</strong> Plan never changed. Body attack in round 12 = body attack in round 1.</div>
+            <div class="acc-item hit"><strong>Williams Tier III confirmed.</strong> Disengagement subtype — went to ropes instead of reaching for solutions when hurt.</div>
+            <div class="acc-item hit"><strong>Watch For #1 confirmed.</strong> Body work produced visible fatigue reactions in Williams — footwork changed, output dropped.</div>
+          </div>
+          <div>
+            <div class="acc-col-h acc-miss">Misses / Refinements</div>
+            <div class="acc-item miss"><strong>Margin underestimated.</strong> Projected 115-113. Actual 118-108 on widest card. Adames's defensive head movement was not fully credited in the pre-fight program — it neutralized Williams's reach advantage more completely than projected.</div>
+            <div class="acc-item miss"><strong>Williams's chin undervalued.</strong> Projected late TKO possibility rounds 10-12. Williams went the full 12 with heart. He is more durable than the Sheeraz stoppage suggested.</div>
+            <div class="acc-item miss"><strong>Adames's defensive skill underrated.</strong> The pre-fight program focused on his offense. His head movement and ability to make Williams miss while countering was the analytical gap in the pre-fight build.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Framework Validation</div>
+    <div class="fw-val">
+      <div class="fwv-head">
+        <span class="fwv-hl">New Rules · First Live Test</span>
+        <span class="fwv-sub">Rules 26 · 27 · 28 — March 21, 2026</span>
+      </div>
+      <div class="fwv-row">
+        <span class="fwv-rule">Rule 27<br>Crisis<br>Execution</span>
+        <div class="fwv-finding">Adames Tier II held under every condition — including the round 8 moment when Williams briefly hurt him. Response was immediate, automatic, and correct. Williams Unverified tag resolved to confirmed Tier III (disengagement): went to ropes when hurt, surges got shorter, never found the right tool under sustained pressure.</div>
+        <span class="fwv-verdict fwv-confirmed">CONFIRMED</span>
+      </div>
+      <div class="fwv-row">
+        <span class="fwv-rule">Rule 28<br>Champ<br>Round Bank</span>
+        <div class="fwv-finding">Deep vs Thin Bank played out definitively. Adames's body attack was identical in round 12 as round 1 — verified CRB behavior. Williams had no answer for championship-level pressure from round 5 onward — thin elite-level bank confirmed. The framework's most original metric passed its first live test.</div>
+        <span class="fwv-verdict fwv-confirmed">CONFIRMED</span>
+      </div>
+      <div class="fwv-row">
+        <span class="fwv-rule">Rule 26<br>Judging<br>Risk</span>
+        <div class="fwv-finding">Decision Risk was rated HIGH. The fight went to cards with no controversy — scorecards were lopsided and aligned. The risk was structural and real; the outcome simply didn't require the judging risk framework to activate because the fight wasn't close. HIGH risk does not predict controversy — it flags the conditions where controversy could occur. Those conditions existed. The result made them irrelevant.</div>
+        <span class="fwv-verdict fwv-partial">STRUCTURAL · MOOT</span>
+      </div>
+    </div>
+
+    <div class="sec-label">Legacy</div>
+    <div class="legacy">
+      <span class="legacy-l">What Tonight Means</span>
+      <div class="legacy-body">
+        Carlos Adames walked into this fight with a question mark — the Sheeraz draw had left the boxing world unsure whether he was truly elite or merely very good. Tonight removed that ambiguity. <strong>He dominated a legitimate challenger in the man's hometown, on the man's preferred surface, with 230 more amateur fights of experience as an edge he made visible from round two onward.</strong> He out-landed Williams 2:1. He dropped him. He body-worked him into fatigue. He finished in complete control. The question is no longer whether Adames is elite. The question is who at 160 pounds can actually challenge him. Janibek Alimkhanuly's name came up immediately. Adames himself floated 154 and 168 — suggesting a fighter who knows he has maxed out the current middleweight field.
+
+        For Austin Williams, tonight is the data point the Blueprint said we needed. He showed heart, character, and genuine skill in round one and again in the late rounds when he kept throwing with a bloody mouth. <em>But the Tier III confirmation — head never moving off the centerline, going to the ropes when hurt, surges getting shorter — is the developmental work that has to happen before he gets another title shot.</em> He is 29. There is time. Tonight was the education.
+
+        For the Blueprint: Rules 26, 27, and 28 passed their first live test. The Championship Round Bank predicted the fight's second half more precisely than any other analytical metric available. The Crisis Execution Rating told the story of round eight before round eight happened. The Judge's Chair identified the structural flaw — Williams's centerline habit — before the knockdown confirmed it at 1:17 of round two.
+
+        The framework works. Now we build it against harder fights.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== BACK COVER ===== -->
+<div class="page back">
+  <div class="back-bg"></div>
+  <div class="back-stripe"></div>
+  <div class="back-inner">
+    <div class="back-top">
+      <span class="back-issue">Story First Blueprint · Recap Edition · Card II · March 21, 2026</span>
+      <div class="back-quote">
+        "His head didn't move off the center line. Adames had been waiting since January to find it. He found it at 1:17 of round two. The rest was a championship performance — measured, physical, and relentless."
+      </div>
+      <div class="back-attrib">— Story First Blueprint · Game Story · March 21, 2026</div>
+
+      <div style="margin-top:0.35in;display:grid;grid-template-columns:1fr 1fr;gap:0.3in;">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(0,107,60,0.5);font-weight:700;margin-bottom:10px;">Next Up · Division Watch</div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.82;color:rgba(255,255,255,0.4);">
+            Adames floated three directions post-fight: Janibek Alimkhanuly at 160, a drop to super welterweight at 154, or a move up to 168. Any of the three produces a major fight. The WBC belt makes him the most valuable fighter in the middleweight division until Janibek returns. The Blueprint watches all three paths.
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(0,107,60,0.5);font-weight:700;margin-bottom:10px;">Williams · What's Next</div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.82;color:rgba(255,255,255,0.4);">
+            The four-fight rebuild worked to get him here. A second rebuild — focused specifically on head movement and crisis execution under championship-level pressure — could bring him back stronger. He is 29. The chin is real. The heart is real. The Tier III confirmation is correctable. The Blueprint will be watching when he returns.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:0.3in;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.2in;">
+        <div style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(0,107,60,0.5);font-weight:700;margin-bottom:8px;">Permanent Lesson File · March 21, 2026</div>
+        <div style="font-family:'Libre Baskerville',serif;font-size:12px;line-height:1.82;color:rgba(255,255,255,0.35);">
+          Adames's defensive head movement was not fully credited in the pre-fight build. The program focused on his offense. His ability to make Williams miss — hands low, head moving constantly — was the analytical gap that explains why the margin was wider than projected. Add defensive head movement as a required evaluation point in every future boxing program. A fighter who makes his opponent miss while countering is winning on criteria one AND criteria four simultaneously. That double-scoring is invisible in pre-fight analysis if we only look at offense.
+        </div>
+      </div>
+    </div>
+
+    <div class="back-title">Adames.</div>
+
+    <div class="back-foot">
+      <div class="bf-l">
+        Story First Blueprint · Boxing Recap · Adames retains WBC Middleweight Title<br>
+        Caribe Royale Resort · Orlando, Florida · March 21, 2026 · DAZN<br>
+        Sources: Yahoo Sports · Boxing Social · BoxRec · Bad Left Hook · BoxingScene · Box247
+      </div>
+      <div class="bf-r">Card II · Recap</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

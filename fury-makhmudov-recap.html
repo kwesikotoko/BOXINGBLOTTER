@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — Fury vs. Makhmudov Recap · London · Netflix</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b1520;
+    --newsprint: #e8f0f5;
+    --aged: #d0dce6;
+    --red: #c0292b;
+    --ocean: #1a4a6e;
+    --ocean-light: #2e7abf;
+    --gold: #b8912a;
+    --rule: #0b1520;
+    --muted: #3d5a72;
+    --light-rule: #a8bfcc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { background: #060c12; font-family: 'Barlow', sans-serif; color: var(--ink); }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--newsprint);
+    box-shadow: 0 0 80px rgba(0,80,140,0.3);
+  }
+
+  /* MASTHEAD */
+  .masthead { background: var(--ink); border-bottom: 4px solid var(--red); }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 24px 6px;
+    border-bottom: 1px solid #1a2e40;
+  }
+
+  .masthead-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #5a8aaa; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .masthead-title { text-align: center; padding: 14px 24px 10px; }
+
+  .blotter-name { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: var(--newsprint); letter-spacing: -0.01em; line-height: 1; text-transform: uppercase; }
+
+  .blotter-rule { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .blotter-rule-line { flex: 1; height: 1px; background: var(--gold); }
+  .blotter-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; white-space: nowrap; }
+
+  .edition-bar { background: var(--red); padding: 5px 24px; display: flex; justify-content: space-between; }
+  .edition-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: white; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  /* COVER */
+  .cover { background: var(--ink); padding: 28px 28px 22px; position: relative; overflow: hidden; }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 25% 60%, rgba(192,41,43,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: var(--red); letter-spacing: 0.3em; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
+
+  .cover-headline { text-align: center; margin-bottom: 20px; }
+  .cover-headline h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 76px; font-weight: 900; color: var(--newsprint); line-height: 0.86; text-transform: uppercase; }
+  .cover-headline h1 em { font-style: normal; color: var(--ocean-light); }
+  .cover-sub { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: #5a8aaa; text-align: center; margin-top: 10px; line-height: 1.4; }
+
+  /* RESULT BLOCK */
+  .result-block { display: grid; grid-template-columns: 1fr auto 1fr; border: 1px solid #1a2e40; margin-bottom: 8px; }
+
+  .result-fighter { padding: 14px 16px; text-align: center; }
+  .result-fighter.left { border-right: 1px solid #1a2e40; }
+  .result-fighter.right { border-left: 1px solid #1a2e40; }
+
+  .result-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; line-height: 1; }
+  .result-record { font-family: 'DM Mono', monospace; font-size: 11px; color: #5a8aaa; margin-top: 4px; }
+
+  .result-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 6px; }
+  .result-badge.winner { background: var(--red); color: white; }
+  .result-badge.loser { background: #1a2e40; color: #5a8aaa; }
+  .result-badge.retired { background: var(--gold); color: var(--ink); }
+
+  .result-center { background: var(--red); padding: 14px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; }
+  .result-method { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; color: white; letter-spacing: 0.05em; line-height: 1; }
+  .result-scores { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.7); margin-top: 5px; text-align: center; letter-spacing: 0.05em; line-height: 1.6; }
+
+  .cover-deck { font-family: 'Playfair Display', serif; font-size: 12.5px; font-style: italic; color: #4a7090; text-align: center; border-top: 1px solid #1a2e40; padding-top: 10px; line-height: 1.5; }
+
+  /* BODY */
+  .body { padding: 0 28px 28px; }
+
+  .section-head { display: flex; align-items: center; gap: 10px; margin: 22px 0 13px; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ocean); white-space: nowrap; }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); opacity: 0.15; }
+
+  .story-head { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 6px; }
+  .story-deck { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--muted); line-height: 1.45; margin-bottom: 13px; border-left: 3px solid var(--ocean); padding-left: 12px; }
+
+  .story-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.72; color: var(--ink); column-count: 2; column-gap: 26px; margin-bottom: 14px; }
+  .story-body p { margin-bottom: 10px; }
+  .story-body p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; float: left; line-height: 0.85; margin: 4px 6px 0 0; color: var(--ocean); }
+
+  .pull-quote { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 12px 0; margin: 16px 0; text-align: center; }
+  .pull-quote-text { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--ink); line-height: 1.45; }
+  .pull-quote-attr { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+
+  /* ROUND TABLE */
+  .rounds-table { width: 100%; border-collapse: collapse; font-family: 'DM Mono', monospace; font-size: 11px; margin-bottom: 6px; }
+  .rounds-table th { background: var(--ink); color: var(--newsprint); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 7px 10px; text-align: left; font-weight: 500; }
+  .rounds-table td { padding: 7px 10px; border-bottom: 1px solid var(--light-rule); vertical-align: top; }
+  .rounds-table tr:nth-child(even) td { background: rgba(0,0,0,0.03); }
+  .round-num { font-weight: 700; color: var(--ocean); white-space: nowrap; }
+  .round-score { text-align: center; font-weight: 700; white-space: nowrap; color: var(--ocean-light); }
+  .round-note { font-family: 'Barlow', sans-serif; font-size: 12px; color: var(--ink); line-height: 1.5; }
+
+  /* COMPUBOX */
+  .stats-block { background: var(--aged); padding: 14px 16px; margin-bottom: 10px; }
+  .stats-title { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+
+  .stat-row { display: grid; grid-template-columns: 70px 1fr 70px; gap: 14px; align-items: center; margin-bottom: 4px; }
+  .stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; line-height: 1; }
+  .stat-val.fury { color: var(--red); text-align: right; }
+  .stat-val.makh { color: var(--muted); text-align: left; }
+  .stat-bar-wrap { position: relative; height: 7px; background: var(--light-rule); border-radius: 1px; overflow: hidden; }
+  .stat-bar { position: absolute; top: 0; height: 100%; }
+  .stat-bar.fury-bar { background: var(--red); left: 0; }
+  .stat-bar.makh-bar { background: var(--muted); right: 0; }
+  .stat-label-row { display: grid; grid-template-columns: 70px 1fr 70px; gap: 14px; margin-bottom: 12px; }
+  .stat-label { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+  .stat-label.l { text-align: right; }
+  .stat-label.r { text-align: left; }
+
+  /* VERDICTS */
+  .verdicts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .verdict-card { border: 1px solid var(--light-rule); padding: 12px 14px; }
+  .verdict-status { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 2px solid; }
+  .verdict-status.exceeded { color: var(--red); border-color: var(--red); }
+  .verdict-status.delivered { color: #2a6e3a; border-color: #2a6e3a; }
+  .verdict-status.missed { color: var(--muted); border-color: var(--light-rule); }
+  .verdict-status.unverified { color: var(--gold); border-color: var(--gold); }
+  .verdict-name { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
+  .verdict-note { font-family: 'Barlow', sans-serif; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+  /* CO-FIGHTS */
+  .co-block { border: 1px solid var(--light-rule); padding: 14px 16px; margin-bottom: 10px; }
+  .co-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .co-title { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .co-result { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-top: 2px; }
+  .co-badge { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .co-badge.hit { background: #2a6e3a; color: white; }
+  .co-badge.miss { background: var(--red); color: white; }
+  .co-badge.partial { background: var(--gold); color: var(--ink); }
+  .co-scores { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+  .co-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: var(--ink); line-height: 1.65; }
+
+  /* PROSPECT WATCH UPDATE */
+  .prospect-update { background: #0f1e0f; border-left: 3px solid var(--gold); padding: 14px 18px; margin-bottom: 10px; }
+  .prospect-update-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .prospect-update-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; margin-bottom: 3px; }
+  .prospect-update-result { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); margin-bottom: 8px; }
+  .prospect-update-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: #a8c4a8; line-height: 1.65; }
+
+  /* ACCURACY */
+  .accuracy-block { background: var(--ink); padding: 18px 22px; margin-bottom: 10px; }
+  .accuracy-title { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .accuracy-grid { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+  .accuracy-items { display: flex; flex-direction: column; gap: 6px; }
+  .accuracy-item { display: flex; align-items: baseline; gap: 8px; }
+  .acc-badge { font-family: 'DM Mono', monospace; font-size: 8px; font-weight: 500; padding: 2px 6px; letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; }
+  .acc-badge.hit { background: #2a6e3a; color: white; }
+  .acc-badge.miss { background: var(--red); color: white; }
+  .acc-badge.partial { background: #5a4a1a; color: var(--gold); }
+  .acc-desc { font-family: 'Barlow', sans-serif; font-size: 11.5px; color: #7a8a9a; line-height: 1.4; }
+  .grade-block { text-align: center; border-left: 1px solid #1a2e40; padding-left: 20px; }
+  .grade-letter { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; line-height: 1; }
+  .grade-letter.b { color: var(--ocean-light); }
+  .grade-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #4a6a7a; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
+  .accuracy-note { font-family: 'Barlow', sans-serif; font-size: 11px; font-style: italic; color: #4a6a7a; margin-top: 14px; padding-top: 12px; border-top: 1px solid #1a2e40; line-height: 1.5; }
+
+  /* LESSON FILE */
+  .lesson-block { background: var(--aged); border-left: 3px solid var(--gold); padding: 12px 14px; margin-bottom: 10px; }
+  .lesson-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .lesson-item { font-family: 'Barlow', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; padding-left: 14px; position: relative; }
+  .lesson-item::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .legacy-head { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .legacy-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.7; color: var(--ink); column-count: 2; column-gap: 26px; }
+  .legacy-body p { margin-bottom: 10px; }
+
+  hr.divider { border: none; border-top: 1px solid var(--light-rule); margin: 18px 0; }
+  hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.1; margin: 20px 0; }
+
+  /* BACK COVER */
+  .back-cover { background: var(--ink); padding: 22px 28px 26px; border-top: 4px solid var(--ocean-light); }
+  .back-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+  .bc-title { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--ocean-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #1a2e40; }
+  .bc-row { margin-bottom: 7px; }
+  .bc-row-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--newsprint); }
+  .bc-row-val { font-family: 'Barlow', sans-serif; font-size: 11px; color: #3a6080; margin-top: 1px; line-height: 1.4; }
+  .back-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #1a2e40; padding-top: 14px; }
+  .back-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; }
+  .back-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #2a4a5a; letter-spacing: 0.08em; text-align: right; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 7 · Recap Edition</span>
+      <span class="masthead-meta">Tottenham Hotspur Stadium · London, England</span>
+      <span class="masthead-meta">Saturday, April 11, 2026</span>
+    </div>
+    <div class="masthead-title">
+      <div class="blotter-name">The Boxing Blotter</div>
+      <div class="blotter-rule">
+        <div class="blotter-rule-line"></div>
+        <div class="blotter-tagline">Documents Before · Scores During · Grades After</div>
+        <div class="blotter-rule-line"></div>
+      </div>
+    </div>
+    <div class="edition-bar">
+      <span class="edition-label">Post-Fight · Netflix · Heavyweight · British Title · Prospect Watch Confirmed</span>
+      <span class="edition-label">@boxingblotter</span>
+    </div>
+  </header>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-label">Main Event Result · Heavyweight · 12 Rounds · Tottenham Hotspur Stadium · Netflix</div>
+
+    <div class="cover-headline">
+      <h1>Back.<br>But Not<br><em>Dominant.</em></h1>
+      <div class="cover-sub">Fury won all the rounds that mattered. The crowd wanted him to finish. He didn't. The questions about what is left answered partially — but not finally.</div>
+    </div>
+
+    <div class="result-block">
+      <div class="result-fighter left">
+        <div class="result-name">Tyson<br>Fury</div>
+        <div class="result-record">35-2-1 · 24 KOs</div>
+        <div style="margin:5px 0;"><span class="result-badge winner">WINNER · UNANIMOUS DECISION</span></div>
+      </div>
+      <div class="result-center">
+        <div class="result-method">UD</div>
+        <div class="result-scores">120-108<br>120-108<br>119-109</div>
+      </div>
+      <div class="result-fighter right">
+        <div class="result-name">Arslanbek<br>Makhmudov</div>
+        <div class="result-record">21-3 · 19 KOs</div>
+        <div style="margin:5px 0;"><span class="result-badge loser">Survived · Held</span></div>
+      </div>
+    </div>
+
+    <div class="cover-deck">
+      CompuBox: Fury outlanded Makhmudov 106-44 through round 9 · Makhmudov's tactic: wrestle and hold at every clinch<br>
+      Fury called out Anthony Joshua from the ring · Joshua was ringside · "Let's give the fans the battle of Britain"
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <div class="section-head">
+      <span class="section-label">Game Story</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="story-head">The Rust Was Real. So Was the Control.</div>
+    <div class="story-deck">Fury outboxed Makhmudov from round three through twelve. He also never turned it up when the opportunity to finish was there. Both things happened. Both things matter.</div>
+
+    <div class="story-body">
+      <p>The opening round belonged to Makhmudov. He came in fast, landed an overhand right before Fury had found his range, and pushed the former champion onto the ropes. The early round danger flag the Blotter raised in the pre-fight program was real — Makhmudov's aggression in the first three minutes was the most dangerous he would be all night. Fury looked uncomfortable. The crowd at Tottenham was nervous.</p>
+
+      <p>Then Fury remembered who he was. From round three onward he controlled the fight with his jab and right uppercut, walking Makhmudov onto shots at close range, landing consistently to the body, and building a lead that was never seriously in question. By round nine, CompuBox tracked Fury outlanding Makhmudov 106-44. That is not a close fight. That is a dominant performance on the punch statistics.</p>
+
+      <p>The problem — and the reason the Tottenham crowd went quiet — was what Fury didn't do with the lead. In the second half of the contest, on multiple occasions, Fury had Makhmudov hurt and chose not to escalate. His corner told him to go for the knockout entering the championship rounds. He worked the body and the jab instead. Makhmudov's tactic of clinching at every opportunity aided his survival, but survival was possible partly because Fury allowed it.</p>
+
+      <p>The Blotter called Fury TKO rounds 5-8. The winner was correct. The method was wrong. The performance was better than a near-shutout scorecard suggests and worse than the crowd expected. The honest analytical reading: Fury at 37, returning after 16 months, with two Usyk losses behind him, outboxed a man who had been stopped twice by quality heavyweights and never really looked like he belonged at this level. That is a win. What it is not is the statement performance that makes Anthony Joshua look at the Joshua fight as a risk he can afford to take.</p>
+    </div>
+
+    <!-- THE MOMENT -->
+    <div class="section-head">
+      <span class="section-label">The Moment</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div style="background:var(--ink); padding:18px 22px; margin-bottom:14px; position:relative;">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; color:var(--red); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px; padding-left:28px;">Round 10 — Vintage. Brief. Not Enough.</div>
+      <div style="font-family:'Playfair Display',serif; font-size:15px; font-style:italic; color:var(--newsprint); line-height:1.5; padding-left:28px;">Fury spun beautifully off the ropes and unloaded a combination that landed clean — head movement, pivot, volume, timing all present simultaneously. The crowd rose. That was the fighter they came to see. It lasted one sequence. Makhmudov held and it ended. The moment was real. It was also the exception, not the rule, and the crowd knew the difference.</div>
+      <div style="font-family:'DM Mono',monospace; font-size:9px; color:#4a6a7a; letter-spacing:0.1em; margin-top:8px; padding-left:28px;">— The fight in one passage. The best Fury was there. It was not the whole night.</div>
+    </div>
+
+    <!-- ROUND BY ROUND -->
+    <div class="section-head">
+      <span class="section-label">Round by Round</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <table class="rounds-table">
+      <thead>
+        <tr>
+          <th style="width:55px">Round</th>
+          <th style="width:75px; text-align:center;">Score</th>
+          <th>Narrative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="round-num">R1</td><td class="round-score">10–9 M</td><td class="round-note">Makhmudov comes out fast, overhand right lands, pushes Fury to the ropes. Fury slow to establish his jab. Most competitive round of the fight.</td></tr>
+        <tr><td class="round-num">R2</td><td class="round-score">10–9 F</td><td class="round-note">Fury begins to find range. Jab starts landing. Right uppercut at close range scores. Makhmudov sloppy in his approach. Fury still shaking off ring rust but in control.</td></tr>
+        <tr><td class="round-num">R3–5</td><td class="round-score">10–9 F ×3</td><td class="round-note">Fury establishes control. Jab consistent, body work begins. Makhmudov holds at every clinch. Early round danger window closes. Fury growing more comfortable with each minute.</td></tr>
+        <tr><td class="round-num">R6–7</td><td class="round-score">10–9 F ×2</td><td class="round-note">Fury working uppercut into his attack — lands cleanly enough that the finish seems possible. Corner instructs him to go for it. He stays disciplined to his jab instead. Crowd grows restless.</td></tr>
+        <tr><td class="round-num">R8–9</td><td class="round-score">10–9 F ×2</td><td class="round-note">Most one-sided stretch of the fight. Fury outlanding Makhmudov 106-44 through R9. Body shots. Uppercuts. Makhmudov taking a knee in a clinch in R9. Clearly exhausted. Fury not turning up the volume.</td></tr>
+        <tr><td class="round-num">R10</td><td class="round-score">10–9 F</td><td class="round-note">Fury spins off the ropes and unloads — the one sequence of vintage Gypsy King the crowd came for. Doesn't follow up. Makhmudov survives into the clinch again. Crowd briefly ignites, then quiets.</td></tr>
+        <tr><td class="round-num">R11–12</td><td class="round-score">10–9 F ×2</td><td class="round-note">SugarHill tells Fury to stop for the knockout entering R11. Body shots and uppercuts keep coming but Makhmudov holds and survives. Final bell. Scores read 120-108 twice, 119-109. Near shutout.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- PULL QUOTE -->
+    <div class="pull-quote">
+      <div class="pull-quote-text">"I want you, AJ — Anthony Joshua. Let's give the fight fans what they want — the battle of Britain."</div>
+      <div class="pull-quote-attr">— Tyson Fury · Post-fight, Tottenham Hotspur Stadium · Joshua was ringside</div>
+    </div>
+
+    <!-- COMPUBOX -->
+    <div class="section-head">
+      <span class="section-label">Punch Statistics</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="stats-block">
+      <div class="stats-title">CompuBox · Through Round 9 (verified) · Source: Yahoo Sports fight coverage</div>
+
+      <div class="stat-row">
+        <div class="stat-val fury">106</div>
+        <div class="stat-bar-wrap"><div class="stat-bar fury-bar" style="width:71%"></div><div class="stat-bar makh-bar" style="width:29%"></div></div>
+        <div class="stat-val makh">44</div>
+      </div>
+      <div class="stat-label-row">
+        <div class="stat-label l">FURY</div>
+        <div class="stat-label">TOTAL LANDED (thru R9)</div>
+        <div class="stat-label r">MAKHMUDOV</div>
+      </div>
+
+      <div style="font-family:'Barlow',sans-serif; font-size:11.5px; font-style:italic; color:var(--muted); margin-top:6px; line-height:1.5;">
+        A 106-44 punch differential through nine rounds is not a close fight. Fury controlled the distance, won rounds cleanly, and outlanded his opponent by more than 2:1. The issue was never the scorecards. It was what those numbers felt like from the crowd's perspective — technically sound, physically dominant, and curiously reluctant to go for the finish.
+      </div>
+    </div>
+
+    <!-- VERDICTS -->
+    <div class="section-head">
+      <span class="section-label">Player Verdicts</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="verdicts-grid">
+      <div class="verdict-card">
+        <div class="verdict-status delivered">Delivered</div>
+        <div class="verdict-name">Tyson Fury</div>
+        <div class="verdict-note">Won cleanly. Controlled every round after the first. Showed enough jab, enough movement, and enough ring intelligence to confirm that the core skills are still there. Did not show the finishing instinct or the sustained power that made him the best heavyweight in the world. Whether that is the 16-month layoff or something more permanent is the question that remains open. Joshua fight will be the answer.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-status missed">Below Expectations</div>
+        <div class="verdict-name">Arslanbek Makhmudov</div>
+        <div class="verdict-note">The early danger was real. After round two, nothing. He held at every clinch, never found a clean sequence, and was largely an unwilling participant in his own performance — using survival tactics to protect his record rather than any aggressive game plan. He was stopped twice before this fight. He was not stopped tonight because Fury chose not to finish him. That distinction belongs in the analytical file.</div>
+      </div>
+    </div>
+
+    <hr class="divider-heavy">
+
+    <!-- CO-MAIN: BENN vs PROGRAIS -->
+    <div class="section-head">
+      <span class="section-label">Co-Main Result — A Volunteer's Final Night</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="co-block">
+      <div class="co-header">
+        <div>
+          <div class="co-title">150lb Catchweight · 10 Rounds</div>
+          <div class="co-result">Conor Benn def. Regis Prograis — Unanimous Decision</div>
+        </div>
+        <span class="co-badge partial">Partial Hit</span>
+      </div>
+      <div class="co-scores">98-92 · 98-92 · 98-92 · Benn now 25-1 · Prograis retires 30-4</div>
+      <div class="co-body">
+        The Blotter called Benn TKO rounds 4-8. Benn won every round on every card but never pulled the trigger. The winner was correct. The method was wrong. That said, the analytical framing holds up on review: Benn's body work and jab controlled the fight. Prograis, fighting with a leg injury that was visible from the opening bell — he wobbled in round one from a right hand and never looked balanced throughout — gave a game account of himself in the middle rounds but faded as the size differential wore him down. Benn cuts over both eyes from head clashes didn't change the outcome. The 98-92 scorecards were correct. The fight was lethargic. The $15 million debut did not deliver the performance the billing demanded.
+
+        The story that matters more than the scorecard: Regis Prograis announced his retirement after the fight. He applauded the decision, stepped to the microphone, and said this was his last night. The Volunteer's final act was to accept a fight against a bigger, younger, fresher opponent at a weight above his natural class, in the opponent's home country, and compete with dignity for ten rounds. He was never going to win. He went anyway. The Blueprint notes that without equivocation. That is what the Volunteer profile looks like at the end.
+      </div>
+    </div>
+
+    <!-- BRITISH TITLE -->
+    <div class="section-head">
+      <span class="section-label">British Heavyweight Title — The David Haye Path Opens</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="co-block">
+      <div class="co-header">
+        <div>
+          <div class="co-title">British Heavyweight Title · 12 Rounds</div>
+          <div class="co-result">Richard Riakporhe def. Jeamie TKV Tshikeva — TKO Round 5</div>
+        </div>
+        <span class="co-badge hit">Hit</span>
+      </div>
+      <div class="co-scores">Riakporhe now 20-1, 16 KOs · New British Heavyweight Champion · Stoppage at 2:12 R5 · TKV now 9-3</div>
+      <div class="co-body">
+        Called Riakporhe TKO rounds 5-9. It happened in round 5. Clean hit. The execution was exactly as the Blueprint projected — Riakporhe applied steady pressure, bloodied Tshikeva's nose by round two, received a point deduction against TKV for headbutting in round four, and finished the job in round five with a right hand that dropped the champion. Tshikeva beat the count but couldn't defend and the referee stepped in at 2:12.
+
+        The David Haye comparison Riakporhe made himself — British cruiserweight champion to British heavyweight champion to WBA heavyweight world title — is now one step completed. He is a two-time British champion in two different divisions. He spoke after the fight exactly as someone who knows where the path leads: "I don't like watching long fights. I'm going to keep on training to knock people out." The Blotter watches Riakporhe's next fight with genuine analytical interest.
+
+        Note on TKV: He defended his title fighting in the stadium two blocks from where he grew up. The home postcode crowd was real. Riakporhe was better. TKV's grit — the quality that beat Clarke — was present but insufficient against a man with Riakporhe's power and experience. That is not a failure of character. It is an honest result.
+      </div>
+    </div>
+
+    <!-- HUNI vs CLARKE -->
+    <div class="section-head">
+      <span class="section-label">Prospect Watch — Verification Result</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="prospect-update">
+      <div class="prospect-update-label">⚡ Prospect Watch Vol. I · Entry No. 2 — Verification Filed</div>
+      <div class="prospect-update-name">Justis Huni · Majority Decision Win · Clarke</div>
+      <div class="prospect-update-result">13-1 · 7 KOs · Scores: 96-94 · 96-94 · 95-95 · Won championship rounds to take the fight</div>
+      <div class="prospect-update-body">
+        Called Huni UD. He won a majority decision — one judge had it even. The winner was correct. The one even scorecard tells an honest story: Clarke was competitive through the middle rounds and made Huni work for every round in the second half of the fight. Huni won the championship rounds — precisely the verification threshold the Blotter set in the pre-fight program. He did not face Wardley-level adversity, but he showed he could close a fight against a motivated Olympic bronze medalist when the championship rounds mattered. The Prospect Watch thesis holds. Clarke at 34 slides further from contention. Huni at 27 with a new trainer and a hard majority decision win moves forward. The Blotter keeps his entry active with the championship round question now partially answered.
+      </div>
+    </div>
+
+    <div class="co-block">
+      <div class="co-header">
+        <div>
+          <div class="co-title">Heavyweight · 10 Rounds</div>
+          <div class="co-result">Justis Huni def. Frazer Clarke — Majority Decision</div>
+        </div>
+        <span class="co-badge partial">Partial Hit</span>
+      </div>
+      <div class="co-scores">96-94 · 96-94 · 95-95 · Huni now 13-1 · Clarke now 9-3-1</div>
+      <div class="co-body">Called Huni UD. Correct winner, majority decision not unanimous. Clarke built into the fight through the middle rounds and had his moments. Huni's size, speed, and footwork gave him the edge in the championship rounds. Both men under new trainers — both adjusting in real time. The result is a sorting mechanism, as the Blotter described it pre-fight. Clarke at 34 with three losses and three failed British title attempts. Window narrowing.</div>
+    </div>
+
+    <!-- PRELIM WRAP -->
+    <div class="section-head">
+      <span class="section-label">Prelim Wrap — Prospect Watch Entries Confirmed</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="prospect-update" style="margin-bottom:10px;">
+      <div class="prospect-update-label">⚡ Prospect Watch Vol. I · Entry No. 1 — Third Consecutive Major Stage · Third Escalating Performance</div>
+      <div class="prospect-update-name">Mikie Tallon · KO Round 1 · Blanc</div>
+      <div class="prospect-update-result">13-0 · 3 KOs · Las Vegas (Canelo week) → Tottenham (Eubank-Benn II) → Tottenham Netflix. Bigger stage. Better finish. Same pattern.</div>
+      <div class="prospect-update-body">
+        Three major cards. Three escalating performances. Tonight on Netflix at Tottenham Hotspur Stadium in front of 62,850 people, Tallon stopped his man in round one. The Blotter filed his Prospect Watch entry four hours ago in the pre-fight program. The verification came the same night. The thesis — he performs at the level of the stage he is on, not below it — is confirmed for a third consecutive time. Entry upgraded. The British title remains the stated goal for 2026. When it arrives, the Blotter will be in the seat.
+      </div>
+    </div>
+
+    <div style="background:var(--aged); padding:12px 16px; margin-bottom:10px;">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid var(--light-rule);">Other Prelim Results</div>
+
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px; padding-bottom:7px; border-bottom:1px solid rgba(0,0,0,0.05);">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase;">Breyon Gorham def. Eduardo Costa</div>
+          <div style="font-family:'Barlow',sans-serif; font-size:11px; color:var(--muted);">Gorham now 21-0, 16 KOs · Blotter call: TKO 5-8 → TKO R5 · Hit</div>
+        </div>
+        <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--ocean);">TKO · R5 · SL</div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase;">Pawel August def. Simon Zachenhuber</div>
+          <div style="font-family:'Barlow',sans-serif; font-size:11px; color:var(--muted);">August now 18-0 · Zachenhuber suffers first loss (was 28-0) · Blotter called upset correctly</div>
+        </div>
+        <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--ocean);">UD · 58-56 · SMW</div>
+      </div>
+    </div>
+
+    <!-- ACCURACY REPORT -->
+    <div class="section-head">
+      <span class="section-label">Blueprint Accuracy Report</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="accuracy-block">
+      <div class="accuracy-title">Vol. I · No. 7 · Post-Fight Self-Assessment</div>
+      <div class="accuracy-grid">
+        <div class="accuracy-items">
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Fury winner — correct</span></div>
+          <div class="accuracy-item"><span class="acc-badge miss">MISS</span><span class="acc-desc">Fury method — called TKO 5-8, went UD near-shutout</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Benn winner — correct</span></div>
+          <div class="accuracy-item"><span class="acc-badge miss">MISS</span><span class="acc-desc">Benn method — called TKO 4-8, went UD 98-92</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Riakporhe winner and method — TKO R5, within 5-9 range</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Huni winner — correct</span></div>
+          <div class="accuracy-item"><span class="acc-badge partial">PARTIAL</span><span class="acc-desc">Huni method — called UD, got majority decision (one judge even)</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Early round Danger Flag — Makhmudov was dangerous in R1 exactly as flagged</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Volunteer framing on Prograis — confirmed by his post-fight retirement announcement</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Gorham TKO R5, Tallon KO R1, August upset — all correct</span></div>
+        </div>
+        <div class="grade-block">
+          <div class="grade-letter b">B</div>
+          <div class="grade-label">Blueprint<br>Grade</div>
+        </div>
+      </div>
+      <div class="accuracy-note">4 of 4 winners correct. Clean hit on British title method. Two main card method misses — called TKO in both Fury and Benn fights, both went to wide decisions. The Blueprint correctly identified the early round danger to Fury, correctly identified Prograis's Volunteer profile, and filed the Tallon and Huni Prospect Watch entries that were confirmed the same night. The method calls cost the A. Four correct winners, honest analytical framing throughout, two misses in the method projections. B is the grade.</div>
+    </div>
+
+    <!-- LESSON FILE -->
+    <div class="section-head">
+      <span class="section-label">Lesson File — New Entries</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="lesson-block">
+      <div class="lesson-label">Permanent Lesson File · April 11, 2026</div>
+      <div class="lesson-item">A fighter returning after 16 months with two documented losses to the pound-for-pound number one, against an opponent who was stopped by two quality fighters and never went past early rounds, may win dominantly on the scorecards without showing finishing instinct. Form decline + rust + safe opponent is not the same combination as form decline + rust + dangerous opponent. The Fury call should have accounted for the type of win available — near-shutout decision rather than stopping — given Makhmudov's survival instinct and holding tactics.</div>
+      <div class="lesson-item">A fight with a pre-confirmed leg injury on one side (Prograis, rumored and then verified by his movement throughout) changes the method projection significantly. If Benn knew he was fighting an injured Prograis, the finishing instinct to go through the gears was reduced because the submission risk was also reduced. Injury intelligence — when credibly sourced — must factor into method projections, not just winner projections.</div>
+      <div class="lesson-item">The Volunteer profile applied to Prograis was the correct framing and was confirmed by his retirement announcement. When the analytical frame is right before the fight and confirmed by events after it, that is the Blotter doing its job. The scorecard miss doesn't erase the framing correctness.</div>
+    </div>
+
+    <!-- LEGACY -->
+    <div class="section-head">
+      <span class="section-label">Legacy</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="legacy-head">What Saturday Night Left Behind</div>
+    <div class="legacy-body">
+      <p>Fury called out Anthony Joshua. Joshua was sitting ringside. Joshua gave the cameras a response that suggested he wasn't ready to commit. Netflix confirmed they are working on the fight. The Blueprint will have a program when it is official. The Gypsy King versus AJ — the fight British boxing has been waiting for, finally without world titles involved, both men past their peak and both with something to prove. If it happens, 62,850 at Tottenham will feel like a rehearsal.</p>
+      <p>Regis Prograis retired. He stood at the microphone at 37 years old, in a foreign country, in a fight he was never going to win, and said this was his last night. He fought Josh Taylor, Devin Haney, Jack Catterall, and Conor Benn in his final chapter. He took every hard fight available. The Volunteer profile is confirmed across a career and a retirement speech. The Boxing Blotter notes it with the respect it deserves.</p>
+      <p>Richard Riakporhe is the British heavyweight champion. He has now won British titles at cruiserweight and heavyweight. The David Haye path is real. Nobody else in the division is walking it faster.</p>
+    </div>
+
+  </div>
+
+  <!-- BACK COVER -->
+  <div class="back-cover">
+    <div class="back-grid">
+      <div>
+        <div class="bc-title">All Results</div>
+        <div class="bc-row"><div class="bc-row-label">Main Event</div><div class="bc-row-val">Fury UD Makhmudov · 120-108 ×2 · 119-109</div></div>
+        <div class="bc-row"><div class="bc-row-label">Co-Main</div><div class="bc-row-val">Benn UD Prograis · 98-92 ×3 · Prograis retires</div></div>
+        <div class="bc-row"><div class="bc-row-label">British Title</div><div class="bc-row-val">Riakporhe TKO5 Tshikeva · 2:12 R5</div></div>
+        <div class="bc-row"><div class="bc-row-label">HW Undercard</div><div class="bc-row-val">Huni MD Clarke · 96-94 ×2 · 95-95</div></div>
+        <div class="bc-row"><div class="bc-row-label">Prelims</div><div class="bc-row-val">Gorham TKO5 · Tallon KO1 · August UD (upset)</div></div>
+      </div>
+
+      <div>
+        <div class="bc-title">Blueprint Grade: B</div>
+        <div class="bc-row"><div class="bc-row-label">Winners</div><div class="bc-row-val">4/4 correct</div></div>
+        <div class="bc-row"><div class="bc-row-label">Method hits</div><div class="bc-row-val">Riakporhe TKO R5 ✓ · Gorham TKO R5 ✓</div></div>
+        <div class="bc-row"><div class="bc-row-label">Method misses</div><div class="bc-row-val">Fury UD not TKO · Benn UD not TKO</div></div>
+        <div class="bc-row"><div class="bc-row-label">Partial</div><div class="bc-row-val">Huni MD not UD · one judge even</div></div>
+        <div class="bc-row"><div class="bc-row-label">Framing</div><div class="bc-row-val">Early danger flag ✓ · Prograis Volunteer ✓</div></div>
+      </div>
+
+      <div>
+        <div class="bc-title">What's Next</div>
+        <div class="bc-row"><div class="bc-row-label">Fury targeting</div><div class="bc-row-val">Anthony Joshua · Netflix confirmed working on it</div></div>
+        <div class="bc-row"><div class="bc-row-label">Prograis</div><div class="bc-row-val">Retired · 30-4 · Volunteer profile confirmed</div></div>
+        <div class="bc-row"><div class="bc-row-label">Riakporhe</div><div class="bc-row-val">New British HW champion · David Haye path active</div></div>
+        <div class="bc-row"><div class="bc-row-label">Prospect Watch</div><div class="bc-row-val">Tallon KO1 confirmed · Huni MD thesis active</div></div>
+        <div class="bc-row"><div class="bc-row-label">Next program</div><div class="bc-row-val">Inoue vs. Nakatani · May 2, Tokyo</div></div>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      <div class="back-brand">The Boxing Blotter</div>
+      <div class="back-meta">
+        Vol. I · No. 7 · Recap Edition · April 11, 2026<br>
+        Story First Blueprint · Scout's Chair Standard<br>
+        boxingblotter.com · @boxingblotter
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — Inoue vs. Nakatani Recap · Tokyo Dome · May 2, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0608;
+    --newsprint: #f5eee8;
+    --aged: #ece0d8;
+    --crimson: #a81420;
+    --crimson-light: #cc2030;
+    --gold: #b89240;
+    --rule: #1a0808;
+    --muted: #6b3a3a;
+    --light-rule: #d4b8b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #080204; font-family: 'Barlow', sans-serif; color: var(--ink); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--newsprint); box-shadow: 0 0 100px rgba(168,20,32,0.3); }
+
+  .masthead { background: var(--ink); border-bottom: 4px solid var(--crimson); }
+  .masthead-top { display: flex; justify-content: space-between; padding: 10px 24px 6px; border-bottom: 1px solid #2a0808; }
+  .masthead-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #7a3a3a; text-transform: uppercase; letter-spacing: 0.08em; }
+  .masthead-title { text-align: center; padding: 14px 24px 10px; }
+  .blotter-name { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: var(--newsprint); letter-spacing: -0.01em; line-height: 1; text-transform: uppercase; }
+  .blotter-rule { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .blotter-rule-line { flex: 1; height: 1px; background: var(--gold); }
+  .blotter-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; white-space: nowrap; }
+  .edition-bar { background: var(--crimson); padding: 5px 24px; display: flex; justify-content: space-between; }
+  .edition-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: white; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  .cover { background: var(--ink); padding: 28px 28px 22px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(168,20,32,0.1) 0%, transparent 55%); pointer-events: none; }
+
+  .cover-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: var(--crimson-light); letter-spacing: 0.3em; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
+
+  .cover-headline { text-align: center; margin-bottom: 20px; }
+  .cover-headline h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 76px; font-weight: 900; color: var(--newsprint); line-height: 0.86; text-transform: uppercase; }
+  .cover-headline h1 em { font-style: normal; color: var(--crimson-light); }
+  .cover-sub { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: #6a2a2a; text-align: center; margin-top: 10px; line-height: 1.5; }
+
+  .result-block { display: grid; grid-template-columns: 1fr auto 1fr; border: 1px solid #2a0808; margin-bottom: 8px; }
+  .result-fighter { padding: 14px 16px; text-align: center; }
+  .result-fighter.left { border-right: 1px solid #2a0808; }
+  .result-fighter.right { border-left: 1px solid #2a0808; }
+  .result-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; line-height: 1; }
+  .result-record { font-family: 'DM Mono', monospace; font-size: 11px; color: #7a3a3a; margin-top: 4px; }
+  .result-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 5px; }
+  .result-badge.winner { background: var(--crimson); color: white; }
+  .result-badge.loser { background: #2a0808; color: #7a3a3a; }
+  .result-center { background: var(--crimson); padding: 14px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; }
+  .result-method { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; color: white; line-height: 1; }
+  .result-scores { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.7); margin-top: 5px; text-align: center; line-height: 1.6; }
+
+  .cover-deck { font-family: 'Playfair Display', serif; font-size: 12.5px; font-style: italic; color: #4a1818; text-align: center; border-top: 1px solid #2a0808; padding-top: 10px; line-height: 1.55; }
+
+  .body { padding: 0 28px 28px; }
+
+  .section-head { display: flex; align-items: center; gap: 10px; margin: 22px 0 13px; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson); white-space: nowrap; }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); opacity: 0.12; }
+
+  .story-head { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 6px; }
+  .story-deck { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--muted); line-height: 1.45; margin-bottom: 13px; border-left: 3px solid var(--crimson); padding-left: 12px; }
+  .story-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.72; color: var(--ink); column-count: 2; column-gap: 26px; margin-bottom: 14px; }
+  .story-body p { margin-bottom: 10px; }
+  .story-body p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; float: left; line-height: 0.85; margin: 4px 6px 0 0; color: var(--crimson); }
+
+  .moment-box { background: var(--ink); padding: 18px 22px; margin-bottom: 14px; }
+  .moment-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--crimson-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .moment-text { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--newsprint); line-height: 1.5; }
+  .moment-attr { font-family: 'DM Mono', monospace; font-size: 9px; color: #4a1818; letter-spacing: 0.1em; margin-top: 8px; }
+
+  .rounds-table { width: 100%; border-collapse: collapse; font-family: 'DM Mono', monospace; font-size: 11px; margin-bottom: 6px; }
+  .rounds-table th { background: var(--ink); color: var(--newsprint); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 7px 10px; text-align: left; font-weight: 500; }
+  .rounds-table td { padding: 7px 10px; border-bottom: 1px solid var(--light-rule); vertical-align: top; }
+  .rounds-table tr:nth-child(even) td { background: rgba(0,0,0,0.03); }
+  .round-num { font-weight: 700; color: var(--crimson); white-space: nowrap; }
+  .round-score { text-align: center; font-weight: 700; white-space: nowrap; color: var(--crimson-light); }
+  .round-note { font-family: 'Barlow', sans-serif; font-size: 12px; color: var(--ink); line-height: 1.5; }
+  .key-row td { background: rgba(168,20,32,0.05) !important; }
+
+  .pull-quote { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 12px 0; margin: 16px 0; text-align: center; }
+  .pull-quote-text { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--ink); line-height: 1.45; }
+  .pull-quote-attr { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+
+  .verdicts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .verdict-card { border: 1px solid var(--light-rule); padding: 12px 14px; }
+  .verdict-status { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 2px solid; }
+  .verdict-status.exceeded { color: var(--crimson); border-color: var(--crimson); }
+  .verdict-status.delivered { color: #2a6e3a; border-color: #2a6e3a; }
+  .verdict-name { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
+  .verdict-note { font-family: 'Barlow', sans-serif; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+  .accuracy-block { background: var(--ink); padding: 18px 22px; margin-bottom: 10px; }
+  .accuracy-title { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .accuracy-grid { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+  .accuracy-items { display: flex; flex-direction: column; gap: 6px; }
+  .accuracy-item { display: flex; align-items: baseline; gap: 8px; }
+  .acc-badge { font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 6px; letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; }
+  .acc-badge.hit { background: #2a6e3a; color: white; }
+  .acc-badge.miss { background: var(--crimson); color: white; }
+  .acc-badge.partial { background: #5a4a1a; color: var(--gold); }
+  .acc-desc { font-family: 'Barlow', sans-serif; font-size: 11.5px; color: #7a5a5a; line-height: 1.4; }
+  .grade-block { text-align: center; border-left: 1px solid #2a0808; padding-left: 20px; }
+  .grade-letter { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; line-height: 1; }
+  .grade-letter.b { color: var(--crimson-light); }
+  .grade-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #4a1818; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
+  .accuracy-note { font-family: 'Barlow', sans-serif; font-size: 11px; font-style: italic; color: #4a2a2a; margin-top: 14px; padding-top: 12px; border-top: 1px solid #2a0808; line-height: 1.5; }
+
+  .lesson-block { background: var(--aged); border-left: 3px solid var(--gold); padding: 12px 14px; margin-bottom: 10px; }
+  .lesson-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .lesson-item { font-family: 'Barlow', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; padding-left: 14px; position: relative; }
+  .lesson-item::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .legacy-head { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .legacy-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.7; color: var(--ink); column-count: 2; column-gap: 26px; }
+  .legacy-body p { margin-bottom: 10px; }
+
+  hr.divider { border: none; border-top: 1px solid var(--light-rule); margin: 18px 0; }
+  hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.1; margin: 20px 0; }
+
+  .back-cover { background: var(--ink); padding: 22px 28px 26px; border-top: 4px solid var(--crimson); }
+  .back-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+  .bc-title { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #2a0808; }
+  .bc-row { margin-bottom: 7px; }
+  .bc-row-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--newsprint); }
+  .bc-row-val { font-family: 'Barlow', sans-serif; font-size: 11px; color: #5a2a2a; margin-top: 1px; line-height: 1.4; }
+  .back-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #2a0808; padding-top: 14px; }
+  .back-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; }
+  .back-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #2a0a0a; letter-spacing: 0.08em; text-align: right; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 9 · Recap Edition</span>
+      <span class="masthead-meta">Tokyo Dome · Tokyo, Japan</span>
+      <span class="masthead-meta">Saturday, May 2, 2026</span>
+    </div>
+    <div class="masthead-title">
+      <div class="blotter-name">The Boxing Blotter</div>
+      <div class="blotter-rule">
+        <div class="blotter-rule-line"></div>
+        <div class="blotter-tagline">Documents Before · Scores During · Grades After</div>
+        <div class="blotter-rule-line"></div>
+      </div>
+    </div>
+    <div class="edition-bar">
+      <span class="edition-label">Undisputed Super Bantamweight · Post-Fight · 55,000 at Tokyo Dome · Monster Remains</span>
+      <span class="edition-label">@boxingblotter</span>
+    </div>
+  </header>
+
+  <div class="cover">
+    <div class="cover-label">Main Event Result · Undisputed Super Bantamweight Championship · 12 Rounds</div>
+
+    <div class="cover-headline">
+      <h1>He Demanded<br>Everything.<br>The Monster<br>Had <em>More.</em></h1>
+      <div class="cover-sub">Nakatani gave Inoue the hardest fight of his 122-pound reign. In the championship rounds, as he always does, Inoue pulled away.</div>
+    </div>
+
+    <div class="result-block">
+      <div class="result-fighter left">
+        <div class="result-name">Naoya<br>Inoue</div>
+        <div class="result-record">33-0 · 27 KOs</div>
+        <div style="margin:5px 0;"><span class="result-badge winner">WINNER · UNANIMOUS DECISION · STILL UNDISPUTED</span></div>
+      </div>
+      <div class="result-center">
+        <div class="result-method">UD</div>
+        <div class="result-scores">116-112<br>116-112<br>115-113</div>
+      </div>
+      <div class="result-fighter right">
+        <div class="result-name">Junto<br>Nakatani</div>
+        <div class="result-record">32-1 · 24 KOs</div>
+        <div style="margin:5px 0;"><span class="result-badge loser">First Professional Loss</span></div>
+      </div>
+    </div>
+
+    <div class="cover-deck">
+      55,000 spectators · Tokyo Dome · WBC · WBO · IBF · WBA Super · The Ring Magazine titles retained<br>
+      Nakatani stunned Inoue with an uppercut in R9 · Cut opened over Nakatani's right eye R10 (headclash) · Inoue pulled away in championship rounds
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section-head">
+      <span class="section-label">Game Story</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="story-head">The Hardest Fight of the 122-Pound Reign. The Same Result.</div>
+    <div class="story-deck">Nakatani was not a pretender. He made the champion adjust, made him feel real danger, and then watched the champion pull away anyway. That is what separates Inoue from everyone else.</div>
+
+    <div class="story-body">
+      <p>The Blotter called this the hardest analytical call since the programs started. That assessment was correct — it was the hardest fight of Inoue's undisputed reign at 122 pounds. It was also a decision, not a stoppage, which means the method was wrong. Both of those things belong at the top, together.</p>
+
+      <p>Nakatani was exactly what the pre-fight analysis said he would be: the most technically complete southpaw Inoue has faced at super bantamweight, with the height and reach to create problems from outside Inoue's natural range. He caused real adjustment difficulty in the early rounds. He made Inoue fall short with his jab repeatedly in rounds two and three. The southpaw puzzle was genuine, not manufactured by the program.</p>
+
+      <p>Then Inoue remembered who he is. He cut off the ring with his footwork — the thing that makes him different from other technically gifted fighters — and started winning the battle of the jabs from round four. By round five he had built a healthy lead. The scorecards at the final bell, 116-112 twice and 115-113, reflect a fight that was not close. It felt closer than the numbers because Nakatani had genuine moments. The moments didn't accumulate into rounds. Inoue prevented that.</p>
+
+      <p>The defining passage came in round nine. Nakatani caught Inoue with a southpaw uppercut that briefly stunned the champion — the one moment in the fight where the height advantage created real, visible danger. Inoue absorbed it and finished the round. In round ten, a headclash opened a cut over Nakatani's right eye. From that point, Inoue's speed was a killer. He targeted the cut, widened his lead, and closed the fight with the composure that is his defining characteristic. The championship rounds went to Inoue, as the pre-fight framework said they would. That call was correct even though the method was not.</p>
+
+      <p>Nakatani's stock rose in defeat. He gave Inoue the hardest night of his 122-pound title reign, proved he belonged at the highest level, and took his first professional loss the way a champion takes it — still coming forward in round twelve, still working, still making the champion earn it. At 28 years old and now 32-1, the door to a rematch or a world title at another weight is not closed. He discovered tonight that Inoue is better. He also discovered exactly how much better, and at 28, that information has value.</p>
+    </div>
+
+    <div class="section-head">
+      <span class="section-label">The Moment</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="moment-box">
+      <div class="moment-label">Round 9 · The Uppercut That Landed · The Answer That Followed</div>
+      <div class="moment-text">Nakatani times Inoue coming in and catches him flush with a southpaw uppercut. The champion's head snaps back. The Tokyo Dome makes a sound nobody expected. For three seconds, the question of the night — can Nakatani hurt Inoue? — is answered. Then Inoue finishes the round. And comes out for round ten. And wins the championship rounds. The southpaw could hurt him. He couldn't stop him. That is the full story of this fight in one passage.</div>
+      <div class="moment-attr">— The moment the challenger proved his credentials. And the moment the champion proved why the credentials weren't enough.</div>
+    </div>
+
+    <div class="section-head">
+      <span class="section-label">Round by Round</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <table class="rounds-table">
+      <thead>
+        <tr>
+          <th style="width:55px">Round</th>
+          <th style="width:75px; text-align:center;">Score</th>
+          <th>Narrative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="round-num">R1</td><td class="round-score">10-9 I</td><td class="round-note">Inoue darts in first with his left jab. Nakatani pawing his southpaw right. Both feeling out the alignment. Inoue wins the round on clean work but Nakatani's range is an immediate complication.</td></tr>
+        <tr><td class="round-num">R2-3</td><td class="round-score">Close</td><td class="round-note">Nakatani keeps Inoue at bay with his right hand. Inoue falling short repeatedly as the southpaw reach advantage does its work. Nakatani's left hand getting closer with each attempt. Most competitive stretch of the fight.</td></tr>
+        <tr><td class="round-num">R4-5</td><td class="round-score">10-9 I ×2</td><td class="round-note">Inoue adjusts. Footwork cuts off the ring. He starts winning the jab battle with superior hand speed. Nakatani responds in round five with a flurry on the ropes that briefly reverses momentum. Inoue's early lead established.</td></tr>
+        <tr><td class="round-num">R6-8</td><td class="round-score">10-9 I ×3</td><td class="round-note">Inoue controlling with right hands that find Nakatani in between combinations. Nakatani still coming, still working his left, still forcing exchanges. Neither man giving a round away. Inoue winning each one cleanly.</td></tr>
+        <tr class="key-row"><td class="round-num">R9</td><td class="round-score">10-9 I</td><td class="round-note">The uppercut. Nakatani times Inoue coming in and catches him clean with the southpaw uppercut — the moment the Blueprint's southpaw analysis identified as the key danger point. Inoue's head snaps. He finishes the round. Still wins the round. The danger was real and insufficient.</td></tr>
+        <tr class="key-row"><td class="round-num">R10</td><td class="round-score">10-9 I</td><td class="round-note">Headclash opens a cut over Nakatani's right eye. The wound doesn't stop his aggression but it gives Inoue a target. Speed becomes his weapon. Championship round bank activating exactly as projected.</td></tr>
+        <tr><td class="round-num">R11-12</td><td class="round-score">10-9 I ×2</td><td class="round-note">Inoue pulling away. Nakatani still coming forward, still working in round twelve when most fighters have accepted the verdict. He lands power shots in the final round and earns the crowd's respect. Inoue's speed remains a problem at the final bell. Unanimous decision. Monster remains undisputed.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">"He was the toughest opponent I have faced at super bantamweight. He made me work for every round. I am still the champion because I earned it."</div>
+      <div class="pull-quote-attr">— Naoya Inoue · Post-fight · Tokyo Dome</div>
+    </div>
+
+    <div class="section-head">
+      <span class="section-label">Player Verdicts</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="verdicts-grid">
+      <div class="verdict-card">
+        <div class="verdict-status exceeded">Exceeded Expectations</div>
+        <div class="verdict-name">Naoya Inoue</div>
+        <div class="verdict-note">The championship round performance is the story. The program said his Tier I crisis execution and deep championship round bank would be decisive. Nakatani provided a genuine R9 danger moment — Inoue absorbed it and won the next three rounds clearly. 33-0. Still undisputed. The greatest fighter in the world today confirmed his position against the strongest domestic challenger his weight class has ever produced.</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-status delivered">Delivered</div>
+        <div class="verdict-name">Junto Nakatani</div>
+        <div class="verdict-note">32-1. Lost to the best fighter in the world by a margin smaller than the scorecards suggest. Made the champion adjust, made him feel danger, landed the cleanest shot of the fight in round nine. At 28 years old, this is not an ending. The Blotter notes that his stock rose in defeat — a genuinely uncommon outcome. Every analytical dimension the program identified about his ceiling was correct. So was the call that Inoue's was higher.</div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <span class="section-label">Blueprint Accuracy Report</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="accuracy-block">
+      <div class="accuracy-title">Vol. I · No. 9 · Post-Fight Self-Assessment</div>
+      <div class="accuracy-grid">
+        <div class="accuracy-items">
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Inoue winner — correct</span></div>
+          <div class="accuracy-item"><span class="acc-badge miss">MISS</span><span class="acc-desc">Method — called TKO rounds 7-10, went unanimous decision 12 rounds</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Southpaw puzzle in early rounds — Nakatani caused real adjustment difficulty through rounds 2-4</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Championship round bank decisive — Inoue pulled away in rounds 10-12 exactly as projected</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Tier I crisis execution — R9 uppercut landed clean, Inoue finished the round and won the next three</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Nakatani's stock to rise in defeat — correct, confirmed by post-fight commentary universally</span></div>
+          <div class="accuracy-item"><span class="acc-badge partial">PARTIAL</span><span class="acc-desc">Decision Risk — rated Moderate, fight went to clear scores (116-112 twice), not a razor-thin result. Status bias not required to explain the outcome.</span></div>
+        </div>
+        <div class="grade-block">
+          <div class="grade-letter b">B</div>
+          <div class="grade-label">Blueprint<br>Grade</div>
+        </div>
+      </div>
+      <div class="accuracy-note">Correct winner, correct analytical framing on every dimension — southpaw puzzle, championship rounds, Tier I execution, Nakatani's ceiling question. One method miss. The Blueprint called the fight correctly and the scorecard incorrectly. A B reflects the miss honestly without discounting the framework work that was right.</div>
+    </div>
+
+    <div class="section-head">
+      <span class="section-label">Lesson File — New Entry</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="lesson-block">
+      <div class="lesson-label">Permanent Lesson File · May 2, 2026</div>
+      <div class="lesson-item">When the pre-fight analysis correctly identifies a fighter's Tier I crisis execution and deep championship round bank as the decisive variables, and those variables prove correct, the method call should weight them more heavily than the stoppage history of either fighter. Inoue has stopped 27 of 33 opponents. Nakatani has never been stopped. The Blueprint correctly identified both facts and then called a TKO — which contradicted the chin durability principle. The correct call, given both frameworks, was a decision. The analytical work was right. The method projection did not follow from it.</div>
+    </div>
+
+    <div class="section-head">
+      <span class="section-label">Legacy</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="legacy-head">What Tokyo Left Behind</div>
+    <div class="legacy-body">
+      <p>Inoue is 33-0 and undisputed. He has now defended the undisputed super bantamweight title seven times. He has beaten every serious challenger his division has produced. The question the post-fight conversation turned to immediately: who is next? His promoter stated a possible move to featherweight is being considered. Crawford was in the building. Whatever comes next, the Blotter will have a program.</p>
+      <p>Nakatani's legacy at 32-1 is already significant. Three-division world champion at 28, with a professional record that includes one loss to the best fighter in the world in the biggest fight in Japanese boxing history. He was not exposed. He was outperformed by the singular talent of his generation. The difference between those two outcomes is everything in how a career is remembered.</p>
+    </div>
+
+  </div>
+
+  <div class="back-cover">
+    <div class="back-grid">
+      <div>
+        <div class="bc-title">Fight Data</div>
+        <div class="bc-row"><div class="bc-row-label">Venue</div><div class="bc-row-val">Tokyo Dome, Tokyo, Japan</div></div>
+        <div class="bc-row"><div class="bc-row-label">Attendance</div><div class="bc-row-val">55,000 · Sold out</div></div>
+        <div class="bc-row"><div class="bc-row-label">Result</div><div class="bc-row-val">Inoue UD · 116-112 ×2 · 115-113</div></div>
+        <div class="bc-row"><div class="bc-row-label">Inoue record</div><div class="bc-row-val">33-0 · 27 KOs</div></div>
+        <div class="bc-row"><div class="bc-row-label">Nakatani record</div><div class="bc-row-val">32-1 · 24 KOs</div></div>
+      </div>
+      <div>
+        <div class="bc-title">Blueprint Grade: B</div>
+        <div class="bc-row"><div class="bc-row-label">Winner</div><div class="bc-row-val">HIT — Inoue</div></div>
+        <div class="bc-row"><div class="bc-row-label">Method</div><div class="bc-row-val">MISS — called TKO, went UD</div></div>
+        <div class="bc-row"><div class="bc-row-label">Southpaw puzzle</div><div class="bc-row-val">HIT — real adjustment difficulty R2-4</div></div>
+        <div class="bc-row"><div class="bc-row-label">Championship rounds</div><div class="bc-row-val">HIT — decisive in R10-12</div></div>
+        <div class="bc-row"><div class="bc-row-label">Tier I execution R9</div><div class="bc-row-val">HIT — absorbed uppercut, won next 3 rounds</div></div>
+      </div>
+      <div>
+        <div class="bc-title">What's Next</div>
+        <div class="bc-row"><div class="bc-row-label">Inoue</div><div class="bc-row-val">Featherweight move under consideration · No mandatory challenger at 122</div></div>
+        <div class="bc-row"><div class="bc-row-label">Nakatani</div><div class="bc-row-val">32-1 · 28 years old · Rematch or title hunt at another weight</div></div>
+        <div class="bc-row"><div class="bc-row-label">Crawford in building</div><div class="bc-row-val">Noted · Any Inoue-Crawford fight is speculative but on record</div></div>
+      </div>
+    </div>
+    <div class="back-footer">
+      <div class="back-brand">The Boxing Blotter</div>
+      <div class="back-meta">Vol. I · No. 9 · Recap Edition · May 2, 2026<br>Story First Blueprint · Scout's Chair Standard<br>boxingblotter.com · @boxingblotter</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
