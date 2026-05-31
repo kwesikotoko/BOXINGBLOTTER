@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — Wardley vs. Dubois · Manchester · DAZN PPV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #0b1520;
+    --newsprint:  #e8f0f5;
+    --aged:       #cddae4;
+    --ocean:      #1a3a52;
+    --ocean-mid:  #1d5a8a;
+    --ocean-light:#2e7abf;
+    --ocean-pale: #d0e4f0;
+    --steel:      #4a7a9b;
+    --gold:       #b8931e;
+    --gold-light: #dbb84a;
+    --red:        #c0292b;
+    --muted:      #3d5a72;
+    --rule:       #0b1520;
+    --light-rule: #a0bfd0;
+    --prospect-bg:#0a1e12;
+    --prospect-green:#2e7a3a;
+    --white:      #f0f6fa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #04090e;
+    font-family: 'Barlow', sans-serif;
+    color: var(--ink);
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--newsprint);
+    box-shadow: 0 0 120px rgba(10,60,120,0.5);
+  }
+
+  /* ═══ MASTHEAD ═══ */
+  .masthead {
+    background: var(--ink);
+    border-bottom: 4px solid var(--ocean-light);
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 24px 7px;
+    border-bottom: 1px solid #1a2e40;
+  }
+
+  .masthead-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #4a7a9b;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+
+  .masthead-meta span { color: var(--ocean-light); }
+
+  .masthead-title {
+    text-align: center;
+    padding: 13px 24px 10px;
+  }
+
+  .masthead-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .masthead-title .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--steel);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .masthead-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 7px 24px 10px;
+    border-top: 1px solid #1a2e40;
+  }
+
+  .masthead-bottom .item {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .masthead-bottom .item strong {
+    display: block;
+    color: var(--ocean-light);
+    font-size: 9.5px;
+  }
+
+  /* ═══ COVER ═══ */
+  .cover {
+    background: var(--ink);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(26,58,82,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(29,90,138,0.3) 0%, transparent 60%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.012) 2px,
+        rgba(255,255,255,0.012) 3px
+      );
+    pointer-events: none;
+  }
+
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+    padding: 40px 36px 36px;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ocean-light);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .cover-fighters {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 16px;
+  }
+
+  .cover-name {
+    flex: 1;
+  }
+
+  .cover-name h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+
+  .cover-name .record {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--steel);
+    letter-spacing: 0.12em;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .cover-name.right { text-align: right; }
+
+  .cover-vs {
+    width: 80px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .cover-vs span {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .cover-vs .belt-line {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--ocean-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  .cover-rule {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--ocean-mid), var(--ocean-light), var(--ocean-mid), transparent);
+    margin: 16px 0;
+  }
+
+  .cover-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--gold-light);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .cover-deck {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #7aa8c4;
+    line-height: 1.55;
+    max-width: 600px;
+    margin-bottom: 24px;
+  }
+
+  .cover-fight-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #1a2e40;
+    border: 1px solid #1a2e40;
+    border-top: 2px solid var(--ocean-light);
+  }
+
+  .strip-cell {
+    background: #0d1e2e;
+    padding: 10px 14px;
+    text-align: center;
+  }
+
+  .strip-cell .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: #3d6a88;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .strip-cell .value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ocean-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .cover-undercard {
+    margin-top: 0;
+    border-top: none;
+    padding: 14px 0 0;
+  }
+
+  .cover-undercard .uc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--steel);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .uc-bouts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 24px;
+  }
+
+  .uc-bout {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    color: #5a8aaa;
+    letter-spacing: 0.04em;
+  }
+
+  .uc-bout strong { color: #8ab4cc; }
+
+  /* ═══ PAGE SECTIONS ═══ */
+  .section {
+    padding: 30px 36px;
+    border-bottom: 1px solid var(--aged);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    color: var(--ocean-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--ocean-mid);
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--aged);
+  }
+
+  /* ═══ BODY TEXT ═══ */
+  .body-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #1a2d3d;
+  }
+
+  .body-text p { margin-bottom: 12px; }
+  .body-text p:last-child { margin-bottom: 0; }
+
+  .body-text strong { font-weight: 600; color: var(--ink); }
+
+  .body-text .pull {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--ocean);
+    border-left: 3px solid var(--ocean-light);
+    padding-left: 14px;
+    margin: 16px 0;
+    line-height: 1.45;
+  }
+
+  /* ═══ TALE OF THE TAPE ═══ */
+  .tape-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    border: 1px solid var(--aged);
+    overflow: hidden;
+  }
+
+  .tape-header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .tape-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .tape-header .sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--steel);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .tape-header.champ { background: var(--ocean); }
+  .tape-header.chall { background: #1a2e40; }
+  .tape-header.mid   {
+    background: #0d1e2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+  }
+
+  .tape-row {
+    display: contents;
+  }
+
+  .tape-cell {
+    padding: 8px 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid var(--aged);
+    background: #f2f7fa;
+  }
+
+  .tape-cell.left  { text-align: right; background: #eaf2f8; }
+  .tape-cell.right { text-align: left;  background: #f2f7fa; }
+
+  .tape-cell.mid-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    font-weight: 400;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #e0ecf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+  }
+
+  .tape-cell.edge-left  { color: var(--ocean); font-weight: 700; }
+  .tape-cell.edge-right { color: var(--ocean); font-weight: 700; }
+
+  .tape-footer {
+    grid-column: 1 / -1;
+    background: var(--ink);
+    padding: 8px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: #4a7a9b;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ═══ MATCHUP FACTORS ═══ */
+  .factors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 6px;
+  }
+
+  .factor-card {
+    background: var(--white);
+    border: 1px solid var(--aged);
+    border-left: 3px solid var(--ocean-mid);
+    padding: 14px 16px;
+  }
+
+  .factor-card.edge-left { border-left-color: var(--ocean); }
+  .factor-card.edge-right { border-left-color: var(--gold); }
+  .factor-card.neutral   { border-left-color: var(--muted); }
+
+  .factor-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+
+  .factor-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  .factor-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #2a3d50;
+  }
+
+  .factor-edge {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px solid var(--aged);
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ocean-mid);
+    font-weight: 500;
+  }
+
+  .factor-edge span { color: var(--ink); font-weight: 700; }
+
+  /* ═══ FIGHTER PROFILE CARD ═══ */
+  .fighter-profile {
+    background: var(--white);
+    border: 1px solid var(--aged);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .fighter-profile:last-child { margin-bottom: 0; }
+
+  .fp-header {
+    background: var(--ocean);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .fp-header.challenger { background: #1a2e40; }
+
+  .fp-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .fp-header .fp-record {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ocean-light);
+    letter-spacing: 0.1em;
+  }
+
+  .fp-header.challenger .fp-record { color: var(--gold-light); }
+
+  .fp-body {
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 14px;
+  }
+
+  .fp-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fp-stat {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .fp-stat strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    margin-top: 1px;
+  }
+
+  .fp-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #2a3d50;
+  }
+
+  /* ═══ TWO-COLUMN LAYOUT ═══ */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* ═══ SPOTLIGHT SECTION ═══ */
+  .spotlight {
+    background: var(--ink);
+    padding: 28px 36px;
+    border-bottom: 1px solid #1a2e40;
+  }
+
+  .spotlight .section-head {
+    border-bottom-color: var(--ocean-light);
+  }
+
+  .spotlight .section-label { color: var(--ocean-light); }
+  .spotlight .section-title { color: var(--white); }
+  .spotlight .section-rule  { background: #1a2e40; }
+
+  .spotlight .body-text {
+    color: #8ab4cc;
+  }
+
+  .spotlight .body-text strong { color: var(--white); }
+
+  .spotlight .body-text .pull {
+    color: var(--gold-light);
+    border-left-color: var(--gold);
+  }
+
+  .spotlight-flag {
+    display: inline-block;
+    background: var(--ocean-mid);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 14px;
+  }
+
+  .amateur-badge {
+    background: #0d1e2e;
+    border: 1px solid #1a3a52;
+    border-left: 3px solid var(--gold);
+    padding: 12px 14px;
+    margin-top: 14px;
+  }
+
+  .amateur-badge .ab-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 5px;
+  }
+
+  .amateur-badge .ab-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #7aa8c4;
+    line-height: 1.5;
+  }
+
+  /* ═══ PROSPECT WATCH ═══ */
+  .prospect-section {
+    background: var(--prospect-bg);
+    padding: 28px 36px;
+    border-bottom: 1px solid #0d2a14;
+  }
+
+  .prospect-masthead {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--prospect-green);
+  }
+
+  .pw-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--prospect-green);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .pw-vol {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: #3a6a45;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .pw-rule { flex: 1; height: 1px; background: #0d2a14; }
+
+  .prospect-card {
+    background: #0d1e10;
+    border: 1px solid #1a3a1a;
+    border-left: 3px solid var(--prospect-green);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .prospect-card.watch-candidate {
+    border-left-color: var(--gold);
+  }
+
+  .prospect-card:last-child { margin-bottom: 0; }
+
+  .pc-header {
+    background: #0a1a0c;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #1a3a1a;
+  }
+
+  .pc-header.watch { border-bottom-color: #3a2a08; background: #1a1508; }
+
+  .pc-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .pc-entry {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--prospect-green);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .pc-entry.watch { color: var(--gold); }
+
+  .pc-body {
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 14px;
+  }
+
+  .pc-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .pc-stat {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #3a6a45;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .pc-stat strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #a0d4a8;
+    letter-spacing: 0.04em;
+    margin-top: 1px;
+  }
+
+  .pc-stat.watch-stat { color: #6a5a20; }
+  .pc-stat.watch-stat strong { color: var(--gold-light); }
+
+  .pc-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #6aaa78;
+  }
+
+  .pc-text strong { color: #a0d4a8; }
+
+  .pc-text.watch-text { color: #9a8a50; }
+  .pc-text.watch-text strong { color: var(--gold-light); }
+
+  .pc-honest-note {
+    grid-column: 1 / -1;
+    background: #060e08;
+    border-top: 1px solid #1a3a1a;
+    padding: 9px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #3a6a45;
+    letter-spacing: 0.06em;
+  }
+
+  .pc-honest-note strong { color: var(--prospect-green); }
+
+  /* ═══ THE CALL ═══ */
+  .call-section {
+    background: var(--ink);
+    padding: 28px 36px;
+  }
+
+  .call-section .section-head {
+    border-bottom-color: var(--gold);
+  }
+
+  .call-section .section-label { color: var(--gold); }
+  .call-section .section-title { color: var(--white); }
+  .call-section .section-rule  { background: #1a2e40; }
+
+  .call-card {
+    background: #0d1e2e;
+    border: 1px solid #1a3a52;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .call-card:last-child { margin-bottom: 0; }
+
+  .call-header {
+    background: var(--ocean);
+    padding: 9px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .call-header.secondary { background: #152030; }
+
+  .call-matchup {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .call-division {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--ocean-light);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .call-body {
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+  }
+
+  .call-pick {
+    text-align: center;
+    border-right: 1px solid #1a3a52;
+    padding-right: 16px;
+  }
+
+  .call-pick .winner {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .call-pick .method {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+
+  .call-pick .rounds {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .call-pick .confidence {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px solid #1a3a52;
+  }
+
+  .call-pick .confidence .conf-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: #3d6a88;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 3px;
+  }
+
+  .conf-dots {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+  }
+
+  .conf-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1a3a52;
+  }
+
+  .conf-dot.filled { background: var(--gold); }
+
+  .call-reasoning {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #7aa8c4;
+  }
+
+  .call-reasoning strong { color: var(--white); }
+
+  .call-upset {
+    margin-top: 8px;
+    padding: 8px 10px;
+    background: #060e18;
+    border-left: 2px solid var(--red);
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    color: #8a6060;
+    line-height: 1.5;
+  }
+
+  .call-upset strong { color: #c07070; }
+
+  /* ═══ SUPPORTING CARD ═══ */
+  .support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .support-bout {
+    background: var(--white);
+    border: 1px solid var(--aged);
+    padding: 12px 14px;
+  }
+
+  .support-bout .sb-matchup {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 3px;
+  }
+
+  .support-bout .sb-division {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .support-bout .sb-note {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #3a5568;
+  }
+
+  /* ═══ PROSPECT WATCH CALLOUT ═══ */
+  .pw-callout {
+    background: #060e08;
+    border: 1px solid #1a3a1a;
+    border-left: 3px solid var(--prospect-green);
+    padding: 10px 14px;
+    margin-top: 14px;
+  }
+
+  .pw-callout .pwc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: var(--prospect-green);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+
+  .pw-callout .pwc-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #5a8a62;
+    line-height: 1.5;
+  }
+
+  .pw-callout .pwc-text strong { color: #8abf90; }
+
+  /* ═══ DIVIDER ═══ */
+  .ocean-divider {
+    height: 4px;
+    background: linear-gradient(90deg, var(--ink), var(--ocean), var(--ocean-light), var(--ocean), var(--ink));
+  }
+
+  .thin-divider {
+    height: 1px;
+    background: var(--aged);
+    margin: 16px 0;
+  }
+
+  /* ═══ BACK COVER ═══ */
+  .back-cover {
+    background: var(--ink);
+    padding: 20px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid var(--ocean-light);
+  }
+
+  .bc-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #3d6a88;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .bc-left span { color: var(--ocean-light); }
+
+  .bc-center {
+    text-align: center;
+  }
+
+  .bc-center .bc-blotter {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .bc-center .bc-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: #4a7a9b;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  .bc-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #3d6a88;
+    line-height: 1.8;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .bc-right span { color: var(--ocean-light); }
+
+  /* ═══ INLINE CHIPS / BADGES ═══ */
+  .chip {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 0;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+
+  .chip-blue  { background: var(--ocean-mid); color: var(--white); }
+  .chip-gold  { background: var(--gold);      color: var(--white); }
+  .chip-red   { background: var(--red);       color: var(--white); }
+  .chip-green { background: var(--prospect-green); color: var(--white); }
+
+  /* ═══ PRINT UTILITY ═══ */
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════════════════════
+       MASTHEAD
+  ═══════════════════════════════════════════════════════ -->
+  <div class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 12 · Pre-Fight Edition</span>
+      <span class="masthead-meta">Co-op Live Arena · Manchester, England</span>
+      <span class="masthead-meta">Saturday, May 9, 2026 · <span>DAZN PPV</span></span>
+    </div>
+    <div class="masthead-title">
+      <h1>The Boxing Blotter</h1>
+      <div class="tagline">Documents Before · Scores During · Grades After</div>
+    </div>
+    <div class="masthead-bottom">
+      <div class="item"><span>Platform</span>@boxingblotter</div>
+      <div class="item"><span>Web</span>boxingblotter.com</div>
+      <div class="item"><span>Rule</span>Story First</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       COVER
+  ═══════════════════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-texture"></div>
+    <div class="cover-inner">
+
+      <div class="cover-eyebrow">WBO World Heavyweight Championship · First Defense</div>
+
+      <div class="cover-fighters">
+        <div class="cover-name">
+          <h2>Fabio<br>Wardley</h2>
+          <div class="record">20-0-1 · 19 KOs · Ipswich, England</div>
+        </div>
+        <div class="cover-vs">
+          <span>vs.</span>
+          <div class="belt-line">WBO Title</div>
+        </div>
+        <div class="cover-name right">
+          <h2>Daniel<br>Dubois</h2>
+          <div class="record">22-3 · 21 KOs · London, England</div>
+        </div>
+      </div>
+
+      <div class="cover-rule"></div>
+
+      <div class="cover-subtitle">"Don't Blink"</div>
+      <div class="cover-deck">
+        Two British heavyweights. Combined knockout rate: 95%. One title, no split decisions in either fighter's DNA. They turned professional on the same day. One of them carries the belt. The other wants it back.
+      </div>
+
+      <div class="cover-fight-strip">
+        <div class="strip-cell">
+          <span class="label">Weight</span>
+          <span class="value">242.2 vs 251.7 lbs</span>
+        </div>
+        <div class="strip-cell">
+          <span class="label">Scheduled</span>
+          <span class="value">12 Rounds</span>
+        </div>
+        <div class="strip-cell">
+          <span class="label">Broadcaster</span>
+          <span class="value">DAZN PPV</span>
+        </div>
+      </div>
+
+      <div class="cover-undercard">
+        <div class="uc-label">Also on the Card</div>
+        <div class="uc-bouts">
+          <div class="uc-bout"><strong>Rafferty vs. Essuman</strong> — 140 lbs · 10 rounds</div>
+          <div class="uc-bout"><strong>Morrell vs. Chelli</strong> — Catchweight · 10 rounds</div>
+          <div class="uc-bout"><strong>Jalolov vs. Smakici</strong> — Heavyweight · 8 rounds</div>
+          <div class="uc-bout"><strong>Cameron vs. Rea</strong> — LHW WBA Intercontinental</div>
+          <div class="uc-bout"><strong>Majid vs. Gwynne</strong> — 140 lbs WBA International</div>
+          <div class="uc-bout"><strong>Flood · Hamilton-Allen · Aborode</strong> — Pro debuts</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ocean-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       THE STORY
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">The Story</span>
+      <h2 class="section-title">The Same Day They Turned Pro</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="body-text">
+      <p>Fabio Wardley and Daniel Dubois both turned professional in 2017. Same year, same calendar. Neither knew the other would be standing across the ring nine years later with a world title between them.</p>
+
+      <p>The developmental stories could not be more different. Wardley came from white-collar boxing — a handful of unlicensed bouts, no amateur pedigree, no Olympic program, no national federation backing. He signed with Dillian Whyte's management operation, got put on cards early, and was treated as a curiosity at first. A big puncher from Ipswich with a work ethic and no conventional credentials. Then he kept stopping people, and the sport was forced to take him seriously. Simon Vallily, Nick Webb, Nathan Gorman, David Adeleye — he didn't just beat them, he demolished them. The question was whether it would hold against better opposition.</p>
+
+      <div class="pull">"He wasn't just beating guys — he was crushing them. And when the test came, he didn't flinch."</div>
+
+      <p>The first real test was Frazer Clarke in 2024 — an experienced amateur, a legitimate professional. Clarke went twelve rounds with Wardley and came off the canvas to get there. It ended in a draw. Six months later, Wardley stopped Clarke in round one. Then came Justis Huni, a 2019 World Amateur bronze medalist and the Blotter's Prospect Watch No. 2 entry — Huni led on all three cards through nine rounds at Portman Road with 25,000+ fans watching. Wardley knocked him out in round ten. Then Joseph Parker in round eleven for the WBO interim title. When Oleksandr Usyk vacated rather than face Wardley as mandatory, the belt was upgraded to full championship status.</p>
+
+      <p>Dubois was sold as a blue chipper from the start — English title, British title, Commonwealth title, media attention, weight of expectation. He earned it. His destruction of Anthony Joshua — flooring the 2012 Olympic champion four times and stopping him in the fifth round — was one of the heavyweight moments of the decade. His run through Jarrell Miller and Filip Hrgovic positioned him for the Usyk rematch. Usyk took him apart and made a statement. Three losses on Dubois's record now: Joe Joyce (2020), Usyk I (2023), Usyk II (2025).</p>
+
+      <p>What tonight comes down to is not record. It is not credentials. It is which fighter's version of themselves shows up when the pressure arrives — because pressure arrives quickly when both men throw with knockout intent from the opening bell.</p>
+
+      <div class="pw-callout">
+        <div class="pwc-label">Prospect Watch Continuity · Entry No. 2</div>
+        <div class="pwc-text"><strong>Justis Huni</strong> (13-1, heavyweight, Australia) — stopped by tonight's champion Fabio Wardley in round 10, June 2025, at Portman Road, Ipswich. Wardley was ahead on zero of the three scorecards entering the 10th. Huni's record stands at 13-1 with the loss now on file. Entry remains active.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       TALE OF THE TAPE
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">Tale of the Tape</span>
+      <h2 class="section-title">Wardley <em>vs.</em> Dubois</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="tape-grid">
+      <div class="tape-header champ">
+        <h3>Fabio Wardley</h3>
+        <div class="sub">WBO Heavyweight Champion · Ipswich, England</div>
+      </div>
+      <div class="tape-header mid"></div>
+      <div class="tape-header chall">
+        <h3>Daniel Dubois</h3>
+        <div class="sub">Former IBF/WBA Champion · London, England</div>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="tape-cell left">20-0-1</div>
+      <div class="tape-cell mid-label">Record</div>
+      <div class="tape-cell right">22-3</div>
+
+      <!-- Row 2 -->
+      <div class="tape-cell left">19 (95%)</div>
+      <div class="tape-cell mid-label">KO Rate</div>
+      <div class="tape-cell right">21 (95%)</div>
+
+      <!-- Row 3 -->
+      <div class="tape-cell left">31</div>
+      <div class="tape-cell mid-label">Age</div>
+      <div class="tape-cell right">28</div>
+
+      <!-- Row 4 -->
+      <div class="tape-cell left">242.2 lbs</div>
+      <div class="tape-cell mid-label">Weigh-in</div>
+      <div class="tape-cell right edge-right">251.7 lbs ↑</div>
+
+      <!-- Row 5 -->
+      <div class="tape-cell left">6'4"</div>
+      <div class="tape-cell mid-label">Height</div>
+      <div class="tape-cell right">6'5"</div>
+
+      <!-- Row 6 -->
+      <div class="tape-cell left">Orthodox</div>
+      <div class="tape-cell mid-label">Stance</div>
+      <div class="tape-cell right">Orthodox</div>
+
+      <!-- Row 7 -->
+      <div class="tape-cell left">None documented</div>
+      <div class="tape-cell mid-label">Amateur</div>
+      <div class="tape-cell right">Traditional pathway</div>
+
+      <!-- Row 8 -->
+      <div class="tape-cell left edge-left">Clean career</div>
+      <div class="tape-cell mid-label">Weight Discipline</div>
+      <div class="tape-cell right edge-right">251.7 career high</div>
+
+      <div class="tape-footer">
+        Weigh-in figures: May 8, 2026 · Queensberry Promotions official · Dubois career-high weight +8 lbs from Usyk II (243.8 lbs, July 2025)
+      </div>
+    </div>
+
+    <!-- MATCHUP FACTORS -->
+    <div style="margin-top: 22px;">
+      <div style="font-family:'DM Mono',monospace;font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--aged);">Matchup Factors</div>
+
+      <div class="factors-grid">
+
+        <div class="factor-card edge-right">
+          <div class="factor-label">Factor 01</div>
+          <div class="factor-title">The Jab Question</div>
+          <div class="factor-body">Dubois has a legitimate jab. Shane McGuigan — who has trained Dubois — said explicitly that Dubois can control Wardley with his feet and his jab, and that Wardley cannot beat Dubois in a boxing match. Wardley does not use the jab as a primary weapon. If Dubois establishes the jab early and stays disciplined about not loading up, he controls range and limits Wardley's exchanges.</div>
+          <div class="factor-edge">Edge: <span>Dubois if he stays disciplined</span></div>
+        </div>
+
+        <div class="factor-card edge-left">
+          <div class="factor-label">Factor 02</div>
+          <div class="factor-title">The Psychological Variable</div>
+          <div class="factor-body">This is documented, not speculative. Dubois has walked away from two fights when conditions turned against him — vs. Joyce (eye injury), vs. Usyk I (broken down). Wardley has never been in a fight he didn't try to finish. The Clarke draw, the Huni comeback from being behind by three rounds — Wardley finds answers. When someone hurts Wardley, he gets more dangerous, not less. That asymmetry matters.</div>
+          <div class="factor-edge">Edge: <span>Wardley — pattern of adversity response</span></div>
+        </div>
+
+        <div class="factor-card edge-right">
+          <div class="factor-label">Factor 03</div>
+          <div class="factor-title">The Size Factor</div>
+          <div class="factor-body">Dubois came in at 251.7 lbs — his career high, up 8 lbs from Usyk II. He is 9.5 lbs heavier than Wardley on fight day. At heavyweight, that is a real structural advantage in exchanges. Dubois is also a year younger. Whether that weight means peak conditioning or slower feet in rounds 9-12 is the question to watch. Wardley has never faced someone with Dubois's combination of size and technical skill.</div>
+          <div class="factor-edge">Edge: <span>Dubois — size differential is real</span></div>
+        </div>
+
+        <div class="factor-card neutral">
+          <div class="factor-label">Factor 04</div>
+          <div class="factor-title">The Experience Ledger</div>
+          <div class="factor-body">Dubois has fought at a higher level — Joshua, Hrgovic, Miller, Usyk twice. He knows what elite heavyweight power feels like. Wardley's toughest opposition before Parker was Clarke (draw, then R1 stoppage) and Huni. Wardley's ceiling has not been fully tested. Neither man's record tells us definitively how this ends — it is genuinely competitive.</div>
+          <div class="factor-edge">Edge: <span>Dubois — more rounds at the top level</span></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       CO-MAIN: RAFFERTY vs. ESSUMAN
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">Co-Main Event</span>
+      <h2 class="section-title">Rafferty <em>vs.</em> Essuman</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:16px;">
+      <div class="fighter-profile">
+        <div class="fp-header">
+          <h3>Jack Rafferty</h3>
+          <span class="fp-record">26-0-1 · 17 KOs</span>
+        </div>
+        <div class="fp-body">
+          <div class="fp-stats">
+            <div class="fp-stat">Age<strong>30</strong></div>
+            <div class="fp-stat">Base<strong>Shaw, England</strong></div>
+            <div class="fp-stat">Weigh-in<strong>146.9 lbs</strong></div>
+            <div class="fp-stat">Last fight<strong>Drew Chamberlain<br>Aug 2025 (British/Comm. title)</strong></div>
+          </div>
+          <div class="fp-text">
+            Former British and Commonwealth junior welterweight champion. Moving up 7 lbs to welterweight for the first time, but doing it the right way — not against a hand-picked debut opponent. Rafferty's identity is pressure and volume. He draws his blueprint straight and executes it. The draw with Chamberlain in August 2025 was the last blemish; he wants to be remembered for fights like this, not domestic title defenses.
+          </div>
+        </div>
+      </div>
+
+      <div class="fighter-profile">
+        <div class="fp-header challenger">
+          <h3>Ekow Essuman</h3>
+          <span class="fp-record">22-2 · 8 KOs</span>
+        </div>
+        <div class="fp-body">
+          <div class="fp-stats">
+            <div class="fp-stat">Age<strong>37</strong></div>
+            <div class="fp-stat">Base<strong>Nottingham, England</strong></div>
+            <div class="fp-stat">Weigh-in<strong>146.7 lbs</strong></div>
+            <div class="fp-stat">Last fight<strong>Stopped by Catterall<br>R11, Nov 2025</strong></div>
+          </div>
+          <div class="fp-text">
+            "The Engine." Former British welterweight champion who controlled that domestic scene for years before being stripped by Harry Scarff in late 2023. Rebuilt with a career-best win over Josh Taylor in May 2025 — went to Scotland, outworked a former undisputed champion, and earned a showcase spot. Catterall then took him apart in eleven rounds in November. Now fighting his first career bout at 140 lbs, at 37.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-text">
+      <p>The analytical tension here is straightforward: Rafferty is bigger, younger, and has the work rate to match Essuman's engine. But Rafferty is making his welterweight debut and Essuman brings genuine world-level credentials — the Taylor win is real, regardless of where Taylor is in his career. Rafferty's advantage is that he is likely making weight comfortably at 147, not cutting down. Essuman at 37 is fighting on borrowed time at this level.</p>
+      <p>The division change also matters in both directions. Essuman spent a decade at 147 — moving down means less natural size. For Rafferty, moving up means more room, less strain. If Rafferty's body adapts to the weight class as he believes it will, this becomes a decisive performance. If the extra weight slows him early and Essuman builds momentum, it is a longer night.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       THE SPOTLIGHT — ZAK CHELLI
+  ═══════════════════════════════════════════════════════ -->
+  <div class="spotlight">
+    <div class="section-head">
+      <span class="section-label">The Spotlight</span>
+      <h2 class="section-title">The Man Nobody's Covering</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="spotlight-flag">Undiscovered Prospect Lens</div>
+
+    <div class="body-text">
+      <p><strong>The coverage this week is all about David Morrell coming to the UK.</strong> His amateur credentials. His WBA title reign. His rebuild after the Benavidez loss. That is the correct story if your job is covering Morrell. The Blotter's job is covering the fight.</p>
+
+      <p><strong>Zak Chelli</strong> (16-3-1, 8 KOs, 28, West London) is the fighter nobody is spending column inches on. He should not even be in this fight. Callum Smith pulled out injured three weeks ago. Chelli's father went on social media and campaigned publicly for the opportunity. A phone call came in. Chelli took the fight at light heavyweight — a division above his base weight class — with three weeks' notice, against a fighter ranked No. 1 by the WBO at 175 lbs.</p>
+
+      <p>The amateur background is where this story starts.</p>
+
+      <div class="pull">"As an amateur, he beat Ben Whittaker and Lewis Richardson — both went on to win Olympic medals. That was before any of them were famous."</div>
+
+      <p>As a pro, the losses to Mark Jeffers, Callum Simpson, and Harry Scarff look like the record of a fighter who belongs in mid-tier domestic competition. That reading misses what Chelli brings into the ring. He has never been stopped in 20 professional bouts. His wins over Jack Cullen and Anthony Sims Jr. — the moments where he was locked in mentally — showed what he is capable of when the mindset is right. He spent the past year teaching boxing fundamentals to children with special educational needs and behavioral management challenges through Time Out Boxing. He did not drift. He stayed in the gym and waited for the phone to ring.</p>
+
+      <p>He is a massive underdog against Morrell. But he is walking into this fight clear-eyed about what it is. <strong>"This is my dream fight,"</strong> Chelli said this week. <strong>"And that'd be my dream victory as well."</strong> That is not trash talk. That is a fighter who knows exactly what he is attempting.</p>
+
+      <div class="amateur-badge">
+        <div class="ab-label">Amateur Background — Verified</div>
+        <div class="ab-text">As an amateur, Chelli defeated Ben Whittaker (Paris 2024 Olympic silver medalist) and Lewis Richardson (Paris 2024 Olympic bronze medalist) before either fighter had won a medal. Source: BoxingScene interview, May 2026. Neither the pre-fight coverage nor the betting lines account for this background.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PROSPECT WATCH
+  ═══════════════════════════════════════════════════════ -->
+  <div class="prospect-section">
+
+    <div class="prospect-masthead">
+      <span class="pw-logo">Prospect Watch</span>
+      <span class="pw-vol">Vol. I · Filed May 9, 2026</span>
+      <div class="pw-rule"></div>
+    </div>
+
+    <!-- JALOLOV — NEW FORMAL ENTRY -->
+    <div class="prospect-card">
+      <div class="pc-header">
+        <span class="pc-name">Bakhodir Jalolov</span>
+        <span class="pc-entry">Vol. I · Entry No. 6 · Filed Tonight</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-stats">
+          <div class="pc-stat">Pro Record<strong>16-0 · 14 KOs</strong></div>
+          <div class="pc-stat">KO Rate<strong>87.5%</strong></div>
+          <div class="pc-stat">Division<strong>Heavyweight</strong></div>
+          <div class="pc-stat">Country<strong>Uzbekistan</strong></div>
+          <div class="pc-stat">Age<strong>31</strong></div>
+          <div class="pc-stat">Physical<strong>6'7" · 81" reach</strong></div>
+          <div class="pc-stat">Stance<strong>Southpaw</strong></div>
+          <div class="pc-stat">Weigh-in<strong>254.9 lbs</strong></div>
+        </div>
+        <div class="pc-text">
+          <strong>Amateur foundation:</strong> 247-17 amateur record. Two Olympic gold medals — Tokyo 2020, Paris 2024. Two World Championship golds (2019, 2023). World Championship bronze (2015). Two-time flag bearer for Uzbekistan at the Olympic Games. The most decorated amateur resume of any active heavyweight in professional boxing. No active heavyweight professional has won two Olympic gold medals in the super heavyweight division.
+          <br><br>
+          <strong>The professional picture:</strong> Pro debut May 2018. Sixteen fights in eight years — the gap explained by two additional Olympic campaigns and multiple World Championship cycles he competed in while holding a professional license. He has now retired from amateur boxing publicly. There is no more amateur schedule. The professional career is the only career.
+          <br><br>
+          <strong>Tonight:</strong> UK debut vs. Agron Smakici (21-3, 19 KOs). Jalolov arrives at 254.9 lbs — nearly 14 lbs heavier than his opponent. Watch for whether he pressures for early rounds or coasts on size. He has called out Moses Itauma. Before that conversation can happen, he needs a run of meaningful professional activity. This is step one.
+        </div>
+        <div class="pc-honest-note" style="grid-column:1/-1">
+          <strong>Honest note on age:</strong> At 31, Jalolov is older than the Blotter's typical Prospect Watch entry. He is filed regardless. The amateur credentials are unmatched. The professional ceiling is genuinely unknown — 16 fights over 8 years against limited opposition has not tested it. If those credentials translate at the highest professional level, the heavyweight division changes. That question is worth tracking. Entry filed tonight.
+        </div>
+      </div>
+    </div>
+
+    <!-- MORRELL — WATCH CANDIDATE -->
+    <div class="prospect-card watch-candidate">
+      <div class="pc-header watch">
+        <span class="pc-name">David Morrell Jr.</span>
+        <span class="pc-entry watch">Watch Candidate · Not Yet Filed</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-stats">
+          <div class="pc-stat watch-stat">Pro Record<strong>12-1 · 9 KOs</strong></div>
+          <div class="pc-stat watch-stat">Division<strong>Light Heavyweight</strong></div>
+          <div class="pc-stat watch-stat">Country<strong>Cuba / USA</strong></div>
+          <div class="pc-stat watch-stat">Age<strong>28</strong></div>
+          <div class="pc-stat watch-stat">Stance<strong>Southpaw</strong></div>
+          <div class="pc-stat watch-stat">Weigh-in<strong>176.1 lbs</strong></div>
+        </div>
+        <div class="pc-text watch-text">
+          <strong>Amateur foundation:</strong> 130-5 amateur record. 2016 Youth World Championships gold — named Best Boxer of the Tournament. 2017 Cuban National Championships gold. Defected from Cuba in 2018 — his father and brother made the sea crossing with him. Won the WBA super middleweight title in his third professional fight. Held the WBA light heavyweight title until 2025. Only professional loss: to Benavidez on February 1, 2025 — a fight in which Morrell staggered Benavidez twice and scored a clean knockdown before losing the decision.
+          <br><br>
+          <strong>Why not filed yet:</strong> Morrell at 12-1 is not undiscovered. He has WBA title reigns at two weight classes, a roster of legitimate opponents, and significant coverage. The Blotter's sharpest edge is the fighter nobody is writing about. <strong>Morrell is the fighter everyone is watching tonight.</strong> He is on the radar. The Blotter watches his ceiling — specifically: can he get the Benavidez rematch, and does his UK performance against a late-replacement opponent at a catchweight tell us anything meaningful? Tonight's result determines if and when the formal filing comes.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SUPPORTING CARD
+  ═══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">Supporting Card</span>
+      <h2 class="section-title">The Rest of Manchester</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="support-grid">
+
+      <div class="support-bout">
+        <div class="sb-matchup">Morrell vs. Chelli</div>
+        <div class="sb-division">Catchweight (176/177 lbs) · 10 Rounds</div>
+        <div class="sb-note">Morrell (12-1, 9 KOs) on UK debut after Smith injury forced a late replacement. Chelli (16-3-1, 8 KOs) accepted on three weeks' notice. The Spotlight entry covers Chelli in detail. The analytical question is about Morrell — does a smooth performance here restore momentum, or does the gap in opposition quality make the result unreadable for a Benavidez rematch conversation?</div>
+      </div>
+
+      <div class="support-bout">
+        <div class="sb-matchup">Jalolov vs. Smakici</div>
+        <div class="sb-division">Heavyweight · 8 Rounds</div>
+        <div class="sb-note">Jalolov (16-0, 14 KOs) makes his UK debut at 254.9 lbs, nearly 14 lbs heavier than Smakici (21-3, 19 KOs). The match is not competitive on paper. Watch the quality of the performance — how Jalolov moves at his size, whether he pressures early or waits, and whether he shows anything that supports or undermines the Itauma callout he has made publicly.</div>
+      </div>
+
+      <div class="support-bout">
+        <div class="sb-matchup">Cameron vs. Rea</div>
+        <div class="sb-division">Light Heavyweight · WBA Intercontinental · 10 Rounds</div>
+        <div class="sb-note">Cameron (24-7-1, 10 KOs), 37, needs to remain relevant in a stacked light heavyweight division. Rea (21-2, 10 KOs) is coming off a seven-fight winning streak that was ended by Lyndon Arthur. Cameron weighed in at 174.4 lbs; Rea light at 173.1 lbs. Both made weight cleanly. A WBA Intercontinental title is the floor here; a statement performance is the ceiling.</div>
+      </div>
+
+      <div class="support-bout">
+        <div class="sb-matchup">Majid vs. Gwynne</div>
+        <div class="sb-division">Super Lightweight · WBA International · 6 Rounds</div>
+        <div class="sb-note">Majid (16-0, 4 KOs) is the lesser-known undefeated fighter on this card. WBC ranked him at No. 12 in the junior welterweight division. Gwynne (18-4-2, 5 KOs) is 35 and 1-2-1 in his last four bouts. Both made the super lightweight limit cleanly. A win for Majid here moves him up the WBA International ranking. Worth a watch for how he performs with room to grow.</div>
+      </div>
+
+      <div class="support-bout">
+        <div class="sb-matchup">Ummataliev vs. Drabik</div>
+        <div class="sb-division">Super Middleweight · 6 Rounds</div>
+        <div class="sb-note">Javokhir Ummataliev makes his Manchester appearance in a scheduled six-rounder. Amateur background and professional record data is limited on both fighters at this level of the card. Result and performance quality are the data points to file here.</div>
+      </div>
+
+      <div class="support-bout">
+        <div class="sb-matchup">Flood · Hamilton-Allen · Aborode</div>
+        <div class="sb-division">Jr. Middleweight / Jr. Welterweight · 4 Rounds</div>
+        <div class="sb-note">Second pro fight for Bobbi Flood (1-0) and Issiah Hamilton-Allen (1-0). Fawaz Aborode debuts at junior welterweight. Four-round fights on a PPV card of this size mean these fighters are being shown to a significant audience early in their careers. Performance and poise under that circumstance is worth noting regardless of result.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ocean-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       THE CALL
+  ═══════════════════════════════════════════════════════ -->
+  <div class="call-section">
+    <div class="section-head">
+      <span class="section-label">The Call</span>
+      <h2 class="section-title">Picks · Methods · Confidence</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- MAIN EVENT CALL -->
+    <div class="call-card">
+      <div class="call-header">
+        <span class="call-matchup">Wardley vs. Dubois — WBO Heavyweight Title</span>
+        <span class="call-division">Main Event · 12 Rounds</span>
+      </div>
+      <div class="call-body">
+        <div class="call-pick">
+          <div class="winner">Fabio Wardley</div>
+          <div class="method">TKO</div>
+          <div class="rounds">Rounds 5–9</div>
+          <div class="confidence">
+            <div class="conf-label">Confidence</div>
+            <div class="conf-dots">
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot"></div>
+              <div class="conf-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="call-reasoning">
+          <strong>The reasoning:</strong> Dubois has the tools to win this fight — the jab, the size advantage, the superior technical background. His path is clear: establish distance, punish with the jab, don't get dragged into exchanges. Shane McGuigan laid the blueprint out precisely. The problem is that Dubois has never fully trusted that blueprint when the fight gets hard. He is a born puncher who wants to end things, and that instinct has worked against him against opponents who could take it and come back.
+          <br><br>
+          Wardley's pattern is documented and consistent. Clarke hurt him. Huni was beating him on every card. Parker rocked him. In each case, Wardley kept moving forward and eventually landed. The adversity-response profile favors Wardley decisively. When Dubois hurts him — and Dubois will land something — the question is whether Wardley can absorb it the way he absorbed the Huni knockdown scenario and come back. Based on the record, yes.
+          <br><br>
+          Dubois's psychological variable — the documented pattern of capitulating when a fight turns against him — is the tipping point in this call.
+          <div class="call-upset">
+            <strong>Live upset scenario:</strong> Dubois lands first, hurt Wardley early, gets the finish before Wardley's engine can turn over. At 251.7 lbs and with his jab working, a rounds 2–4 knockout by Dubois is entirely credible. This call is moderate confidence, not a lock.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CO-MAIN CALL -->
+    <div class="call-card">
+      <div class="call-header secondary">
+        <span class="call-matchup">Rafferty vs. Essuman</span>
+        <span class="call-division">Co-Main · Welterweight · 10 Rounds</span>
+      </div>
+      <div class="call-body">
+        <div class="call-pick">
+          <div class="winner">Rafferty</div>
+          <div class="method">Decision</div>
+          <div class="rounds">Majority or Unanimous</div>
+          <div class="confidence">
+            <div class="conf-label">Confidence</div>
+            <div class="conf-dots">
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="call-reasoning">
+          Rafferty is 30, Essuman is 37. Rafferty is moving up in weight naturally; Essuman is coming down from a career at 147. Both bring volume and work rate — the names for their styles are different but they are the same fight in practice. Youth and size advantage at the weight should carry Rafferty. Essuman's Taylor win shows he still belongs at this level. The Catterall stoppage shows where his ceiling is now. Rafferty at welterweight, in his debut fight at the weight, is better than Catterall. The win should be clear enough for the scorecards to agree.
+        </div>
+      </div>
+    </div>
+
+    <!-- UNDERCARD CALLS -->
+    <div class="call-card">
+      <div class="call-header secondary">
+        <span class="call-matchup">Morrell vs. Chelli</span>
+        <span class="call-division">Catchweight · 10 Rounds</span>
+      </div>
+      <div class="call-body">
+        <div class="call-pick">
+          <div class="winner">Morrell</div>
+          <div class="method">TKO</div>
+          <div class="rounds">Rounds 5–8</div>
+          <div class="confidence">
+            <div class="conf-label">Confidence</div>
+            <div class="conf-dots">
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="call-reasoning">
+          Morrell is the WBO's No. 1 light heavyweight contender. Chelli is stepping up from super middleweight on three weeks' notice at a catchweight of 176-177 lbs. The gap in opposition quality is significant. <strong>The round range is extended</strong> because Chelli has never been stopped in 20 professional fights. He will be competitive through the early rounds. Morrell's 75% knockout rate against better opposition says the finish comes eventually.
+        </div>
+      </div>
+    </div>
+
+    <div class="call-card">
+      <div class="call-header secondary">
+        <span class="call-matchup">Jalolov vs. Smakici</span>
+        <span class="call-division">Heavyweight · 8 Rounds</span>
+      </div>
+      <div class="call-body">
+        <div class="call-pick">
+          <div class="winner">Jalolov</div>
+          <div class="method">TKO/KO</div>
+          <div class="rounds">Rounds 1–4</div>
+          <div class="confidence">
+            <div class="conf-label">Confidence</div>
+            <div class="conf-dots">
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+              <div class="conf-dot filled"></div>
+            </div>
+          </div>
+        </div>
+        <div class="call-reasoning">
+          87.5% KO rate, 6'7", southpaw, two-time Olympic gold medalist making his UK debut at 254.9 lbs against a 21-3 opponent who has been stopped multiple times. The result is not the story. The performance quality — how Jalolov moves, pressures, and finishes — is what tonight files in the record.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       BACK COVER
+  ═══════════════════════════════════════════════════════ -->
+  <div class="back-cover">
+    <div class="bc-left">
+      <div>Program · <span>Vol. I No. 12</span></div>
+      <div>Card · <span>Wardley-Dubois · Manchester</span></div>
+      <div>Edition · <span>Pre-Fight</span></div>
+    </div>
+    <div class="bc-center">
+      <div class="bc-blotter">The Boxing Blotter</div>
+      <div class="bc-tagline">Documents Before · Scores During · Grades After</div>
+    </div>
+    <div class="bc-right">
+      <div>Handle · <span>@boxingblotter</span></div>
+      <div>Web · <span>boxingblotter.com</span></div>
+      <div>Date · <span>May 9, 2026</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

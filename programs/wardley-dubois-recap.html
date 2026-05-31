@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — Wardley vs. Dubois Recap · Manchester · May 9, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:         #07111c;
+    --newsprint:   #e6eff5;
+    --aged:        #c8d8e4;
+    --ocean:       #1a3a52;
+    --ocean-mid:   #1d5a8a;
+    --ocean-light: #2e7abf;
+    --ocean-pale:  #cfe3f0;
+    --steel:       #4a7a9b;
+    --muted:       #3d5a72;
+    --gold:        #b8931e;
+    --gold-light:  #dbb84a;
+    --red:         #c0292b;
+    --red-dim:     #7a1a1c;
+    --green:       #1e6b2e;
+    --green-light: #2e9b42;
+    --green-pale:  #d4edda;
+    --white:       #f0f6fa;
+    --light-rule:  #a0bfd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #020a10;
+    font-family: 'Barlow', sans-serif;
+    color: var(--ink);
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--newsprint);
+    box-shadow: 0 0 140px rgba(10,50,100,0.6);
+  }
+
+  /* ══ MASTHEAD ══ */
+  .masthead {
+    background: var(--ink);
+    border-bottom: 4px solid var(--ocean-light);
+  }
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 24px 7px;
+    border-bottom: 1px solid #1a2e40;
+  }
+  .masthead-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #4a7a9b;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+  .masthead-meta span { color: var(--ocean-light); }
+  .masthead-title {
+    text-align: center;
+    padding: 13px 24px 10px;
+  }
+  .masthead-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .masthead-title .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--steel);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .masthead-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 7px 24px 10px;
+    border-top: 1px solid #1a2e40;
+  }
+  .masthead-bottom .item {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  .masthead-bottom .item strong {
+    display: block;
+    color: var(--ocean-light);
+    font-size: 9.5px;
+  }
+
+  /* ══ RECAP COVER ══ */
+  .recap-cover {
+    background: var(--ink);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 50%, rgba(26,58,82,0.5) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 30%, rgba(29,90,138,0.25) 0%, transparent 50%),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 3px);
+    pointer-events: none;
+  }
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+    padding: 36px 36px 32px;
+  }
+  .cover-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ocean-light);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cover-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #1a3a52;
+  }
+  .cover-headline {
+    margin-bottom: 20px;
+  }
+  .cover-headline h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cover-headline h2 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .cover-headline .deck {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: #6a9ab8;
+    line-height: 1.55;
+    max-width: 580px;
+  }
+
+  /* ══ RESULT STRIP ══ */
+  .result-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: #1a2e40;
+    border: 1px solid #1a2e40;
+    border-top: 2px solid var(--ocean-mid);
+    margin-bottom: 18px;
+  }
+  .rs-cell {
+    background: #0a1824;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .rs-cell .rs-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7px;
+    color: #3a6a88;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .rs-cell .rs-winner {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+  .rs-cell .rs-method {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: var(--ocean-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+    display: block;
+  }
+  .rs-cell.upset-cell { background: #100a02; }
+  .rs-cell.upset-cell .rs-winner { color: var(--gold-light); }
+  .rs-cell.upset-cell .rs-method { color: var(--gold); }
+
+  /* ══ GRADE BADGE ══ */
+  .grade-block {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .grade-letter {
+    width: 64px;
+    height: 64px;
+    background: var(--ocean-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .grade-letter span {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+  }
+  .grade-reasoning {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #6a9ab8;
+    line-height: 1.55;
+  }
+  .grade-reasoning strong { color: var(--white); }
+
+  /* ══ OCEAN DIVIDER ══ */
+  .ocean-divider {
+    height: 4px;
+    background: linear-gradient(90deg, var(--ink), var(--ocean), var(--ocean-light), var(--ocean), var(--ink));
+  }
+  .thin-rule { height: 1px; background: var(--aged); margin: 16px 0; }
+
+  /* ══ SECTION ══ */
+  .section {
+    padding: 28px 36px;
+    border-bottom: 1px solid var(--aged);
+    background: var(--newsprint);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 500;
+    color: var(--ocean-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--ocean-mid); }
+  .section-rule { flex: 1; height: 1px; background: var(--aged); }
+
+  /* ══ BODY TEXT ══ */
+  .body-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #1a2d3d;
+  }
+  .body-text p { margin-bottom: 12px; }
+  .body-text p:last-child { margin-bottom: 0; }
+  .body-text strong { font-weight: 600; color: var(--ink); }
+  .body-text .pull {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--ocean);
+    border-left: 3px solid var(--ocean-light);
+    padding-left: 14px;
+    margin: 16px 0;
+    line-height: 1.45;
+  }
+
+  /* ══ ROUND-BY-ROUND TIMELINE ══ */
+  .round-timeline {
+    margin-top: 16px;
+    border: 1px solid var(--aged);
+    overflow: hidden;
+  }
+  .rt-header {
+    background: var(--ink);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rt-header span {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .rt-header strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ocean-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .rt-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    border-bottom: 1px solid var(--aged);
+    background: #f4f8fb;
+  }
+  .rt-row:last-child { border-bottom: none; }
+  .rt-row:nth-child(even) { background: #edf4f8; }
+  .rt-round {
+    background: var(--ocean);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 6px;
+  }
+  .rt-round.turning-point { background: var(--gold); color: var(--ink); }
+  .rt-round.finish       { background: var(--red); }
+  .rt-desc {
+    padding: 10px 14px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #2a3d50;
+  }
+  .rt-desc strong { color: var(--ink); }
+  .rt-desc .badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 7px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .badge-kd  { background: var(--red);    color: var(--white); }
+  .badge-key { background: var(--gold);   color: var(--ink); }
+  .badge-end { background: var(--ocean);  color: var(--white); }
+
+  /* ══ CALL REVIEW ══ */
+  .call-review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .cr-card {
+    border: 1px solid var(--aged);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .cr-header {
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cr-header.correct   { background: #e8f5ea; border-bottom: 2px solid var(--green); }
+  .cr-header.incorrect { background: #faeaea; border-bottom: 2px solid var(--red); }
+  .cr-header.partial   { background: #fdf6e8; border-bottom: 2px solid var(--gold); }
+
+  .cr-matchup {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .cr-verdict {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+  }
+  .cr-verdict.correct   { color: var(--green); }
+  .cr-verdict.incorrect { color: var(--red); }
+  .cr-verdict.partial   { color: var(--gold); }
+
+  .cr-body {
+    padding: 12px 14px;
+  }
+  .cr-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 6px;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+  }
+  .cr-row:last-child { margin-bottom: 0; }
+  .cr-row-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    align-self: start;
+    padding-top: 1px;
+  }
+  .cr-row-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+  .cr-row-val.got  { color: var(--green); }
+  .cr-row-val.miss { color: var(--red); }
+  .cr-row-val.part { color: var(--gold); }
+
+  .cr-note {
+    margin-top: 8px;
+    padding: 7px 10px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #3a5568;
+    background: #f0f6fa;
+    border-left: 2px solid var(--aged);
+  }
+  .cr-note strong { color: var(--ink); }
+
+  /* ══ SPOTLIGHT VINDICATION ══ */
+  .spotlight-vindication {
+    background: var(--ink);
+    padding: 28px 36px;
+    border-bottom: 1px solid #1a2e40;
+  }
+  .sv-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .sv-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+  .sv-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .sv-rule { flex: 1; height: 1px; background: #1a2e40; }
+  .sv-body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #8ab4cc;
+  }
+  .sv-body p { margin-bottom: 12px; }
+  .sv-body p:last-child { margin-bottom: 0; }
+  .sv-body strong { color: var(--white); }
+  .sv-body .pull {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    padding-left: 14px;
+    margin: 16px 0;
+    line-height: 1.45;
+  }
+  .odds-callout {
+    display: flex;
+    gap: 1px;
+    background: #1a2e40;
+    border: 1px solid #1a2e40;
+    border-left: 3px solid var(--gold);
+    margin-top: 16px;
+    overflow: hidden;
+  }
+  .oc-cell {
+    background: #0a1824;
+    padding: 12px 16px;
+    flex: 1;
+    text-align: center;
+  }
+  .oc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7px;
+    color: #3a6a88;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+  }
+  .oc-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+  }
+  .oc-value.odds { color: var(--red); }
+  .oc-value.result { color: var(--gold-light); }
+  .oc-value.rank { color: var(--ocean-light); }
+
+  /* ══ SUPPORTING RESULTS ══ */
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .result-card {
+    border: 1px solid var(--aged);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .rc-header {
+    background: var(--ocean);
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .rc-header.upset  { background: #1a1508; border-bottom: 2px solid var(--gold); }
+  .rc-matchup {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .rc-matchup.upset { color: var(--gold-light); }
+  .rc-result-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: var(--ocean-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .rc-result-badge.upset { color: var(--gold); }
+  .rc-body {
+    padding: 12px 14px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #2a3d50;
+  }
+  .rc-body strong { color: var(--ink); }
+
+  /* ══ PROSPECT WATCH ══ */
+  .pw-section {
+    background: #040e06;
+    padding: 28px 36px;
+    border-bottom: 1px solid #0d2a14;
+  }
+  .pw-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2e7a3a;
+  }
+  .pw-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: #2e7a3a;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .pw-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: #3a6a45;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .pw-rule { flex: 1; height: 1px; background: #0d2a14; }
+
+  .pw-entry {
+    background: #0a1a0c;
+    border: 1px solid #1a3a1a;
+    border-left: 3px solid #2e7a3a;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .pw-entry:last-child { margin-bottom: 0; }
+  .pw-entry.watch-candidate { border-left-color: var(--gold); }
+  .pw-entry.flag            { border-left-color: var(--red); }
+
+  .pwe-header {
+    background: #061008;
+    padding: 9px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #1a3a1a;
+  }
+  .pwe-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .pwe-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: #2e7a3a;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .pwe-tag.watch { color: var(--gold); }
+  .pwe-tag.flag  { color: var(--red); }
+
+  .pwe-body {
+    padding: 12px 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #5a9a68;
+  }
+  .pwe-body strong { color: #a0d4a8; }
+  .pwe-body.watch-text { color: #9a8a50; }
+  .pwe-body.watch-text strong { color: var(--gold-light); }
+
+  .pwe-verdict {
+    padding: 8px 16px;
+    background: #060e08;
+    border-top: 1px solid #1a3a1a;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #2e7a3a;
+    letter-spacing: 0.06em;
+  }
+  .pwe-verdict.watch { color: var(--gold); border-top-color: #3a2a08; background: #100e04; }
+  .pwe-verdict strong { color: inherit; }
+
+  /* ══ BACK COVER ══ */
+  .back-cover {
+    background: var(--ink);
+    padding: 18px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid var(--ocean-light);
+  }
+  .bc-left { font-family:'DM Mono',monospace; font-size:8.5px; color:#3d6a88; line-height:1.8; text-transform:uppercase; letter-spacing:0.08em; }
+  .bc-left span { color:var(--ocean-light); }
+  .bc-center { text-align:center; }
+  .bc-blotter { font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:var(--white); letter-spacing:0.14em; text-transform:uppercase; }
+  .bc-tagline { font-family:'DM Mono',monospace; font-size:7.5px; color:#4a7a9b; letter-spacing:0.16em; text-transform:uppercase; margin-top:3px; }
+  .bc-right { font-family:'DM Mono',monospace; font-size:8.5px; color:#3d6a88; line-height:1.8; text-align:right; text-transform:uppercase; letter-spacing:0.08em; }
+  .bc-right span { color:var(--ocean-light); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 12 · Recap Edition</span>
+      <span class="masthead-meta">Co-op Live Arena · Manchester, England</span>
+      <span class="masthead-meta">Saturday, May 9, 2026 · <span>DAZN PPV</span></span>
+    </div>
+    <div class="masthead-title">
+      <h1>The Boxing Blotter</h1>
+      <div class="tagline">Documents Before · Scores During · Grades After</div>
+    </div>
+    <div class="masthead-bottom">
+      <div class="item"><span>Handle</span>@boxingblotter</div>
+      <div class="item"><span>Web</span>boxingblotter.com</div>
+      <div class="item"><span>Edition</span>Post-Fight</div>
+    </div>
+  </div>
+
+  <!-- RECAP COVER -->
+  <div class="recap-cover">
+    <div class="cover-texture"></div>
+    <div class="cover-inner">
+
+      <div class="cover-eyebrow">WBO Heavyweight Title · New Champion</div>
+
+      <div class="cover-headline">
+        <h2>Dubois Gets Off<br>The Canvas. <em>Twice.</em></h2>
+        <div class="deck">
+          Daniel Dubois was dropped in rounds 1 and 3, came back, and stopped Fabio Wardley in the 11th to win the WBO title. On the same card, Zak Chelli knocked out David Morrell at 33-1 odds. Manchester delivered everything the tagline promised.
+        </div>
+      </div>
+
+      <!-- FULL CARD RESULTS STRIP -->
+      <div class="result-strip">
+        <div class="rs-cell">
+          <span class="rs-label">Main Event · HW Title</span>
+          <span class="rs-winner">Dubois</span>
+          <span class="rs-method">TKO · Rd. 11</span>
+        </div>
+        <div class="rs-cell">
+          <span class="rs-label">Co-Main · Welterweight</span>
+          <span class="rs-winner">Rafferty</span>
+          <span class="rs-method">TKO · Rd. 6 (Corner)</span>
+        </div>
+        <div class="rs-cell upset-cell">
+          <span class="rs-label">Upset · Catchweight</span>
+          <span class="rs-winner">Chelli</span>
+          <span class="rs-method">TKO · Rd. 10 · 33-1</span>
+        </div>
+        <div class="rs-cell">
+          <span class="rs-label">LHW · WBA Intercont.</span>
+          <span class="rs-winner">Rea</span>
+          <span class="rs-method">TKO · Rd. 4</span>
+        </div>
+        <div class="rs-cell">
+          <span class="rs-label">Heavyweight</span>
+          <span class="rs-winner">Jalolov</span>
+          <span class="rs-method">TKO · Rd. 7 (Corner)</span>
+        </div>
+      </div>
+
+      <!-- GRADE -->
+      <div class="grade-block">
+        <div class="grade-letter"><span>B</span></div>
+        <div class="grade-reasoning">
+          <strong>Program Grade: B.</strong> Two correct picks. Main event call missed — picked Wardley, Dubois won. The reasoning that carried the call (psychological variable, documented quit pattern) was refuted directly: Dubois got off the canvas twice and came back. The analytical work was sound on the factors that held — jab, size, experience edge. The conclusion was wrong and that is acknowledged. Chelli was the editorial win of the night. The Spotlight identified the story before it happened at 33-1 odds.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ocean-divider"></div>
+
+  <!-- THE NIGHT -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">The Night</span>
+      <h2 class="section-title">What Manchester Produced</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="body-text">
+      <p>The tagline was "Don't Blink." Manchester did not blink. It produced a legitimate Fight of the Year candidate in the main event, the biggest upset in British boxing in years on the undercard, a dominant welterweight performance from a fighter now knocking on the door of a title shot, and a Prospect Watch entry that went seven rounds when the call had him finishing by round four. This card gave the Blotter more to file than any card since Inoue-Nakatani.</p>
+      <p>The headline stories are two. Dubois answered the one question that mattered about him — the psychological question — by getting up twice and winning. And Zak Chelli, the fighter this program covered before anyone else was writing about him, stopped a two-time world champion at 33-1 odds in the final round. Those two stories define the night. Everything else is filed in its proper place below.</p>
+    </div>
+  </div>
+
+  <!-- MAIN EVENT RECAP -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">Main Event</span>
+      <h2 class="section-title">Dubois <em>TKO11</em> Wardley — New WBO Champion</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="body-text">
+      <p>Wardley came out fast and landed the right hand in the opening moments. <strong>Dubois went down in round 1.</strong> The Co-op Live erupted. Wardley pressed. Then Dubois went down again in round 3 — Wardley's power was landing. And then something happened that Dubois's critics had insisted would never happen: he got up. Both times. And he came back.</p>
+
+      <p>The fight turned when Dubois settled into his jab. The analytical blueprint from the pre-fight program — Dubois uses his jab, controls range, doesn't let Wardley get inside — played out in the middle rounds exactly as called. Dubois began landing cleaner, heavier, and with better angles. Wardley never stopped coming, which is the truest thing that can be written about him, but he was taking more than he was giving.</p>
+
+      <div class="pull">"It was a war. We came through the sticky moments. Thank you, Fabio, for that." — Daniel Dubois, post-fight</div>
+
+      <p>Going into round 10, the ringside doctor examined Wardley before the bell rang. They let it continue. Wardley went out for the 10th and kept fighting. Dubois finished it in round 11 — pinned Wardley on the ropes, unloaded a sustained attack, referee Howard Foster stopped it. <strong>Wardley never officially went down.</strong> He absorbed an extraordinary amount of punishment over 11 rounds and stayed upright throughout, which is a fact worth documenting separately from the loss.</p>
+
+      <p>Dubois is 23-3, 22 KOs. Two-time world heavyweight champion. Wardley is 20-1-1, 19 KOs. Frank Warren confirmed Wardley holds a rematch clause. That fight, if it happens, will sell itself.</p>
+    </div>
+
+    <!-- ROUND TIMELINE -->
+    <div class="round-timeline">
+      <div class="rt-header">
+        <span>Round-by-Round · Key Moments</span>
+        <strong>Dubois TKO11 Wardley</strong>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round turning-point">R1</div>
+        <div class="rt-desc"><span class="badge badge-kd">Knockdown</span><strong>Dubois down.</strong> Wardley lands a right hand in the opening exchanges. Dubois hits the canvas. Gets up. Crowd noise is immediate and sustained.</div>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round">R2</div>
+        <div class="rt-desc">Dubois settles. Jab begins to find a home. Wardley keeps coming but Dubois is not rattled. First sign that the early knockdown has not broken him.</div>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round turning-point">R3</div>
+        <div class="rt-desc"><span class="badge badge-kd">Knockdown</span><strong>Dubois down again.</strong> Second canvas visit of the night for Dubois. Gets up again. At this point, Dubois has answered the psychological question twice inside three rounds.</div>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round">R4–R6</div>
+        <div class="rt-desc"><span class="badge badge-key">Shift</span>Dubois controls the middle rounds. Jab working. Size differential becoming visible. Dubois landing the cleaner combinations. Wardley pressing but eating more than he is landing.</div>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round">R7–R9</div>
+        <div class="rt-desc">Dubois fully in command. Wardley's durability the only reason the fight continues. Dubois scores a knockdown in this stretch per multiple sources — Wardley stays upright per Sky Sports ringside. Heavy punishment either way.</div>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round">R10</div>
+        <div class="rt-desc"><span class="badge badge-key">Doctor</span>Wardley's legs are staggering before the bell. Ringside doctor examines him. Fight is allowed to continue. Wardley walks out for the 10th.</div>
+      </div>
+      <div class="rt-row">
+        <div class="rt-round finish">R11</div>
+        <div class="rt-desc"><span class="badge badge-end">Stoppage</span><strong>Dubois pins Wardley on the ropes. Sustained attack. Referee Howard Foster stops it.</strong> Daniel Dubois is a two-time world heavyweight champion. Wardley never went down in 11 rounds.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALL REVIEW -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">Call Review</span>
+      <h2 class="section-title">What We Got Right. What We Got Wrong.</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="call-review-grid">
+
+      <div class="cr-card">
+        <div class="cr-header incorrect">
+          <span class="cr-matchup">Wardley vs. Dubois</span>
+          <span class="cr-verdict incorrect">Wrong Pick</span>
+        </div>
+        <div class="cr-body">
+          <div class="cr-row">
+            <span class="cr-row-label">Called</span>
+            <span class="cr-row-val miss">Wardley TKO R5–9</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Result</span>
+            <span class="cr-row-val got">Dubois TKO R11</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Factors held</span>
+            <span class="cr-row-val">Jab ✓ · Size ✓ · Experience ✓</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Factor failed</span>
+            <span class="cr-row-val miss">Psychological variable</span>
+          </div>
+          <div class="cr-note">The call was carried by Dubois's documented quit pattern. He refuted it directly — twice off the canvas in the first three rounds. The three analytical factors that pointed to Dubois all held. The one factor that pointed to Wardley did not. Pick was wrong. Reasoning was honest. Acknowledged.</div>
+        </div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-header correct">
+          <span class="cr-matchup">Rafferty vs. Essuman</span>
+          <span class="cr-verdict correct">Correct</span>
+        </div>
+        <div class="cr-body">
+          <div class="cr-row">
+            <span class="cr-row-label">Called</span>
+            <span class="cr-row-val">Rafferty Decision</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Result</span>
+            <span class="cr-row-val got">Rafferty TKO6 (Corner)</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Note</span>
+            <span class="cr-row-val">Better than called</span>
+          </div>
+          <div class="cr-note">Essuman's corner stopped it after round 6 due to a bad cut that was affecting him throughout. Rafferty was winning clearly before the stoppage. Youth, weight-class comfort, and work rate all played out. Correct winner, better result than projected.</div>
+        </div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-header incorrect">
+          <span class="cr-matchup">Morrell vs. Chelli</span>
+          <span class="cr-verdict incorrect">Wrong Winner</span>
+        </div>
+        <div class="cr-body">
+          <div class="cr-row">
+            <span class="cr-row-label">Called</span>
+            <span class="cr-row-val miss">Morrell TKO R5–8</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Result</span>
+            <span class="cr-row-val got">Chelli TKO10</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Spotlight</span>
+            <span class="cr-row-val got">Called correctly</span>
+          </div>
+          <div class="cr-note"><strong>The pick was wrong. The Spotlight was right.</strong> The pre-fight program documented Chelli's amateur background, his body work tendency, his durability, and called him the most undercovered fighter on the card. The market had him at 33-1 to win by KO. He won by KO in round 10. The editorial call was correct even though the formal pick was not.</div>
+        </div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-header partial">
+          <span class="cr-matchup">Jalolov vs. Smakici</span>
+          <span class="cr-verdict partial">Correct / Rounds Off</span>
+        </div>
+        <div class="cr-body">
+          <div class="cr-row">
+            <span class="cr-row-label">Called</span>
+            <span class="cr-row-val">Jalolov TKO R1–4</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Result</span>
+            <span class="cr-row-val got">Jalolov TKO7 (Corner)</span>
+          </div>
+          <div class="cr-row">
+            <span class="cr-row-label">Winner</span>
+            <span class="cr-row-val got">Correct</span>
+          </div>
+          <div class="cr-note">Jalolov did not press for the early finish. Appeared to pace himself. Corner stopped it after round 7. Correct result, round range was wrong. Filed separately in Prospect Watch.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SPOTLIGHT VINDICATION -->
+  <div class="spotlight-vindication">
+    <div class="sv-head">
+      <span class="sv-label">Spotlight Vindication</span>
+      <h2 class="sv-title">Zak Chelli · The Story the Market Missed</h2>
+      <div class="sv-rule"></div>
+    </div>
+
+    <div class="sv-body">
+      <p>The pre-fight Spotlight section ran under the headline <strong>"The Man Nobody's Covering."</strong> The argument was specific: Chelli's amateur background — victories over Ben Whittaker and Lewis Richardson before either won Olympic medals — was the buried data point that the pre-fight coverage was ignoring. The market had him at <strong>33-1 to win by knockout.</strong> Some outlets reported odds as high as 35-1.</p>
+
+      <p>The fight unfolded close to exactly as the Spotlight described. Chelli stayed behind a high guard, worked the body throughout the middle rounds, kept walking Morrell down when Morrell wanted to move and pick. Morrell controlled long stretches behind the jab — the cleaner work belonged to him through the early and middle rounds. He built an apparent lead. Then he took his foot off the gas, the way the pre-fight program described as his documented tendency after hurting opponents.</p>
+
+      <div class="pull">"I said I'd shock the world, did I not? And I did it. I'm a man of my word. Give me anyone." — Zak Chelli, post-fight to The Ring</div>
+
+      <p>In the 9th, Chelli landed a right hand that hurt Morrell — the same looping overhand right the Spotlight identified as his primary power weapon. Morrell survived the round. He came out for the 10th believing he had done enough. Chelli landed it again, landed the follow-up combination, and referee Darren Sarginson stopped it at 2:24 of round 10. <strong>Morrell had never been stopped in his professional career</strong> before this fight.</p>
+
+      <p>Chelli is now <strong>17-3-1, 9 KOs, ranked No. 10 at 175 lbs by The Ring.</strong> He has called out every champion in the light heavyweight division. His words post-fight: <em>"Benavidez didn't do that to him. I did."</em> That is not wrong.</p>
+
+      <div class="odds-callout">
+        <div class="oc-cell">
+          <div class="oc-label">Pre-Fight Odds (KO)</div>
+          <div class="oc-value odds">33–1</div>
+        </div>
+        <div class="oc-cell">
+          <div class="oc-label">Result</div>
+          <div class="oc-value result">TKO Rd. 10</div>
+        </div>
+        <div class="oc-cell">
+          <div class="oc-label">Morrell's Prior Stoppages</div>
+          <div class="oc-value result">0 of 13</div>
+        </div>
+        <div class="oc-cell">
+          <div class="oc-label">The Ring Ranking (Post)</div>
+          <div class="oc-value rank">No. 10 LHW</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPORTING RESULTS -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-label">Supporting Card</span>
+      <h2 class="section-title">The Rest of the Results</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="results-grid">
+
+      <div class="result-card">
+        <div class="rc-header">
+          <span class="rc-matchup">Rafferty TKO6 Essuman</span>
+          <span class="rc-result-badge">Welterweight · 10 Rds</span>
+        </div>
+        <div class="rc-body">
+          Rafferty (27-0-1, 18 KOs) was the better fighter before the cut changed the equation. Essuman's corner stopped it after round 6 — a bad cut was affecting him throughout and the corner made the call. Rafferty was winning on the cards regardless. Dominant welterweight debut for the 30-year-old from Shaw. The Lewis Crocker IBF title fight is the logical next call. Essuman at 37, now 22-3, is at the end of this level. His two recent losses came to Catterall and now Rafferty — both legitimate fighters, both stoppages. The clock is visible.
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-header">
+          <span class="rc-matchup">Rea TKO4 Cameron</span>
+          <span class="rc-result-badge">LHW · WBA Intercontinental</span>
+        </div>
+        <div class="rc-body">
+          Rea (22-2, 10 KOs) applied pressure throughout and repeatedly landed the harder shots. The turning point was a clean left hand that dropped Cameron heavily in round 4 — Rea followed up after Cameron rose and the referee stopped it. Cameron (24-8-1, 10 KOs) is 37 and has now been stopped for the third time in his last six fights. Rea wins the WBA Intercontinental belt at light heavyweight. A credible domestic scene performance — next step is seeing where the WBA ranks him and what gets made.
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-header upset">
+          <span class="rc-matchup rc-matchup upset">Gwynne MD over Majid</span>
+          <span class="rc-result-badge upset">SLT · WBA International</span>
+        </div>
+        <div class="rc-body">
+          Scores: 96-94 twice, 95-95. Gwynne (19-4-2) wins by majority decision — one judge saw it even. Majid (16-1) loses his unbeaten record in his first real test. The Blotter called Majid to watch and noted him as the lesser-known undefeated fighter on the card. The loss doesn't disqualify him from the conversation but it does change it — the WBA ranking he was building toward now requires rebuilding from a different position. Gwynne at 35, 1-2-1 in his last four, took the opportunity and made something of it. Honest result. Majid has work to do.
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-header">
+          <span class="rc-matchup">Jalolov TKO7 Smakici</span>
+          <span class="rc-result-badge">Heavyweight · 8 Rds</span>
+        </div>
+        <div class="rc-body">
+          Jalolov (17-0, 15 KOs) made his UK debut and did not press for the early finish. Corner stopped it after round 7. The pre-fight call had him finishing by round 4 — that did not happen. He appeared to pace himself rather than hunt the stoppage. Whether that is conditioning, tactical patience, or something else is filed with the Prospect Watch update below. The Itauma callout remains public. This performance did not close that analytical question — a 7-round corner stoppage against a limited opponent does not tell us what a fight with Moses Itauma would look like.
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-header">
+          <span class="rc-matchup">Ummataliev KO2 Drabik</span>
+          <span class="rc-result-badge">Super Middleweight · 6 Rds</span>
+        </div>
+        <div class="rc-body">
+          Ummataliev (2-0) finishes quickly on the Manchester card. Two professional fights, two stoppages. No extended sample yet to analyze. File the result and move on.
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-header">
+          <span class="rc-matchup">Flood · Hamilton-Allen Debuts</span>
+          <span class="rc-result-badge">Super Welterweight · 4 Rds</span>
+        </div>
+        <div class="rc-body">
+          Flood (2-0) wins by points, 40-36 over Darby. Hamilton-Allen (2-0) wins by points, 39-37 over Goulding. Both picked up their second professional wins in front of a large Manchester PPV audience. Four-round fights on a card this size are a television audition as much as anything else. Both passed. Neither result requires more analysis at this stage.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROSPECT WATCH UPDATES -->
+  <div class="pw-section">
+    <div class="pw-head">
+      <span class="pw-logo">Prospect Watch</span>
+      <span class="pw-sub">Vol. I · Post-Fight Updates · Filed May 9, 2026</span>
+      <div class="pw-rule"></div>
+    </div>
+
+    <!-- JALOLOV UPDATE -->
+    <div class="pw-entry">
+      <div class="pwe-header">
+        <span class="pwe-name">Bakhodir Jalolov</span>
+        <span class="pwe-tag">Vol. I · Entry No. 6 · Active</span>
+      </div>
+      <div class="pwe-body">
+        <strong>Updated record: 17-0, 15 KOs.</strong> UK debut complete. Jalolov did not go for the early finish the Blotter projected — the call was TKO R1-4, the fight went to a corner stoppage in round 7. He appears to have paced himself. Whether that reflects tactical patience at 254.9 lbs, a conditioning choice, or simply a less-than-motivated opponent who needed time to break down is not answerable from one fight. The Itauma callout is still public. A corner stoppage of a 21-3 opponent in 7 rounds does not accelerate or confirm that conversation either way.
+      </div>
+      <div class="pwe-verdict"><strong>Entry status: Active.</strong> Itauma question remains open. Next fight is the filing that matters.</div>
+    </div>
+
+    <!-- MORRELL WATCH CANDIDATE UPDATE -->
+    <div class="pw-entry watch-candidate">
+      <div class="pwe-header">
+        <span class="pwe-name">David Morrell Jr.</span>
+        <span class="pwe-tag watch">Watch Candidate · Status Changed</span>
+      </div>
+      <div class="pwe-body watch-text">
+        <strong>Updated record: 12-2, 9 KOs.</strong> Two losses in 15 months. First career stoppage. The pre-fight note on Morrell read: "This is no longer a rebuild story — it is a career crossroads." That was written before the result. The result confirmed it.
+        <br><br>
+        The Blotter did not formally file Morrell because he was not undiscovered. The rationale was that tonight's performance would determine whether the formal filing made sense. It does not. A two-time world champion who has been stopped for the first time in his career, against a 33-1 underdog, on 3 weeks' notice, after losing to Benavidez — the analytical question is not about his ceiling anymore. It is about whether he finds the rematch with Benavidez and whether the chin question that this loss raises is structural or situational.
+      </div>
+      <div class="pwe-verdict watch"><strong>Watch Candidate note updated.</strong> Formal Prospect Watch filing will not proceed. Morrell's story is a different chapter now — career inflection, not emerging ceiling.</div>
+    </div>
+
+  </div>
+
+  <div class="ocean-divider"></div>
+
+  <!-- BACK COVER -->
+  <div class="back-cover">
+    <div class="bc-left">
+      <div>Program · <span>Vol. I No. 12</span></div>
+      <div>Card · <span>Wardley-Dubois · Manchester</span></div>
+      <div>Edition · <span>Recap · Grade: B</span></div>
+    </div>
+    <div class="bc-center">
+      <div class="bc-blotter">The Boxing Blotter</div>
+      <div class="bc-tagline">Documents Before · Scores During · Grades After</div>
+    </div>
+    <div class="bc-right">
+      <div>Handle · <span>@boxingblotter</span></div>
+      <div>Web · <span>boxingblotter.com</span></div>
+      <div>Filed · <span>May 9, 2026</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

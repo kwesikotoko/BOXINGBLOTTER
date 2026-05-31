@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story First Blueprint · Adames vs Williams · Orlando · March 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#FAFAF8; --ink:#0E0E0C; --smoke:#E0DDD6; --muted:#6E6B62;
+  --wbc-green:#006B3C; --wbc-gold:#C8A41A;
+  --ad-red:#CC1A1A; --ad-dark:#8B0000;
+  --wi-navy:#1A2B5C; --wi-blue:#2A4080;
+  --neutral:#0C0C0A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;font-family:'Libre Baskerville',Georgia,serif;color:var(--ink)}
+.page{width:8.5in;min-height:11in;margin:0 auto 40px;background:var(--paper);box-shadow:0 8px 48px rgba(0,0,0,0.7);position:relative;overflow:hidden}
+
+/* ===== COVER ===== */
+.cover{background:var(--neutral);min-height:11in;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cv-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,107,60,0.1),transparent 55%),
+  radial-gradient(ellipse 80% 40% at 100% 100%,rgba(26,43,92,0.08),transparent 50%),
+  linear-gradient(180deg,#101010 0%,#0C0C0A 100%)}
+.cv-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,164,26,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,164,26,0.02) 1px,transparent 1px);background-size:52px 52px}
+.cv-accent{position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--wbc-green),rgba(0,107,60,0.1))}
+.cv-inner{position:relative;z-index:4;padding:0.55in 0.6in 0.55in 0.7in;display:flex;flex-direction:column;min-height:11in}
+
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.14in;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px}
+.cv-brand{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.45em;text-transform:uppercase;color:rgba(200,164,26,0.5);font-weight:700}
+.cv-event-tag{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.18);text-align:right}
+
+.cv-wbc{display:flex;align-items:center;gap:12px;margin:0.22in 0 0.18in}
+.wbc-bar{width:3px;height:36px;background:var(--wbc-green);flex-shrink:0}
+.wbc-text{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;line-height:1.6}
+
+/* FIGHTER NAMES — BIG BEBAS */
+.cv-ad-name{font-family:'Bebas Neue',sans-serif;font-size:90px;line-height:0.88;letter-spacing:0.02em;color:white;margin-bottom:2px}
+.cv-ad-sub{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(204,26,26,0.7);margin-bottom:0.18in;display:block;font-weight:700}
+.cv-vs-bar{display:flex;align-items:center;gap:16px;margin-bottom:0.18in}
+.cv-vs-line{flex:1;height:1px;background:rgba(255,255,255,0.08)}
+.cv-vs-text{font-family:'Libre Baskerville',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.2)}
+.cv-wi-name{font-family:'Bebas Neue',sans-serif;font-size:90px;line-height:0.88;letter-spacing:0.02em;color:rgba(255,255,255,0.65);margin-bottom:2px}
+.cv-wi-sub{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(26,43,92,0.6);margin-bottom:0.22in;display:block;font-weight:700}
+
+.cv-tape-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.06);margin-bottom:0.22in}
+.cts-cell{background:rgba(255,255,255,0.02);padding:10px 12px}
+.cts-l{font-family:'Space Mono',monospace;font-size:6px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(200,164,26,0.45);margin-bottom:5px;display:block;font-weight:700}
+.cts-ad{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--ad-red);display:block;line-height:1.1}
+.cts-wi{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--wi-navy);display:block;line-height:1.1}
+.cts-cat{font-family:'Space Mono',monospace;font-size:6.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.2);display:block;margin-top:1px}
+
+.cv-dek{font-family:'Libre Baskerville',serif;font-style:italic;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.42);max-width:5.8in;margin-bottom:auto}
+.cv-dek strong{font-style:normal;color:rgba(255,255,255,0.72);font-weight:700}
+
+.cv-info-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,107,60,0.2);margin-bottom:0.22in}
+.cis-cell{background:rgba(255,255,255,0.015);padding:9px 12px}
+.cis-l{font-family:'Space Mono',monospace;font-size:6px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(0,107,60,0.5);margin-bottom:3px;display:block;font-weight:700}
+.cis-v{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.04em;color:rgba(255,255,255,0.62)}
+
+.cv-foot{border-top:1px solid rgba(255,255,255,0.05);padding-top:12px;display:flex;justify-content:space-between;align-items:flex-end}
+.cf-l{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.12);line-height:2}
+.cf-r{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.08em;color:rgba(0,107,60,0.06)}
+
+/* ===== PAGE HEADER ===== */
+.ph{background:var(--neutral);padding:11px 0.6in 11px 0.7in;display:flex;justify-content:space-between;align-items:center}
+.ph-l{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700}
+.ph-r{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.pc{padding:0.38in 0.6in 0.46in 0.7in;background:var(--paper)}
+
+/* ===== TYPOGRAPHY ===== */
+.sec-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.42em;text-transform:uppercase;color:var(--wbc-green);display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:700}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--wbc-green),transparent)}
+.hed{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:0.9;color:var(--ink);margin-bottom:14px;letter-spacing:0.02em}
+.body-t{font-family:'Libre Baskerville',serif;font-size:13.5px;line-height:1.82;color:#1A1A14;margin-bottom:12px}
+.body-t strong{font-weight:700;color:var(--ink)}.body-t em{font-style:italic;color:var(--muted)}
+hr.r{border:none;height:1px;background:linear-gradient(to right,transparent,var(--smoke),transparent);margin:16px 0}
+
+/* ===== TAPE ===== */
+.tape{border:1px solid var(--smoke);background:#F6F5F0;overflow:hidden;margin-bottom:16px}
+.tape-head{background:var(--neutral);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.th-l{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--ad-red);font-weight:700}
+.th-r{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--wi-navy);font-weight:700}
+.tape-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--smoke)}
+.tape-row:last-child{border-bottom:none}
+.tr-ad{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--ad-red);padding:8px 14px;text-align:left;letter-spacing:0.03em}
+.tr-wi{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--wi-navy);padding:8px 14px;text-align:right;letter-spacing:0.03em}
+.tr-cat{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 10px;white-space:nowrap;font-weight:700}
+.tr-edge{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.18em;color:var(--wbc-green);font-weight:700}
+
+/* ===== FIGHT BLOCK ===== */
+.fight-block{border:1px solid var(--smoke);background:#F6F5F0;overflow:hidden;margin-bottom:16px}
+.fb-head{padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--smoke);background:#EFEDE6}
+.fb-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.04em;color:var(--ink)}
+.fb-sub{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:2px;font-weight:700}
+.fb-meta{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:1.8}
+.fb-body{padding:11px 14px 13px}
+.fb-story-l{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.32em;text-transform:uppercase;color:var(--wbc-green);margin-bottom:5px;display:block;font-weight:700}
+.fb-story{font-family:'Libre Baskerville',serif;font-size:13px;line-height:1.78;color:#1A1A14}
+.fb-story strong{font-weight:700;color:var(--ink)}.fb-story em{font-style:italic;color:var(--muted)}
+.fb-kf{margin-top:9px;padding-top:8px;border-top:1px solid var(--smoke);display:flex;gap:9px;align-items:flex-start}
+.fb-kfl{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--wbc-green);flex-shrink:0;padding-top:2px;font-weight:700}
+.fb-kft{font-family:'Libre Baskerville',serif;font-style:italic;font-size:13px;line-height:1.65;color:#1A1A14}
+
+/* ===== HOW EACH FIGHTER WINS ===== */
+.how-win{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--smoke);overflow:hidden;margin-bottom:18px}
+.hw-ad{border-right:1px solid var(--smoke);padding:12px 14px;background:#F6F5F0}
+.hw-wi{padding:12px 14px;background:#F6F5F0}
+.hw-head{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.05em;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--smoke)}
+.hw-item{font-family:'Libre Baskerville',serif;font-size:12px;line-height:1.65;color:#1A1A14;margin-bottom:5px;padding-left:12px;position:relative}
+.hw-item::before{content:'—';position:absolute;left:0;color:var(--wbc-green);font-family:'Space Mono',monospace;font-size:8px;font-weight:700}
+
+/* ===== THE CALL ===== */
+.call{background:var(--neutral);padding:0.26in 0.3in 0.26in 0.34in;margin:18px -0.6in 0 -0.7in;position:relative;overflow:hidden}
+.call::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--wbc-green)}
+.call::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 80% 50%,rgba(0,107,60,0.07),transparent 55%)}
+.call-i{position:relative;z-index:2;padding-left:0.1in}
+.call-l{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:0.5em;text-transform:uppercase;color:var(--wbc-green);margin-bottom:8px;display:block;font-weight:700}
+.call-h{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:0.9;color:white;margin-bottom:10px;letter-spacing:0.02em}
+.call-h em{font-style:italic;font-family:'Libre Baskerville',serif;color:var(--wbc-gold);font-size:46px}
+.call-body{font-family:'Libre Baskerville',serif;font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);margin-bottom:14px}
+.call-body strong{color:rgba(255,255,255,0.9);font-weight:700}
+.call-pick{display:flex;align-items:flex-start;gap:22px;padding-top:14px;border-top:1px solid rgba(0,107,60,0.2)}
+.cp-label{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.3);white-space:nowrap;padding-top:6px;flex-shrink:0;font-weight:700}
+.cp-val{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:0.04em;color:white;line-height:1}
+.cp-reason{font-family:'Libre Baskerville',serif;font-style:italic;font-size:12.5px;line-height:1.65;color:rgba(255,255,255,0.5);margin-top:4px}
+
+/* ===== PROSPECT CARDS ===== */
+.prospect-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.prospect{border:1px solid var(--smoke);background:#F6F5F0;padding:11px 13px}
+.pros-tag{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--wbc-green);margin-bottom:4px;display:block;font-weight:700}
+.pros-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.02em;color:var(--ink);margin-bottom:2px;line-height:1}
+.pros-rec{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block;font-weight:700}
+.pros-txt{font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.68;color:#1A1A14}
+.pros-txt strong{font-weight:700;color:var(--ink)}
+
+@media print{body{background:white}.page{margin:0;box-shadow:none;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="page cover">
+  <div class="cv-bg"></div>
+  <div class="cv-grid"></div>
+  <div class="cv-accent"></div>
+  <div class="cv-inner">
+    <div class="cv-top">
+      <span class="cv-brand">Story First Blueprint · Official Program</span>
+      <span class="cv-event-tag">DAZN · Matchroom Boxing · March 21, 2026 · Orlando, FL</span>
+    </div>
+
+    <div class="cv-wbc">
+      <div class="wbc-bar"></div>
+      <div class="wbc-text">WBC World Middleweight Championship<br>12 Rounds · 160 lbs · Caribe Royale Resort</div>
+    </div>
+
+    <div class="cv-ad-name" style="color:white;">Carlos<br>Adames</div>
+    <span class="cv-ad-sub">"El Bronco" · Dominican Republic · Champion · 24-1-1 · 18 KOs</span>
+
+    <div class="cv-vs-bar">
+      <div class="cv-vs-line"></div>
+      <span class="cv-vs-text">vs</span>
+      <div class="cv-vs-line"></div>
+    </div>
+
+    <div class="cv-wi-name">Austin<br>Williams</div>
+    <span class="cv-wi-sub">"Ammo" · Houston, Texas · Challenger · 20-1 · 13 KOs</span>
+
+    <div class="cv-tape-strip">
+      <div class="cts-cell"><span class="cts-l">Record</span><span class="cts-ad">24-1-1</span><span class="cts-wi">20-1</span><span class="cts-cat">KOs</span></div>
+      <div class="cts-cell"><span class="cts-l">Age</span><span class="cts-ad">31</span><span class="cts-wi">29</span><span class="cts-cat">Years</span></div>
+      <div class="cts-cell"><span class="cts-l">Height</span><span class="cts-ad">5'11"</span><span class="cts-wi">6'1"</span><span class="cts-cat">Inches</span></div>
+      <div class="cts-cell"><span class="cts-l">Reach</span><span class="cts-ad">73"</span><span class="cts-wi">78"</span><span class="cts-cat">5" Edge →</span></div>
+      <div class="cts-cell"><span class="cts-l">Stance</span><span class="cts-ad" style="font-size:15px;">Orthodox</span><span class="cts-wi" style="font-size:15px;">Southpaw</span><span class="cts-cat">Mismatch</span></div>
+    </div>
+
+    <div style="border:1px solid rgba(0,107,60,0.3);background:rgba(0,107,60,0.05);padding:10px 14px;margin-bottom:0.18in;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+      <div style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.38em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;padding-top:2px;white-space:nowrap;">What's<br>At Stake</div>
+      <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:2;">
+        WBC World Middleweight Championship<br>
+        Third title defense for Adames · First world title opportunity for Williams<br>
+        Winner: positioned for Canelo Alvarez or unified title unification<br>
+        Loser: rebuild at 31 (Adames) or reset at 29 (Williams)
+      </div>
+    </div>
+    <div class="cv-dek">
+      This fight was supposed to happen in January at Madison Square Garden. Adames withdrew through illness. Williams — rather than sit idle — beat a replacement opponent the same night. <strong>He didn't go home. He stayed ready.</strong> Now the Green and Gold belt is on the line at the same Orlando resort where Williams earned his WBA Continental Americas title a year ago. For Adames, this is the third defense of a belt he earned through survival and force. For Williams, ten years of dedication arrives at a single night in March. Adames said it best: "Destiny forgives once. After that, it collects."
+    </div>
+
+    <div class="cv-info-strip">
+      <div class="cis-cell"><span class="cis-l">Venue</span><div class="cis-v">Caribe Royale</div></div>
+      <div class="cis-cell"><span class="cis-l">Date</span><div class="cis-v">Sat Mar 21</div></div>
+      <div class="cis-cell"><span class="cis-l">Broadcast</span><div class="cis-v">DAZN</div></div>
+      <div class="cis-cell"><span class="cis-l">Ring Walks</span><div class="cis-v">~10:30 PM ET</div></div>
+    </div>
+
+    <div class="cv-foot">
+      <div class="cf-l">
+        Story First Blueprint · Boxing Program · Adames vs Williams<br>
+        Caribe Royale Resort · Orlando, Florida · March 21, 2026 · DAZN<br>
+        Sources: Matchroom Boxing · BoxRec · Bad Left Hook · Boxing Social · British Boxing News
+      </div>
+      <div class="cf-r">Card II</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: MAIN EVENT ANALYSIS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Adames vs Williams · Main Event Analysis</span><span class="ph-r">Story First Blueprint · Card II</span></div>
+  <div class="pc">
+
+    <div class="sec-label">The Story</div>
+    <div class="hed">The Belt That<br>Got Away. Twice.</div>
+
+    <div class="body-t">
+      Austin Williams lost to Hamzah Sheeraz in 2024 — a 10th-round TKO that forced a reset. He rebuilt. Four wins in 14 months. Then January arrived: the title fight was set for MSG on the Teofimo-Shakur undercard. Adames pulled out the morning of the weigh-in, citing illness. <strong>Williams didn't go home. He fought a replacement opponent that same night and won.</strong> That composure — fighting someone else when your title shot walked out the door — tells you who Austin Williams is.
+    </div>
+
+    <div class="body-t">
+      Carlos Adames got the belt the hard way. He stopped Julian Williams to win the interim WBC title, then got elevated to full champion when Jermall Charlo's inactivity exhausted the WBC's patience. He beat Terrell Gausha cleanly. Then he fought Hamzah Sheeraz — the same Sheeraz who had stopped Williams — and couldn't finish him either. The fight went to a controversial draw. <em>Adames and Williams share the same opponent, but with different results. Sheeraz stopped Williams in the 10th round in 2024. Sheeraz fought Adames to a controversial draw in February 2025. That gap — stopped vs. couldn't-be-stopped — is the most direct analytical comparison available for Saturday night.</em>
+    </div>
+
+    <hr class="r">
+
+    <div class="sec-label">Tale of the Tape</div>
+    <div class="tape">
+      <div class="tape-head">
+        <span class="th-l">Carlos "El Bronco" Adames</span>
+        <span class="th-r">Austin "Ammo" Williams</span>
+      </div>
+      <div class="tape-row"><div class="tr-ad">24-1-1</div><div class="tr-cat">Record</div><div class="tr-wi">20-1</div></div>
+      <div class="tape-row"><div class="tr-ad">18 KOs · 75%</div><div class="tr-cat">Stoppage Rate</div><div class="tr-wi">13 KOs · 65%</div></div>
+      <div class="tape-row"><div class="tr-ad">31 years</div><div class="tr-cat">Age</div><div class="tr-wi">29 years</div></div>
+      <div class="tape-row"><div class="tr-ad">5'11"</div><div class="tr-cat">Height</div><div class="tr-wi">6'1" ↑</div></div>
+      <div class="tape-row"><div class="tr-ad">73 inches</div><div class="tr-cat">Reach</div><div class="tr-wi">78 inches ↑</div></div>
+      <div class="tape-row"><div class="tr-ad">Orthodox</div><div class="tr-cat">Stance</div><div class="tr-wi">Southpaw</div></div>
+      <div class="tape-row"><div class="tr-ad">Dominican Republic</div><div class="tr-cat">Origin</div><div class="tr-wi">Houston, Texas</div></div>
+      <div class="tape-row"><div class="tr-ad">Pressure / Body attack</div><div class="tr-cat">Style</div><div class="tr-wi">Jab + straight left / Size</div></div>
+      <div class="tape-row"><div class="tr-ad">3-1 favorite</div><div class="tr-cat">Odds</div><div class="tr-wi">Challenger</div></div>
+      <div class="tape-row"><div class="tr-ad">Draw vs Sheeraz (Feb '25)</div><div class="tr-cat">Shared Opponent</div><div class="tr-wi">TKO loss vs Sheeraz ('24)</div></div>
+      <div class="tape-row"><div class="tr-ad" style="font-size:13px;">DEEP</div><div class="tr-cat">CRB Rating</div><div class="tr-wi" style="font-size:13px;">MODERATE · Unverified at elite level</div></div>
+    </div>
+
+    <div class="sec-label">The Matchup</div>
+    <div class="body-t">
+      The five-inch reach advantage is the conversation before any other conversation. Williams at 6'1" with 78-inch arms can operate at a distance where Adames cannot land his best shots. The southpaw vs orthodox dynamic compounds this — Adames will have to work around the straight left, which is Williams's power weapon, every time he tries to get inside. <strong>Williams's game plan writes itself: jab, maintain range, accumulate rounds.</strong>
+    </div>
+    <div class="body-t">
+      The counter-argument is Adames's body attack and pressure. He is not a one-dimensional fighter — he has championship pedigree and the ability to cut off the ring, negate the reach, and make a taller man fight small. The Sheeraz draw showed that a big, active fighter who maintains output can take rounds from Adames. Williams can do that. <em>The question is not whether Williams can survive Adames — it is whether he has the stopping power to land something that genuinely changes the fight.</em> Adames has been stopped once in his career. He is difficult to hurt badly.
+    </div>
+    <div class="body-t">
+      Note the shared Sheeraz variable carefully: Adames couldn't finish Sheeraz. Williams got stopped by Sheeraz. On that metric alone, Adames is the pick. But ring conditions shift. Williams is older, more experienced, and fighting on the same Orlando floor where he earned his WBA Continental title in 2025. The familiarity matters.
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Championship Round Bank</div>
+    <div style="border:1px solid var(--smoke);background:#F6F5F0;overflow:hidden;margin-bottom:18px;">
+      <div style="background:var(--neutral);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;">The Road to Round 12</span>
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);">Rounds 9–12 · Opposition Weighted · Amateur Credit Applied</span>
+      </div>
+      <div style="padding:10px 14px 8px;border-bottom:1px solid var(--smoke);">
+        <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.75;color:#1A1A14;font-style:italic;">
+          A 12-round championship fight is not twelve equal rounds. Rounds 1–8 are investment. Rounds 9–12 are collection. The Championship Round Bank measures how many times each fighter has been to the collection stage — and whether they were there against opponents who made them earn it.
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--smoke);">
+        <div style="padding:11px 14px;border-right:1px solid var(--smoke);">
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;color:var(--ad-red);">Adames</div>
+            <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;">DEEP</div>
+          </div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.72;color:#1A1A14;">
+            Three world title fights. Gausha went 12. Sheeraz went 12. Julian Williams went 9. Adames has been in championship rounds against fighters who pushed him — Sheeraz specifically made him uncomfortable through the second half of a 12-round fight and Adames never deviated from the plan. <strong>His championship round bank is the deepest of any fighter on either card tonight.</strong> His body attack was present in round 12 of the Sheeraz fight the same way it was in round one. That consistency is not talent alone. It is a verified CRB — the product of being there before and knowing what to do when the legs want to quit and the lungs are burning. Quality-filtered against his opposition, Adames's bank holds at full value. Gausha and Sheeraz are legitimate. The rounds counted.
+          </div>
+        </div>
+        <div style="padding:11px 14px;">
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;color:var(--wi-navy);">Williams</div>
+            <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;">MODERATE · UNVERIFIED AT ELITE LEVEL</div>
+          </div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.72;color:#1A1A14;">
+            Williams has been in 12-round fights. He has been to round 10 and beyond. But the quality filter matters here. His championship round experience against elite opposition is limited to one fight — the Sheeraz loss, which ended in round 10, the wrong way. His rebuild wins over Volny, Vazquez, and Toussaint produced championship rounds against fighters outside the elite tier. Raw bank is moderate. Quality-weighted, it is thin where it matters most. <strong>Tonight is Williams's first championship round experience against a verified world-class fighter who has been there before.</strong> Two things are simultaneously true: he has logged the rounds professionally, and none of those rounds were against anyone like Adames. The UNVERIFIED tag remains until round 10 tonight tells us something new.
+          </div>
+        </div>
+      </div>
+      <div style="padding:9px 14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;white-space:nowrap;padding-top:2px;">The Edge</span>
+        <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.72;color:#1A1A14;"><strong>Adames — and it is not close.</strong> Deep verified CRB vs. moderate unverified. When this fight reaches round 10 tonight, one man has been exactly here before. The other has been somewhere close but never this hard. That gap is real. It does not guarantee the result — but it explains why the body attack that shows up in round 12 for Adames is the same one that showed up in round one.</div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">The Judge's Chair</div>
+    <div style="border:1px solid var(--smoke);background:#F6F5F0;overflow:hidden;margin-bottom:18px;">
+      <div style="background:var(--neutral);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;">How This Fight Gets Scored</span>
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);">For the casual fan · Score it yourself</span>
+      </div>
+      <div style="padding:12px 14px 10px;border-bottom:1px solid var(--smoke);">
+        <div style="font-family:'Libre Baskerville',serif;font-size:13.5px;line-height:1.82;color:#1A1A14;">
+          Judges score four things in priority order: <strong>clean punches that land with impact</strong>, effective aggression, ring control, and defense. The first criterion carries the most weight. In this fight, two styles create the hardest possible judging problem. <em>Adames's body work — the punch that wins fights at 160 pounds — is the hardest work for a ringside judge to credit.</em> It doesn't produce the visual drama of head shots. It produces footwork changes, labored breathing, and late-round deterioration. Williams's reach and southpaw angles create spatial control that scores as ring generalship — but from a ringside seat it can look like retreating. In a close fight, both men may be winning by the criteria that judges historically undervalue. That's not conspiracy. That's physics.
+        </div>
+      </div>
+      <div style="padding:10px 14px;border-bottom:1px solid var(--smoke);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;white-space:nowrap;padding-top:1px;">Watch For</span>
+        <div style="font-family:'Libre Baskerville',serif;font-size:13px;line-height:1.78;color:#1A1A14;">
+          <div style="margin-bottom:5px;padding-left:12px;position:relative;"><span style="position:absolute;left:0;font-family:'Space Mono',monospace;font-size:8px;color:var(--wbc-green);font-weight:700;">—</span>Does Adames's body attack visibly slow Williams's movement? Body work that produces footwork changes — a southpaw who stops circling and starts standing flat — is body work judges notice. Silent body work is invisible body work on a scorecard.</div>
+          <div style="margin-bottom:5px;padding-left:12px;position:relative;"><span style="position:absolute;left:0;font-family:'Space Mono',monospace;font-size:8px;color:var(--wbc-green);font-weight:700;">—</span>Is Williams controlling distance or retreating? These are not the same thing. Control means Williams is choosing the range and landing from it. Retreat means Adames is taking the range and Williams is surviving. Judges are supposed to credit the former as ring generalship. They don't always distinguish.</div>
+          <div style="padding-left:12px;position:relative;"><span style="position:absolute;left:0;font-family:'Space Mono',monospace;font-size:8px;color:var(--wbc-green);font-weight:700;">—</span>Who lands the last clean shot in close rounds? Recency bias is documented in judging research. The fighter who lands something sharp in the final 20 seconds of a competitive round often gets credited with the round regardless of what happened in the first two minutes. In a fight this close, those 20 seconds are worth watching every time.</div>
+        </div>
+      </div>
+      <div style="padding:9px 14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;white-space:nowrap;">Decision Risk</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:0.05em;">HIGH — invisible body work vs. spatial control. The style clash the current scoring system handles worst.</span>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Crisis Execution Rating</div>
+    <div style="border:1px solid var(--smoke);background:#F6F5F0;overflow:hidden;margin-bottom:18px;">
+      <div style="background:var(--neutral);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;">When The Fight Gets Hard — Who Breaks?</span>
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);">Tier I · Tier II · Tier III · Unverified</span>
+      </div>
+      <div style="padding:10px 14px 6px;border-bottom:1px solid var(--smoke);">
+        <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.75;color:#1A1A14;font-style:italic;margin-bottom:8px;">
+          Some fighters have so many tools they can overthink in crunch time — confused about what to use and when. Other fighters, limited in their tools, don't have to think. They just do. The Crisis Execution Rating measures which side of that line a fighter lives on.
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--smoke);">
+        <div style="padding:11px 14px;border-right:1px solid var(--smoke);">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:var(--ad-red);margin-bottom:4px;">Adames <span style="font-size:11px;color:var(--wbc-green);letter-spacing:0.2em;font-family:'Space Mono',monospace;font-weight:700;">TIER II</span></div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.72;color:#1A1A14;">Defined identity execution. Pressure, body attack, wait. That is Adames's complete sentence in a crisis. He does not search for another answer when the fight gets hard because that answer is the only one he carries. Three title fights have confirmed it — including a draw with Hamzah Sheeraz where Adames absorbed significant punishment and never deviated from the plan. <strong>The body attack came out in round one and was still there in round twelve.</strong> Historical model: Joe Frazier — not in skill set, but in crisis consistency. Historical model: Chavez Sr.</div>
+        </div>
+        <div style="padding:11px 14px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:var(--wi-navy);margin-bottom:4px;">Williams <span style="font-size:11px;color:var(--wbc-green);letter-spacing:0.2em;font-family:'Space Mono',monospace;font-weight:700;">UNVERIFIED</span></div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.72;color:#1A1A14;">Williams has the toolbox — southpaw angles, reach management, jab control, straight left. He has not been in a world title fight. He has not been in a championship round with the belt on the line. The Sheeraz loss showed a fighter who could not access his tools under sustained pressure from a bigger puncher. Has he built a crisis default in the two years since? <strong>We do not know. Tonight is the first data point.</strong> If Williams gets hurt in rounds 8–10 and his response is immediate and correct, upgrade to Tier I or Tier II. If he searches, the rating is confirmed Tier III.</div>
+        </div>
+      </div>
+      <div style="padding:9px 14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;white-space:nowrap;">Edge</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--ink);letter-spacing:0.04em;">ADAMES — documented Tier II execution vs. an unverified challenger in his first title fight. The unknown is not an advantage.</span>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">How Each Fighter Wins</div>
+    <div class="how-win">
+      <div class="hw-ad">
+        <div class="hw-head" style="color:var(--ad-red);">Adames retains if:</div>
+        <div class="hw-item">He closes the distance early and makes the fight physical before Williams settles into his range</div>
+        <div class="hw-item">His body attack accumulates damage in rounds 4–8, slowing Williams's footwork</div>
+        <div class="hw-item">He wins the in-fighting exchanges when Williams tries to hold after getting hit</div>
+        <div class="hw-item">He finds a stoppage — because a 12-round decision against a size and reach disadvantage carries risk</div>
+      </div>
+      <div class="hw-wi">
+        <div class="hw-head" style="color:var(--wi-navy);">Williams wins the belt if:</div>
+        <div class="hw-item">He uses his jab and 5-inch reach advantage to control range and deny Adames his preferred distance</div>
+        <div class="hw-item">His straight left lands consistently when Adames loads up to follow</div>
+        <div class="hw-item">He banks rounds early — if this goes to the cards, size and activity win</div>
+        <div class="hw-item">The same Orlando crowd that saw him beat Volny in 2025 pushes him through a tough middle stretch</div>
+      </div>
+    </div>
+
+    <div class="call">
+      <div class="call-i">
+        <span class="call-l">Story First Blueprint · The Call</span>
+        <div class="call-h">Adames retains —<br><em>close, but the body wins.</em></div>
+        <div class="call-body">
+          Williams is the better story. The ten years of dedication, the composure to fight on when his title shot pulled out, the return to Orlando where he first made his case — all of it makes him a compelling pick. But <strong>Adames is the more dangerous man and the harder man to beat.</strong> He doesn't panic when someone fights him tall. He walks them down, hunts the body, and waits. Williams has never faced a title-fight body attack at this level. The shared Sheeraz result is honest evidence: Adames couldn't stop him, but Williams got stopped by him. The pressure fighter wins the close fights. It won't be easy. It won't be clean. But the Green and Gold belt goes home with Adames.
+        </div>
+        <div class="call-pick">
+          <span class="cp-label">Blueprint Pick</span>
+          <div>
+            <div class="cp-val" style="color:rgba(0,107,60,0.9);">Adames UD or Late TKO · Rounds 10–12</div>
+            <div class="cp-reason">Adames 115-113 on the cards if it goes the distance. If the body work compounds and Williams's legs slow in round 9 or 10, Adames finishes. Williams is live to win if his jab controls the first six rounds and he builds a lead the body attack can't fully erase. This is a genuine fight. The pick is Adames — but bring your full attention.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 3: CO-MAIN + PROSPECTS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-l">Co-Main Event · Rising Stars to Watch</span><span class="ph-r">Story First Blueprint · Card II</span></div>
+  <div class="pc">
+
+    <div class="sec-label">Co-Main Event</div>
+    <div class="fight-block">
+      <div class="fb-head">
+        <div>
+          <div class="fb-title">Omari "The Banger" Jones vs Christian Gomez</div>
+          <div class="fb-sub">Junior Middleweights · 154 lbs · 8 Rounds · DAZN Main Card</div>
+        </div>
+        <div class="fb-meta">Orlando, FL<br>Caribe Royale<br>Mar 21, 2026</div>
+      </div>
+      <div class="fb-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;border-bottom:1px solid var(--smoke);padding-bottom:12px;">
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--ink);margin-bottom:3px;letter-spacing:0.02em;">Omari Jones</div>
+            <div style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:700;">5-0 · 4 KOs · Orlando, FL · Paris 2024 Bronze Medal · Age 23</div>
+            <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.68;color:#1A1A14;">Started karate at four. Boxing at eight. A natural from day one, his coaches gave him the nickname "The Banger" before he was a teenager. 2021 World Championship silver. Paris 2024 Olympic bronze — losing a 3-2 split to the eventual champion after trailing 3-1 heading into the final round. He turned professional January 2025, signed with Eddie Hearn, and has never seen round four. <strong>Tonight he fights in his hometown.</strong></div>
+          </div>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--ink);margin-bottom:3px;letter-spacing:0.02em;">Christian Gomez</div>
+            <div style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:700;">23-6-1 · 21 KOs · Legitimate Opposition · Experienced</div>
+            <div style="font-family:'Libre Baskerville',serif;font-size:12.5px;line-height:1.68;color:#1A1A14;">23-6-1 with 21 stoppages — Gomez is not a handpicked opponent. He has beaten 23 professional fighters and his KO percentage is legitimate. Jones is a heavy favorite, but Gomez gives him real rounds at real pace. <em>This is the right test for Jones at this point in his development.</em> He will be asked questions he hasn't faced in five professional fights.</div>
+          </div>
+        </div>
+        <span class="fb-story-l">Why This Matters</span>
+        <div class="fb-story">
+          Omari Jones is fighting in Orlando — where he trains, where he won his first professional fight, where the crowd knows his name. <strong>An Olympic medalist with an 80% finish rate, fighting at home against a man with 21 career stoppages — this is the most narrative-rich bout on the undercard.</strong> If you want pure appointment television, Teremoana is two fights down on the same card. But if you want to watch a fighter becoming something, Jones is your bout. Eddie Hearn called him a future world champion after he stopped his toughest opponent to date last November. Jones is exactly the kind of fighter this program exists to surface: an Olympic medalist from a place people know, quietly becoming something that the rest of the country hasn't fully named yet.
+        </div>
+        <div class="fb-kf">
+          <span class="fb-kfl">Key Factor</span>
+          <span class="fb-kft">Does Jones see round five tonight? His knockout instinct and Gomez's durability are the direct tension. Watch Jones's ring generalship — can he cut off the ring and impose his timing on a man with 21 career stoppages of his own? The answer advances his timeline significantly.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-label">Scout's Nuggets · Two Names to File</div>
+
+    <div class="prospect-grid">
+      <div class="prospect">
+        <span class="pros-tag">Heavyweight · 8 Rounds · Undefeated</span>
+        <div class="pros-name">Teremoana<br>Teremoana</div>
+        <span class="pros-rec">9-0 · 9 KOs · 100% Stoppage Rate · Australia · Paris 2024 Olympian</span>
+        <div class="pros-txt">
+          6'6". 265 lbs. Cook Islander heritage. Former plumber who left the trade at 24 to commit fully to boxing after his grandfather's death. Named after that grandfather. <strong>Nine professional fights. Nine stoppages. Eleven total rounds combined.</strong> At the Paris Olympics, he became the first Australian to win a bout in super heavyweight — a first-round knockout. His signature: the Pe'e ceremonial dance after every victory, performed in the ring for his family and his heritage. The record averages out to 1.2 rounds per fight. Curtis Harper has never faced anything like this. <em>This is not a man learning how to finish. This is a man who finishes.</em> When Eddie Hearn calls someone a "future heavyweight champion," that claim usually requires proving. Teremoana is two years away from making it an argument that serious people take seriously.
+        </div>
+      </div>
+      <div class="prospect">
+        <span class="pros-tag">Lightweight · 10 Rounds · Undefeated</span>
+        <div class="pros-name">Jaycob<br>Gomez</div>
+        <span class="pros-rec">Undefeated · Matchroom / Boxlab Promotions · Co-Promoted</span>
+        <div class="pros-txt">
+          Ten rounds for a lightweight on a DAZN main card is not a gift — it is a statement of faith from two promotions. Boxlab Promotions brought Gomez into the Matchroom infrastructure specifically for this card. <strong>The co-promotion model — Matchroom's platform, Boxlab's fighter — is how prospects get made.</strong> Gomez faces Corey Marksman in what is his most significant exposure to date. Lightweight is deep, competitive, and looking for its next face. Watch how Gomez handles pressure, pace, and the spotlight of a DAZN main card. Undefeated records at lightweight mean less than how you look when the fight gets difficult. If Gomez looks right tonight in rounds 7–10, the conversation about what comes next starts immediately.
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--smoke);padding-top:14px;margin-top:4px;">
+      <div style="font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--wbc-green);font-weight:700;margin-bottom:10px;">Full Card · Caribe Royale Resort · Orlando, Florida · DAZN</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div style="font-family:'Libre Baskerville',serif;font-size:12px;line-height:1.9;color:#1A1A14;">
+          <strong>Main Event:</strong> Adames vs Williams · 12R · Middleweight · WBC World Title<br>
+          <strong>Co-Main:</strong> Omari Jones vs Gomez · 8R · Jr Middleweight<br>
+          <strong>Main Card:</strong> Teremoana vs Curtis Harper · 8R · Heavyweight<br>
+          <strong>Main Card:</strong> Jaycob Gomez vs Corey Marksman · 10R · Lightweight
+        </div>
+        <div style="font-family:'Libre Baskerville',serif;font-size:12px;line-height:1.9;color:#1A1A14;">
+          <strong>Undercard:</strong> Carlos De Leon Castro vs TBA · 6R · Jr Lightweight<br>
+          <strong>Undercard:</strong> Roberto R. Rivera Gomez vs TBA · 6R · Featherweight<br>
+          <strong>Undercard:</strong> Jordan Orozco Hernandez vs TBA · 6R · Bantamweight<br>
+          <strong>Undercard:</strong> Junior Alcantara vs Israel Camacho · 4R · Bantamweight
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

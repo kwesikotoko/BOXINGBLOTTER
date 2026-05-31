@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter · Fundora vs Thurman · March 28, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --newsprint:#F0EAD6; --ink:#0F0C07; --red:#C01A0A; --red-l:#E8250F;
+  --smoke:#D8D0BC; --muted:#6A6050; --dark:#1A1510; --rule:#2A2218;
+  --fd-red:#C01A0A; --th-navy:#0A1F3C;
+  --gold:#B8920A; --cream:#FAF5E8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#2A2218;font-family:'Playfair Display',Georgia,serif;color:var(--ink)}
+.page{width:8.5in;min-height:11in;margin:0 auto 40px;background:var(--newsprint);box-shadow:0 8px 48px rgba(0,0,0,0.8);position:relative;overflow:hidden}
+
+/* ===== COVER — BROADSHEET FRONT PAGE ===== */
+.cover{min-height:11in;background:var(--newsprint);display:flex;flex-direction:column;position:relative}
+.cover::before{content:'';position:absolute;inset:0;background-image:
+  repeating-linear-gradient(0deg,transparent 0px,transparent 3px,rgba(15,12,7,0.018) 3px,rgba(15,12,7,0.018) 4px);
+  pointer-events:none}
+
+/* MASTHEAD */
+.masthead{border-bottom:4px solid var(--ink);padding:10px 0.45in 8px;position:relative}
+.mh-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.mh-brand{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:900;letter-spacing:-0.01em;text-transform:uppercase;color:var(--ink);line-height:1}
+.mh-brand span{color:var(--red)}
+.mh-meta{text-align:right}
+.mh-tagline{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);line-height:1.8;display:block}
+.mh-rule-line{height:2px;background:var(--ink);margin-bottom:5px}
+.mh-dateline{display:flex;justify-content:space-between;align-items:center}
+.mh-date{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink)}
+.mh-edition{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink)}
+.mh-rule2{height:1px;background:var(--ink);margin-top:5px}
+
+/* HEADLINE BLOCK */
+.cv-hed-block{padding:0.18in 0.45in 0;border-bottom:2px solid var(--ink)}
+.cv-kicker{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:var(--red);margin-bottom:6px;display:block;font-weight:500}
+.cv-hed{font-family:'Playfair Display',serif;font-weight:900;font-size:62px;line-height:0.92;color:var(--ink);margin-bottom:8px;letter-spacing:-0.02em}
+.cv-hed em{font-style:italic;color:var(--red)}
+.cv-dek{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;line-height:1.6;color:#2A1E10;border-top:1px solid var(--smoke);padding-top:8px;margin-bottom:8px}
+
+/* RESULT BAND */
+.cv-belt-band{background:var(--ink);padding:9px 0.45in;display:flex;align-items:center;justify-content:space-between}
+.cbb-l{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500}
+.cbb-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:white}
+.cbb-r{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:right}
+
+/* THREE COLUMN LAYOUT */
+.cv-cols{display:grid;grid-template-columns:1fr 2px 1fr 2px 1fr;padding:0.14in 0.45in 0;gap:0;border-bottom:2px solid var(--ink)}
+.cv-col-rule{background:var(--smoke);margin:0 0.14in}
+.cv-col{}
+.col-hed{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;line-height:0.95;text-transform:uppercase;letter-spacing:0.01em;margin-bottom:5px}
+.col-sub{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block;border-bottom:1px solid var(--smoke);padding-bottom:5px}
+.col-body{font-family:'Playfair Display',serif;font-size:11.5px;line-height:1.72;color:#1A1208}
+.col-body strong{font-weight:700;color:var(--ink)}.col-body em{font-style:italic;color:var(--muted)}
+
+/* TALE OF TAPE STRIP */
+.cv-tape-strip{padding:0.1in 0.45in;border-bottom:2px solid var(--ink)}
+.cts-label{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.4em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block}
+.cts-grid{display:grid;grid-template-columns:1fr auto 1fr}
+.cts-fd{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--fd-red)}
+.cts-th{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--th-navy);text-align:right}
+.cts-cat{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 8px;white-space:nowrap}
+.cts-row{display:contents}
+.cts-fd,.cts-th,.cts-cat{padding:4px 0;border-bottom:1px dotted var(--smoke);font-size:15px}
+.cts-row:last-child .cts-fd,
+.cts-row:last-child .cts-th,
+.cts-row:last-child .cts-cat{border-bottom:none}
+
+/* WHAT'S AT STAKE */
+.cv-stake{padding:0.1in 0.45in 0.14in;border-bottom:2px solid var(--ink);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.cws-l{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.38em;text-transform:uppercase;color:var(--red);font-weight:500;white-space:nowrap;padding-top:2px}
+.cws-body{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);line-height:1.9}
+
+/* FOOTER */
+.cv-foot{padding:0.1in 0.45in;display:flex;justify-content:space-between;align-items:center}
+.cf-l{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);line-height:1.9}
+.cf-r{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+
+/* ===== PAGE HEADER ===== */
+.ph{background:var(--ink);padding:8px 0.45in;display:flex;justify-content:space-between;align-items:center}
+.ph-brand{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:white}
+.ph-brand span{color:var(--red)}
+.ph-r{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.pc{padding:0.32in 0.45in 0.4in;background:var(--newsprint)}
+
+/* ===== INTERIOR TYPOGRAPHY ===== */
+.sec-rule{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sr-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.42em;text-transform:uppercase;color:var(--red);font-weight:500;white-space:nowrap}
+.sr-line{flex:1;height:2px;background:var(--ink)}
+.hed{font-family:'Playfair Display',serif;font-weight:900;font-size:44px;line-height:0.92;color:var(--ink);margin-bottom:10px;letter-spacing:-0.02em}
+.hed em{font-style:italic;color:var(--red)}
+.body-t{font-family:'Playfair Display',serif;font-size:13.5px;line-height:1.84;color:#1A1208;margin-bottom:11px}
+.body-t strong{font-weight:700;color:var(--ink)}.body-t em{font-style:italic;color:var(--muted)}
+hr.r{border:none;border-top:1px solid var(--smoke);margin:14px 0}
+
+/* ===== TAPE ===== */
+.tape{border:2px solid var(--ink);overflow:hidden;margin-bottom:16px}
+.tape-head{background:var(--ink);padding:8px 12px;display:flex;justify-content:space-between}
+.th-l{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--fd-red)}
+.th-r{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--th-navy)}
+.tape-row{display:grid;grid-template-columns:1fr auto 1fr;border-bottom:1px solid var(--smoke)}
+.tape-row:last-child{border-bottom:none}
+.tape-row:nth-child(even){background:rgba(0,0,0,0.02)}
+.tr-fd{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--fd-red);padding:7px 12px;text-align:left;letter-spacing:0.03em}
+.tr-th{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--th-navy);padding:7px 12px;text-align:right;letter-spacing:0.03em}
+.tr-cat{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 10px;white-space:nowrap;font-weight:500;display:flex;align-items:center}
+
+/* ===== SECTIONS ===== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.box{border:2px solid var(--ink);background:var(--cream);overflow:hidden}
+.box-head{background:var(--ink);padding:8px 12px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.box-body{padding:10px 12px;font-family:'Playfair Display',serif;font-size:12.5px;line-height:1.72;color:#1A1208}
+.box-body strong{font-weight:700;color:var(--ink)}.box-body em{font-style:italic;color:var(--muted)}
+.box-item{font-size:12.5px;line-height:1.65;margin-bottom:5px;padding-left:12px;position:relative}
+.box-item::before{content:'—';position:absolute;left:0;font-family:'DM Mono',monospace;font-size:9px;color:var(--red)}
+
+/* ===== CRB SECTION ===== */
+.crb-section{border:2px solid var(--ink);overflow:hidden;margin-bottom:16px}
+.crb-head{background:var(--dark);padding:9px 12px;display:flex;justify-content:space-between;align-items:center}
+.crb-hl{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.crb-sub{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.crb-grid{display:grid;grid-template-columns:1fr 1px 1fr}
+.crb-divider{background:var(--smoke)}
+.crb-col{padding:10px 12px}
+.crb-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:3px}
+.crb-rating{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;font-weight:500;padding:2px 7px;display:inline-block;margin-bottom:7px}
+.crb-deep{background:rgba(26,46,10,0.12);color:#1A5C2A}
+.crb-mod{background:rgba(26,43,92,0.08);color:var(--th-navy)}
+.crb-thin{background:rgba(139,26,10,0.08);color:var(--red)}
+.crb-text{font-family:'Playfair Display',serif;font-size:12px;line-height:1.68;color:#1A1208}
+.crb-edge{background:rgba(184,146,10,0.08);border-top:1px solid var(--smoke);padding:8px 12px;grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.crb-edge-l{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+.crb-edge-v{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink)}
+
+/* ===== JUDGE'S CHAIR ===== */
+.jc-section{border:2px solid var(--ink);overflow:hidden;margin-bottom:16px}
+.jc-head{background:var(--dark);padding:9px 12px;display:flex;justify-content:space-between}
+.jc-hl{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.jc-sub{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.jc-body{padding:10px 12px;border-bottom:1px solid var(--smoke)}
+.jc-text{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;line-height:1.78;color:#1A1208}
+.jc-text strong{font-style:normal;font-weight:700;color:var(--ink)}
+.jc-wf{padding:9px 12px;border-bottom:1px solid var(--smoke);display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.jc-wfl{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);font-weight:500;white-space:nowrap;padding-top:2px}
+.jc-items{font-family:'Playfair Display',serif;font-size:12.5px;line-height:1.78;color:#1A1208}
+.jc-item{margin-bottom:5px;padding-left:12px;position:relative}
+.jc-item::before{content:'—';position:absolute;left:0;font-family:'DM Mono',monospace;font-size:9px;color:var(--red)}
+.jc-risk{padding:8px 12px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.jc-rl{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);font-weight:500;white-space:nowrap}
+.jc-rv{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink)}
+
+/* ===== THE CALL ===== */
+.call{background:var(--dark);padding:0.22in 0.28in;margin:16px -0.45in 0;position:relative;overflow:hidden}
+.call::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--red)}
+.call::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(192,26,10,0.06),transparent)}
+.call-i{position:relative;z-index:2}
+.call-l{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.5em;text-transform:uppercase;color:var(--red);margin-bottom:6px;display:block;font-weight:500}
+.call-h{font-family:'Playfair Display',serif;font-weight:900;font-size:44px;line-height:0.9;color:white;margin-bottom:10px;letter-spacing:-0.02em}
+.call-h em{font-style:italic;color:#E8C060}
+.call-body{font-family:'Playfair Display',serif;font-size:13.5px;line-height:1.78;color:rgba(255,255,255,0.62);margin-bottom:12px}
+.call-body strong{color:rgba(255,255,255,0.9);font-weight:700}
+.call-pick{display:flex;align-items:flex-start;gap:20px;padding-top:12px;border-top:1px solid rgba(192,26,10,0.2)}
+.cp-l{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.3);white-space:nowrap;padding-top:5px;flex-shrink:0}
+.cp-val{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:white;line-height:1}
+.cp-reason{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;line-height:1.65;color:rgba(255,255,255,0.48);margin-top:4px}
+
+/* ===== FIGHT BLOCK ===== */
+.fight-block{border:2px solid var(--ink);overflow:hidden;margin-bottom:14px}
+.fb-head{background:var(--dark);padding:9px 12px;display:flex;justify-content:space-between;align-items:center}
+.fb-hl{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:white}
+.fb-meta{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:right;line-height:1.8}
+.fb-content{padding:10px 12px 12px;background:var(--cream)}
+.fb-body{font-family:'Playfair Display',serif;font-size:13px;line-height:1.78;color:#1A1208;margin-bottom:10px}
+.fb-body strong{font-weight:700;color:var(--ink)}.fb-body em{font-style:italic;color:var(--muted)}
+.fb-kf{padding-top:8px;border-top:1px solid var(--smoke);display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.fb-kfl{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);font-weight:500;white-space:nowrap;padding-top:2px}
+.fb-kft{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;line-height:1.65;color:#1A1208}
+
+/* ===== CRISIS EXECUTION ===== */
+.crisis{border:2px solid var(--ink);overflow:hidden;margin-bottom:14px}
+.crisis-head{background:var(--dark);padding:8px 12px;display:flex;justify-content:space-between;align-items:center}
+.crisis-hl{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.crisis-sub{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.crisis-intro{padding:8px 12px 6px;border-bottom:1px solid var(--smoke);font-family:'Playfair Display',serif;font-style:italic;font-size:12.5px;line-height:1.75;color:#1A1208;background:var(--cream)}
+.crisis-intro strong{font-style:normal;font-weight:700;color:var(--ink)}
+.crisis-cols{display:grid;grid-template-columns:1fr 1px 1fr;background:var(--smoke)}
+.crisis-col{padding:10px 12px;background:var(--cream)}
+.crisis-name{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:3px}
+.crisis-badge{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;padding:2px 7px;display:inline-block;margin-bottom:6px;font-weight:500}
+.tier-ii{background:rgba(26,46,10,0.1);color:#1A5C2A}
+.tier-iii{background:rgba(139,26,10,0.08);color:var(--red)}
+.tier-drift{background:rgba(184,146,10,0.1);color:#7A5A08}
+.unverified{background:rgba(42,30,16,0.08);color:#4A3A1A}
+.crisis-text{font-family:'Playfair Display',serif;font-size:12px;line-height:1.68;color:#1A1208}
+.crisis-text strong{font-weight:700;color:var(--ink)}
+.crisis-edge{background:rgba(184,146,10,0.06);border-top:1px solid var(--smoke);padding:8px 12px;grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+.crisis-el{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+.crisis-ev{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink)}
+
+/* ===== NUGGETS ===== */
+.nugget-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.nugget{border:2px solid var(--ink);background:var(--cream);overflow:hidden}
+.nug-head{background:var(--dark);padding:7px 11px;display:flex;align-items:center;justify-content:space-between}
+.nug-tag{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.nug-div{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.nug-match{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:0.02em;color:var(--ink);margin-bottom:4px;padding:7px 11px 0}
+.nug-body{padding:0 11px 10px;font-family:'Playfair Display',serif;font-size:12px;line-height:1.68;color:#1A1208}
+.nug-body strong{font-weight:700;color:var(--ink)}.nug-body em{font-style:italic;color:var(--muted)}
+
+/* ===== BACK COVER ===== */
+.back{min-height:11in;background:var(--dark);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.back::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(192,26,10,0.06),transparent 60%)}
+.back-inner{position:relative;z-index:2;padding:0.55in 0.55in;display:flex;flex-direction:column;min-height:11in;justify-content:space-between}
+.back-mh{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.15);margin-bottom:0.4in;display:block}
+.back-mh span{color:var(--red)}
+.back-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;line-height:1.68;color:rgba(255,255,255,0.5);max-width:5.5in;margin-bottom:0.14in}
+.back-attr{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(192,26,10,0.5);font-weight:500}
+.back-title{font-family:'Barlow Condensed',sans-serif;font-size:130px;font-weight:900;line-height:0.8;letter-spacing:-0.01em;text-transform:uppercase;color:rgba(255,255,255,0.03);margin-top:auto;margin-bottom:0.2in}
+.back-foot{border-top:1px solid rgba(255,255,255,0.05);padding-top:14px;display:flex;justify-content:space-between;align-items:flex-end}
+.bf-l{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.1);line-height:2}
+
+@media print{body{background:white}.page{margin:0;box-shadow:none;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="page cover">
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="mh-top">
+      <div class="mh-brand">The Boxing <span>Blotter</span></div>
+      <div class="mh-meta">
+        <span class="mh-tagline">Story First Blueprint · Scout's Chair Analysis<br>Professional Boxing Program Guide · Est. 2026</span>
+      </div>
+    </div>
+    <div class="mh-rule-line"></div>
+    <div class="mh-dateline">
+      <span class="mh-date">Saturday, March 28, 2026 · MGM Grand Garden Arena · Las Vegas, Nevada</span>
+      <span class="mh-edition">Prime Video PPV · PBC on Prime · Vol. I · No. 3</span>
+    </div>
+    <div class="mh-rule2"></div>
+  </div>
+
+  <!-- BELT BAND -->
+  <div class="cv-belt-band">
+    <span class="cbb-l">Main Event · 12 Rounds</span>
+    <span class="cbb-title">WBC Super Welterweight World Championship · 154 lbs</span>
+    <span class="cbb-r">Third Defense · Fundora</span>
+  </div>
+
+  <!-- HEADLINE -->
+  <div class="cv-hed-block">
+    <span class="cv-kicker">The Boxing Blotter · Fight Week Preview</span>
+    <div class="cv-hed">The Towering<br><em>Inferno</em><br>vs. One Time.</div>
+    <div class="cv-dek">A 6'5½" southpaw champion with an 80-inch reach defends against the 37-year-old former unified welterweight king who was supposed to win this belt before Fundora stepped in and took it. The biggest physical mismatch in junior middleweight title history. And the man who knocked out Fundora is fighting in the co-main.</div>
+  </div>
+
+  <!-- THREE COLUMNS -->
+  <div class="cv-cols">
+    <div class="cv-col">
+      <span class="col-sub">The Champion</span>
+      <div class="col-hed" style="color:var(--fd-red);">Sebastian Fundora</div>
+      <div class="col-body">
+        <strong>"The Towering Inferno."</strong> 23-1-1. 15 knockouts. 28 years old. WBC champion since March 2024, when he stepped in as a replacement for an injured Keith Thurman and beat Tim Tszyu in a bloody split decision to take both the WBC and WBO belts. He dominated the rematch seven months later, stopping Tszyu in seven rounds. The man is in his absolute prime — trained by his Cuban-born father Freddy Sr. at the Coachella Valley Boxing Club, where the whole Fundora family lives and breathes boxing. His sister Gabriela is the undisputed flyweight champion. <em>First brother-sister duo as simultaneous world champions in boxing history.</em>
+      </div>
+    </div>
+    <div class="cv-col-rule"></div>
+    <div class="cv-col">
+      <span class="col-sub">The Challenger</span>
+      <div class="col-hed" style="color:var(--th-navy);">Keith Thurman</div>
+      <div class="col-body">
+        <strong>"One Time."</strong> 31-1. 23 knockouts. 37 years old. Former unified welterweight champion — held WBA and WBC simultaneously. Built one of the most electrifying records in the sport through performances against Porter, Garcia, Guerrero, and Maidana. Then inactivity swallowed years. His only loss: a split decision to Manny Pacquiao in 2019. He moved up to 154 for a March 2025 tune-up, stopped Brock Jarvis in three rounds in Sydney, and now stands here — trying to capture the belt that was supposed to be his before a training injury made Fundora's entire career possible.
+      </div>
+    </div>
+    <div class="cv-col-rule"></div>
+    <div class="cv-col">
+      <span class="col-sub">The Subplot</span>
+      <div class="col-hed">The Ghost<br>of Mendoza</div>
+      <div class="col-body">
+        <strong>Brian Mendoza is fighting on this card tonight.</strong> Mendoza is the only man who has ever beaten Sebastian Fundora — a seventh-round knockout in April 2023. He is in the co-main event. The man who created the path that led to Fundora becoming champion will be in the same building, on the same card, fighting while Fundora defends the belt his win made possible. No broadcaster is highlighting this. The Blotter names it first. <em>Watch the co-main for context on the main event.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- TALE OF TAPE STRIP -->
+  <div class="cv-tape-strip">
+    <span class="cts-label">Tale of the Tape · Physical Comparison</span>
+    <div class="cts-grid">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.04em;color:var(--fd-red);text-transform:uppercase;padding-bottom:3px;border-bottom:1px solid var(--smoke);">Fundora</div>
+      <div style="font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-align:center;padding-bottom:3px;border-bottom:1px solid var(--smoke);">Category</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.04em;color:var(--th-navy);text-align:right;text-transform:uppercase;padding-bottom:3px;border-bottom:1px solid var(--smoke);">Thurman</div>
+
+      <div class="cts-fd">23-1-1 · 15 KOs</div><div class="cts-cat">Record</div><div class="cts-th">31-1 · 23 KOs</div>
+      <div class="cts-fd">28 yrs</div><div class="cts-cat">Age</div><div class="cts-th">37 yrs</div>
+      <div class="cts-fd">6'5½" ↑</div><div class="cts-cat">Height</div><div class="cts-th">5'9½"</div>
+      <div class="cts-fd">80" ↑</div><div class="cts-cat">Reach</div><div class="cts-th">69"</div>
+      <div class="cts-fd">Southpaw</div><div class="cts-cat">Stance</div><div class="cts-th">Orthodox</div>
+      <div class="cts-fd">Freddy Fundora Sr.</div><div class="cts-cat">Trainer</div><div class="cts-th">Dan Birmingham</div>
+      <div class="cts-fd">MODERATE · Building</div><div class="cts-cat">CRB Rating</div><div class="cts-th">DEEP · Aged/Tier Drift</div>
+    </div>
+  </div>
+
+  <!-- WHAT'S AT STAKE -->
+  <div class="cv-stake">
+    <span class="cws-l">What's<br>At Stake</span>
+    <div class="cws-body">
+      WBC Super Welterweight Championship — third defense for Fundora<br>
+      Winner: positioned for unification with IBF/WBA champions · division dominance at 154<br>
+      Fundora victory: confirms his status as the face of the division in his absolute prime<br>
+      Thurman upset: the most stunning comeback win in the division since Foreman beat Moorer
+    </div>
+  </div>
+
+  <div class="cv-foot">
+    <div class="cf-l">
+      The Boxing Blotter · Story First Blueprint · Scout's Chair Analysis<br>
+      Sources: ESPN · BoxRec · The Ring · Bad Left Hook · PBC · Wikipedia
+    </div>
+    <div class="cf-r">Program No. 3 · March 28, 2026</div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: MAIN EVENT ANALYSIS ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-brand">The Boxing <span>Blotter</span></span><span class="ph-r">Fundora vs Thurman · Main Event Analysis</span></div>
+  <div class="pc">
+
+    <div class="sec-rule"><span class="sr-label">The Story</span><div class="sr-line"></div></div>
+    <div class="hed">Physics. Experience.<br><em>History.</em></div>
+
+    <div class="body-t">
+      The physical numbers are extraordinary even by boxing standards. Eight inches of height. Eleven inches of reach. At 154 pounds. Fundora at 6'5½" is not a tall junior middleweight — he is a tall super middleweight fighting at junior middleweight. His frame belongs in a different weight class and somehow he is competitive, even dominant, at 154 because <strong>he fights inside despite his stature</strong> — walking through the reach advantage to land body shots and throw high-volume combinations from uncomfortable angles that taller fighters almost never use.
+    </div>
+    <div class="body-t">
+      Thurman is bringing the most experienced campaign at 147 pounds in this decade into a weight class that is not his own, at 37 years old, against a man nine years younger who is in the middle of defending a title he won in a fight Thurman was supposed to be in. The irony is documented and the Blotter names it: <strong>Thurman's injury in March 2024 is the reason Fundora has a world title.</strong> Thurman was supposed to fight Tszyu. Fundora stepped in. Fundora won. Now Thurman has to beat Fundora to get the belt his absence made possible.
+    </div>
+    <div class="body-t">
+      There is one number in Thurman's favor that matters more than any physical measurement: he has never been stopped. In 32 professional fights against quality opposition — Porter, Garcia, Guerrero, Pacquiao — nobody has ever put Keith Thurman on the canvas and kept him there. His chin is a documented asset. His timing, even at 37 with years of inactivity, is elite-level muscle memory from a career built on counter-punching. <em>One Thurman right hand at the correct moment changes any fight he is in.</em>
+    </div>
+
+    <hr class="r">
+    <div class="sec-rule"><span class="sr-label">Tale of the Tape</span><div class="sr-line"></div></div>
+    <div class="tape">
+      <div class="tape-head">
+        <span class="th-l">Sebastian "The Towering Inferno" Fundora</span>
+        <span class="th-r">Keith "One Time" Thurman</span>
+      </div>
+      <div class="tape-row"><div class="tr-fd">23-1-1</div><div class="tr-cat">Record</div><div class="tr-th">31-1</div></div>
+      <div class="tape-row"><div class="tr-fd">15 KOs · 65%</div><div class="tr-cat">Stoppage Rate</div><div class="tr-th">23 KOs · 74%</div></div>
+      <div class="tape-row"><div class="tr-fd">28 years</div><div class="tr-cat">Age</div><div class="tr-th">37 years</div></div>
+      <div class="tape-row"><div class="tr-fd">6'5½" ↑↑</div><div class="tr-cat">Height (+8")</div><div class="tr-th">5'9½"</div></div>
+      <div class="tape-row"><div class="tr-fd">80 inches ↑↑</div><div class="tr-cat">Reach (+11")</div><div class="tr-th">69 inches</div></div>
+      <div class="tape-row"><div class="tr-fd">Southpaw</div><div class="tr-cat">Stance</div><div class="tr-th">Orthodox</div></div>
+      <div class="tape-row"><div class="tr-fd">Coachella, CA</div><div class="tr-cat">Base</div><div class="tr-th">Las Vegas, NV</div></div>
+      <div class="tape-row"><div class="tr-fd">Freddy Fundora Sr. (father)</div><div class="tr-cat">Trainer</div><div class="tr-th">Dan Birmingham</div></div>
+      <div class="tape-row"><div class="tr-fd">1 (Mendoza, KO7, 2023)</div><div class="tr-cat">Times Stopped</div><div class="tr-th">0 (Never stopped)</div></div>
+      <div class="tape-row"><div class="tr-fd">MODERATE · Building</div><div class="tr-cat">CRB Rating</div><div class="tr-th">DEEP · Aged / Tier Drift</div></div>
+    </div>
+
+    <div class="sec-rule"><span class="sr-label">The Matchup</span><div class="sr-line"></div></div>
+    <div class="body-t">
+      The style tension here is not what it appears. Fundora does not fight tall — he fights inside despite his height. He throws 80+ punches per round when aggressive, works body shots from angles that confuse taller opponents, and uses his reach not to keep distance but to wrap around guards and land from positions shorter fighters can't reach. <strong>His awkwardness is the weapon.</strong> Opponents who expect to fight a tall boxer find themselves in a phone booth with a man whose arms extend in directions that should be physically impossible.
+    </div>
+    <div class="body-t">
+      Thurman needs to find the right hand early and find it clean. His counter-punching timing — built over 20 years against world-class opposition — is genuine even at 37. If Fundora's aggression creates the opening, Thurman can land the kind of shot that has dropped better physical specimens. The blueprint for beating Fundora exists because Mendoza demonstrated it in 2023: catch him coming forward, land the right hand at the right moment, and his chin is not impenetrable. <em>Thurman is significantly more skilled than Mendoza, but also significantly less physically primed.</em>
+    </div>
+    <div class="body-t">
+      The inactivity question cannot be waved away with optimism. Thurman has averaged a fight every 20 months over his last five bouts. His last genuine competitive test was Pacquiao in 2019. Brock Jarvis in Sydney in March 2025 — stopped in three rounds — was not a competitive test. It was a tune-up. The legs at 37 after that level of inactivity in the championship rounds against a 28-year-old throwing 80 punches per round is the operational question this fight answers.
+    </div>
+
+    <hr class="r">
+    <div class="sec-rule"><span class="sr-label">Championship Round Bank</span><div class="sr-line"></div></div>
+    <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--muted);margin-bottom:10px;padding:0 2px;"><strong style="font-style:normal;color:var(--ink);">In plain terms:</strong> A 12-round championship fight is not twelve equal rounds. Rounds 1–8 are investment — both fighters building their game. Rounds 9–12 are collection — where titles are actually decided. A fighter who has never been there before is entering unknown territory, no matter how good they look in rounds 1–8. This metric asks: how many times has each fighter actually been to the collection stage, and did they earn those rounds against real opposition?</div>
+    <div class="crb-section">
+      <div class="crb-head">
+        <span class="crb-hl">The Road to Round 12</span>
+        <span class="crb-sub">Rounds 9-12 · Opposition Weighted · Amateur Credit Applied</span>
+      </div>
+      <div class="crb-grid">
+        <div class="crb-col">
+          <div class="crb-name" style="color:var(--fd-red);">Fundora</div>
+          <span class="crb-rating crb-mod">MODERATE · Building</span>
+          <div class="crb-text">At 28, Fundora's championship round bank is real but still developing. The Tszyu fights went deep — the first all 12 rounds, the second seven. The Mendoza knockout was in round seven. He has been in the late rounds of championship fights and responded correctly. What the bank does not yet contain: the experience of being behind on scorecards in the championship rounds and needing to come from behind to win. His fights have gone according to plan or ended early. The Thurman fight may be the first time he genuinely needs his championship bank under adversity. <strong>28-year-old champion with developing bank.</strong></div>
+        </div>
+        <div style="background:var(--smoke)"></div>
+        <div class="crb-col">
+          <div class="crb-name" style="color:var(--th-navy);">Thurman</div>
+          <span class="crb-rating crb-deep">DEEP · Aged · ⚑ Tier Drift</span>
+          <div style="font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-style:normal;">⚑ Tier Drift = his experience is real but may have expired with age and inactivity</div>
+          <div class="crb-text">Historically the deeper bank of the two fighters. Porter, Garcia, Guerrero — Thurman has been in wars that went to the cards, come from behind, managed championship rounds under pressure. The bank is real. The Tier Drift caveat applies directly: championship round experience from 2015-2019 at 147 pounds. Now 37. Now at a new weight class. Now after years of layoff. <strong>The bank exists. The question is whether it's still liquid.</strong> A fighter's championship round bank doesn't evaporate with age — but the physical capacity to access it does. Round 10 at 37 after 20-month layoffs is not round 10 at 29 with momentum.</div>
+        </div>
+        <div class="crb-edge" style="display:grid;grid-template-columns:auto 1fr;gap:12px;">
+          <span class="crb-edge-l">Edge</span>
+          <span class="crb-edge-v">FUNDORA on recency and activity. Thurman on historical depth. The Tier Drift flag makes Thurman's bank a question, not an asset.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 3: JUDGE'S CHAIR + CRISIS EXECUTION + THE CALL ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-brand">The Boxing <span>Blotter</span></span><span class="ph-r">Fundora vs Thurman · Scoring · Crisis · The Call</span></div>
+  <div class="pc">
+
+    <div class="sec-rule"><span class="sr-label">The Judge's Chair</span><div class="sr-line"></div></div>
+    <div class="jc-section">
+      <div class="jc-head">
+        <span class="jc-hl">How This Fight Gets Scored</span>
+        <span class="jc-sub">For the casual fan · Score it yourself</span>
+      </div>
+      <div class="jc-body">
+        <div class="jc-text">Judges score four things in order: <strong>clean effective punching, effective aggression, ring control, and defense.</strong> The tension in this fight: Fundora's volume can overwhelm a judge's ability to distinguish clean punches from punches that hit arms and shoulders. He throws constantly — but landing rate matters, not just output. And Thurman's counter-punching, when it lands clean, scores heavily on criterion one even at low volume. <em>A fighter who throws 30 and lands 20 clean beats a fighter who throws 80 and lands 30 clean.</em> Watch landing rate, not punch rate. Status Bias note: Thurman is the bigger historical name. Judges who watched his prime at 147 carry that reputation into the room. In close rounds, that current runs toward him.</div>
+      </div>
+      <div class="jc-wf">
+        <span class="jc-wfl">Watch For</span>
+        <div class="jc-items">
+          <div class="jc-item">Does Thurman's right hand land clean in rounds 1-4, before Fundora's volume and pace compounds? Early Thurman accuracy is the story of the fight's first half.</div>
+          <div class="jc-item">How much of Fundora's volume is landing clean vs. hitting arms and guard? High output with low accuracy is not criterion one. It may be criterion two (aggression) but judges distinguish.</div>
+          <div class="jc-item">Who controls the center of the ring? Fundora's aggression against Thurman's footwork is a ring control battle. The fighter dictating where the exchanges happen wins criterion three.</div>
+          <div class="jc-item">Does Thurman's output drop noticeably in rounds 9-12? That's the Tier Drift question made visible. If his punch rate falls by half in the championship rounds, the bank is no longer liquid.</div>
+        </div>
+      </div>
+      <div class="jc-risk">
+        <span class="jc-rl">Decision Risk</span>
+        <div>
+          <span class="jc-rv">MODERATE</span>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:var(--muted);margin-top:3px;">Volume vs. accuracy is hard for judges to score consistently. And Thurman is the bigger name — judges who watched his prime at 147 may subconsciously give him close rounds. That's not corruption. That's human nature in a profession with no accountability. It matters in a close fight.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-rule"><span class="sr-label">Crisis Execution Rating</span><div class="sr-line"></div></div>
+    <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--muted);margin-bottom:10px;padding:0 2px;"><strong style="font-style:normal;color:var(--ink);">In plain terms:</strong> When the fight is hardest — you're hurt, you're tired, it's round ten — do you do the right thing automatically, or do you freeze up trying to decide? Fighters with a deep toolbox sometimes overthink it. Fighters with a simpler game plan often respond faster. <strong style="font-style:normal;color:var(--ink);">Tier I</strong> = elite, adjusts instantly. <strong style="font-style:normal;color:var(--ink);">Tier II</strong> = limited but automatic — the plan never changes. <strong style="font-style:normal;color:var(--ink);">Tier III</strong> = reaches for the wrong thing or shuts down. <strong style="font-style:normal;color:var(--ink);">Tier Drift</strong> = was elite once, but age and inactivity may have changed that. Tonight that last label matters most.</div>
+    <div class="crisis">
+      <div class="crisis-head">
+        <span class="crisis-hl">When The Fight Gets Hard — Who Breaks?</span>
+        <span class="crisis-sub">Tier I · Tier II · Tier III · Unverified · Tier Drift</span>
+      </div>
+      <div class="crisis-intro">
+        <strong>Some fighters have so many tools they overthink in crunch time.</strong> Others, limited in their tools, don't have to think — they just do. The Crisis Execution Rating measures which side of that line a fighter lives on when the fight gets hardest.
+      </div>
+      <div class="crisis-cols">
+        <div class="crisis-col">
+          <div class="crisis-name" style="color:var(--fd-red);">Fundora</div>
+          <span class="crisis-badge tier-ii">TIER II — Defined Identity</span>
+          <div class="crisis-text">Fundora's crisis default is volume and forward pressure — he responds to adversity by throwing more, not less. After the Mendoza knockout in 2023, he came back to win the title. Against Lubin, he took a knockdown and came back to stop him. When hurt, he does not disengage or search for the wrong tool. He increases output and presses forward. <strong>That is a defined identity crisis response — not elegant, but automatic and effective.</strong> The Mendoza loss is the most important data point in his file: he recovered, rebuilt, and came back with more fire. Tier II confirmed.</div>
+        </div>
+        <div style="background:var(--smoke)"></div>
+        <div class="crisis-col">
+          <div class="crisis-name" style="color:var(--th-navy);">Thurman</div>
+          <span class="crisis-badge tier-drift">TIER DRIFT FLAG — Historical Tier I → Unknown</span>
+          <div class="crisis-text">In his prime, Thurman showed Tier I characteristics — processing speed, counter-punching read, the ability to adapt mid-fight against Porter and Garcia. That is real. The Tier Drift caveat applies here with maximum force: <strong>his last genuine championship-level crisis was 2019 against Pacquiao.</strong> Seven years of inactivity do not preserve crisis execution. The muscle memory exists in his hands. Whether his brain, at 37, can access it under real pressure at a new weight class in rounds 10-12 — that is genuinely unknown. Historical Tier I with a Tier Drift flag that could mean anything from Tier I preserved to Tier III revealed. Tonight answers the question.</div>
+        </div>
+        <div class="crisis-edge">
+          <span class="crisis-el">Edge</span>
+          <span class="crisis-ev">FUNDORA — verified Tier II beats historical Tier I with Tier Drift flag. Certainty beats uncertainty every time.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-rule"><span class="sr-label">How Each Fighter Wins</span><div class="sr-line"></div></div>
+    <div class="two-col">
+      <div class="box">
+        <div class="box-head" style="color:var(--fd-red);">Fundora wins if:</div>
+        <div class="box-body">
+          <div class="box-item">He establishes his volume early — rounds 1-4 — before Thurman gets comfortable with the timing and angles</div>
+          <div class="box-item">The body attack finds Thurman's body in the mid-rounds and drains his legs before the championship rounds arrive</div>
+          <div class="box-item">He makes Thurman's right hand miss consistently — taking away the one weapon that can change the fight instantly</div>
+          <div class="box-item">The championship rounds show Thurman's Tier Drift — output dropping, legs slowing — and Fundora recognizes and escalates at that moment</div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-head" style="color:var(--th-navy);">Thurman wins if:</div>
+        <div class="box-body">
+          <div class="box-item">He lands the right hand early and clean — before Fundora's rhythm and volume take over — proving the muscle memory is intact at 37</div>
+          <div class="box-item">His footwork denies Fundora the inside position that makes his awkward angles work — making him fight at distance where the reach advantage is uncomfortable</div>
+          <div class="box-item">His experience and ring IQ outmaneuver Fundora's youth and volume in the championship rounds — the Tier I bank, if it is still liquid, surfaces late</div>
+          <div class="box-item">He finds the same opening Mendoza found in 2023 — Fundora coming forward flat — and capitalizes with the kind of finishing instinct that built his entire career</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="call">
+      <div class="call-i">
+        <span class="call-l">The Boxing Blotter · The Call</span>
+        <div class="call-h">Fundora by<br><em>stoppage.</em><br>Youth and volume.</div>
+        <div class="call-body">
+          Thurman at his best is a problem for anyone. Thurman at 37, with seven years of near-inactivity, at a new weight class, against a 28-year-old champion who is physically his superior in every measurable dimension — that is a different conversation. The Tier Drift flag on Thurman's Crisis Execution Rating is the analytical heart of this fight. His championship round bank is historically real. The question is whether that bank is still liquid at this stage of his career, at this weight, against this volume of punches. <strong>The Blueprint says it isn't — not fully, not against this opponent, not in these rounds.</strong> Fundora's body attack finds Thurman's legs in round 6 or 7, and from there the championship rounds belong to the Towering Inferno.
+        </div>
+        <div class="call-pick">
+          <span class="cp-l">Blotter Pick</span>
+          <div>
+            <div class="cp-val">Fundora TKO · Rounds 8–10</div>
+            <div class="cp-reason">The Mendoza knockdown exists — Fundora's chin is not impenetrable. If Thurman's right hand lands clean in the first four rounds and the Tier Drift flag does not apply, this becomes a genuinely competitive fight on the cards. But the volume gap, the age gap, and the CRB recency gap all compound in the same direction. Thurman is live through round seven. After that, the legs tell the story.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAGE 4: CO-MAIN + UNDERCARD ===== -->
+<div class="page">
+  <div class="ph"><span class="ph-brand">The Boxing <span>Blotter</span></span><span class="ph-r">Co-Main · Undercard · Full Card</span></div>
+  <div class="pc">
+
+    <div class="sec-rule"><span class="sr-label">Co-Main Event · Full Treatment</span><div class="sr-line"></div></div>
+    <div class="fight-block">
+      <div class="fb-head">
+        <div class="fb-hl">Yoenis Tellez vs Brian Mendoza</div>
+        <div class="fb-meta">Jr Middleweights · 12 Rounds · Prime Video PPV<br>MGM Grand · Las Vegas · March 28, 2026</div>
+      </div>
+      <div class="fb-content">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--smoke);">
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:var(--fd-red);margin-bottom:3px;">Yoenis Tellez</div>
+            <div style="font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:500;">11-1 · 8 KOs · Age 25 · Cuba → Houston (Ronnie Shields)</div>
+            <div class="fb-body">Defected from Cuba in 2020, trained briefly in Russia, joined Ronnie Shields's Houston gym in 2022. First major splash: short-notice stoppage of Sergio Garcia on the Crawford-Spence undercard in July 2023. Won the WBA interim belt with a decision over Julian Williams in March 2025. Lost it to Abass Baraou in August — his first professional defeat. <strong>Was already in training camp for the March 21 card when this fight became available. Took it without hesitation.</strong> That is the Volunteer profile in action at 25 years old.</div>
+          </div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:var(--th-navy);margin-bottom:3px;">Brian Mendoza</div>
+            <div style="font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:500;">23-4 · 17 KOs · Age 32 · Albuquerque → Las Vegas</div>
+            <div class="fb-body"><strong>The only man to beat Sebastian Fundora.</strong> April 2023 — seventh round knockout, WBC interim title, one of the most stunning upsets in recent 154-pound history. Went to Australia to fight Tszyu for the full belt, lost by decision. Stepped in on late notice against Bohachuk in March 2024 on the Tszyu-Fundora undercard and lost. Two straight PPV losses. Bounced back against Jesus Rojas in July 2025. Now here — fighting on the same card as the man he knocked out, looking for one more statement result to push back into the championship picture.</div>
+          </div>
+        </div>
+        <div class="fb-body">
+          <strong>The Story:</strong> This is a crossroads fight for both men — but for different reasons. Tellez is 25 and building. A win against a man who knocked out the champion puts his name in front of everyone in the division. Mendoza is 32 and needs a signature win to stay relevant after two consecutive PPV-level losses. The Mendoza-on-this-card subplot is the most under-discussed element of this entire fight week. He created the path that led to Fundora being champion. He is back here trying to remind everyone that what he did in 2023 was not an accident.
+        </div>
+        <div class="fb-body">
+          <strong>Championship Round Bank:</strong> Both fighters have championship-level experience at 154 pounds. Mendoza went 12 with Tszyu. Tellez went 12 with Baraou. This fight has two fighters with genuine collection-round experience — expect the championship rounds to matter. Neither fighter is entering unknown developmental territory in round 10.
+        </div>
+        <div class="fb-kf">
+          <span class="fb-kfl">The Call</span>
+          <span class="fb-kft">Mendoza's power against Tellez's Cuban technical skill and superior youth. Mendoza is live at any moment — he knocked out the champion, he can knock out Tellez. But Tellez's preparation advantage (already in camp), his youth at 25, and his technical foundation from the Cuban system give him the edge over 12 rounds. <strong>Blotter Pick: Tellez UD or late stoppage — rounds 9-12 if he can avoid Mendoza's right hand for the first half.</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="r">
+    <div class="sec-rule"><span class="sr-label">Scout's Nuggets · Two Names to File</span><div class="sr-line"></div></div>
+    <div class="nugget-grid">
+      <div class="nugget">
+        <div class="nug-head">
+          <span class="nug-tag">Middleweight · 10 Rounds · Undefeated</span>
+          <span class="nug-div">On the PPV</span>
+        </div>
+        <div class="nug-match">Yoenli "Yoyo El Diablo" Hernandez<br>vs Terrell Gausha</div>
+        <div class="nug-body">
+          9-0. 8 KOs. 28 years old. Cuban. <strong>2021 AIBA World Amateur Champion — gold medal.</strong> Defected from Cuba in 2023 during a stopover in Panama. Now fighting out of Providence, Rhode Island and Miami. Ranked WBA #1, WBC #2 at middleweight. The Blotter already has Gausha in the file — he lost to Adames, who we covered last week. Now Gausha is here as the veteran test for Hernandez's biggest professional stage.
+
+          Hernandez is what happens when the Cuban amateur system produces a middleweight who combines gold-medal technical foundation with genuine power. <em>His nickname — "Yoyo El Diablo" — came from coaches watching him as a kid.</em> A win here in dominant fashion puts him in the mandatory conversation at 160 immediately. Watch whether his Cuban fundamentals hold up in rounds 7-10 against a legitimate opponent — Gausha has been in championship rounds before and knows how to make a fight ugly when he needs to.
+        </div>
+      </div>
+      <div class="nugget">
+        <div class="nug-head">
+          <span class="nug-tag">Super Middleweight · 10 Rounds · Rematch</span>
+          <span class="nug-div">Free on Prime</span>
+        </div>
+        <div class="nug-match">Elijah Garcia<br>vs Kevin Newman II</div>
+        <div class="nug-body">
+          Garcia is 17-1 with 13 KOs — a Glendale, Arizona super middleweight who has been building serious momentum. Newman is 18-3-1 with 11 KOs — the man Garcia already fought in fight one, which means there is documented intel on both sides. Rematches at this level of the super middleweight division carry real stakes: the loser of fight two almost certainly falls out of the title conversation at 168 pounds for the foreseeable future.
+
+          <strong>Garcia is the name the Blotter is filing forward.</strong> At 168 pounds, with Canelo still occupying the division's commercial peak and Benavidez, Adames, and others moving around it, the next generation of super middleweights is being sorted in fights exactly like this one. Garcia's finishing rate and his comfort in the championship rounds will tell us whether he belongs in that next tier of conversations. Watch rounds 7-10 specifically — the first fight's middle rounds are where the rematch's story lives.
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:2px solid var(--ink);padding-top:12px;margin-top:4px;">
+      <div style="font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--red);font-weight:500;margin-bottom:10px;">Full Card · MGM Grand Garden Arena · Las Vegas · Prime Video PPV</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div style="font-family:'Playfair Display',serif;font-size:12px;line-height:1.9;color:#1A1208;">
+          <strong>Main Event:</strong> Fundora vs Thurman · 12R · 154 lbs · WBC Title<br>
+          <strong>Co-Main:</strong> Tellez vs Mendoza · 12R · Jr Middleweight<br>
+          <strong>PPV Undercard:</strong> Hernandez vs Gausha · 10R · Middleweight<br>
+          <strong>PPV Undercard:</strong> Hovhannisyan vs Navarro · 10R · Heavyweight
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:12px;line-height:1.9;color:#1A1208;">
+          <strong>Free on Prime (prelim):</strong> Garcia vs Newman II · 10R · Super Middle<br>
+          <strong>Free on Prime:</strong> Kaipo Gallegos vs Julian Gonzalez · 10R · LW<br>
+          <strong>Free on Prime:</strong> Brayan Gonzalez vs Brandon Guerrero · 6R · FW<br>
+          <strong>Broadcast:</strong> Prime Video PPV · 8 PM ET · 5 PM PT
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== BACK COVER ===== -->
+<div class="page back">
+  <div class="back::before"></div>
+  <div class="back-inner">
+    <div>
+      <span class="back-mh">The Boxing <span>Blotter</span> · Story First Blueprint · Scout's Chair Analysis</span>
+      <div class="back-quote">
+        "Thurman's injury in March 2024 is the reason Fundora has a world title. He was supposed to fight Tszyu. Fundora stepped in. Fundora won. Now Thurman has to beat the man who took his spot to get a belt he never lost in a fight."
+      </div>
+      <div class="back-attr">— The Boxing Blotter · The Story · March 28, 2026</div>
+
+      <div style="margin-top:0.4in;display:grid;grid-template-columns:1fr 1fr;gap:0.3in;">
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(192,26,10,0.45);font-weight:500;margin-bottom:10px;">The Competitive Willingness Lens</div>
+          <div style="font-family:'Playfair Display',serif;font-size:12.5px;line-height:1.82;color:rgba(255,255,255,0.38);">
+            Thurman at 37, moving up in weight, chasing a belt he was denied by injury — that reads like Volunteer behavior. A man who could have stayed retired, stayed comfortable, stayed protected behind his welterweight legacy. He didn't. He came back for one more run at something real. The Blotter respects that — win or lose, the choice to be here at this stage of a career is the act of integrity that the Volunteer profile recognizes.
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(192,26,10,0.45);font-weight:500;margin-bottom:10px;">Division Watch · 154 Pounds</div>
+          <div style="font-family:'Playfair Display',serif;font-size:12.5px;line-height:1.82;color:rgba(255,255,255,0.38);">
+            The 154-pound division is genuinely stacked. Fundora holds the WBC. Baraou holds the WBA. Unification fights are possible. Tellez, Hernandez at 160, and the emerging Cuban wave all represent the next tier of challengers. This card is not just a title defense — it is a sorting mechanism for the division's next two years.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:0.3in;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.2in;">
+        <div style="font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(192,26,10,0.45);font-weight:500;margin-bottom:8px;">For New Readers · What Is The Boxing Blotter?</div>
+        <div style="font-family:'Playfair Display',serif;font-size:12.5px;line-height:1.82;color:rgba(255,255,255,0.35);">
+          The Boxing Blotter is a program guide built on the Story First Blueprint framework — the scout's chair applied to professional boxing. We produce pre-fight programs, post-fight recaps, and graded accuracy reports. Every pick gets graded honestly. Every miss goes into the permanent lesson file. We don't manage brands. We document what happens. The blotter is the record. @boxingblotter on X.
+        </div>
+      </div>
+    </div>
+
+    <div class="back-title">Fundora.</div>
+
+    <div class="back-foot">
+      <div class="bf-l">
+        The Boxing Blotter · Story First Blueprint · Vol. I · No. 3 · March 28, 2026<br>
+        MGM Grand Garden Arena · Las Vegas, Nevada · Prime Video PPV · PBC on Prime<br>
+        Sources: ESPN · BoxRec · The Ring · Bad Left Hook · PBC · SI · BoxingNews24 · Wikipedia
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

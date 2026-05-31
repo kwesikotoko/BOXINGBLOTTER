@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — Atlanta Recap · Gateway Center Arena · May 9, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #080e08;
+    --newsprint: #f2edd8;
+    --aged: #e4dcc4;
+    --forest: #1a4a22;
+    --forest-light: #2a7a34;
+    --gold: #c4900a;
+    --gold-light: #e0a818;
+    --red: #c0292b;
+    --rule: #0a1408;
+    --muted: #3a5a3a;
+    --light-rule: #c8d4b8;
+    --green: #2a6e3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #040a04; font-family: 'Barlow', sans-serif; color: var(--ink); }
+
+  .page { max-width: 900px; margin: 0 auto; background: var(--newsprint); box-shadow: 0 0 80px rgba(26,74,34,0.3); }
+
+  .masthead { background: var(--ink); border-bottom: 4px solid var(--red); }
+  .masthead-top { display: flex; justify-content: space-between; padding: 10px 24px 6px; border-bottom: 1px solid #1a2a1a; }
+  .masthead-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #5a7a5a; text-transform: uppercase; letter-spacing: 0.08em; }
+  .masthead-title { text-align: center; padding: 14px 24px 10px; }
+  .blotter-name { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: var(--newsprint); letter-spacing: -0.01em; line-height: 1; text-transform: uppercase; }
+  .blotter-rule { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .blotter-rule-line { flex: 1; height: 1px; background: var(--gold); }
+  .blotter-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; white-space: nowrap; }
+  .edition-bar { background: var(--red); padding: 5px 24px; display: flex; justify-content: space-between; }
+  .edition-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: white; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  /* COVER */
+  .cover { background: var(--ink); padding: 28px 28px 22px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 70%, rgba(26,74,34,0.15) 0%, transparent 55%); pointer-events: none; }
+
+  .cover-kicker { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 16px; }
+  .kicker-line { flex: 1; height: 1px; background: #1a2a1a; }
+  .kicker-text { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap; }
+
+  .cover-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: var(--forest-light); letter-spacing: 0.3em; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
+
+  .cover-headline { text-align: center; margin-bottom: 22px; }
+  .cover-headline h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 76px; font-weight: 900; color: var(--newsprint); line-height: 0.86; text-transform: uppercase; }
+  .cover-headline h1 em { font-style: normal; color: var(--gold); }
+  .cover-sub { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: #5a7a5a; text-align: center; margin-top: 10px; line-height: 1.5; }
+
+  /* RESULT BLOCKS */
+  .result-block { display: grid; grid-template-columns: 1fr auto 1fr; border: 1px solid #1a2a1a; margin-bottom: 8px; }
+  .result-fighter { padding: 14px 16px; text-align: center; }
+  .result-fighter.left { border-right: 1px solid #1a2a1a; }
+  .result-fighter.right { border-left: 1px solid #1a2a1a; }
+  .result-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; line-height: 1; }
+  .result-record { font-family: 'DM Mono', monospace; font-size: 11px; color: #5a7a5a; margin-top: 4px; }
+  .result-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 5px; }
+  .result-badge.winner { background: var(--forest); color: white; }
+  .result-badge.cancelled { background: var(--red); color: white; }
+  .result-badge.loser { background: #1a2a1a; color: #5a7a5a; }
+  .result-center { padding: 14px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; }
+  .result-center.green { background: var(--forest); }
+  .result-center.red-bg { background: var(--red); }
+  .result-method { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; color: white; line-height: 1; }
+  .result-detail { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.7); margin-top: 5px; text-align: center; line-height: 1.6; }
+
+  .cover-deck { font-family: 'Playfair Display', serif; font-size: 12.5px; font-style: italic; color: #3a5a3a; text-align: center; border-top: 1px solid #1a2a1a; padding-top: 10px; line-height: 1.55; }
+
+  /* BODY */
+  .body { padding: 0 28px 28px; }
+  .section-head { display: flex; align-items: center; gap: 10px; margin: 22px 0 13px; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--forest); white-space: nowrap; }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); opacity: 0.12; }
+
+  .story-head { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 6px; }
+  .story-deck { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--muted); line-height: 1.45; margin-bottom: 13px; border-left: 3px solid var(--forest); padding-left: 12px; }
+  .story-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.72; color: var(--ink); column-count: 2; column-gap: 26px; margin-bottom: 14px; }
+  .story-body p { margin-bottom: 10px; }
+  .story-body p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; float: left; line-height: 0.85; margin: 4px 6px 0 0; color: var(--forest); }
+
+  .pull-quote { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 12px 0; margin: 16px 0; text-align: center; }
+  .pull-quote-text { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--ink); line-height: 1.45; }
+  .pull-quote-attr { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+
+  /* PROSPECT WATCH UPDATE */
+  .prospect-upgrade { background: #080e08; border-left: 4px solid var(--gold); padding: 18px 20px; margin-bottom: 14px; }
+  .prospect-upgrade-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 8px; }
+  .prospect-upgrade-name { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; margin-bottom: 3px; }
+  .prospect-upgrade-result { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); margin-bottom: 10px; }
+  .prospect-upgrade-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: #8aaa8a; line-height: 1.68; }
+  .prospect-upgrade-body p { margin-bottom: 8px; }
+
+  .upgrade-status { background: rgba(196,144,10,0.1); border: 1px solid rgba(196,144,10,0.25); padding: 10px 14px; margin-top: 10px; }
+  .upgrade-status-label { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 5px; }
+  .upgrade-status-text { font-family: 'Barlow', sans-serif; font-size: 12px; color: rgba(224,200,120,0.8); line-height: 1.55; }
+
+  /* CO-FIGHTS */
+  .co-block { border: 1px solid var(--light-rule); padding: 14px 16px; margin-bottom: 10px; }
+  .co-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .co-title { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .co-result { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--ink); margin-top: 2px; }
+  .co-badge { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .co-badge.noted { background: var(--forest); color: white; }
+  .co-badge.flag { background: var(--gold); color: var(--ink); }
+  .co-scores { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+  .co-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: var(--ink); line-height: 1.65; }
+
+  /* RULE 40 ACCOUNTABILITY */
+  .rule-box { background: rgba(192,41,43,0.06); border-left: 3px solid var(--red); padding: 14px 16px; margin-bottom: 14px; }
+  .rule-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--red); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .rule-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+
+  /* RESULTS GRID */
+  .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .result-mini { border: 1px solid var(--light-rule); padding: 10px 12px; }
+  .result-mini-label { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px; }
+  .result-mini-fight { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); line-height: 1.1; margin-bottom: 2px; }
+  .result-mini-result { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--forest); }
+  .result-mini-note { font-family: 'Barlow', sans-serif; font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+  /* ACCURACY */
+  .accuracy-block { background: var(--ink); padding: 18px 22px; margin-bottom: 10px; }
+  .accuracy-title { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .accuracy-grid { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+  .accuracy-items { display: flex; flex-direction: column; gap: 6px; }
+  .accuracy-item { display: flex; align-items: baseline; gap: 8px; }
+  .acc-badge { font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 6px; letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; }
+  .acc-badge.hit { background: #2a6e3a; color: white; }
+  .acc-badge.miss { background: var(--red); color: white; }
+  .acc-badge.noted { background: var(--gold); color: var(--ink); }
+  .acc-badge.na { background: #3a5a3a; color: white; }
+  .acc-desc { font-family: 'Barlow', sans-serif; font-size: 11.5px; color: #7a9a7a; line-height: 1.4; }
+  .grade-block { text-align: center; border-left: 1px solid #1a2a1a; padding-left: 20px; }
+  .grade-letter { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; line-height: 1; }
+  .grade-letter.b { color: var(--forest-light); }
+  .grade-letter.a { color: var(--gold); }
+  .grade-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #3a5a3a; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
+  .accuracy-note { font-family: 'Barlow', sans-serif; font-size: 11px; font-style: italic; color: #3a5a3a; margin-top: 14px; padding-top: 12px; border-top: 1px solid #1a2a1a; line-height: 1.5; }
+
+  .lesson-block { background: var(--aged); border-left: 3px solid var(--gold); padding: 12px 14px; margin-bottom: 10px; }
+  .lesson-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .lesson-item { font-family: 'Barlow', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; padding-left: 14px; position: relative; }
+  .lesson-item::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .legacy-head { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .legacy-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.7; color: var(--ink); column-count: 2; column-gap: 26px; }
+  .legacy-body p { margin-bottom: 10px; }
+
+  hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.1; margin: 20px 0; }
+
+  .back-cover { background: var(--ink); padding: 22px 28px 26px; border-top: 4px solid var(--gold); }
+  .back-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+  .bc-title { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #1a2a1a; }
+  .bc-row { margin-bottom: 7px; }
+  .bc-row-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--newsprint); }
+  .bc-row-val { font-family: 'Barlow', sans-serif; font-size: 11px; color: #4a6a4a; margin-top: 1px; line-height: 1.4; }
+  .back-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #1a2a1a; padding-top: 14px; }
+  .back-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; }
+  .back-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #1a2a1a; letter-spacing: 0.08em; text-align: right; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 11 · Recap Edition</span>
+      <span class="masthead-meta">Gateway Center Arena · College Park, Georgia</span>
+      <span class="masthead-meta">Saturday, May 9, 2026</span>
+    </div>
+    <div class="masthead-title">
+      <div class="blotter-name">The Boxing Blotter</div>
+      <div class="blotter-rule">
+        <div class="blotter-rule-line"></div>
+        <div class="blotter-tagline">Documents Before · Scores During · Grades After</div>
+        <div class="blotter-rule-line"></div>
+      </div>
+    </div>
+    <div class="edition-bar">
+      <span class="edition-label">Post-Fight · Main Event Cancelled · Oberlton Headlines · Prospect Watch Upgraded</span>
+      <span class="edition-label">@boxingblotter</span>
+    </div>
+  </header>
+
+  <!-- COVER -->
+  <div class="cover">
+
+    <div class="cover-kicker">
+      <div class="kicker-line"></div>
+      <div class="kicker-text">The Night the Card Survived Itself</div>
+      <div class="kicker-line"></div>
+    </div>
+
+    <div class="cover-label">Co-Main Becomes Main Event · Light Heavyweight · 10 Rounds · College Park, Georgia</div>
+
+    <div class="cover-headline">
+      <h1>Oberlton<br>Answered<br>Every <em>Question.</em></h1>
+      <div class="cover-sub">The main event fell apart at the scale. The co-main stepped up. Atif Oberlton stopped a man who had never been stopped in 26 professional fights. The Prospect Watch entry filed four hours earlier was confirmed by 10 PM.</div>
+    </div>
+
+    <!-- MAIN EVENT RESULT -->
+    <div class="result-block" style="margin-bottom:6px;">
+      <div class="result-fighter left">
+        <div class="result-name">Angelo Leo</div>
+        <div class="result-record">26-1 · 12 KOs · IBF Champion</div>
+        <div style="margin:5px 0;"><span class="result-badge winner">TITLE RETAINED BY DEFAULT · PAID IN FULL</span></div>
+      </div>
+      <div class="result-center red-bg">
+        <div class="result-method">OFF</div>
+        <div class="result-detail">Cancelled<br>Weight miss<br>128.8 → 128</div>
+      </div>
+      <div class="result-fighter right">
+        <div class="result-name">Ra'eese Aleem</div>
+        <div class="result-record">23-1 · 12 KOs</div>
+        <div style="margin:5px 0;"><span class="result-badge cancelled">MISSED WEIGHT · 2.8 LBS OVER</span></div>
+      </div>
+    </div>
+
+    <!-- ACTUAL MAIN EVENT -->
+    <div class="result-block">
+      <div class="result-fighter left">
+        <div class="result-name">Atif "Lord Pretty Calvo" Oberlton</div>
+        <div class="result-record">16-0 · 14 KOs · 8 Straight Stoppages</div>
+        <div style="margin:5px 0;"><span class="result-badge winner">WINNER · EMERGENCY MAIN EVENT</span></div>
+      </div>
+      <div class="result-center green">
+        <div class="result-method">TKO</div>
+        <div class="result-detail">R4 · 3:00<br>Corner stopped<br>before R5</div>
+      </div>
+      <div class="result-fighter right">
+        <div class="result-name">Carlos Gongora</div>
+        <div class="result-record">22-4 · 17 KOs</div>
+        <div style="margin:5px 0;"><span class="result-badge loser">First Career Stoppage · 26 fights</span></div>
+      </div>
+    </div>
+
+    <div class="cover-deck">
+      Gateway Center Arena · College Park, Georgia · DAZN · 8 PM ET<br>
+      Blotter was in the building · Rule 40 originated on this card · Prospect Watch Entry No. 5 confirmed same night
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- ALEEM WEIGHT MISS -->
+    <div class="section-head">
+      <span class="section-label">The Weight Miss — Rule 40 Applied</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="rule-box">
+      <div class="rule-label">⚑ Rule 40 — Weight Discipline Check · The Case That Created the Rule</div>
+      <div class="rule-body">Ra'eese Aleem arrived at the Gateway Center Arena on Friday having been in College Park since Tuesday. He had four full days to make 126 pounds. He weighed 128.8 on his first attempt. He got an hour. He came back at 128. Still two pounds over. The fight was cancelled. Angelo Leo, who weighed 125, received his full $147,000 purse under Georgia commission rules. Aleem received nothing and forfeited the first world title opportunity of a 15-year professional career. His adviser Sean Gibbons called it "speechless" and noted Aleem had never missed weight before — including fights in Australia and Japan. The Blotter documented Aleem's clean weight history in the pre-fight program and correctly identified it as a clean record. The clean history provided no warning. The rule created in response to this event is not about Aleem. It is about every future fighter on every future card, whose weight history may tell a different story if the research is done first.</div>
+    </div>
+
+    <!-- OBERLTON STORY -->
+    <div class="section-head">
+      <span class="section-label">Game Story — The Night Belonged to Philadelphia</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="story-head">The Card Needed Someone to Step Up. Oberlton Did More Than That.</div>
+    <div class="story-deck">He stopped a man in four rounds who had never been stopped in 26 professional fights against opponents including former world champions. That is the sentence that goes on the Prospect Watch entry.</div>
+
+    <div class="story-body">
+      <p>Atif Oberlton arrived in College Park as a co-main event. He left as the headliner, the story of the night, and the fighter who answered every analytical question the Blotter filed in his Prospect Watch entry four hours before the opening bell.</p>
+
+      <p>The question was specific: could Oberlton break down a man who had never been stopped? Carlos Gongora had been stopped by nobody. Not by Demetrius Andrade. Not in 26 professional fights against legitimate opposition. He stepped in on two weeks' notice, moving up from super middleweight to light heavyweight for the first time, and accepted the assignment without hesitation. He came in having never quit in a professional boxing ring. He left with his first career stoppage on his record.</p>
+
+      <p>Oberlton started with the body from the opening minute. Not as a tactic to set up the head — as the primary weapon. He identified that Gongora's defense at light heavyweight, moving up from 168 pounds, would leave his ribs and his liver exposed to a fighter with Oberlton's accuracy. He was right. Round by round, the body work accumulated. Gongora tried to respond — he landed shots throughout and made clear he was not going to submit easily. But by round four, the damage was visible. At the end of the fourth round, Gongora's corner looked at their fighter and made the decision. Hector Bermudez stopped the bout before the bell for round five. Time: 3:00.</p>
+
+      <p>Oberlton is now 16-0 with 14 knockouts and has stopped his last eight opponents in sequence. He is 27 years old, ranked top five in the world at light heavyweight, and just became the fighter who inflicted the first career stoppage on a seasoned former world title challenger. The Blotter filed the entry before the first punch was thrown. The result confirmed the thesis within the same evening.</p>
+    </div>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">"I treat every opponent the same, like a real threat. At the end of the day, he's just another body in the way of me and a world title."</div>
+      <div class="pull-quote-attr">— Atif Oberlton · Pre-fight · College Park, Georgia · Said before the fight, proven after it</div>
+    </div>
+
+    <!-- PROSPECT WATCH UPGRADE -->
+    <div class="section-head">
+      <span class="section-label">Prospect Watch — Entry No. 5 Upgraded</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="prospect-upgrade">
+      <div class="prospect-upgrade-label">⚡ Prospect Watch Vol. I · Entry No. 5 — Verification Threshold Met · Entry Upgraded</div>
+      <div class="prospect-upgrade-name">Atif "Lord Pretty Calvo" Oberlton</div>
+      <div class="prospect-upgrade-result">16-0 · 14 KOs · 8 Consecutive Stoppages · TKO4 Gongora · First Filed: May 9, 2026</div>
+
+      <div class="prospect-upgrade-body">
+        <p>The verification threshold stated in the entry: "Can he break down a former world champion who has never been stopped? If Oberlton wins convincingly and the performance shows the full range of his tools, the Blotter upgrades this entry significantly. A stoppage against Gongora is a statement that demands the division respond."</p>
+        <p>He stopped Gongora in four rounds. Gongora had never been stopped in 26 fights. The statement was made. The division must respond. The entry is upgraded from ACTIVE to CONFIRMED.</p>
+        <p>The body work was the story. Oberlton did not rely on the head — he built the finish with accumulating liver and rib damage that took away Gongora's ability to keep working. That is the Pernell Whitaker influence showing in a real fight against real opposition. Not speed, not flash, but the strategic application of power to the correct target until the correct result becomes inevitable. At 27 years old, he is not a prospect waiting for a chance. He is a contender. The Blotter was in the building when it happened.</p>
+      </div>
+
+      <div class="upgrade-status">
+        <div class="upgrade-status-label">Entry Status — Updated May 9, 2026</div>
+        <div class="upgrade-status-text">Filed: April 11, 2026 (pre-fight program, Leo-Aleem card) · Verified: May 9, 2026 · Result: TKO4 Gongora, first career stoppage of a never-stopped fighter · Status upgraded from ACTIVE to CONFIRMED · World title contention is the next verification event.</div>
+      </div>
+    </div>
+
+    <hr class="divider-heavy">
+
+    <!-- TAYLOR -->
+    <div class="section-head">
+      <span class="section-label">Co-Feature — Taylor + Rule 39 Flag</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="co-block">
+      <div class="co-header">
+        <div>
+          <div class="co-title">Heavyweight · 10 Rounds</div>
+          <div class="co-result">Pryce Taylor def. Calvin Barnett — TKO Round 2 (2:59)</div>
+        </div>
+        <span class="co-badge flag">⚑ Rule 39 — Post-Fight</span>
+      </div>
+      <div class="co-scores">Taylor now 12-0, 8 KOs · Barnett falls to 7-5 · Both fighters rocked in R1 · Taylor shifted to the body in R2 · Corner stopped it</div>
+      <div class="co-body">
+        Taylor delivered the result the program projected — a dominant stoppage built on body work, not power. Barnett was competitive in round one and gave Taylor real resistance. Then the second round happened. Taylor targeted the midsection with consistent, accumulating pressure. Barnett went down — ruled a slip — but absorbed punishment throughout. His corner stopped it at 2:59 with Barnett in obvious pain. The body work tells you something about Taylor's technical development. A fighter who wins with the body against a durable opponent is learning to do things the right way.
+
+        The Rule 39 note that should have been in the pre-fight program: research confirmed Taylor spent a significant portion of his training camp sparring with former heavyweight world champion Deontay Wilder in Tuscaloosa, Alabama. The Blotter had this information in the research and did not apply the Sparring History Flag. A man who has absorbed elite-level punching in camp and continued to function is demonstrating crisis handling that the professional record alone does not capture. That analytical dimension was available. It was missed. It goes in the lesson file.
+      </div>
+    </div>
+
+    <!-- FULL RESULTS -->
+    <div class="section-head">
+      <span class="section-label">All Results</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-mini">
+        <div class="result-mini-label">Main Event (cancelled)</div>
+        <div class="result-mini-fight">Leo vs. Aleem</div>
+        <div class="result-mini-result" style="color:var(--red);">CANCELLED · Aleem missed weight</div>
+        <div class="result-mini-note">Leo retains IBF title. Paid $147K. Aleem receives nothing. First world title chance forfeited at the scale.</div>
+      </div>
+
+      <div class="result-mini">
+        <div class="result-mini-label">New Main Event · LHW · 10 Rds</div>
+        <div class="result-mini-fight">Oberlton def. Gongora</div>
+        <div class="result-mini-result">TKO R4 · 3:00 · Corner stopped</div>
+        <div class="result-mini-note">Gongora's first career stoppage in 26 fights. Oberlton 16-0, 14 KOs. Eight straight stoppages.</div>
+      </div>
+
+      <div class="result-mini">
+        <div class="result-mini-label">Heavyweight · 10 Rds</div>
+        <div class="result-mini-fight">Taylor def. Barnett</div>
+        <div class="result-mini-result">TKO R2 · 2:59 · Corner stopped</div>
+        <div class="result-mini-note">Taylor 12-0, 8 KOs. Body work finished it. Barnett rocked Taylor in R1 before the tables turned.</div>
+      </div>
+
+      <div class="result-mini">
+        <div class="result-mini-label">WBC Latino SB Title · 8 Rds</div>
+        <div class="result-mini-fight">Lozada def. Dionicius</div>
+        <div class="result-mini-result">UD · 80-70 · 79-71 · 80-70</div>
+        <div class="result-mini-note">Two knockdowns in R2. Lozada 4-0. Dionicius was a former multi-division world champion at 36 years old.</div>
+      </div>
+    </div>
+
+    <!-- ACCURACY REPORT -->
+    <div class="section-head">
+      <span class="section-label">Blueprint Accuracy Report</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="accuracy-block">
+      <div class="accuracy-title">Vol. I · No. 11 · Post-Fight Self-Assessment · No Predictions Made</div>
+      <div class="accuracy-grid">
+        <div class="accuracy-items">
+          <div class="accuracy-item"><span class="acc-badge na">N/A</span><span class="acc-desc">No round predictions made — program was a "What to Watch" guide by design. Framework quality assessed instead.</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Oberlton Prospect Watch entry filed and confirmed same night — thesis verified within hours of filing</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Rule 40 activated — Aleem's weight miss is the founding case for the rule created on this card</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Oberlton body work identified as the primary weapon in the "What to Watch" section — confirmed as the finish</span></div>
+          <div class="accuracy-item"><span class="acc-badge hit">HIT</span><span class="acc-desc">Gongora's durability correctly identified as the verification threshold — body work was required to break him</span></div>
+          <div class="accuracy-item"><span class="acc-badge miss">MISS</span><span class="acc-desc">Taylor Rule 39 flag not applied — sparring history with Wilder was in the research and was not flagged</span></div>
+          <div class="accuracy-item"><span class="acc-badge noted">NOTE</span><span class="acc-desc">Aleem's 15-year clean weight record provided no warning — the rule was still the right response to a structural gap</span></div>
+        </div>
+        <div class="grade-block">
+          <div class="grade-letter b">B+</div>
+          <div class="grade-label">Framework<br>Grade</div>
+        </div>
+      </div>
+      <div class="accuracy-note">No predictions made, so no prediction grade to assign. The framework grade assesses the analytical quality: the Prospect Watch entry was filed correctly and confirmed immediately; the weight discipline check was performed honestly; the body work identification was correct. One analytical miss — the Taylor Rule 39 flag was available and unused. B+ reflects strong framework work with one documented research gap.</div>
+    </div>
+
+    <!-- LESSON FILE -->
+    <div class="section-head">
+      <span class="section-label">Lesson File — New Entries</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="lesson-block">
+      <div class="lesson-label">Permanent Lesson File · May 9, 2026</div>
+      <div class="lesson-item">Rule 39 (Sparring History Flag) must be applied at the research stage, not discovered in the recap. Taylor's training camp with Deontay Wilder was documented in publicly available pre-fight press releases. The analytical dimension — a fighter who absorbs elite-level heavyweight punching in camp and continues to function is demonstrating crisis adaptation the professional record cannot show — was available. It was not applied. The rule exists for this purpose. Apply it every time.</div>
+      <div class="lesson-item">A fighter's clean weight history provides no predictive warning for a first miss. Aleem's 15-year clean record was correctly documented. The lesson is not that the check was wrong — it is that the check must now be applied to every future fighter regardless of history, because history is not prediction. Rule 40 was the correct response.</div>
+    </div>
+
+    <!-- LEGACY -->
+    <div class="section-head">
+      <span class="section-label">Legacy</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="legacy-head">What College Park Left Behind</div>
+    <div class="legacy-body">
+      <p>Oberlton is a contender. He is ranked top five in the world at 27 years old and just stopped a man who had never been stopped against quality opposition. The light heavyweight division must take him seriously now. The Blotter was on record before the fight. The date stamp exists. The thesis was confirmed. That is the document.</p>
+      <p>Ra'eese Aleem's story ends the same way it ran for 15 years — right at the door. He did not make it through. Whether he gets another mandatory position or fades back into the contender landscape depends on promoters and sanctioning bodies and the machinery that kept him waiting in the first place. The Blotter documented him honestly before this night and documents him honestly after it. He earned the shot. He did not make weight.</p>
+      <p>Atlanta showed up. The crowd at the Gateway Center Arena got something worth watching despite the main event's cancellation. Salita Promotions said they were entering a boxing hotbed. Oberlton gave them a headline. The next time a major card comes to College Park, the Blotter will be in the same seat.</p>
+    </div>
+
+  </div>
+
+  <!-- BACK COVER -->
+  <div class="back-cover">
+    <div class="back-grid">
+      <div>
+        <div class="bc-title">All Results</div>
+        <div class="bc-row"><div class="bc-row-label">Main Event</div><div class="bc-row-val">Leo-Aleem CANCELLED · Aleem missed weight 2.8 lbs</div></div>
+        <div class="bc-row"><div class="bc-row-label">New Main Event</div><div class="bc-row-val">Oberlton TKO4 Gongora · Corner stopped · 3:00</div></div>
+        <div class="bc-row"><div class="bc-row-label">Co-Feature</div><div class="bc-row-val">Taylor TKO2 Barnett · 2:59 · Body work</div></div>
+        <div class="bc-row"><div class="bc-row-label">WBC Latino Title</div><div class="bc-row-val">Lozada UD Dionicius · 80-70 · Two R2 knockdowns</div></div>
+      </div>
+      <div>
+        <div class="bc-title">Framework Grade: B+</div>
+        <div class="bc-row"><div class="bc-row-label">No predictions made</div><div class="bc-row-val">Framework assessed on analytical quality</div></div>
+        <div class="bc-row"><div class="bc-row-label">Prospect Watch</div><div class="bc-row-val">Entry No. 5 filed and confirmed same night</div></div>
+        <div class="bc-row"><div class="bc-row-label">Rule 40</div><div class="bc-row-val">Applied correctly · No warning available from clean history</div></div>
+        <div class="bc-row"><div class="bc-row-label">Miss</div><div class="bc-row-val">Taylor Rule 39 flag not applied — research gap</div></div>
+      </div>
+      <div>
+        <div class="bc-title">What's Next</div>
+        <div class="bc-row"><div class="bc-row-label">Oberlton</div><div class="bc-row-val">16-0 · World title contention · Division must respond</div></div>
+        <div class="bc-row"><div class="bc-row-label">Leo</div><div class="bc-row-val">Retains IBF title · Mandatory still unresolved</div></div>
+        <div class="bc-row"><div class="bc-row-label">Aleem</div><div class="bc-row-val">23-1 · Future uncertain · IBF mandatory position lost</div></div>
+        <div class="bc-row"><div class="bc-row-label">Blotter was there</div><div class="bc-row-val">College Park, Georgia · In the building · May 9, 2026</div></div>
+      </div>
+    </div>
+    <div class="back-footer">
+      <div class="back-brand">The Boxing Blotter</div>
+      <div class="back-meta">Vol. I · No. 11 · Recap Edition · May 9, 2026<br>Story First Blueprint · Scout's Chair Standard<br>Prospect Watch Entry No. 5 Confirmed · Rule 40 Founded Here<br>boxingblotter.com · @boxingblotter</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

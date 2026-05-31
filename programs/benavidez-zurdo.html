@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — Benavidez vs. Zurdo · Las Vegas · May 2, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a0e04;
+    --newsprint: #f6eddc;
+    --aged: #ecddc4;
+    --amber: #c4780a;
+    --amber-light: #e08c14;
+    --amber-pale: rgba(196,120,10,0.08);
+    --red: #c0292b;
+    --gold: #b5882a;
+    --gold-light: #d4a030;
+    --rule: #1a0e04;
+    --muted: #6b4c22;
+    --light-rule: #d4c0a0;
+    --green: #2a6e3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { background: #0c0702; font-family: 'Barlow', sans-serif; color: var(--ink); }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--newsprint);
+    box-shadow: 0 0 100px rgba(196,120,10,0.3);
+  }
+
+  /* MASTHEAD */
+  .masthead { background: var(--ink); border-bottom: 4px solid var(--amber); }
+
+  .masthead-top { display: flex; justify-content: space-between; padding: 10px 24px 6px; border-bottom: 1px solid #3a2010; }
+  .masthead-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #7a5030; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .masthead-title { text-align: center; padding: 14px 24px 10px; }
+  .blotter-name { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: var(--newsprint); letter-spacing: -0.01em; line-height: 1; text-transform: uppercase; }
+
+  .blotter-rule { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .blotter-rule-line { flex: 1; height: 1px; background: var(--amber); }
+  .blotter-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; color: var(--amber); letter-spacing: 0.25em; text-transform: uppercase; white-space: nowrap; }
+
+  .edition-bar { background: var(--amber); padding: 5px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .edition-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: var(--ink); letter-spacing: 0.15em; text-transform: uppercase; }
+  .ppv-badge { font-family: 'DM Mono', monospace; font-size: 9px; background: var(--ink); color: var(--amber); padding: 2px 8px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* COVER */
+  .cover {
+    background: var(--ink);
+    padding: 28px 28px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 70%, rgba(196,120,10,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(192,41,43,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover-kicker { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 16px; }
+  .kicker-line { flex: 1; height: 1px; background: #3a2010; }
+  .kicker-text { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--amber); letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap; }
+
+  .cover-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: var(--amber); letter-spacing: 0.3em; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
+
+  .cover-headline { text-align: center; margin-bottom: 22px; }
+  .cover-headline h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900; color: var(--newsprint); line-height: 0.86; text-transform: uppercase; }
+  .cover-headline h1 em { font-style: normal; color: var(--amber); }
+  .cover-sub { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: #7a5030; text-align: center; margin-top: 10px; line-height: 1.5; }
+
+  /* TAPE */
+  .tape { display: grid; grid-template-columns: 1fr auto 1fr; border: 1px solid #3a2010; margin-bottom: 10px; }
+  .tape-fighter { padding: 14px 16px; }
+  .tape-fighter.left { border-right: 1px solid #3a2010; }
+  .tape-fighter.right { border-left: 1px solid #3a2010; text-align: right; }
+
+  .tape-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; line-height: 1; margin-bottom: 3px; }
+  .tape-nickname { font-family: 'Playfair Display', serif; font-size: 11px; font-style: italic; color: var(--amber); margin-bottom: 4px; }
+  .tape-record { font-family: 'DM Mono', monospace; font-size: 11px; color: #7a5030; margin-bottom: 5px; }
+
+  .tape-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .tape-badge.amber { background: var(--amber); color: var(--ink); }
+  .tape-badge.dark { background: #3a2010; color: #7a5030; }
+  .tape-badge.red { background: var(--red); color: white; }
+
+  .tape-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .tape-row.right { flex-direction: row-reverse; }
+  .tape-row-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #5a3010; letter-spacing: 0.1em; text-transform: uppercase; }
+  .tape-row-val { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--newsprint); }
+  .tape-row-val.highlight { color: var(--amber); }
+
+  .tape-center { padding: 14px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-width: 100px; background: rgba(196,120,10,0.05); }
+  .vs-text { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: #3a2010; }
+  .tape-center-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #5a3010; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; }
+  .tape-center-val { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; color: var(--amber); text-align: center; }
+
+  .cover-deck { font-family: 'Playfair Display', serif; font-size: 12.5px; font-style: italic; color: #5a3010; text-align: center; border-top: 1px solid #3a2010; padding-top: 10px; line-height: 1.55; }
+
+  /* BODY */
+  .body { padding: 0 28px 28px; }
+
+  .section-head { display: flex; align-items: center; gap: 10px; margin: 22px 0 13px; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber); white-space: nowrap; }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); opacity: 0.15; }
+
+  .read-head { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 6px; }
+  .read-deck { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--muted); line-height: 1.45; margin-bottom: 13px; border-left: 3px solid var(--amber); padding-left: 12px; }
+
+  .read-body { font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.72; color: var(--ink); column-count: 2; column-gap: 26px; margin-bottom: 13px; }
+  .read-body p { margin-bottom: 10px; }
+  .read-body p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; float: left; line-height: 0.85; margin: 4px 6px 0 0; color: var(--amber); }
+
+  /* SPARRING FLAG */
+  .sparring-box {
+    background: var(--ink);
+    border-left: 4px solid var(--gold);
+    padding: 18px 20px;
+    margin: 12px 0;
+  }
+
+  .sparring-title { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 8px; }
+  .sparring-num { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 900; color: var(--amber-light); line-height: 1; margin-bottom: 4px; }
+  .sparring-num-label { font-family: 'DM Mono', monospace; font-size: 9px; color: #7a5030; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+
+  .sparring-pathway { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #3a2010; }
+  .sparring-pathway:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .sparring-pathway-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+  .sparring-pathway-label.crawford { color: var(--amber-light); }
+  .sparring-pathway-label.zurdo { color: #8a8a5a; }
+  .sparring-pathway-text { font-family: 'Barlow', sans-serif; font-size: 12px; color: #9a7050; line-height: 1.65; }
+
+  /* ANALYTICAL DIMENSION */
+  .dimension { background: var(--aged); border-left: 3px solid var(--amber); padding: 15px 17px; margin-bottom: 10px; }
+  .dimension-num { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--amber); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 4px; }
+  .dimension-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 7px; line-height: 1.2; }
+  .dimension-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: var(--ink); line-height: 1.68; }
+
+  /* PULL QUOTE */
+  .pull-quote { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 12px 0; margin: 16px 0; text-align: center; }
+  .pull-quote-text { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--ink); line-height: 1.45; }
+  .pull-quote-attr { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+
+  /* CALL BLOCK */
+  .call-block { background: var(--ink); padding: 18px 22px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; margin-bottom: 10px; border: 1px solid var(--amber); }
+  .call-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--amber); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 5px; }
+  .call-pick { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--newsprint); text-transform: uppercase; line-height: 1.1; }
+  .call-reason { font-family: 'Barlow', sans-serif; font-size: 11px; color: #7a5030; line-height: 1.5; margin-top: 5px; }
+  .call-rounds { text-align: center; border-left: 1px solid #3a2010; padding-left: 18px; }
+  .call-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; color: var(--amber); line-height: 1; }
+  .call-rounds-label { font-family: 'DM Mono', monospace; font-size: 8px; color: #5a3010; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+
+  /* FIGHT CARDS */
+  .fight-card { border: 1px solid var(--light-rule); margin-bottom: 12px; }
+  .fight-card-header { background: var(--aged); padding: 9px 14px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--light-rule); }
+  .fight-card-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .fight-card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; text-transform: uppercase; color: var(--ink); margin-top: 2px; }
+  .fight-card-stake { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; text-align: right; }
+  .fight-card-body { padding: 12px 14px; }
+
+  .fight-matchup { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: start; margin-bottom: 10px; }
+  .fight-fighter { font-family: 'Barlow Condensed', sans-serif; }
+  .fight-fighter.right { text-align: right; }
+  .fight-name { font-size: 17px; font-weight: 800; color: var(--ink); text-transform: uppercase; line-height: 1; }
+  .fight-rec { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .fight-detail { font-family: 'Barlow', sans-serif; font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+  .fight-vs { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--light-rule); text-align: center; padding-top: 2px; }
+  .fight-analysis { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: var(--ink); line-height: 1.65; margin-bottom: 10px; }
+
+  .fight-call { background: var(--ink); padding: 9px 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .fight-call-label { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--amber); letter-spacing: 0.18em; text-transform: uppercase; flex-shrink: 0; }
+  .fight-call-pick { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; color: var(--newsprint); text-transform: uppercase; flex: 1; }
+  .fight-call-why { font-family: 'Barlow', sans-serif; font-size: 10.5px; color: #7a5030; text-align: right; max-width: 220px; line-height: 1.4; }
+
+  /* PED FLAG */
+  .ped-box { background: rgba(192,41,43,0.06); border-left: 3px solid var(--red); padding: 12px 14px; margin: 10px 0; }
+  .ped-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--red); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; }
+  .ped-body { font-family: 'Barlow', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.65; }
+
+  /* PROSPECT WATCH HONEST NOTE */
+  .honest-box { background: var(--aged); border-left: 3px solid var(--gold); padding: 14px 16px; margin-bottom: 12px; }
+  .honest-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+  .honest-body { font-family: 'Barlow', sans-serif; font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+
+  hr.divider { border: none; border-top: 1px solid var(--light-rule); margin: 18px 0; }
+  hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.1; margin: 20px 0; }
+
+  /* BACK COVER */
+  .back-cover { background: var(--ink); padding: 22px 28px 26px; border-top: 4px solid var(--amber); }
+  .back-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+  .bc-title { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--amber); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #3a2010; }
+  .bc-row { margin-bottom: 7px; }
+  .bc-row-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--newsprint); }
+  .bc-row-val { font-family: 'Barlow', sans-serif; font-size: 11px; color: #6a4020; margin-top: 1px; line-height: 1.4; }
+  .back-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #3a2010; padding-top: 14px; }
+  .back-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; }
+  .back-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #3a1a08; letter-spacing: 0.08em; text-align: right; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">Vol. I · No. 10 · Pre-Fight Edition</span>
+      <span class="masthead-meta">T-Mobile Arena · Las Vegas, Nevada</span>
+      <span class="masthead-meta">Saturday, May 2, 2026 · Cinco de Mayo Weekend</span>
+    </div>
+    <div class="masthead-title">
+      <div class="blotter-name">The Boxing Blotter</div>
+      <div class="blotter-rule">
+        <div class="blotter-rule-line"></div>
+        <div class="blotter-tagline">Documents Before · Scores During · Grades After</div>
+        <div class="blotter-rule-line"></div>
+      </div>
+    </div>
+    <div class="edition-bar">
+      <span class="edition-label">WBO & WBA Cruiserweight · WBA Super Middleweight · Mexico vs. Mexico · Cinco de Mayo</span>
+      <span class="ppv-badge">Prime PPV · DAZN PPV · $79.99</span>
+    </div>
+  </header>
+
+  <!-- COVER -->
+  <div class="cover">
+
+    <div class="cover-kicker">
+      <div class="kicker-line"></div>
+      <div class="kicker-text">First Mexico vs. Mexico World Title Fight Ever Staged Above 168 Pounds</div>
+      <div class="kicker-line"></div>
+    </div>
+
+    <div class="cover-label">Main Event · Cruiserweight · 12 Rounds · WBO & WBA World Championships</div>
+
+    <div class="cover-headline">
+      <h1>He Prepared<br>His Rival<br>For <em>Glory.</em><br>Now He<br>Wants It.</h1>
+      <div class="cover-sub">In 2016, David Benavidez was Zurdo Ramirez's sparring partner for his first world title fight. They have spent close to 200 rounds together. On Saturday, the debt comes due.</div>
+    </div>
+
+    <div class="tape">
+      <div class="tape-fighter left">
+        <div class="tape-name">David "El Monstro"<br>Benavidez</div>
+        <div class="tape-nickname">WBC Light Heavyweight Champion · Moving Up</div>
+        <div class="tape-record">31-0 · 25 KOs · 81%</div>
+        <div style="margin:5px 0;"><span class="tape-badge amber">P4P #7 · 2-DIVISION CHAMPION</span></div>
+        <div class="tape-row"><span class="tape-row-label">Age</span><span class="tape-row-val">29</span></div>
+        <div class="tape-row"><span class="tape-row-label">Height</span><span class="tape-row-val">6'2"</span></div>
+        <div class="tape-row"><span class="tape-row-label">Reach</span><span class="tape-row-val">72"</span></div>
+        <div class="tape-row"><span class="tape-row-label">Stance</span><span class="tape-row-val">Orthodox</span></div>
+        <div class="tape-row"><span class="tape-row-label">Pro fights</span><span class="tape-row-val">31</span></div>
+        <div class="tape-row"><span class="tape-row-label">Weight cut</span><span class="tape-row-val">None tonight</span></div>
+      </div>
+
+      <div class="tape-center">
+        <div class="vs-text">VS</div>
+        <div style="margin-top:8px;">
+          <div class="tape-center-label">History</div>
+          <div class="tape-center-val">~200<br>spar rounds</div>
+        </div>
+        <div style="margin-top:6px;">
+          <div class="tape-center-label">Rounds</div>
+          <div class="tape-center-val">12</div>
+        </div>
+      </div>
+
+      <div class="tape-fighter right">
+        <div class="tape-name">Gilberto "Zurdo"<br>Ramirez</div>
+        <div class="tape-nickname">Unified WBO & WBA Cruiserweight Champion</div>
+        <div class="tape-record">48-1 · 30 KOs · 62%</div>
+        <div style="margin:5px 0;"><span class="tape-badge dark">3-DIVISION TITLE HOLDER</span></div>
+        <div class="tape-row right"><span class="tape-row-label">Age</span><span class="tape-row-val">35</span></div>
+        <div class="tape-row right"><span class="tape-row-label">Height</span><span class="tape-row-val highlight">6'5" +3"</span></div>
+        <div class="tape-row right"><span class="tape-row-label">Reach</span><span class="tape-row-val highlight">79" +7"</span></div>
+        <div class="tape-row right"><span class="tape-row-label">Stance</span><span class="tape-row-val highlight">Southpaw</span></div>
+        <div class="tape-row right"><span class="tape-row-label">Pro fights</span><span class="tape-row-val">49</span></div>
+        <div class="tape-row right"><span class="tape-row-label">Only loss</span><span class="tape-row-val">Bivol (P4P #3)</span></div>
+      </div>
+    </div>
+
+    <div class="cover-deck">
+      Benavidez: WBC light heavyweight champion · No weight cut tonight · 29 years old<br>
+      Zurdo: Unified WBO & WBA cruiserweight champion · Fought at super middleweight, light heavyweight, cruiserweight · One loss: Bivol
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN EVENT READ -->
+    <div class="section-head">
+      <span class="section-label">The Read — Main Event</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="read-head">The Sparring Partner Becomes the Challenger. The Champion Has 200 Rounds of Evidence.</div>
+    <div class="read-deck">Every opponent Benavidez has ever faced studied film. Zurdo Ramirez has muscle memory. That is the analytical story of this fight before the first bell rings.</div>
+
+    <div class="read-body">
+      <p>In 2016, Gilberto Ramirez was preparing for the biggest fight of his career — a world title shot against Arthur Abraham. He needed a sparring partner who could replicate a certain physical type: powerful, pressuring, not afraid of anyone. He found one in a 19-year-old named David Benavidez. Ramirez won the title that night against Abraham. Benavidez went home with the data. Over the years that followed, across what Ramirez has described as close to 200 rounds of work together, they built a library on each other that no scouting report can replicate.</p>
+
+      <p>That history is the central analytical fact of this fight. Benavidez knows how Zurdo moves when he is uncomfortable. Zurdo knows how Benavidez loads his right hand, which foot shifts before the body shot comes, what his face looks like in round eight of a hard session when the effort is real. Every other man Benavidez has ever faced arrived with a game plan built from video. Zurdo arrives with physical knowledge. The Blueprint documents this under Rule 39 — the Sparring History Flag — and applies it in both directions.</p>
+
+      <p>Before the sparring history, before the size and reach advantage, before the southpaw alignment — the first analytical obligation of this program is to give Zurdo Ramirez's resume the credit it has not been widely given. His one professional loss came against Dmitry Bivol, who sits at No. 3 on the Blotter's pound-for-pound list. That is not a résumé blemish. That is confirmation that Zurdo competed at the highest level available to him and found only one man capable of beating him. He has held world titles at super middleweight, light heavyweight, and cruiserweight. He has fought in divisions where the most dangerous opposition consistently comes from Eastern European and Central Asian programs — the same programs producing Usyk, Bivol, Beterbiev, and Briedis. The cruiserweight and light heavyweight divisions are where that talent pool runs deepest, and Zurdo built his career there while boxing's media coverage followed the lower weight classes.</p>
+
+      <p>The Holyfield principle applies here. Holyfield was the undisputed cruiserweight champion before he became famous at heavyweight. The talent he built his foundation against — at the heavier weights, against the deeper Eastern European opposition — was elite. The coverage just never followed him there until he became a household name. Zurdo's 49-fight career above 168 pounds deserves that same analytical respect. He is not a light heavyweight who got big. He is a champion who fought serious people in serious weight classes and won almost all of them.</p>
+
+      <p>The physical facts of the matchup are real. Zurdo is three inches taller with seven additional inches of reach and fights from a southpaw stance. That combination presents the same structural puzzle the Blotter analyzed in Inoue-Nakatani — orthodox challenger, reach disadvantage, facing a taller southpaw in the opponent's natural weight. The difference is that Benavidez moves up without a weight cut for the first time, arriving at full natural size with no depletion from draining to 175. He said it himself: no weight cut is a quiet edge. The punches will be bigger. The legs will be fresher. The engine that overwhelms opponents with volume and pressure will not be running on empty.</p>
+    </div>
+
+    <!-- SPARRING HISTORY FLAG -->
+    <div class="sparring-box">
+      <div class="sparring-title">⚑ Rule 39 · Sparring History Flag — Main Event · Both Directions Applied</div>
+      <div class="sparring-num">~200</div>
+      <div class="sparring-num-label">Rounds together · Documented · Zurdo's description · Benavidez confirmed sparring partner for Zurdo's first world title fight, 2016</div>
+
+      <div class="sparring-pathway">
+        <div class="sparring-pathway-label crawford">Benavidez — The Crawford Pathway</div>
+        <div class="sparring-pathway-text">He was 19 years old in those sparring sessions — learning elite southpaw technique, power output, and timing at the highest level available to a developing pro. That exposure helped build the fighter who became a two-division world champion at 29. The sparring room made him better. He does not enter this fight as a man conditioned to serve Zurdo. He enters as a man who graduated from the experience. His quote: "I feel like this weight is definitely gonna help me. My speed is superb and it's on a different level. This is gonna be the best David Benavidez you see."</div>
+      </div>
+
+      <div class="sparring-pathway">
+        <div class="sparring-pathway-label zurdo">Zurdo — The Counterintelligence Advantage</div>
+        <div class="sparring-pathway-text">Every opponent Benavidez has faced studied film of him. Zurdo has absorbed 200 rounds of him. He knows how Benavidez loads his right hand. He knows the body shot setup. He knows what pressure feels like from that specific source. No scouting report covers what the body remembers. When Benavidez throws his first right hand Saturday night, Zurdo's nervous system will recognize it in a way that no other opponent's has. Whether that recognition is neutralizing or simply familiar is the analytical question the first three rounds will answer.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">"I want to go back down to 175 and win all the rest of the belts and reign there. But tonight, this is gonna be the best David Benavidez that you've ever seen."</div>
+      <div class="pull-quote-attr">— David Benavidez · Fight week, Las Vegas</div>
+    </div>
+
+    <!-- ANALYTICAL DIMENSIONS -->
+    <div class="section-head">
+      <span class="section-label">Analytical Dimensions</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="dimension">
+      <div class="dimension-num">The Physical Equation</div>
+      <div class="dimension-title">Size, Stance, and the Southpaw Problem — Again</div>
+      <div class="dimension-body">Three inches of height. Seven inches of reach. A southpaw stance. The same structural challenge the Blotter analyzed in Inoue-Nakatani — but with one crucial difference. Benavidez is moving up in weight without a cut, arriving at his natural size for the first time as a professional. The no-weight-cut dimension is not promotional language. Draining to 175 pounds and rehydrating for fight night costs a fighter in energy output, recovery speed, and punch resistance in the championship rounds. Tonight Benavidez skips that process entirely. The legs that are usually slightly depleted by the weight management will be full. The question for the first half of the fight: does Benavidez's volume and forward pressure reduce the southpaw reach advantage the way he has reduced every other opponent's structural advantages — by making the fight too uncomfortable to operate from the outside?</div>
+    </div>
+
+    <div class="dimension">
+      <div class="dimension-num">The Resume Question Answered Honestly</div>
+      <div class="dimension-title">Zurdo's Opposition Was Better Than the Coverage Suggested</div>
+      <div class="dimension-body">The cruiserweight and light heavyweight divisions have been disproportionately loaded with elite Eastern European and Central Asian fighters in the modern era — a pipeline that emerged through post-Soviet state development programs and produced Usyk, Bivol, Beterbiev, Briedis, Dorticos, and a generation of physically exceptional, technically trained athletes. Zurdo built his career competing in and adjacent to that talent pool. His only professional loss came against Bivol — the P4P No. 3 fighter in the world. A single loss against that opponent on a 49-fight record is not a résumé blemish. It is confirmation that he sought the hardest available challenge and found only one man capable of beating him. The coverage gap is a separate point: great fighters who build their names above 175 pounds rarely get their due until they become household names somewhere more visible. Holyfield was the undisputed cruiserweight champion before becoming famous at heavyweight — his accomplishment at 190 pounds went largely unrecognized until he knocked out Buster Douglas. Zurdo's career deserves the same honest accounting.</div>
+    </div>
+
+    <div class="dimension">
+      <div class="dimension-num">The Age and Mileage Differential</div>
+      <div class="dimension-title">49 Fights at 35. 31 Fights at 29. The Championship Rounds Tell the Story.</div>
+      <div class="dimension-body">Zurdo's resume is legitimate. The mileage question is also legitimate — and they are separate analytical issues that must not be merged. A fighter with 49 fights against serious opponents at 35 years old has absorbed a specific physical accumulation that a 29-year-old with 31 fights has not. That is not a criticism of the competition quality. It is a physical reality. In the championship rounds — if Benavidez can force the fight there against a naturally bigger man — the mileage differential is where his youth and pressure volume make their argument. The fight will not be decided in round two. If it is decided, it is decided in rounds eight through twelve. That is the championship round bank question the Blotter watches all night.</div>
+    </div>
+
+    <div class="call-block">
+      <div>
+        <div class="call-label">Blotter Call · Main Event</div>
+        <div class="call-pick">Benavidez — Unanimous Decision</div>
+        <div class="call-reason">Zurdo has never been stopped in 49 professional fights. His one loss was a decision to Bivol. Chin durability at this level is documented and cannot be dismissed because Benavidez is moving up. The youth, no weight cut, and pressure volume favor Benavidez over twelve rounds — but the route to victory is accumulation, not stoppage. Expect Benavidez to win the championship rounds clearly. Expect Zurdo to still be standing at the final bell.</div>
+      </div>
+      <div class="call-rounds">
+        <div class="call-num">UD</div>
+        <div class="call-rounds-label">Projected<br>Decision</div>
+      </div>
+    </div>
+
+    <hr class="divider-heavy">
+
+    <!-- CO-MAIN: RESENDIZ vs MUNGUIA -->
+    <div class="section-head">
+      <span class="section-label">Co-Main Event — The Fight That Could Steal the Show</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="fight-card">
+      <div class="fight-card-header">
+        <div>
+          <div class="fight-card-label">WBA Super Middleweight Championship · 12 Rounds · First Defense</div>
+          <div class="fight-card-name">Resendiz (c) vs. Munguia</div>
+        </div>
+        <div class="fight-card-stake">Ring 2025 Upset of Year Winner · Former 154lb Champ · All Mexico</div>
+      </div>
+      <div class="fight-card-body">
+        <div class="fight-matchup">
+          <div class="fight-fighter">
+            <div class="fight-name">Armando "Toro" Resendiz</div>
+            <div class="fight-rec">16-2 · 11 KOs · Champion</div>
+            <div class="fight-detail">27 yrs · Nayarit, Mexico · Pressure fighter · Beat Caleb Plant as +1100 underdog · Ring's 2025 Upset of the Year · Elevated to full WBA champion when Crawford retired · 18 fights, fresh legs</div>
+          </div>
+          <div class="fight-vs">vs</div>
+          <div class="fight-fighter right">
+            <div class="fight-name">Jaime Munguia</div>
+            <div class="fight-rec">45-2 · 35 KOs · Former Champion</div>
+            <div class="fight-detail">29 yrs · Tijuana · Trained by Eddy Reynoso · Pro since age 16, 2013 · 47 fights, significant mileage · Lost to Canelo (UD) · Avenged Surace KO loss · Turned pro at 16 in 2013</div>
+          </div>
+        </div>
+
+        <div class="fight-analysis">
+          The analytical case for Resendiz is built on two foundations. The first is competitive history: he beat Caleb Plant as a +1100 underdog with sustained pressure across the late rounds, earning Ring Magazine's Upset of the Year. His quote when told Munguia's experience would be the difference: "Plant was more experienced than me too." The second is physical condition: Munguia has had 47 professional fights since turning pro at 16. That is a substantial mileage accumulation for a man of 29. When Carlos Adames — who has sparred Resendiz — says "the Toro who sparred with me is not the same guy we're seeing now," that is analytically significant sourcing. Resendiz is developing, not declining.
+        </div>
+
+        <!-- PED FLAG -->
+        <div class="ped-box">
+          <div class="ped-label">⚑ Documented Record — Munguia Drug Test · The Blotter States Plainly</div>
+          <div class="ped-body">Following his unanimous decision rematch win over Bruno Surace in Riyadh in May 2025, Munguia's post-fight drug test returned an adverse finding for exogenous testosterone. The subsequent investigation attributed the result to accidental contamination involving Pregnenolone, a legal substance, and Munguia faced no meaningful disciplinary action beyond being limited to one fight in 2025. Resendiz's camp, headed by trainer Manny Robles, responded by demanding VADA testing for this fight: "Absolutely we're worried. That's the first thing I asked — to make sure there is VADA testing involved." The Blotter documents this not as a verdict but as a fact that belongs in the analytical record of any fight Munguia participates in.</div>
+        </div>
+
+        <div class="fight-call">
+          <span class="fight-call-label">Blotter Call</span>
+          <span class="fight-call-pick">Munguia — TKO Rounds 7-10</span>
+          <span class="fight-call-why">Size, experience under Reynoso, and finishing instinct. But Resendiz upset is a legitimate position. Adames's sparring assessment and Resendiz's development trajectory make this the most volatile fight on the card. Watch who wins the middle rounds.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUARTE vs FIERRO -->
+    <div class="section-head">
+      <span class="section-label">Undercard — Former Stablemates · Junior Welterweight</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="fight-card">
+      <div class="fight-card-header">
+        <div>
+          <div class="fight-card-label">Junior Welterweight · 10 Rounds</div>
+          <div class="fight-card-name">Oscar "La Migrana" Duarte vs. Angel "Tashiro" Fierro</div>
+        </div>
+        <div class="fight-card-stake">Former Gym Stablemates · Rule 39 Applies · Title Shot Urgency</div>
+      </div>
+      <div class="fight-card-body">
+        <div class="fight-matchup">
+          <div class="fight-fighter">
+            <div class="fight-name">Oscar Duarte</div>
+            <div class="fight-rec">30-2-1 · 23 KOs · 76%</div>
+            <div class="fight-detail">29 yrs · Parral, Chihuahua · Wins: JoJo Diaz KO9 · Akhmedov UD · Sims Jr. MD (Chicago road win) · Denied IBF title shot when Hitchins withdrew morning of fight</div>
+          </div>
+          <div class="fight-vs">vs</div>
+          <div class="fight-fighter right">
+            <div class="fight-name">Angel Fierro</div>
+            <div class="fight-rec">23-4-2 · 11 KOs</div>
+            <div class="fight-detail">Former stablemate · Has been in wars · Knows Duarte's habits from shared camp history</div>
+          </div>
+        </div>
+        <div class="fight-analysis">
+          The Sparring History Flag applies here too — Duarte and Fierro trained together before becoming opponents. The shared gym history produces the same analytical split: Duarte knows Fierro's tendencies; Fierro knows Duarte's. Neither is approaching this with a clean read built only from video. The story the Blotter watches is Duarte's urgency. He was denied an IBF world title shot when Hitchins withdrew hours before the opening bell — and that kind of preparation-without-execution leaves a specific kind of emotional residue that the next fight either channels or expends. A dominant performance tonight gets him back in the title conversation. A close fight sets him back. Duarte's opposition résumé — Diaz, Akhmedov, Sims in Chicago — is one of the most credible on this undercard.
+        </div>
+        <div class="fight-call">
+          <span class="fight-call-label">Blotter Call</span>
+          <span class="fight-call-pick">Duarte — TKO Rounds 6-10</span>
+          <span class="fight-call-why">Opposition quality, motivation, and a chip on his shoulder from the Hitchins withdrawal. Fierro's inside knowledge keeps it from being clean.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROSPECT WATCH HONEST -->
+    <div class="section-head">
+      <span class="section-label">Prospect Watch — Honest Assessment</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="honest-box">
+      <div class="honest-label">Prospect Watch — Next on the Radar</div>
+      <div class="honest-body">The Blotter has its eye on Isaac Lucero (18-0, 14 KOs, 27 years old, La Paz, Baja California Sur). He is not widely known outside Mexican boxing circles. He has 100+ amateur fights, three national championships in two weight classes, is the son of Mexican national light heavyweight champion Isaias "La Bestia" Lucero Sr., has stopped seven consecutive opponents, and is now training under Bob Santos in Las Vegas. The discovery story on this card is the Sparring History Flag — 200 rounds between two world champions. But when the Blotter returns to Mexico at 154 pounds, the research on Lucero is already done.</div>
+    </div>
+
+  </div>
+
+  <!-- BACK COVER -->
+  <div class="back-cover">
+    <div class="back-grid">
+      <div>
+        <div class="bc-title">Card Details</div>
+        <div class="bc-row"><div class="bc-row-label">Venue</div><div class="bc-row-val">T-Mobile Arena, Las Vegas, Nevada</div></div>
+        <div class="bc-row"><div class="bc-row-label">Date</div><div class="bc-row-val">Saturday, May 2, 2026 · Cinco de Mayo Weekend</div></div>
+        <div class="bc-row"><div class="bc-row-label">Broadcast</div><div class="bc-row-val">Amazon Prime PPV + DAZN PPV · $79.99</div></div>
+        <div class="bc-row"><div class="bc-row-label">Main card</div><div class="bc-row-val">8:00 PM ET · Main event ~11:30 PM ET</div></div>
+        <div class="bc-row"><div class="bc-row-label">Historic</div><div class="bc-row-val">First Mexico vs. Mexico world title fight above 168 pounds</div></div>
+        <div class="bc-row"><div class="bc-row-label">Promoted by</div><div class="bc-row-val">Golden Boy · Sampson · TGB Promotions</div></div>
+      </div>
+
+      <div>
+        <div class="bc-title">Blotter Calls</div>
+        <div class="bc-row"><div class="bc-row-label">Main Event</div><div class="bc-row-val">Benavidez — Unanimous Decision</div></div>
+        <div class="bc-row"><div class="bc-row-label">Co-Main</div><div class="bc-row-val">Munguia — TKO 7-10 · Upset alive</div></div>
+        <div class="bc-row"><div class="bc-row-label">Duarte/Fierro</div><div class="bc-row-val">Duarte — TKO 6-10</div></div>
+        <div class="bc-row"><div class="bc-row-label">Key flag</div><div class="bc-row-val">Rule 39 · ~200 sparring rounds documented · Applied both directions</div></div>
+        <div class="bc-row"><div class="bc-row-label">Munguia flag</div><div class="bc-row-val">Adverse PED finding documented · VADA testing requested by Resendiz camp</div></div>
+      </div>
+
+      <div>
+        <div class="bc-title">What to Watch</div>
+        <div class="bc-row"><div class="bc-row-label">Rounds 1-3</div><div class="bc-row-val">Does Zurdo's felt knowledge of Benavidez neutralize early pressure or simply recognize it?</div></div>
+        <div class="bc-row"><div class="bc-row-label">Rounds 8-11</div><div class="bc-row-val">Does 49 fights of mileage on a 35-year-old body show when the engine keeps running?</div></div>
+        <div class="bc-row"><div class="bc-row-label">Co-main</div><div class="bc-row-val">Does Resendiz's Plant-level hunger appear again, or was Plant the exception?</div></div>
+        <div class="bc-row"><div class="bc-row-label">Next program</div><div class="bc-row-val">Fury vs. Joshua targeted Q4 2026 · Netflix confirmed working on it</div></div>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      <div class="back-brand">The Boxing Blotter</div>
+      <div class="back-meta">
+        Vol. I · No. 10 · Pre-Fight Edition · May 2, 2026<br>
+        Story First Blueprint · Scout's Chair Standard<br>
+        Rule 39 · Sparring History Flag · First Main Event Application<br>
+        boxingblotter.com · @boxingblotter
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
