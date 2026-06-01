@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs · The Boxing Blotter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{background-color:#F0EAD6;font-family:'Barlow Condensed',sans-serif;color:#0F0C07;min-height:100vh}
+
+/* ─── NAV ─── */
+.nav{position:sticky;top:0;z-index:50;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
+.nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
+.nav-the{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(192,26,10,0.8)}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-0.01em;color:#F0EAD6;line-height:1}
+.nav-name span{color:#C01A0A}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a:hover{color:#F0EAD6}
+.nav-links a.active{color:#F0EAD6;border-bottom:2px solid #C01A0A;padding-bottom:2px}
+.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:0.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:24px;cursor:pointer}
+
+/* ─── PAGE HEADER ─── */
+.page-header{
+  background-color:#0F0C07;
+  border-bottom:3px solid #C01A0A;
+  padding:48px 32px;
+  text-align:center;
+}
+.header-kicker{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#C01A0A;
+  margin-bottom:12px;
+}
+.header-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:clamp(48px,8vw,80px);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:#F0EAD6;
+  line-height:0.9;
+}
+.header-sub{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#6A6050;
+  margin-top:16px;
+}
+
+/* ─── VOLUME LABEL ─── */
+.volume-label{
+  max-width:1100px;
+  margin:40px auto 0;
+  padding:0 32px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.vol-text{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#6A6050;
+  white-space:nowrap;
+}
+.vol-line{flex:1;height:1px;background:#D8D0BC}
+
+/* ─── PROGRAM GRID ─── */
+.program-grid{
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px 32px 80px;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+/* ─── PROGRAM ROW ─── */
+.program-row{
+  background-color:#ffffff;
+  border:1px solid #D8D0BC;
+  display:grid;
+  grid-template-columns:56px 1fr auto;
+  align-items:stretch;
+  transition:border-color 0.15s;
+}
+.program-row:hover{border-color:#C01A0A}
+
+.row-num{
+  background-color:#0F0C07;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 12px;
+}
+.row-num-text{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  color:#C01A0A;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  letter-spacing:0.05em;
+  opacity:0.7;
+}
+
+.row-body{
+  padding:18px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:4px;
+}
+
+.row-date{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#9A9080;
+}
+
+.row-fight{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:26px;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+  color:#0F0C07;
+  line-height:1;
+}
+
+.row-venue{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:#9A9080;
+  margin-top:2px;
+}
+
+.row-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:18px 20px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:8px 14px;
+  transition:all 0.15s;
+  white-space:nowrap;
+}
+
+.btn-program{
+  background-color:#0F0C07;
+  color:#F0EAD6;
+  border:1px solid #0F0C07;
+}
+.btn-program:hover{background-color:#C01A0A;border-color:#C01A0A}
+
+.btn-recap{
+  background-color:#ffffff;
+  color:#0F0C07;
+  border:1px solid #D8D0BC;
+}
+.btn-recap:hover{border-color:#C01A0A;color:#C01A0A}
+
+.badge{
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:3px 8px;
+}
+.badge-final{background-color:#1A3A1A;color:#6AAA6A}
+.badge-pre{background-color:#3A2A0A;color:#C8890A}
+
+/* Program-only row (no recap yet) */
+.row-actions .btn-only{
+  background-color:#0F0C07;
+  color:#F0EAD6;
+  border:1px solid #0F0C07;
+}
+.row-actions .btn-only:hover{background-color:#C01A0A;border-color:#C01A0A}
+
+/* ─── FOOTER ─── */
+.site-footer{
+  background-color:#0F0C07;
+  text-align:center;
+  padding:48px 32px;
+  border-top:3px solid #C01A0A;
+}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#F0EAD6}
+.footer-brand span{color:#C01A0A}
+.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A6050;margin-top:14px;line-height:2.2}
+.footer-sub a{color:rgba(192,26,10,0.8);text-decoration:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:700px){
+  .program-row{grid-template-columns:40px 1fr}
+  .row-actions{grid-column:1/-1;padding:12px 16px 16px;border-top:1px solid #F0EAD6;flex-wrap:wrap}
+  .row-fight{font-size:20px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-the">The</span>
+      <span class="nav-name">Boxing <span>Blotter</span></span>
+    </a>
+    <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="/programs/" class="active">Programs</a></li>
+      <li><a href="/prospect-watch/">Prospect Watch</a></li>
+      <li><a href="/unsung/">Unsung Heroes</a></li>
+      <li><a href="/p4p.html">P4P</a></li>
+      <li><a href="/unfought/">Unfought</a></li>
+      <li><a href="/shop/" class="soon">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="header-kicker">The Boxing Blotter</div>
+  <div class="header-title">Programs</div>
+  <div class="header-sub">Vol. I · 2026 &nbsp;·&nbsp; Documents Before · Scores During · Grades After</div>
+</div>
+
+<!-- PROGRAM ARCHIVE -->
+<div class="program-grid">
+
+  <div class="volume-label" style="padding:0;margin-bottom:8px;">
+    <span class="vol-text">Vol. I · 2026</span>
+    <span class="vol-line"></span>
+    <span class="vol-text">17 Programs · 12 Recaps Filed</span>
+  </div>
+
+  <!-- No. 17 — Bivol-Eifert -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">17</span></div>
+    <div class="row-body">
+      <div class="row-date">May 30, 2026</div>
+      <div class="row-fight">Bivol vs. Eifert</div>
+      <div class="row-venue">Ekaterinburg, Russia &nbsp;·&nbsp; Light Heavyweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-pre">Pre-Fight</span>
+      <a href="bivol-eifert.html" class="btn btn-program">Program</a>
+    </div>
+  </div>
+
+  <!-- No. 16 — Foster-Ford -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">16</span></div>
+    <div class="row-body">
+      <div class="row-date">May 30, 2026</div>
+      <div class="row-fight">Foster vs. Ford</div>
+      <div class="row-venue">Houston, TX &nbsp;·&nbsp; Lightweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-pre">Pre-Fight</span>
+      <a href="foster-ford.html" class="btn btn-program">Program</a>
+    </div>
+  </div>
+
+  <!-- No. 15 — Edwards-Nqothole -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">15</span></div>
+    <div class="row-body">
+      <div class="row-date">May 29, 2026</div>
+      <div class="row-fight">Edwards vs. Nqothole</div>
+      <div class="row-venue">York Hall, London &nbsp;·&nbsp; Super Featherweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="edwards-nqothole.html" class="btn btn-program">Program</a>
+      <a href="edwards-nqothole-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 14 — Usyk-Verhoeven -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">14</span></div>
+    <div class="row-body">
+      <div class="row-date">May 23, 2026</div>
+      <div class="row-fight">Usyk vs. Verhoeven</div>
+      <div class="row-venue">Giza, Egypt &nbsp;·&nbsp; Heavyweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="usyk-verhoeven.html" class="btn btn-program">Program</a>
+      <a href="usyk-verhoeven-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 13 — Jones-Gualtieri -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">13</span></div>
+    <div class="row-body">
+      <div class="row-date">May 22, 2026</div>
+      <div class="row-fight">Jones vs. Gualtieri</div>
+      <div class="row-venue">San Jose, CA &nbsp;·&nbsp; Super Featherweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · C+</span>
+      <a href="jones-gualtieri.html" class="btn btn-program">Program</a>
+      <a href="jones-gualtieri-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 12 — Wardley-Dubois -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">12</span></div>
+    <div class="row-body">
+      <div class="row-date">May 9, 2026</div>
+      <div class="row-fight">Wardley vs. Dubois</div>
+      <div class="row-venue">Manchester, England &nbsp;·&nbsp; Heavyweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="wardley-dubois.html" class="btn btn-program">Program</a>
+      <a href="wardley-dubois-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 11 — Leo-Aleem -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">11</span></div>
+    <div class="row-body">
+      <div class="row-date">May 9, 2026</div>
+      <div class="row-fight">Leo vs. Aleem</div>
+      <div class="row-venue">Atlanta, GA &nbsp;·&nbsp; Super Middleweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B+</span>
+      <a href="leo-aleem.html" class="btn btn-program">Program</a>
+      <a href="leo-aleem-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 10 — Benavidez-Zurdo -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">10</span></div>
+    <div class="row-body">
+      <div class="row-date">May 2, 2026</div>
+      <div class="row-fight">Benavidez vs. Zurdo</div>
+      <div class="row-venue">Las Vegas, NV &nbsp;·&nbsp; Light Heavyweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="benavidez-zurdo.html" class="btn btn-program">Program</a>
+      <a href="benavidez-zurdo-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 9 — Inoue-Nakatani -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">9</span></div>
+    <div class="row-body">
+      <div class="row-date">May 2, 2026</div>
+      <div class="row-fight">Inoue vs. Nakatani</div>
+      <div class="row-venue">Tokyo, Japan &nbsp;·&nbsp; Super Bantamweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="inoue-nakatani.html" class="btn btn-program">Program</a>
+      <a href="inoue-nakatani-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 8 — ProBox Atlantic City -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">8</span></div>
+    <div class="row-body">
+      <div class="row-date">April 11, 2026</div>
+      <div class="row-fight">ProBox Atlantic City</div>
+      <div class="row-venue">Atlantic City, NJ &nbsp;·&nbsp; Multi-Bout Card</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="probox-atlantic-city.html" class="btn btn-program">Program</a>
+      <a href="probox-atlantic-city-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 7 — Fury-Makhmudov -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">7</span></div>
+    <div class="row-body">
+      <div class="row-date">April 11, 2026</div>
+      <div class="row-fight">Fury vs. Makhmudov</div>
+      <div class="row-venue">London, England &nbsp;·&nbsp; Heavyweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="fury-makhmudov.html" class="btn btn-program">Program</a>
+      <a href="fury-makhmudov-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 6 — Tszyu-Nurja -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">6</span></div>
+    <div class="row-body">
+      <div class="row-date">April 5, 2026</div>
+      <div class="row-fight">Tszyu vs. Nurja</div>
+      <div class="row-venue">Wollongong, Australia &nbsp;·&nbsp; Junior Welterweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="tszyu-nurja.html" class="btn btn-program">Program</a>
+      <a href="tszyu-nurja-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 5 — Zuffa Boxing 5 -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">5</span></div>
+    <div class="row-body">
+      <div class="row-date">April 5, 2026</div>
+      <div class="row-fight">Zuffa Boxing 5</div>
+      <div class="row-venue">Las Vegas, NV &nbsp;·&nbsp; Multi-Bout Card</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="zuffa-boxing5.html" class="btn btn-program">Program</a>
+      <a href="zuffa-boxing5-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 4 — Wilder-Chisora -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">4</span></div>
+    <div class="row-body">
+      <div class="row-date">April 4, 2026</div>
+      <div class="row-fight">Wilder vs. Chisora</div>
+      <div class="row-venue">London, England &nbsp;·&nbsp; Heavyweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · C</span>
+      <a href="wilder-chisora.html" class="btn btn-program">Program</a>
+      <a href="wilder-chisora-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 3 — Fundora-Thurman -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">3</span></div>
+    <div class="row-body">
+      <div class="row-date">March 28, 2026</div>
+      <div class="row-fight">Fundora vs. Thurman</div>
+      <div class="row-venue">Las Vegas, NV &nbsp;·&nbsp; Junior Middleweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="fundora-thurman.html" class="btn btn-program">Program</a>
+      <a href="fundora-thurman-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 2 — Martinez-Aleem -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">2</span></div>
+    <div class="row-body">
+      <div class="row-date">March 21, 2026</div>
+      <div class="row-fight">Martinez vs. Aleem</div>
+      <div class="row-venue">San Bernardino, CA &nbsp;·&nbsp; Super Middleweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B</span>
+      <a href="martinez-aleem.html" class="btn btn-program">Program</a>
+      <a href="martinez-aleem-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- No. 1 — Adames-Williams -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">1</span></div>
+    <div class="row-body">
+      <div class="row-date">March 21, 2026</div>
+      <div class="row-fight">Adames vs. Williams</div>
+      <div class="row-venue">Orlando, FL &nbsp;·&nbsp; Junior Middleweight</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · A</span>
+      <a href="adames-williams.html" class="btn btn-program">Program</a>
+      <a href="adames-williams-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+  <!-- Barboza-Sims — standalone recap -->
+  <div class="program-row" style="opacity:0.75;">
+    <div class="row-num"><span class="row-num-text" style="font-size:11px;">★</span></div>
+    <div class="row-body">
+      <div class="row-date">March 14, 2026</div>
+      <div class="row-fight">Barboza vs. Sims</div>
+      <div class="row-venue">Anaheim, CA &nbsp;·&nbsp; Lightweight &nbsp;·&nbsp; Recap Only</div>
+    </div>
+    <div class="row-actions">
+      <span class="badge badge-final">Final · B+</span>
+      <a href="barboza-sims-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">The Boxing <span>Blotter</span></div>
+  <div class="footer-sub">
+    Documents Before · Scores During · Grades After<br>
+    <a href="/">boxingblotter.com</a> &nbsp;·&nbsp; @boxingblotter
+  </div>
+</footer>
+
+</body>
+</html>
