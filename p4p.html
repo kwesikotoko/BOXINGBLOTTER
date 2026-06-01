@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pound for Pound Top 10 · The Boxing Blotter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500&family=IBM+Plex+Mono:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+
+/* ─── RESET ─── */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ─── SITE NAV ─── */
+.nav{position:sticky;top:0;z-index:50;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
+.nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
+.nav-the{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(192,26,10,0.8)}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-0.01em;color:#F0EAD6;line-height:1}
+.nav-name span{color:#C01A0A}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a:hover{color:#F0EAD6}
+.nav-links a.active{color:#F0EAD6;border-bottom:2px solid #C01A0A;padding-bottom:2px}
+.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:0.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:24px;cursor:pointer}
+
+/* ─── P4P PAGE BODY ─── */
+body{
+  background-color:#050608;
+  font-family:'Source Serif 4',serif;
+  color:#f2ece0;
+  min-height:100vh;
+}
+
+/* ─── P4P MASTHEAD ─── */
+.p4p-masthead{
+  background-color:#050608;
+  border-bottom:3px solid #c8890a;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+.p4p-masthead::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at 50% -20%, rgba(200,137,10,0.08) 0%, transparent 65%);
+  pointer-events:none;
+}
+.mh-strip{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 32px;
+  border-bottom:1px solid #1a1e28;
+}
+.mh-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  color:#3a3828;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+}
+.mh-center{
+  text-align:center;
+  padding:28px 32px 20px;
+  position:relative;
+  z-index:2;
+}
+.p4p-headline{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:clamp(40px,8vw,80px);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:#f2ece0;
+  line-height:0.92;
+  display:block;
+}
+.p4p-sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  color:#c8890a;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  margin-top:14px;
+  display:block;
+}
+.rule-row{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:14px 0 8px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.rule-line{flex:1;height:1px;background:#c8890a;opacity:0.4}
+.rule-diamond{
+  width:6px;height:6px;
+  background:#c8890a;
+  transform:rotate(45deg);
+  flex-shrink:0;
+  opacity:0.7;
+}
+.edition-bar{
+  background-color:#111520;
+  padding:9px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.edition-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  color:#e8a820;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+}
+.edition-meta{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8.5px;
+  color:#504030;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+}
+
+/* ─── INTRO BANNER ─── */
+.intro{
+  background-color:#0a0c10;
+  padding:28px 48px;
+  border-bottom:1px solid #1a1e28;
+  text-align:center;
+}
+.intro-hed{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:20px;
+  color:#e8a820;
+  letter-spacing:0.02em;
+  line-height:1.5;
+  max-width:820px;
+  margin:0 auto;
+}
+
+/* ─── FIGHTER ENTRIES ─── */
+.fighters{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 0 60px;
+}
+.fighter{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  border-bottom:1px solid #1a1e28;
+  position:relative;
+  transition:background 0.2s;
+}
+.fighter:hover{background:rgba(200,137,10,0.02)}
+.fighter.flip{grid-template-columns:1fr 72px}
+
+/* Rank column */
+.rank-col{
+  background-color:#050608;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border-right:1px solid #1a1e28;
+  position:relative;
+}
+.flip .rank-col{border-right:none;border-left:1px solid #1a1e28;order:2}
+.rank-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:42px;
+  color:#c8890a;
+  opacity:0.35;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  letter-spacing:-0.05em;
+  line-height:1;
+}
+
+/* Main content */
+.fighter-body{display:grid;grid-template-columns:380px 1fr;min-height:340px}
+.flip .fighter-body{grid-template-columns:1fr 380px}
+
+.photo-wrap{
+  overflow:hidden;
+  position:relative;
+  background-color:#0a0a0c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.flip .photo-wrap{order:2}
+.photo-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  display:block;
+  filter:brightness(0.88) contrast(1.06);
+  transition:filter 0.3s, transform 0.4s;
+}
+.fighter:hover .photo-wrap img{
+  filter:brightness(0.95) contrast(1.08);
+  transform:scale(1.02);
+}
+
+/* Placeholder for fighters without photos */
+.photo-placeholder{
+  width:100%;height:100%;
+  background:linear-gradient(135deg, #0a0c10 0%, #111520 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:340px;
+}
+.photo-placeholder-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:120px;
+  color:#c8890a;
+  opacity:0.12;
+  line-height:1;
+  user-select:none;
+}
+
+/* Gold accent bar on photo edge */
+.photo-wrap::after{
+  content:'';
+  position:absolute;
+  top:0;right:0;
+  width:3px;height:100%;
+  background:#c8890a;
+  opacity:0.6;
+}
+.flip .photo-wrap::after{right:auto;left:0}
+
+.fighter-text{
+  padding:32px 36px 32px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background-color:#0a0c10;
+  position:relative;
+}
+.flip .fighter-text{padding:32px 40px 32px 36px}
+
+/* Large rank watermark */
+.fighter-text::before{
+  content:attr(data-rank);
+  position:absolute;
+  right:20px;bottom:-10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:160px;
+  color:#c8890a;
+  opacity:0.04;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.flip .fighter-text::before{right:auto;left:20px}
+
+.fighter-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8px;
+  color:#c8890a;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  margin-bottom:8px;
+}
+.fighter-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:46px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:#f2ece0;
+  line-height:0.9;
+  margin-bottom:4px;
+}
+.fighter-weight{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  color:#6a6050;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  margin-bottom:20px;
+}
+.verdict{
+  font-family:'Source Serif 4',serif;
+  font-size:15.5px;
+  line-height:1.68;
+  color:rgba(242,236,224,0.82);
+}
+
+/* Badges */
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:7.5px;
+  padding:3px 10px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+}
+.badge-gold{background:rgba(200,137,10,0.12);color:#e8a820;border:1px solid rgba(200,137,10,0.3)}
+.badge-avoided{background:rgba(154,31,31,0.15);color:#e08080;border:1px solid rgba(154,31,31,0.4)}
+.badge-clean{background:rgba(26,74,26,0.15);color:#a8d8a8;border:1px solid rgba(26,74,26,0.4)}
+.badge-vol{background:rgba(26,40,74,0.2);color:#a8b8d8;border:1px solid rgba(26,40,74,0.5)}
+
+/* ─── ON RADAR ─── */
+.on-radar{
+  background-color:#0a0c10;
+  border-top:1px solid #1a1e28;
+  padding:40px 48px;
+  max-width:1100px;
+  margin:0 auto;
+}
+.radar-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  color:#c8890a;
+  text-transform:uppercase;
+  letter-spacing:0.22em;
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid #1a1e28;
+}
+.radar-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.radar-item{
+  padding:20px 24px;
+  background:rgba(200,137,10,0.04);
+  border:1px solid rgba(200,137,10,0.15);
+}
+.radar-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;
+  font-size:22px;
+  color:#f2ece0;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:6px;
+}
+.radar-why{
+  font-family:'Source Serif 4',serif;
+  font-size:13.5px;
+  line-height:1.6;
+  color:rgba(242,236,224,0.65);
+}
+
+/* ─── SITE FOOTER ─── */
+.site-footer{
+  background-color:#0F0C07;
+  text-align:center;
+  padding:48px 32px;
+  border-top:3px solid #C01A0A;
+}
+.footer-brand{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:30px;
+  text-transform:uppercase;
+  color:#F0EAD6;
+}
+.footer-brand span{color:#C01A0A}
+.footer-sub{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#6A6050;
+  margin-top:14px;
+  line-height:2.2;
+}
+.footer-sub a{color:rgba(192,26,10,0.8);text-decoration:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:800px){
+  .p4p-headline{font-size:38px}
+  .fighter{grid-template-columns:48px 1fr}
+  .flip{grid-template-columns:1fr 48px}
+  .fighter-body{grid-template-columns:1fr}
+  .flip .fighter-body{grid-template-columns:1fr}
+  .photo-wrap{height:260px}
+  .flip .photo-wrap{order:0}
+  .fighter-text{padding:24px 20px}
+  .fighter-name{font-size:34px}
+  .radar-grid{grid-template-columns:1fr}
+  .intro{padding:24px 24px}
+  .on-radar{padding:28px 24px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-the">The</span>
+      <span class="nav-name">Boxing <span>Blotter</span></span>
+    </a>
+    <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="/programs/">Programs</a></li>
+      <li><a href="/prospect-watch/">Prospect Watch</a></li>
+      <li><a href="/unsung/">Unsung Heroes</a></li>
+      <li><a href="/p4p/" class="active">P4P</a></li>
+      <li><a href="/unfought/">Unfought</a></li>
+      <li><a href="/shop/" class="soon">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- P4P MASTHEAD -->
+<div class="p4p-masthead">
+  <div class="mh-strip">
+    <span class="mh-tag">The Boxing Blotter · boxingblotter.com</span>
+    <span class="mh-tag">Updated · May 2026</span>
+  </div>
+  <div class="mh-center">
+    <span class="p4p-headline">Pound for Pound</span>
+    <div class="rule-row">
+      <span class="rule-line"></span>
+      <span class="rule-diamond"></span>
+      <span class="rule-line"></span>
+    </div>
+    <span class="p4p-sub">Top 10 · 2026 Edition · The Blotter's Official Rankings</span>
+  </div>
+  <div class="edition-bar">
+    <span class="edition-name">Vol. I · 2026</span>
+    <span class="edition-meta">Documents Before · Scores During · Grades After</span>
+  </div>
+</div>
+
+<!-- INTRO BANNER -->
+<div class="intro">
+  <p class="intro-hed">These rankings are built on one principle: the quality of the opposition, not the size of the stage. A fighter's P4P position is earned in the gym and the ring — not in a press conference or a promotional deal. We rank what we see. We explain why we see it that way.</p>
+</div>
+
+<!-- FIGHTER ENTRIES -->
+<div class="fighters">
+
+  <!-- #1 INOUE -->
+  <div class="fighter">
+    <div class="rank-col"><span class="rank-num">1</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">1</span></div>
+      </div>
+      <div class="fighter-text" data-rank="1">
+        <div class="fighter-label">No. 1 &nbsp;·&nbsp; Super Bantamweight / Jr. Lightweight</div>
+        <div class="fighter-name">Naoya Inoue</div>
+        <div class="fighter-weight">The Monster &nbsp;·&nbsp; Japan</div>
+        <div class="verdict">There is no argument here. Inoue is the most complete fighter on the planet — undisputed at 118, undisputed at 122, and when he's cleaned out a division he moves up to find the next hardest challenge. That is the volunteer profile in its purest form. He doesn't wait for the sport to come to him. He goes to get it. The power translates at every weight, the timing is automatic, and the finishing instinct doesn't require a setup. He's #1 because nobody else in the world does what he does.</div>
+        <div class="badge-row">
+          <span class="badge badge-vol">Volunteer</span>
+          <span class="badge badge-gold">Undisputed Multiple Divisions</span>
+          <span class="badge badge-clean">No Asterisks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #2 BIVOL -->
+  <div class="fighter flip">
+    <div class="rank-col"><span class="rank-num">2</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">2</span></div>
+      </div>
+      <div class="fighter-text" data-rank="2">
+        <div class="fighter-label">No. 2 &nbsp;·&nbsp; Light Heavyweight</div>
+        <div class="fighter-name">Dmitry Bivol</div>
+        <div class="fighter-weight">Russia &nbsp;·&nbsp; WBA Light Heavyweight Champion</div>
+        <div class="verdict">Bivol beat Canelo Alvarez when the entire industry said he couldn't. He didn't steal it — he earned it clearly, systematically, over twelve rounds against the biggest name in the sport. No asterisks on his résumé. No controversial decisions. No opponents who had something taken from them. He beats who's in front of him, defends his title, and doesn't manufacture the narrative. His spot at #2 is the cleanest argument on this list.</div>
+        <div class="badge-row">
+          <span class="badge badge-gold">Beat Canelo Clean</span>
+          <span class="badge badge-clean">Undefeated</span>
+          <span class="badge badge-gold">No Asterisks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #3 SHAKUR -->
+  <div class="fighter">
+    <div class="rank-col"><span class="rank-num">3</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">3</span></div>
+      </div>
+      <div class="fighter-text" data-rank="3">
+        <div class="fighter-label">No. 3 &nbsp;·&nbsp; Lightweight</div>
+        <div class="fighter-name">Shakur Stevenson</div>
+        <div class="fighter-weight">Newark, NJ &nbsp;·&nbsp; WBC Lightweight Champion</div>
+        <div class="verdict">The sport's system routes around Shakur Stevenson. He has sought the hard fights and the industry has found reasons those fights don't happen. That's not his problem — that's his credential. The style is suffocating: the distance management is generational, the jab lands like a setup and a finishing tool simultaneously, and his ability to make elite fighters look ordinary is something the division hasn't solved. When the avoided fighter designation is earned, it belongs here.</div>
+        <div class="badge-row">
+          <span class="badge badge-avoided">Avoided Fighter</span>
+          <span class="badge badge-gold">WBC Lightweight</span>
+          <span class="badge badge-vol">Seeks Hard Fights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #4 USYK -->
+  <div class="fighter flip">
+    <div class="rank-col"><span class="rank-num">4</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">4</span></div>
+      </div>
+      <div class="fighter-text" data-rank="4">
+        <div class="fighter-label">No. 4 &nbsp;·&nbsp; Heavyweight</div>
+        <div class="fighter-name">Oleksandr Usyk</div>
+        <div class="fighter-weight">Ukraine &nbsp;·&nbsp; Unified Heavyweight Champion</div>
+        <div class="verdict">The greatest heavyweight of his generation. The wins over Joshua — twice — and the unified championship are credentials that don't disappear overnight. What narrows the gap between him and the top three is accumulated cloud, not collapse. The Dubois I low blow ruling. Tonight's stoppage of Verhoeven with one second left in round eleven, a fighter who had been winning on the cards. Two fights with referee fingerprints on the result — Dubois I and tonight. Neither was clean. The body of work says top two. The recent work says #4.</div>
+        <div class="badge-row">
+          <span class="badge badge-gold">Unified Heavyweight Champion</span>
+          <span class="badge badge-avoided">Two Consecutive Controversies</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #5 BENAVIDEZ -->
+  <div class="fighter">
+    <div class="rank-col"><span class="rank-num">5</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">5</span></div>
+      </div>
+      <div class="fighter-text" data-rank="5">
+        <div class="fighter-label">No. 5 &nbsp;·&nbsp; Super Middleweight / Light Heavyweight</div>
+        <div class="fighter-name">David Benavidez</div>
+        <div class="fighter-weight">Phoenix, Arizona &nbsp;·&nbsp; The Mexican Monster</div>
+        <div class="verdict">168 to 175 to 190 — and the power followed him every step. The body attack that broke Caleb Plant at super middleweight is the same body attack that cracked Zurdo Rodriguez at light heavyweight. When power diminishes moving up in weight, that's the rule. Benavidez is the exception. He's cleaning out a 32-pound range without losing a step, and the argument for placing him higher on this list gets stronger every time he fights. The standard P4P framework wasn't built for what he's doing.</div>
+        <div class="badge-row">
+          <span class="badge badge-vol">32-Pound Range · Power Intact</span>
+          <span class="badge badge-gold">Multiple Division Domination</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #6 BETERBIEV -->
+  <div class="fighter flip">
+    <div class="rank-col"><span class="rank-num">6</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">6</span></div>
+      </div>
+      <div class="fighter-text" data-rank="6">
+        <div class="fighter-label">No. 6 &nbsp;·&nbsp; Light Heavyweight</div>
+        <div class="fighter-name">Artur Beterbiev</div>
+        <div class="fighter-weight">Russia &nbsp;·&nbsp; Unified Light Heavyweight Champion</div>
+        <div class="verdict">Every professional win by stoppage. Every single one. The unified light heavyweight titles are held with the most devastating finishing rate in the sport. Beterbiev sits at #6 — not because he doesn't belong higher, but because Bivol is at #2. Both are the best at 175 pounds. Both deserve to be on this list. The ranking acknowledges the division has two legitimate No. 1s and an unresolved question that only one fight can answer. When that fight happens, one of them moves up.</div>
+        <div class="badge-row">
+          <span class="badge badge-gold">Unified Light Heavyweight</span>
+          <span class="badge badge-clean">100% KO Rate</span>
+          <span class="badge badge-avoided">Bivol-Beterbiev Unresolved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #7 ENNIS -->
+  <div class="fighter">
+    <div class="rank-col"><span class="rank-num">7</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">7</span></div>
+      </div>
+      <div class="fighter-text" data-rank="7">
+        <div class="fighter-label">No. 7 &nbsp;·&nbsp; Welterweight &nbsp;·&nbsp; Avoided Fighter</div>
+        <div class="fighter-name">Jaron "Boots" Ennis</div>
+        <div class="fighter-weight">Philadelphia, PA &nbsp;·&nbsp; Welterweight Champion</div>
+        <div class="verdict">He has sought Crawford. He has sought Spence. He has sought Haney. He has sought Tank Davis. Every single one of them found a reason the fight couldn't be made. That is not coincidence — that is the sport telling you exactly how dangerous this man is. The numbers confirm it: 89% stoppage rate, elite by every metric, from a city that produces fighters who don't back down. The avoided fighter designation isn't a story we're selling. It's what the evidence shows.</div>
+        <div class="badge-row">
+          <span class="badge badge-avoided">Avoided Fighter — Industry Consensus</span>
+          <span class="badge badge-gold">89% Stoppage Rate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #8 RODRIGUEZ -->
+  <div class="fighter flip">
+    <div class="rank-col"><span class="rank-num">8</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">8</span></div>
+      </div>
+      <div class="fighter-text" data-rank="8">
+        <div class="fighter-label">No. 8 &nbsp;·&nbsp; Super Flyweight</div>
+        <div class="fighter-name">Jesse "Bam" Rodriguez</div>
+        <div class="fighter-weight">San Antonio, Texas &nbsp;·&nbsp; Super Flyweight Champion</div>
+        <div class="verdict">The smallest fighter on this list with one of the highest ceilings. Rodriguez operates at 115 pounds with timing, power, and IQ that don't belong at super flyweight — they belong on any P4P list in any era. The combination of youth, technical development, and title-level performances at a weight the casual audience ignores is exactly what this list is designed to surface. He's here because the quality of his work demands it, not because of name recognition.</div>
+        <div class="badge-row">
+          <span class="badge badge-gold">Super Flyweight Champion</span>
+          <span class="badge badge-vol">Youth &amp; Ceiling Both Elite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #9 NAKATANI -->
+  <div class="fighter">
+    <div class="rank-col"><span class="rank-num">9</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">9</span></div>
+      </div>
+      <div class="fighter-text" data-rank="9">
+        <div class="fighter-label">No. 9 &nbsp;·&nbsp; Bantamweight</div>
+        <div class="fighter-name">Junto Nakatani</div>
+        <div class="fighter-weight">Japan &nbsp;·&nbsp; Three-Division World Champion · 32–1 · Moved up to 122 for Inoue</div>
+        <div class="verdict">Three-division world champion at flyweight, super flyweight, and bantamweight — and his most recent fight was a voluntary move up to 122 to challenge Inoue for the undisputed super bantamweight title at Tokyo Dome. He didn't wait for an easier fight at his natural weight. He went up four pounds to face the best fighter on the planet in the biggest fight in Japanese boxing history. He wasn't exposed. He made Inoue fall short with the jab in the early rounds and created genuine adjustment difficulty. The difference between outperformed and exposed is everything in how a career gets remembered.</div>
+        <div class="badge-row">
+          <span class="badge badge-gold">Three-Division Champion</span>
+          <span class="badge badge-clean">Lost to #1 P4P — Not Exposed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- #10 HANEY -->
+  <div class="fighter flip">
+    <div class="rank-col"><span class="rank-num">10</span></div>
+    <div class="fighter-body">
+      <div class="photo-wrap">
+        <div class="photo-placeholder"><span class="photo-placeholder-num">10</span></div>
+      </div>
+      <div class="fighter-text" data-rank="10">
+        <div class="fighter-label">No. 10 &nbsp;·&nbsp; Lightweight</div>
+        <div class="fighter-name">Devin Haney</div>
+        <div class="fighter-weight">Las Vegas, Nevada &nbsp;·&nbsp; Former Undisputed Lightweight Champion</div>
+        <div class="verdict">Former undisputed lightweight champion. Built the résumé the right way — multiple title defenses, fought the available opposition, earned every belt in the division. The García loss is the complication on the record, but the circumstances around that fight are contested territory. A positive test for ostarine in the fight that defines García's case does not give García clean credit for the win. Haney's body of work at lightweight is legitimate. He's at #10 on those terms and those terms alone.</div>
+        <div class="badge-row">
+          <span class="badge badge-gold">Former Undisputed Lightweight</span>
+          <span class="badge badge-avoided">García Result Contested</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /fighters -->
+
+<!-- ON RADAR -->
+<div class="on-radar">
+  <div class="radar-label">On Radar &nbsp;·&nbsp; Within Striking Distance</div>
+  <div class="radar-grid">
+    <div class="radar-item">
+      <div class="radar-name">Jai Opetaia &nbsp;<span style="font-size:13px;font-family:'IBM Plex Mono',monospace;color:#6a6050;letter-spacing:0.1em;">IBF Cruiserweight</span></div>
+      <div class="radar-why">Elite at 200 pounds. Beat Mairis Briedis — a former undisputed cruiserweight champion — to take the title. The asterisk noted. Itching to move up. When he does, the conversation changes. He's one statement fight from forcing his way onto this list.</div>
+    </div>
+    <div class="radar-item">
+      <div class="radar-name">Oscar Collazo &nbsp;<span style="font-size:13px;font-family:'IBM Plex Mono',monospace;color:#6a6050;letter-spacing:0.1em;">WBO Minimumweight</span></div>
+      <div class="radar-why">The most compelling fighter under 115 in the sport. Puerto Rican. Dominant. The power at 105 pounds doesn't make sense until you watch him work. The casual audience hasn't found him yet. The Blotter has. He's building the case round by round.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">The Boxing <span>Blotter</span></div>
+  <div class="footer-sub">
+    Documents Before · Scores During · Grades After<br>
+    <a href="/">boxingblotter.com</a> &nbsp;·&nbsp; @boxingblotter
+  </div>
+</footer>
+
+</body>
+</html>
