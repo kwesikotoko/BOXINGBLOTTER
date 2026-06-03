@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · The Boxing Blotter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+html{background-color:#0F0C07}
+html,body{margin:0;padding:0;background-color:#0F0C07;color:#F0EAD6;min-height:100vh;font-family:'Source Serif 4',serif}
+*{box-sizing:border-box}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
+.nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
+.nav-the{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(192,26,10,0.8)}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-0.01em;color:#F0EAD6;line-height:1}
+.nav-name span{color:#C01A0A}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color .2s;position:relative}
+.nav-links a:hover{color:#F0EAD6}
+.nav-links a.active{color:#F0EAD6;border-bottom:2px solid #C01A0A;padding-bottom:2px}
+.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:24px;cursor:pointer}
+
+/* HERO */
+.hero{background-color:#0F0C07;border-bottom:1px solid #1A1510;padding:80px 32px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(192,26,10,0.08),transparent 60%);pointer-events:none}
+.hero-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(192,26,10,0.7);margin-bottom:20px;position:relative;z-index:2}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(56px,10vw,96px);text-transform:uppercase;letter-spacing:0.04em;color:#F0EAD6;line-height:0.88;position:relative;z-index:2}
+.hero-rule{width:48px;height:2px;background:#C01A0A;margin:28px auto}
+.hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:rgba(240,234,214,0.55);max-width:480px;margin:0 auto;line-height:1.7;position:relative;z-index:2}
+
+/* LOGO MARK */
+.logo-wrap{display:flex;justify-content:center;padding:56px 32px 48px;background-color:#0F0C07}
+.logo-wrap img{width:220px;height:auto;opacity:0.9}
+
+/* STATEMENT */
+.statement{max-width:720px;margin:0 auto;padding:0 32px 80px;background-color:#0F0C07}
+
+.stmt-block{margin-bottom:48px;background-color:#0F0C07}
+.stmt-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C01A0A;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.stmt-label::before{content:"";width:32px;height:1px;background:#C01A0A}
+.stmt-text{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,26px);line-height:1.62;color:#F0EAD6;font-weight:400}
+.stmt-text em{font-style:italic;color:rgba(240,234,214,0.75)}
+
+/* TAGLINE BLOCK */
+.tagline-block{background-color:#1A1510;border-left:3px solid #C01A0A;padding:28px 32px;margin:48px 0}
+.tagline-text{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(28px,5vw,42px);text-transform:uppercase;letter-spacing:0.04em;color:#F0EAD6;line-height:1.1}
+.tagline-text span{color:#C01A0A}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background-color:#1A1510;margin:48px 0}
+.pillar{background-color:#0F0C07;padding:28px 24px;text-align:center}
+.pillar-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;color:#C01A0A;opacity:0.25;line-height:1}
+.pillar-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#C01A0A;margin-top:8px}
+.pillar-text{font-family:'Source Serif 4',serif;font-size:14px;line-height:1.65;color:rgba(240,234,214,0.65);margin-top:10px}
+
+/* FOOTER */
+.site-footer{background-color:#0F0C07;text-align:center;padding:48px 32px;border-top:3px solid #C01A0A}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#F0EAD6}
+.footer-brand span{color:#C01A0A}
+.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#6A6050;margin-top:14px;line-height:2.2}
+.footer-sub a{color:rgba(192,26,10,.8);text-decoration:none}
+
+/* MOBILE */
+@media(max-width:700px){
+  .hero{padding:56px 24px 48px}
+  .statement{padding:0 20px 60px}
+  .pillars{grid-template-columns:1fr}
+  .logo-wrap img{width:160px}
+  .tagline-block{padding:20px 20px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .stmt-text{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/programs/">Programs</a></li>
+      <li><a href="/prospect-watch/">Prospect Watch</a></li>
+      <li><a href="/unsung/">Unsung Heroes</a></li>
+      <li><a href="/p4p.html">P4P</a></li>
+      <li><a href="/unfought/">Unfought</a></li>
+      <li><a href="/shop/" class="soon">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-kicker">The Boxing Blotter &nbsp;&middot;&nbsp; Est. 2013</div>
+  <div class="hero-title">Why We're<br>Here</div>
+  <div class="hero-rule"></div>
+  <div class="hero-sub">A personal account of how the sport gets covered — and why it matters.</div>
+</div>
+
+<!-- LOGO -->
+<div class="logo-wrap">
+  <img src="/assets/logo-cream.png" alt="The Boxing Blotter" onerror="this.style.display='none'">
+</div>
+
+<!-- STATEMENT -->
+<div class="statement">
+
+  <div class="stmt-block">
+    <div class="stmt-label">The Beginning</div>
+    <div class="stmt-text">My father served in the military during a time before cell phones and social media — before there was any easy way to stay connected when the orders came and you had to move. We moved often. Every time we did, I left behind friends, neighborhoods, routines. What I never left behind was sports.</div>
+  </div>
+
+  <div class="stmt-block">
+    <div class="stmt-label">The Constant</div>
+    <div class="stmt-text">Every base had a DYA Center — Dependent Youth Activities. It was the one thing that was always there. Yongsan in Seoul. Fort Sam Houston in San Antonio. Patch Barracks in Stuttgart. Different countries, different languages, different everything — but always somewhere to play, always a way back in. Boxing programs were almost never available, though. <em>Almost never.</em></div>
+  </div>
+
+  <div class="stmt-block">
+    <div class="stmt-label">My Father</div>
+    <div class="stmt-text">Boxing was something I found through him. My father already knew the sport — sitting with him and watching the fights was one of the constants I could hold onto. I already understood sacrifice before I ever laced up gloves — I'd watched my father serve, moved from base to base, learned what it meant to give everything you had and keep going anyway.</div>
+  </div>
+
+  <div class="stmt-block">
+    <div class="stmt-label">What The Gym Taught Me</div>
+    <div class="stmt-text">So when I finally got the chance to train — out of a gym on Memorial Drive in Decatur, under Biggs and Coach Al — I wasn't just learning combinations. I was getting something I'd wanted for a long time. I spent enough time inside those ropes to understand what the sport actually demands: the discipline, the repetition, the sacrifice, the uncertainty. Not as a champion. Not as a contender. Just as someone who gained firsthand respect for what fighters endure every time they step through those ropes. That respect never left.</div>
+  </div>
+
+  <div class="stmt-block">
+    <div class="stmt-label">Why It Matters</div>
+    <div class="stmt-text">The preliminary fighter on the undercard. The prospect nobody has heard of yet. The contender who never got the right fight at the right time. <em>Every single one of them has a story worth telling.</em> I've watched this sport for decades, grew up around it, trained in it, and I've spent years documenting fighters that bigger outlets ignore. That's the credibility that matters here — not a record, not a title, just an honest commitment to the fighters who deserve to be known.</div>
+  </div>
+
+  <!-- TAGLINE BLOCK -->
+  <div class="tagline-block">
+    <div class="tagline-text">Documents <span>Before</span><br>Scores <span>During</span><br>Grades <span>After</span></div>
+  </div>
+
+  <div class="stmt-block">
+    <div class="stmt-label">What This Is</div>
+    <div class="stmt-text">The Boxing Blotter isn't a mission. It's a continuation — of a conversation that started with my father, of a love for a sport that kept me grounded across four continents, of a commitment to the fighters who never get the coverage they've earned. We document before the world catches up. We call our shots before the result is known. We grade ourselves honestly after. That's it.</div>
+  </div>
+
+  <div class="stmt-block">
+    <div class="stmt-label">For Them</div>
+    <div class="stmt-text"><em>They are heroes — just like Thomas Davis, my dad. This is for them.</em></div>
+  </div>
+
+  <!-- THREE PILLARS -->
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">I</div>
+      <div class="pillar-label">Documents Before</div>
+      <div class="pillar-text">Filed before the first bell. Every fighter documented. Every call on record before the result is known.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">II</div>
+      <div class="pillar-label">Scores During</div>
+      <div class="pillar-text">Real-time coverage. The fight as it happens — round by round, moment by moment.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">III</div>
+      <div class="pillar-label">Grades After</div>
+      <div class="pillar-text">We hold ourselves accountable. Every pre-fight call gets graded honestly — right or wrong.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:80px;width:auto;opacity:0.9;"></div>
+  <div class="footer-sub">
+    Documents Before &middot; Scores During &middot; Grades After<br>
+    <a href="/">boxingblotter.com</a> &nbsp;&middot;&nbsp; @boxingblotter &nbsp;&middot;&nbsp; Est. 2013
+  </div>
+</footer>
+
+</body>
+</html>
