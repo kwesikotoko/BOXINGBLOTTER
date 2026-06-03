@@ -249,9 +249,41 @@
   .back-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #1a2a1a; padding-top: 14px; }
   .back-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; }
   .back-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: #1a2a1a; letter-spacing: 0.08em; text-align: right; line-height: 1.6; }
+
+/* SITE NAV */
+.site-nav{position:sticky;top:0;z-index:100;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
+.site-nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 32px}
+.site-nav-brand{display:flex;align-items:center;text-decoration:none}
+.site-nav-brand img{height:38px;width:auto;display:block}
+.site-nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center}
+.site-nav-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color .2s;position:relative}
+.site-nav-links a:hover{color:#F0EAD6}
+.site-nav-links a.soon::after{content:'SOON';font-size:7px;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.site-nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:22px;cursor:pointer;padding:0}
+@media(max-width:700px){
+  .site-nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:16px 24px;gap:14px;border-bottom:1px solid rgba(255,255,255,.08);z-index:99}
+  .site-nav-links.open{display:flex}
+  .site-nav-toggle{display:block}
+  .site-nav-inner{padding:10px 20px}
+}
 </style>
 </head>
 <body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="site-nav-brand"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:38px;width:auto;"></a>
+    <button class="site-nav-toggle" onclick="this.closest('nav').querySelector('.site-nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="site-nav-links">
+      <li><a href="/programs/">Programs</a></li>
+      <li><a href="/prospect-watch.html">Prospect Watch</a></li>
+      <li><a href="/unsung/">Unsung Heroes</a></li>
+      <li><a href="/p4p.html">P4P</a></li>
+      <li><a href="/unfought/">Unfought</a></li>
+      <li><a href="/shop/" class="soon">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="page">
 
   <!-- MASTHEAD -->
@@ -622,6 +654,9 @@
     </div>
   </div>
 
+</div>
+<div style="background:#0F0C07;text-align:center;padding:18px 24px;border-top:1px solid #1A1510;">
+  <a href="/about.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,234,214,0.35);text-decoration:none;">About The Boxing Blotter</a>
 </div>
 </body>
 </html>

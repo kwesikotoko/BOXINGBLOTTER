@@ -102,83 +102,13 @@ html,body{margin:0;padding:0;background-color:#030810;color:#e4ecf2;font-family:
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
 }
-
-/* ── MOBILE OPTIMISATION ── */
-@media(max-width:768px){
-  /* Base text */
-  body{font-size:17px!important;line-height:1.78!important}
-
-  /* Section padding */
-  .section,.body-section,.intro,.on-radar,.body-panel{padding:22px 18px!important}
-
-  /* Body text */
-  .body-text,.intro-body,.fc-col-body,.cx-col-body,.pw-body,.radar-why{
-    font-size:16px!important;line-height:1.78!important}
-
-  /* Headings scale */
-  .featured-fight,.hero-fight{font-size:46px!important}
-  .fc-name,.cx-name{font-size:26px!important}
-  .p4p-headline{font-size:38px!important}
-
-  /* Nav */
-  .nav-inner{padding:12px 18px!important}
-
-  /* Fight name on programs */
-  .row-fight,.prog-fight,.uc-fight{font-size:18px!important}
-
-  /* Scorecard grid single column */
-  .sc-grid{grid-template-columns:1fr!important}
-
-  /* CompuBox table scroll */
-  table{display:block!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important}
-
-  /* Photo captions readable */
-  .hero-cap-text,.hero-cap-credit,.photo-cap span,.fc-photo-cap-text,
-  .fc-photo-cap-credit,.cap-text,.cap-credit{font-size:9px!important}
-
-  /* Reduce hero height slightly */
-  .featured,.hero,.hero-full{min-height:85vh!important}
-
-  /* Hero content padding */
-  .featured-content,.hero-body,.hero-content{padding:0 20px 40px!important}
-
-  /* Archive rows */
-  .program-row,.entry{grid-template-columns:40px 1fr!important}
-  .prog-actions,.row-actions{flex-wrap:wrap!important;gap:6px!important}
-  .btn,.featured-btn{padding:9px 14px!important;font-size:9px!important}
-
-  /* Prospect watch */
-  .fc-header{grid-template-columns:36px 1fr!important}
-  .fc-cols,.cx-body-grid{grid-template-columns:1fr!important}
-  .fc-cols>div:first-child,.cx-body-grid>div:first-child{
-    border-right:none!important;border-bottom:1px solid rgba(200,200,200,0.15)!important;
-    padding-bottom:14px!important;margin-bottom:0!important}
-  .fighter-body,.cx-header{grid-template-columns:1fr!important}
-
-  /* P4P */
-  .fighter-body{grid-template-columns:1fr!important}
-  .fighter-text{padding:20px 18px!important}
-  .fighter-name{font-size:34px!important}
-  .verdict{font-size:15px!important;line-height:1.72!important}
-  .radar-grid{grid-template-columns:1fr!important}
-
-  /* Section labels */
-  .section-label,.fc-col-label,.cx-col-label,.pw-label{
-    font-size:9px!important;letter-spacing:0.18em!important}
-
-  /* Unsung hero page */
-  .featured-name{font-size:46px!important}
-  .featured-hook{font-size:16px!important}
-  .archive-section{padding:24px 18px!important}
-}
-
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:44px;width:auto;display:block;"></a>
+    <a href="/" class="nav-brand"><span class="nav-the">The</span><span class="nav-name">Boxing <span>Blotter</span></span></a>
     <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
     <ul class="nav-links">
       <li><a href="/programs/" class="active">Programs</a></li>
@@ -416,7 +346,7 @@ html,body{margin:0;padding:0;background-color:#030810;color:#e4ecf2;font-family:
 
 
 <div class="back-cover">
-  <div class="bc-logo" style="display:flex;justify-content:center;margin-bottom:8px;"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:70px;width:auto;opacity:0.85;"></div>
+  <div class="bc-brand">The Boxing Blotter</div>
   <div class="bc-tagline">Documents Before &middot; Scores During &middot; Grades After</div>
   <div class="bc-divider"></div>
   <div class="bc-meta">Vol. I &middot; No. 17 &middot; Recap &middot; Bivol vs. Eifert &middot; Ekaterinburg, Russia &middot; May 30, 2026</div>
@@ -424,9 +354,12 @@ html,body{margin:0;padding:0;background-color:#030810;color:#e4ecf2;font-family:
 </div>
 
 <footer class="site-footer">
-  <div class="footer-logo"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:80px;width:auto;opacity:0.9;"></div>
+  <div class="footer-brand">The Boxing <span>Blotter</span></div>
   <div class="footer-sub">Documents Before &middot; Scores During &middot; Grades After<br><a href="/">boxingblotter.com</a> &nbsp;&middot;&nbsp; @boxingblotter</div>
 </footer>
 
+<div style="background:#0F0C07;text-align:center;padding:18px 24px;border-top:1px solid #1A1510;">
+  <a href="/about.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,234,214,0.35);text-decoration:none;">About The Boxing Blotter</a>
+</div>
 </body>
 </html>
