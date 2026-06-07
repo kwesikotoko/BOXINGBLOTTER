@@ -1,0 +1,1063 @@
+/*
+ * THE BOXING BLOTTER — BASE STYLESHEET
+ * blotter-base.css · Version 1.0 · June 2026
+ *
+ * WHAT THIS FILE OWNS:
+ *   - Google Fonts import
+ *   - CSS reset
+ *   - Nav (text wordmark + mobile toggle)
+ *   - Footer (logo image + tagline)
+ *   - Typography scale
+ *   - Shared utilities: badges, buttons, rules, mono labels
+ *   - Mobile breakpoints for all shared elements
+ *
+ * WHAT THIS FILE DOES NOT OWN:
+ *   - Palette colors — each program page defines its own :root variables
+ *   - Hero image treatment — each program page owns its hero
+ *   - Program-specific section layouts
+ *
+ * HOW TO USE:
+ *   1. Link this file FIRST in <head>
+ *   2. Add a <style> block after it with your page's :root palette variables
+ *   3. Build your program sections using your palette variables
+ *
+ * NAV WORDMARK COLORS are intentionally hardcoded here — the nav is always
+ * the same dark background regardless of which card's palette is active.
+ * --nav-bg:    #0F0C07
+ * --nav-red:   #C01A0A
+ * --nav-cream: #F0EAD6
+ */
+
+/* ============================================================
+   FONTS
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap');
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+
+.blotter-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #0F0C07;
+  border-bottom: 3px solid #C01A0A;
+}
+
+.blotter-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+}
+
+/* WORDMARK */
+.blotter-nav-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.blotter-nav-the {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(192, 26, 10, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.blotter-nav-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #F0EAD6;
+  line-height: 1;
+}
+
+.blotter-nav-name .red {
+  color: #C01A0A;
+}
+
+/* NAV LINKS */
+.blotter-nav-links {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+  align-items: center;
+}
+
+.blotter-nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(240, 234, 214, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.blotter-nav-links a:hover {
+  color: #F0EAD6;
+}
+
+.blotter-nav-links a.active {
+  color: #F0EAD6;
+  border-bottom: 2px solid #C01A0A;
+  padding-bottom: 2px;
+}
+
+.blotter-nav-links a.soon::after {
+  content: 'SOON';
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: #C01A0A;
+  position: absolute;
+  top: -8px;
+  right: -24px;
+}
+
+/* MOBILE TOGGLE */
+.blotter-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #F0EAD6;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.blotter-footer {
+  background-color: #0F0C07;
+  text-align: center;
+  padding: 52px 32px 40px;
+  border-top: 3px solid #C01A0A;
+}
+
+.blotter-footer-logo {
+  margin-bottom: 18px;
+}
+
+.blotter-footer-logo img {
+  height: 80px;
+  width: auto;
+  opacity: 0.88;
+  display: inline-block;
+}
+
+.blotter-footer-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #F0EAD6;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.blotter-footer-brand .red {
+  color: #C01A0A;
+}
+
+.blotter-footer-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(240, 234, 214, 0.35);
+  line-height: 2.4;
+}
+
+.blotter-footer-sub a {
+  color: rgba(192, 26, 10, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blotter-footer-sub a:hover {
+  color: #C01A0A;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+/* Mono label — used for section labels, kickers, dates */
+.blotter-mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Condensed display — fight names, headlines */
+.blotter-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Serif italic — decks, pullquotes */
+.blotter-serif-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+/* ============================================================
+   SHARED BADGES
+   ============================================================ */
+
+.blotter-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  padding: 3px 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* Color variants — rely on page palette variables */
+.blotter-badge-final {
+  background: rgba(26, 74, 26, 0.3);
+  color: #7ABB7A;
+  border: 1px solid rgba(26, 74, 26, 0.65);
+}
+
+.blotter-badge-pre {
+  background: rgba(58, 42, 8, 0.35);
+  color: #E8A820;
+  border: 1px solid rgba(196, 154, 42, 0.55);
+}
+
+.blotter-badge-recap {
+  background: rgba(140, 20, 20, 0.25);
+  color: #D07070;
+  border: 1px solid rgba(160, 30, 30, 0.5);
+}
+
+/* ============================================================
+   SHARED BUTTONS
+   ============================================================ */
+
+.blotter-btn {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 14px;
+  transition: all 0.15s;
+  cursor: pointer;
+  border: none;
+}
+
+.blotter-btn-primary {
+  background: #C01A0A;
+  color: #F0EAD6;
+}
+
+.blotter-btn-primary:hover {
+  background: #e02010;
+  color: #ffffff;
+}
+
+.blotter-btn-outline {
+  background: transparent;
+  color: rgba(240, 234, 214, 0.7);
+  border: 1px solid rgba(240, 234, 214, 0.25);
+}
+
+.blotter-btn-outline:hover {
+  border-color: #C01A0A;
+  color: #C01A0A;
+}
+
+/* ============================================================
+   HORIZONTAL RULE WITH LABEL
+   ============================================================ */
+
+.blotter-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 14px;
+}
+
+.blotter-rule-line {
+  flex: 1;
+  height: 1px;
+}
+
+.blotter-rule-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   ARCHIVE / PROGRAM LIST ROWS
+   (used on index.html and any archive page)
+   ============================================================ */
+
+.blotter-archive-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+.blotter-archive-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 22px 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+
+.blotter-archive-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.blotter-archive-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(240, 234, 214, 0.45);
+}
+
+.blotter-archive-count {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #C01A0A;
+  letter-spacing: 0.06em;
+}
+
+.blotter-archive-toggle {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #C01A0A;
+  transition: color 0.2s;
+}
+
+.blotter-archive-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.blotter-archive-list.open {
+  max-height: 5000px;
+}
+
+/* PROGRAM ROW */
+.blotter-program-row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 0;
+  transition: background 0.15s;
+}
+
+.blotter-program-row:hover {
+  background: rgba(192, 26, 10, 0.03);
+}
+
+.blotter-prog-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #C01A0A;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.blotter-prog-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240, 234, 214, 0.4);
+}
+
+.blotter-prog-fight {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #F0EAD6;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.blotter-prog-venue {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240, 234, 214, 0.35);
+  margin-top: 3px;
+}
+
+.blotter-prog-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   SITE-LEVEL SMALL FOOTER BAR (about link etc.)
+   ============================================================ */
+
+.blotter-footer-bar {
+  background: #0F0C07;
+  text-align: center;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.blotter-footer-bar a {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 234, 214, 0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blotter-footer-bar a:hover {
+  color: rgba(240, 234, 214, 0.65);
+}
+
+/* ============================================================
+   MOBILE — SHARED ELEMENTS ONLY
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  /* Nav */
+  .blotter-nav-inner {
+    padding: 12px 18px;
+  }
+
+  .blotter-nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #0F0C07;
+    padding: 18px 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    z-index: 99;
+  }
+
+  .blotter-nav-links.open {
+    display: flex;
+  }
+
+  .blotter-nav-toggle {
+    display: block;
+  }
+
+  .blotter-nav-name {
+    font-size: 19px;
+  }
+
+  /* Footer */
+  .blotter-footer {
+    padding: 40px 20px 32px;
+  }
+
+  .blotter-footer-logo img {
+    height: 64px;
+  }
+
+  /* Archive rows */
+  .blotter-archive-wrap {
+    padding: 0 18px 60px;
+  }
+
+  .blotter-program-row {
+    grid-template-columns: 40px 1fr;
+    gap: 0;
+  }
+
+  .blotter-prog-actions {
+    grid-column: 2;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .blotter-prog-fight {
+    font-size: 18px;
+  }
+
+  /* Buttons */
+  .blotter-btn {
+    padding: 8px 13px;
+    font-size: 9px;
+  }
+
+}
+
+/* ============================================================
+   PROGRAM PAGE SHARED STRUCTURE
+   (the .blotter-page wrapper used on all program pages)
+   ============================================================ */
+
+.blotter-page {
+  max-width: 920px;
+  margin: 0 auto;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Inner nav on program pages (sticky breadcrumb bar) */
+.blotter-page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.blotter-page-nav-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.blotter-page-nav-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+/* Body content area */
+.blotter-body {
+  padding: 0 28px 32px;
+}
+
+/* Section heading */
+.blotter-section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 14px;
+}
+
+.blotter-section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.blotter-section-rule {
+  flex: 1;
+  height: 1px;
+  opacity: 0.2;
+}
+
+/* Read section prose */
+.blotter-read-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.blotter-read-deck {
+  font-family: 'Playfair Display', serif;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  border-left: 3px solid currentColor;
+  padding-left: 12px;
+  opacity: 0.75;
+}
+
+.blotter-read-body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  line-height: 1.72;
+  column-count: 2;
+  column-gap: 26px;
+  margin-bottom: 14px;
+}
+
+.blotter-read-body p {
+  margin-bottom: 10px;
+}
+
+/* Drop cap */
+.blotter-read-body p:first-child::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 900;
+  float: left;
+  line-height: 0.85;
+  margin: 4px 6px 0 0;
+}
+
+/* Mobile: single column body */
+@media (max-width: 700px) {
+  .blotter-read-body {
+    column-count: 1;
+  }
+
+  .blotter-body {
+    padding: 0 18px 28px;
+  }
+
+  .blotter-read-head {
+    font-size: 22px;
+  }
+
+  .blotter-page-nav {
+    padding: 8px 18px;
+  }
+}
+
+/* ============================================================
+   TALE OF THE TAPE — shared grid skeleton
+   (colors come from page palette)
+   ============================================================ */
+
+.blotter-tape {
+  display: grid;
+  grid-template-columns: 1fr 110px 1fr;
+}
+
+.blotter-tape-fighter {
+  padding: 18px 16px;
+}
+
+.blotter-tape-fighter.right {
+  text-align: right;
+}
+
+.blotter-tape-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.blotter-tape-record {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  margin-top: 4px;
+  opacity: 0.65;
+}
+
+.blotter-tape-stat {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  align-items: baseline;
+}
+
+.blotter-tape-fighter.right .blotter-tape-stat {
+  flex-direction: row-reverse;
+}
+
+.blotter-tape-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.blotter-tape-stat-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.blotter-tape-center {
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.blotter-tape-vs {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.blotter-tape-center-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.blotter-tape-center-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .blotter-tape {
+    grid-template-columns: 1fr 80px 1fr;
+  }
+
+  .blotter-tape-name {
+    font-size: 16px;
+  }
+
+  .blotter-tape-fighter {
+    padding: 14px 10px;
+  }
+}
+
+/* ============================================================
+   FIGHT CARD ROWS — shared skeleton
+   ============================================================ */
+
+.blotter-fight-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 12px;
+}
+
+.blotter-fight-card-header {
+  padding: 9px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.blotter-fight-card-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.blotter-fight-card-stake {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blotter-fight-card-body {
+  padding: 12px 14px;
+}
+
+.blotter-fight-matchup {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.blotter-fight-fighter {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.blotter-fight-fighter.right {
+  text-align: right;
+}
+
+.blotter-fight-name {
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.blotter-fight-rec {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  margin-top: 2px;
+  opacity: 0.6;
+}
+
+.blotter-fight-vs {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.blotter-fight-detail {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
+  opacity: 0.65;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .blotter-fight-name {
+    font-size: 14px;
+  }
+
+  .blotter-fight-matchup {
+    grid-template-columns: 1fr 28px 1fr;
+    gap: 4px;
+  }
+}
+
+/* ============================================================
+   THE CALL BOX — shared skeleton
+   ============================================================ */
+
+.blotter-call {
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.blotter-call-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.75;
+}
+
+.blotter-call-pick {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.blotter-call-reason {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11.5px;
+  line-height: 1.58;
+  margin-top: 6px;
+  opacity: 0.75;
+}
+
+.blotter-call-rounds {
+  text-align: center;
+  padding-left: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.blotter-call-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.blotter-call-rounds-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 3px;
+  opacity: 0.5;
+}
+
+.blotter-call-confidence {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 3px 9px;
+}
+
+@media (max-width: 600px) {
+  .blotter-call {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .blotter-call-rounds {
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 0;
+    padding-top: 14px;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+}
+
+/* ============================================================
+   ACCURACY REPORT BOX — shared skeleton
+   ============================================================ */
+
+.blotter-accuracy {
+  padding: 16px 20px;
+  margin-top: 20px;
+}
+
+.blotter-accuracy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+}
+
+.blotter-accuracy-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.blotter-accuracy-grade {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.blotter-accuracy-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  gap: 16px;
+}
+
+.blotter-accuracy-row:last-child {
+  border-bottom: none;
+}
+
+.blotter-accuracy-call {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.blotter-accuracy-result {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 2px 7px;
+}
+
+/* ============================================================
+   HERO IMAGE — base rules (positioning per page)
+   ============================================================ */
+
+.blotter-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.blotter-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.blotter-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* override per page */
+}
+
+.blotter-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Portrait mode base — override min-height per page */
+@media (max-width: 600px) and (orientation: portrait) {
+  .blotter-hero {
+    min-height: 0 !important;
+    height: 55vh;
+    max-height: 55vh;
+  }
+
+  .blotter-hero-bg img {
+    object-position: center 35%;
+  }
+}
