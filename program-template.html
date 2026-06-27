@@ -467,8 +467,8 @@ body {
   text-transform: uppercase; margin-bottom: 5px;
 }
 .flag-banner-text {
-  font-family: 'Barlow', sans-serif; font-size: 12px;
-  color: #c0c8d0; line-height: 1.55;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: #c0c8d0; line-height: 1.5;
 }
 
 /* READ */
@@ -485,7 +485,7 @@ body {
 }
 .read-body {
   font-family: 'Barlow', sans-serif;
-  font-size: 13px; line-height: 1.72; color: var(--ink);
+  font-size: 16px; line-height: 1.65; color: var(--ink);
   column-count: 2; column-gap: 26px; margin-bottom: 14px;
 }
 .read-body p { margin-bottom: 10px; }
@@ -514,8 +514,8 @@ body {
   letter-spacing: 0.02em; line-height: 1.1;
 }
 .main-call-reason {
-  font-family: 'Barlow', sans-serif; font-size: 11.5px;
-  color: #6a7a8a; line-height: 1.55; margin-top: 6px;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: #6a7a8a; line-height: 1.5; margin-top: 6px;
 }
 .main-call-rounds { text-align: center; border-left: 1px solid #2e3a50; padding-left: 20px; }
 .main-call-num {
@@ -549,8 +549,8 @@ body {
   color: var(--gold); margin-bottom: 10px;
 }
 .spotlight-body {
-  font-family: 'Barlow', sans-serif; font-size: 13px;
-  color: #b8c0c8; line-height: 1.68;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: #b8c0c8; line-height: 1.6;
 }
 .spotlight-body p { margin-bottom: 9px; }
 
@@ -566,8 +566,8 @@ body {
   padding-bottom: 6px; border-bottom: 1px solid var(--light-rule);
 }
 .amateur-box-body {
-  font-family: 'Barlow', sans-serif; font-size: 12.5px;
-  color: var(--ink); line-height: 1.62;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: var(--ink); line-height: 1.55;
 }
 
 /* FIGHT CARDS */
@@ -602,7 +602,7 @@ body {
   font-size: 10px; color: var(--muted); margin-top: 2px;
 }
 .fight-detail {
-  font-family: 'Barlow', sans-serif; font-size: 11px;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
   color: var(--muted); margin-top: 3px; line-height: 1.4;
 }
 .fight-vs {
@@ -611,8 +611,8 @@ body {
   color: var(--light-rule); text-align: center;
 }
 .fight-analysis {
-  font-family: 'Barlow', sans-serif; font-size: 12.5px;
-  color: var(--ink); line-height: 1.65; margin-bottom: 10px;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: var(--ink); line-height: 1.58; margin-bottom: 10px;
 }
 .fight-call {
   background: var(--ink); padding: 9px 14px;
@@ -630,7 +630,7 @@ body {
   color: var(--newsprint); text-transform: uppercase; flex: 1;
 }
 .fight-call-why {
-  font-family: 'Barlow', sans-serif; font-size: 10.5px;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
   color: #4a5a6a; text-align: right;
   max-width: 220px; line-height: 1.4;
 }
@@ -656,8 +656,8 @@ body {
   color: #7a8a9a; margin-bottom: 10px; letter-spacing: 0.06em;
 }
 .pw-body {
-  font-family: 'Barlow', sans-serif; font-size: 12.5px;
-  color: #b0bac4; line-height: 1.65;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: #b0bac4; line-height: 1.58;
 }
 .pw-body p { margin-bottom: 8px; }
 .pw-status {
@@ -684,8 +684,8 @@ body {
   margin-bottom: 6px;
 }
 .nr-note {
-  font-family: 'Barlow', sans-serif; font-size: 12px;
-  color: #7a8a9a; line-height: 1.6;
+  font-family: 'Barlow', sans-serif; font-size: 16px;
+  color: #7a8a9a; line-height: 1.5;
 }
 
 /* DIVIDERS */
@@ -825,7 +825,16 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
 
 /* MOBILE */
 @media(max-width:680px) {
-  .read-body { column-count: 1; }
+  .read-body { column-count: 1; font-size: 18px; line-height: 1.6; }
+  .flag-banner-text { font-size: 18px; line-height: 1.55; }
+  .main-call-reason { font-size: 18px; line-height: 1.55; }
+  .spotlight-body { font-size: 18px; line-height: 1.6; }
+  .amateur-box-body { font-size: 18px; line-height: 1.55; }
+  .fight-detail { font-size: 18px; line-height: 1.4; }
+  .fight-analysis { font-size: 18px; line-height: 1.55; }
+  .fight-call-why { font-size: 18px; }
+  .pw-body { font-size: 18px; line-height: 1.55; }
+  .nr-note { font-size: 18px; line-height: 1.5; }
   .back-grid { grid-template-columns: 1fr; }
   .tape { grid-template-columns: 1fr; }
   .tape-fighter.left, .tape-fighter.right { border: none; border-bottom: 1px solid #2e3a50; }
