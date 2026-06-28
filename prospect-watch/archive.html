@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive · Grind and Climb · The Boxing Blotter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{background-color:#F0EAD6;font-family:'Barlow Condensed',sans-serif;color:#0F0C07;min-height:100vh}
+
+/* ─── NAV ─── */
+.nav{position:sticky;top:0;z-index:50;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
+.nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
+.nav-the{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(192,26,10,0.8)}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-0.01em;color:#F0EAD6;line-height:1}
+.nav-name span{color:#C01A0A}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a:hover{color:#F0EAD6}
+.nav-links a.active{color:#F0EAD6;border-bottom:2px solid #C01A0A;padding-bottom:2px}
+.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:0.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:24px;cursor:pointer}
+
+/* ─── PAGE HEADER ─── */
+.page-header{background-color:#0F0C07;border-bottom:3px solid #C01A0A;padding:48px 32px;text-align:center}
+.header-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#C01A0A;margin-bottom:12px}
+.header-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(44px,8vw,76px);text-transform:uppercase;letter-spacing:0.04em;color:#F0EAD6;line-height:0.9}
+.header-sub{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#6A6050;margin-top:16px}
+
+/* ─── VOLUME LABEL ─── */
+.volume-label{max-width:1100px;margin:40px auto 0;padding:0 32px;display:flex;align-items:center;gap:16px}
+.vol-text{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A6050;white-space:nowrap}
+.vol-line{flex:1;height:1px;background:#D8D0BC}
+
+/* ─── PROGRAM GRID (reused pattern) ─── */
+.program-grid{max-width:1100px;margin:0 auto;padding:24px 32px 80px;display:flex;flex-direction:column;gap:3px}
+
+.program-row{background-color:#ffffff;border:1px solid #D8D0BC;display:grid;grid-template-columns:56px 1fr auto;align-items:stretch;transition:border-color 0.15s}
+.program-row:hover{border-color:#C01A0A}
+
+.row-num{background-color:#0F0C07;display:flex;align-items:center;justify-content:center;padding:0 12px}
+.row-num-text{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:#C01A0A;writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:0.05em;opacity:0.7}
+
+.row-body{padding:18px 24px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.row-date{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#9A9080}
+.row-fight{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;text-transform:uppercase;letter-spacing:0.02em;color:#0F0C07;line-height:1}
+.row-venue{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9080;margin-top:2px}
+
+.row-actions{display:flex;align-items:center;gap:8px;padding:18px 20px}
+.btn{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:8px 14px;transition:all 0.15s;white-space:nowrap}
+.btn-program{background-color:#0F0C07;color:#F0EAD6;border:1px solid #0F0C07}
+.btn-program:hover{background-color:#C01A0A;border-color:#C01A0A}
+.btn-recap{background-color:#ffffff;color:#0F0C07;border:1px solid #D8D0BC}
+.btn-recap:hover{border-color:#C01A0A;color:#C01A0A}
+
+.badge{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px}
+.badge-current{background-color:#1A3A1A;color:#6AAA6A}
+.badge-archived{background-color:#3A2A0A;color:#C8890A}
+
+/* ─── FOOTER ─── */
+.site-footer{background-color:#0F0C07;text-align:center;padding:48px 32px;border-top:3px solid #C01A0A}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#F0EAD6}
+.footer-brand span{color:#C01A0A}
+.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A6050;margin-top:14px;line-height:2.2}
+.footer-sub a{color:rgba(192,26,10,0.8);text-decoration:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:700px){
+  .program-row{grid-template-columns:40px 1fr}
+  .row-actions{grid-column:1/-1;padding:12px 16px 16px;border-top:1px solid #F0EAD6;flex-wrap:wrap}
+  .row-fight{font-size:20px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-the">The</span>
+      <span class="nav-name">Boxing <span>Blotter</span></span>
+    </a>
+    <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/programs/">Programs</a></li>
+      <li><a href="/prospect-watch/" class="active">Grind and Climb</a></li>
+      <li><a href="/unsung/">Unsung Heroes</a></li>
+      <li><a href="/p4p.html">P4P</a></li>
+      <li><a href="/unfought/">Unfought</a></li>
+      <li><a href="/shop/" class="soon">Shop</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="header-kicker">The Boxing Blotter &middot; Archive</div>
+  <div class="header-title">Grind<br>and Climb</div>
+  <div class="header-sub">Every Volume &nbsp;·&nbsp; Documents Before &middot; Scores During &middot; Grades After</div>
+</div>
+
+<!-- VOLUME ARCHIVE -->
+<div class="program-grid">
+
+  <div class="volume-label">
+    <span class="vol-text">All Volumes</span>
+    <div class="vol-line"></div>
+  </div>
+
+  <!-- Vol. II — current -->
+  <div class="program-row">
+    <div class="row-num"><span class="row-num-text">II</span></div>
+    <div class="row-body">
+      <div class="row-date">Updated June 27, 2026 &nbsp;·&nbsp; <span class="badge badge-current">Current</span></div>
+      <div class="row-fight">Grind and Climb</div>
+      <div class="row-venue">The Approach (18) &nbsp;·&nbsp; The Crossover (6) &nbsp;·&nbsp; Earned Eyes (3)</div>
+    </div>
+    <div class="row-actions">
+      <a href="/prospect-watch/" class="btn btn-program">Read Vol. II</a>
+    </div>
+  </div>
+
+  <!-- Vol. I — archived -->
+  <div class="program-row" style="opacity:0.85;">
+    <div class="row-num"><span class="row-num-text">I</span></div>
+    <div class="row-body">
+      <div class="row-date">Published through June 1, 2026 &nbsp;·&nbsp; <span class="badge badge-archived">Archived</span></div>
+      <div class="row-fight">Prospect Watch</div>
+      <div class="row-venue">Raw to Ripe &nbsp;·&nbsp; The Crossover &nbsp;·&nbsp; Frozen, Unedited</div>
+    </div>
+    <div class="row-actions">
+      <a href="/prospect-watch/vol-1.html" class="btn btn-recap">Read Vol. I</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:80px;width:auto;opacity:0.9;"></div>
+  <div class="footer-sub">
+    Documents Before &middot; Scores During &middot; Grades After<br>
+    <a href="/">boxingblotter.com</a> &nbsp;&middot;&nbsp; @boxingblotter
+  </div>
+</footer>
+
+</body>
+</html>
