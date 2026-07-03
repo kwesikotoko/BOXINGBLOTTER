@@ -496,24 +496,6 @@ body{
 .hero-rotator::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,12,0.15) 0%,rgba(10,10,12,0.55) 55%,rgba(10,10,12,0.95) 100%)}
 .hero-rotator-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#3a3f48}
 @media(max-width:680px){.hero-rotator{height:220px}}
-
-/* HERO — matches Grind and Climb / site-wide pattern */
-.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#0a0a0c}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(0.42) contrast(1.08)}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,#0a0a0c 0%,rgba(10,10,12,0.88) 32%,rgba(10,10,12,0.2) 65%,rgba(10,10,12,0.45) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 48px 56px;max-width:920px}
-.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:#c8890a;margin-bottom:14px;display:flex;align-items:center;gap:14px}
-.hero-kicker::before{content:'';width:32px;height:2px;background:#c8890a}
-.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,10vw,92px);text-transform:uppercase;letter-spacing:0.02em;color:#f2ece0;line-height:0.9;margin-bottom:10px}
-.hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.6vw,26px);color:#c8890a;margin-bottom:18px}
-.hero-philosophy{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(14px,1.5vw,16px);font-style:italic;line-height:1.7;color:rgba(242,236,224,0.7);max-width:620px;border-left:3px solid #c8890a;padding-left:20px;margin-bottom:30px}
-.hero-vol-link{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(242,236,224,0.55);border:1px solid rgba(242,236,224,0.25);padding:9px 20px;transition:all .2s}
-.hero-vol-link:hover{color:#f2ece0;border-color:#c8890a}
-@media(max-width:768px){
-  .hero-content{padding:0 22px 36px}
-  .hero{min-height:78vh}
-}
 </style>
 </head>
 <body>
@@ -537,44 +519,53 @@ body{
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"><img id="hero-photo" src="" alt="" style="display:none;"></div>
-  <div class="hero-content">
-    <div class="hero-kicker">The Boxing Blotter &middot; P4P</div>
-    <h1 class="hero-title">Pound<br>for Pound</h1>
-    <p class="hero-sub">We rank what we see.</p>
-    <p class="hero-philosophy">These rankings are built on one principle: the quality of the opposition, not the size of the stage. A fighter's P4P position is earned in the gym and the ring &mdash; not in a press conference or a promotional deal. We rank what we see. We explain why we see it that way.</p>
-    <a href="#p4p-archive-anchor" class="hero-vol-link">Browse Past Issues &rarr;</a>
-  </div>
-</section>
+<!-- ROTATING HERO — pool is empty, add base64 <img class="hero-frame"> entries here when photos are supplied -->
+<div class="hero-rotator" id="p4pHeroRotator">
+  <!-- Example structure once photos are added:
+  <img class="hero-frame" src="data:image/jpeg;base64,..." alt="">
+  <img class="hero-frame" src="data:image/jpeg;base64,..." alt="">
+  -->
+  <div class="hero-rotator-empty">Hero photo pool not yet populated</div>
+</div>
 <script>
-/* HERO PHOTO ROTATION — pulls photos already embedded in the fighter
-   cards below, so nothing is duplicated in the page. Picks one at random
-   on each load. As new fighters get real photos in their cards, they
-   automatically join this pool — nothing here needs to change.
-   Runs after DOMContentLoaded since the fighter cards load further down
-   the page, after this script tag. Uses plain for-loops (not
-   NodeList.forEach) for maximum compatibility. */
-document.addEventListener('DOMContentLoaded', function(){
-  var candidates = [];
-  var fighters = document.querySelectorAll('.fighter');
-  for (var i = 0; i < fighters.length; i++) {
-    var f = fighters[i];
-    var img = f.querySelector('.photo-wrap img');
-    var name = f.querySelector('.fighter-name');
-    if (img && img.src && img.src.indexOf('data:image') === 0) {
-      candidates.push({ src: img.src, alt: name ? name.textContent : '' });
-    }
-  }
-  if (!candidates.length) return;
-  var pick = candidates[Math.floor(Math.random() * candidates.length)];
-  var heroImg = document.getElementById('hero-photo');
-  heroImg.src = pick.src;
-  heroImg.alt = pick.alt;
-  heroImg.style.display = 'block';
-});
+(function(){
+  var frames = document.querySelectorAll('#p4pHeroRotator .hero-frame');
+  if(!frames.length) return;
+  var i = Math.floor(Math.random()*frames.length);
+  frames[i].classList.add('active');
+  setInterval(function(){
+    frames[i].classList.remove('active');
+    i = (i+1) % frames.length;
+    frames[i].classList.add('active');
+  }, 6000);
+})();
 </script>
+
+<!-- P4P MASTHEAD -->
+<div class="p4p-masthead">
+  <div class="mh-strip">
+    <span class="mh-tag">The Boxing Blotter · boxingblotter.com</span>
+    <span class="mh-tag">Archived Issue · July 2026</span>
+  </div>
+  <div class="mh-center">
+    <span class="p4p-headline">Pound for Pound</span>
+    <div class="rule-row">
+      <span class="rule-line"></span>
+      <span class="rule-diamond"></span>
+      <span class="rule-line"></span>
+    </div>
+    <span class="p4p-sub">Top 10 · P4P Issue No. 2 · The Blotter's Official Rankings</span>
+  </div>
+  <div class="edition-bar">
+    <span class="edition-name">P4P Issue No. 2 · July 2026</span>
+    <span class="edition-meta">Documents Before · Scores During · Grades After</span>
+  </div>
+</div>
+
+<!-- INTRO BANNER -->
+<div class="intro">
+  <p class="intro-hed">These rankings are built on one principle: the quality of the opposition, not the size of the stage. A fighter's P4P position is earned in the gym and the ring — not in a press conference or a promotional deal. We rank what we see. We explain why we see it that way.</p>
+</div>
 
 <!-- FIGHTER ENTRIES -->
 <div class="fighters">
@@ -791,26 +782,15 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 
 <!-- ISSUE ARCHIVE -->
-<div class="archive-wrap" id="p4p-archive-anchor">
+<div class="archive-wrap">
   <div class="archive-header" onclick="var l=this.nextElementSibling;l.classList.toggle('open');this.querySelector('.archive-toggle').textContent=l.classList.contains('open')?'Close Archive':'View Past Issues'">
     <div class="archive-header-left">
       <span class="archive-label">P4P Issue Archive</span>
-      <span class="archive-count">2 Issues Published</span>
+      <span class="archive-count">1 Issue Published</span>
     </div>
     <span class="archive-toggle">View Past Issues</span>
   </div>
   <div class="archive-list">
-    <div class="issue-row">
-      <div class="issue-num">2</div>
-      <div class="issue-body">
-        <div class="issue-date">July 2026</div>
-        <div class="issue-title">P4P Issue No. 2 &mdash; July 2026</div>
-        <div class="issue-note">Ennis (Zayas win), Usyk (vacated belts), and Stevenson (Lopez win) updated; full rankings reordered 1&ndash;10.</div>
-      </div>
-      <div class="issue-actions">
-        <a href="p4p-archive/p4p-issue-02-july2026.html" class="btn">View Issue</a>
-      </div>
-    </div>
     <div class="issue-row">
       <div class="issue-num">1</div>
       <div class="issue-body">
