@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+<!--
+  PROGRAM TEMPLATE — corrected July 24, 2026
+  Fixes applied after drift was found between this file and what was
+  actually live on shipped pages:
+    1. .fight-call rebuilt as a stacked full-width layout (label, then
+       pick, then reasoning each on their own line) — was a horizontal
+       flex row that no longer matched the live site's format.
+    2. .fight-card-header / .fight-card-body padding standardized to
+       22px horizontal so every Blotter Call box shares the same left
+       margin as .main-call.
+    3. Cover H1 headline / deck text color fixed from var(--ink) to
+       var(--newsprint) — was rendering dark text on the cover's own
+       dark gradient background, illegible on darker palettes.
+    4. .tape-stat rows centered instead of spread edge-to-edge.
+  Save this as the new program-template.html and upload this version
+  at the start of every future Stage 2 build.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -406,7 +423,7 @@ body {
 .tape-badge.gold { background: var(--gold); color: var(--ink); }
 .tape-badge.dark { background: #2e3a50; color: #7a8a9a; }
 .tape-badge.sea  { background: var(--sea); color: var(--newsprint); }
-.tape-stat { display: flex; justify-content: space-between; margin-top: 4px; }
+.tape-stat { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
 .tape-stat-label {
   font-family: 'DM Mono', monospace; font-size: 8px;
   color: #4a5a6a; letter-spacing: 0.1em; text-transform: uppercase;
@@ -573,7 +590,7 @@ body {
 /* FIGHT CARDS */
 .fight-card { border: 1px solid var(--light-rule); margin-bottom: 12px; }
 .fight-card-header {
-  background: var(--aged); padding: 9px 14px;
+  background: var(--aged); padding: 9px 22px;
   display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid var(--light-rule);
 }
@@ -586,7 +603,7 @@ body {
   font-family: 'DM Mono', monospace; font-size: 9px;
   color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;
 }
-.fight-card-body { padding: 12px 14px; }
+.fight-card-body { padding: 12px 22px; }
 .fight-matchup {
   display: grid; grid-template-columns: 1fr auto 1fr;
   gap: 8px; align-items: center; margin-bottom: 10px;
@@ -615,24 +632,24 @@ body {
   color: var(--ink); line-height: 1.58; margin-bottom: 10px;
 }
 .fight-call {
-  background: var(--ink); padding: 9px 14px;
-  display: flex; justify-content: space-between;
-  align-items: center; gap: 12px;
+  background: var(--ink); padding: 18px 22px;
+  display: block;
 }
 .fight-call-label {
-  font-family: 'DM Mono', monospace; font-size: 8px;
+  font-family: 'DM Mono', monospace; font-size: 9px;
   color: var(--gold); letter-spacing: 0.18em;
-  text-transform: uppercase; flex-shrink: 0;
+  text-transform: uppercase; display: block; margin-bottom: 8px;
 }
 .fight-call-pick {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 15px; font-weight: 800;
-  color: var(--newsprint); text-transform: uppercase; flex: 1;
+  font-size: 20px; font-weight: 800;
+  color: var(--newsprint); text-transform: uppercase;
+  display: block; margin-bottom: 8px; line-height: 1.15;
 }
 .fight-call-why {
   font-family: 'Barlow', sans-serif; font-size: 16px;
-  color: #4a5a6a; text-align: right;
-  max-width: 220px; line-height: 1.4;
+  color: #8a95a0; text-align: left;
+  max-width: 100%; line-height: 1.5; display: block;
 }
 
 /* PROSPECT WATCH BLOCK */
@@ -844,7 +861,6 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
   .main-call { grid-template-columns: 1fr; }
   .main-call-rounds { border-left: none; border-top: 1px solid #2e3a50; padding-left: 0; padding-top: 14px; text-align: left; }
   .back-cover { padding: 16px 16px 20px; }
-  .fight-call { flex-direction: column; align-items: flex-start; gap: 6px; }
   .fight-call-why { text-align: left; max-width: 100%; }
   .comain-photos {
     grid-template-columns: 1fr;
@@ -923,10 +939,10 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
     </div>
 
     <div style="text-align:center; margin-bottom:20px;">
-      <h1 style="font-family:'Barlow Condensed',sans-serif; font-size:72px; font-weight:900; color:var(--ink); line-height:0.88; text-transform:uppercase; letter-spacing:0.01em;">
+      <h1 style="font-family:'Barlow Condensed',sans-serif; font-size:72px; font-weight:900; color:var(--newsprint); line-height:0.88; text-transform:uppercase; letter-spacing:0.01em;">
         [HEADLINE<br>LINE ONE] <em style="font-style:normal; color:var(--gold);">[WORD]</em>
       </h1>
-      <div style="font-family:'Playfair Display',serif; font-size:14px; font-style:italic; color:var(--ink); margin-top:10px;">
+      <div style="font-family:'Playfair Display',serif; font-size:14px; font-style:italic; color:var(--newsprint); margin-top:10px; opacity:0.85;">
         [Cover deck — one sentence. The spine of the whole program.]
       </div>
     </div>
