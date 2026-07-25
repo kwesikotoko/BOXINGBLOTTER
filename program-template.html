@@ -15,6 +15,23 @@
     4. .tape-stat rows centered instead of spread edge-to-edge.
   Save this as the new program-template.html and upload this version
   at the start of every future Stage 2 build.
+
+  PROGRAM TEMPLATE — corrected July 25, 2026 (v2)
+  Two more fixes, found building the Spence-Tszyu card:
+    5. .fighter-photos and .comain-photos switched from CSS Grid to
+       flexbox with explicit 50% widths + min-width:0/min-height:0 on
+       the wrap divs. Grid items default to min-width:auto, which for
+       an <img> resolves to the image's full intrinsic width — with
+       large embedded photos this silently breaks the grid and forces
+       the two photos to stack instead of sitting side by side.
+    6. .fighter-photo-wrap img and .comain-photo-wrap img switched from
+       object-fit:cover to object-fit:contain, object-position:center
+       center. cover crops to fill the box — for a tall portrait photo
+       in this short wide cell, that always cuts off part of the
+       fighter's body no matter where the crop is anchored. contain
+       guarantees the full photo shows, letterboxed on the sides
+       instead of cropped top/bottom. Do not revert to cover for
+       these two blocks.
 -->
 <html lang="en">
 <head>
@@ -752,8 +769,7 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
 
 /* FIGHTER PHOTOS */
 .fighter-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 0;
   margin-bottom: 16px;
   height: 320px;
@@ -763,12 +779,16 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
   position: relative;
   overflow: hidden;
   background: #060810;
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 0;
+  min-height: 0;
 }
 .fighter-photo-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
   display: block;
 }
 .fighter-photo-cap {
@@ -795,8 +815,7 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
 
 /* CO-MAIN PHOTOS */
 .comain-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 0;
   margin-bottom: 14px;
   height: 280px;
@@ -806,12 +825,16 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
   position: relative;
   overflow: hidden;
   background: #060810;
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 0;
+  min-height: 0;
 }
 .comain-photo-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
   display: block;
 }
 .comain-photo-wrap.portrait img {
@@ -863,11 +886,13 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
   .back-cover { padding: 16px 16px 20px; }
   .fight-call-why { text-align: left; max-width: 100%; }
   .comain-photos {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     height: auto;
   }
   .comain-photo-wrap {
     position: relative;
+    width: 100%;
+    flex-basis: auto;
     height: 0;
     padding-bottom: 66%;
   }
