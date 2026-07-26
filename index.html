@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programs · The Boxing Blotter</title>
+<title>The Boxing Blotter · Documents Before · Scores During · Grades After</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+body{background-color:#0A0C14;font-family:'Barlow Condensed',sans-serif;color:#F0EAD6;min-height:100vh}
 
-body{background-color:#F0EAD6;font-family:'Barlow Condensed',sans-serif;color:#0F0C07;min-height:100vh}
-
-/* ─── NAV ─── */
+/* NAV */
 .nav{position:sticky;top:0;z-index:50;background-color:#0F0C07;border-bottom:3px solid #C01A0A}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
 .nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
@@ -19,211 +18,86 @@ body{background-color:#F0EAD6;font-family:'Barlow Condensed',sans-serif;color:#0
 .nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-0.01em;color:#F0EAD6;line-height:1}
 .nav-name span{color:#C01A0A}
 .nav-links{display:flex;gap:26px;list-style:none;align-items:center}
-.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,234,214,0.65);text-decoration:none;transition:color .2s;position:relative}
 .nav-links a:hover{color:#F0EAD6}
 .nav-links a.active{color:#F0EAD6;border-bottom:2px solid #C01A0A;padding-bottom:2px}
-.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:0.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
+.nav-links a.soon::after{content:'SOON';font-size:7px;letter-spacing:.1em;color:#C01A0A;position:absolute;top:-8px;right:-22px}
 .nav-toggle{display:none;background:none;border:none;color:#F0EAD6;font-size:24px;cursor:pointer}
 
-/* ─── PAGE HEADER ─── */
-.page-header{
-  background-color:#0F0C07;
-  border-bottom:3px solid #C01A0A;
-  padding:48px 32px;
-  text-align:center;
-}
-.header-kicker{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:#C01A0A;
-  margin-bottom:12px;
-}
-.header-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:900;
-  font-size:clamp(48px,8vw,80px);
-  text-transform:uppercase;
-  letter-spacing:0.04em;
-  color:#F0EAD6;
-  line-height:0.9;
-}
-.header-sub{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:#6A6050;
-  margin-top:16px;
-}
+/* BRAND STRIP */
+.brand-strip{background-color:#0F0C07;text-align:center;padding:28px 32px 24px;border-bottom:1px solid #1A1510}
+.brand-strip-the{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:rgba(192,26,10,0.7)}
+.brand-strip-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(42px,8vw,80px);text-transform:uppercase;letter-spacing:-0.02em;line-height:0.88;color:#F0EAD6}
+.brand-strip-name span{color:#C01A0A}
+.brand-strip-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(240,234,214,0.4);margin-top:14px}
+.brand-strip-desc{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;line-height:1.65;color:rgba(240,234,214,0.55);max-width:540px;margin:14px auto 0}
 
-/* ─── VOLUME LABEL ─── */
-.volume-label{
-  max-width:1100px;
-  margin:40px auto 0;
-  padding:0 32px;
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-.vol-text{
-  font-family:'DM Mono',monospace;
-  font-size:9px;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:#6A6050;
-  white-space:nowrap;
-}
-.vol-line{flex:1;height:1px;background:#D8D0BC}
 
-/* ─── PROGRAM GRID ─── */
-.program-grid{
-  max-width:1100px;
-  margin:0 auto;
-  padding:24px 32px 80px;
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
+/* FEATURED — exact Corrales structure */
+.featured{position:relative;min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.featured-bg{position:absolute;inset:0;z-index:0}
+.featured-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(0.58) contrast(1.1)}
+.featured-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#0A0C14 0%,rgba(10,12,20,0.88) 28%,rgba(10,12,20,0.3) 60%,rgba(10,12,20,0.5) 100%)}
+.featured-content{position:relative;z-index:2;padding:0 48px 60px;max-width:860px}
+.featured-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#c49a2a;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.featured-kicker::before{content:"";width:28px;height:1px;background:#c49a2a}
+.featured-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#7aaac8;margin-bottom:8px}
+.featured-fight{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,9vw,90px);text-transform:uppercase;letter-spacing:0.02em;color:#e4ecf2;line-height:0.88}
+.featured-vs{color:#c49a2a;font-size:0.58em;vertical-align:middle;margin:0 6px}
+.featured-meta{font-family:'DM Mono',monospace;font-size:9px;color:#7aaac8;text-transform:uppercase;letter-spacing:0.12em;margin-top:14px;line-height:1.9}
+.featured-status{display:inline-flex;align-items:center;gap:8px;background:rgba(10,12,20,0.6);border:1px solid #3a6a9a;padding:6px 14px;margin-top:16px}
+.featured-status-dot{width:6px;height:6px;background:#c49a2a;border-radius:50%}
+.featured-status-text{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#c49a2a}
+.featured-btns{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.featured-btn{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:12px 24px;transition:all .2s}
+.featured-btn-primary{background:#c49a2a;color:#030810}
+.featured-btn-primary:hover{background:#e8c050}
+.featured-btn-secondary{background:rgba(10,12,20,0.7);color:#7aaac8;border:1px solid #3a6a9a}
+.featured-btn-secondary:hover{border-color:#7aaac8;color:#e4ecf2}
 
-/* ─── PROGRAM ROW ─── */
-.program-row{
-  background-color:#ffffff;
-  border:1px solid #D8D0BC;
-  display:grid;
-  grid-template-columns:56px 1fr auto;
-  align-items:stretch;
-  transition:border-color 0.15s;
-}
-.program-row:hover{border-color:#C01A0A}
+/* ARCHIVE */
+.archive-wrap{max-width:1100px;margin:0 auto;padding:0 32px 80px;background-color:#0F0C07;border-top:3px solid #C01A0A}
+.archive-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:22px 0 14px;border-bottom:1px solid #2A2520;user-select:none}
+.archive-header-left{display:flex;align-items:center;gap:14px}
+.archive-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#9A9080}
+.archive-count{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:#C01A0A;letter-spacing:0.06em}
+.archive-toggle{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#C01A0A;transition:color .2s}
+.archive-list{max-height:0;overflow:hidden;transition:max-height 0.5s ease}
+.archive-list.open{max-height:30000px}
 
-.row-num{
-  background-color:#0F0C07;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 12px;
-}
-.row-num-text{
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:900;
-  font-size:18px;
-  color:#C01A0A;
-  writing-mode:vertical-rl;
-  text-orientation:mixed;
-  letter-spacing:0.05em;
-  opacity:0.7;
-}
-
-.row-body{
-  padding:18px 24px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:4px;
-}
-
-.row-date{
-  font-family:'DM Mono',monospace;
-  font-size:9px;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:#9A9080;
-}
-
-.row-fight{
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:900;
-  font-size:26px;
-  text-transform:uppercase;
-  letter-spacing:0.02em;
-  color:#0F0C07;
-  line-height:1;
-}
-
-.row-venue{
-  font-family:'DM Mono',monospace;
-  font-size:9px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:#9A9080;
-  margin-top:2px;
-}
-
-.row-actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:18px 20px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  font-family:'DM Mono',monospace;
-  font-size:9px;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  text-decoration:none;
-  padding:8px 14px;
-  transition:all 0.15s;
-  white-space:nowrap;
-}
-
-.btn-program{
-  background-color:#0F0C07;
-  color:#F0EAD6;
-  border:1px solid #0F0C07;
-}
-.btn-program:hover{background-color:#C01A0A;border-color:#C01A0A}
-
-.btn-recap{
-  background-color:#ffffff;
-  color:#0F0C07;
-  border:1px solid #D8D0BC;
-}
+.program-row{display:grid;grid-template-columns:52px 1fr auto;align-items:center;border-bottom:1px solid #2A2520;padding:14px 0;transition:background .15s}
+.program-row:hover{background:rgba(192,26,10,0.03)}
+.prog-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:#C01A0A;opacity:0.55;text-align:center}
+.prog-body{}
+.prog-date{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:#8A8070}
+.prog-fight{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:0.02em;color:#F0EAD6;line-height:1;margin-top:2px}
+.prog-venue{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:#8A8070;margin-top:3px}
+.prog-actions{display:flex;align-items:center;gap:8px}
+.badge{font-family:'DM Mono',monospace;font-size:8px;padding:3px 8px;letter-spacing:0.1em;text-transform:uppercase}
+.badge-final{background:rgba(26,74,26,0.35);color:#7ABB7A;border:1px solid rgba(26,74,26,0.7)}
+.badge-pre{background:rgba(58,42,8,0.35);color:#E8A820;border:1px solid rgba(196,154,42,0.6)}
+.btn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:6px 12px;transition:all .15s}
+.btn-prog{background:#1A1714;color:#F0EAD6;border:1px solid #3A3530}
+.btn-prog:hover{background:#C01A0A;border-color:#C01A0A}
+.btn-recap{background:transparent;color:#D0C8B4;border:1px solid #3A3530}
 .btn-recap:hover{border-color:#C01A0A;color:#C01A0A}
 
-.badge{
-  font-family:'DM Mono',monospace;
-  font-size:8px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  padding:3px 8px;
-}
-.badge-final{background-color:#1A3A1A;color:#6AAA6A}
-.badge-pre{background-color:#3A2A0A;color:#C8890A}
-
-/* Program-only row (no recap yet) */
-.row-actions .btn-only{
-  background-color:#0F0C07;
-  color:#F0EAD6;
-  border:1px solid #0F0C07;
-}
-.row-actions .btn-only:hover{background-color:#C01A0A;border-color:#C01A0A}
-
-/* ─── FOOTER ─── */
-.site-footer{
-  background-color:#0F0C07;
-  text-align:center;
-  padding:48px 32px;
-  border-top:3px solid #C01A0A;
-}
+/* FOOTER */
+.site-footer{background-color:#0F0C07;text-align:center;padding:48px 32px;border-top:3px solid #C01A0A}
 .footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#F0EAD6}
 .footer-brand span{color:#C01A0A}
-.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A6050;margin-top:14px;line-height:2.2}
-.footer-sub a{color:rgba(192,26,10,0.8);text-decoration:none}
+.footer-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#6A6050;margin-top:14px;line-height:2.2}
+.footer-sub a{color:rgba(192,26,10,.8);text-decoration:none}
 
-/* ─── RESPONSIVE ─── */
 @media(max-width:700px){
-  .program-row{grid-template-columns:40px 1fr}
-  .row-actions{grid-column:1/-1;padding:12px 16px 16px;border-top:1px solid #F0EAD6;flex-wrap:wrap}
-  .row-fight{font-size:20px}
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
-  .nav-links.open{display:flex}
-  .nav-toggle{display:block}
+.featured-content{padding:0 24px 40px}
+
+.featured-fight{font-size:42px}
+.archive-wrap{padding:0 20px 60px}
+.prog-actions{flex-wrap:wrap}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background-color:#0F0C07;padding:18px 32px;gap:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-links.open{display:flex}
+.nav-toggle{display:block}
 }
 
 /* ── MOBILE OPTIMISATION ── */
@@ -295,20 +169,23 @@ body{background-color:#F0EAD6;font-family:'Barlow Condensed',sans-serif;color:#0
   .archive-section{padding:24px 18px!important}
 }
 
+
+.featured-split{position:absolute;inset:0;display:flex;overflow:hidden}
+.featured-split-left,.featured-split-right{flex:1;overflow:hidden;position:relative}
+.featured-split-left img,.featured-split-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.42) contrast(1.1)}
+.featured-split-left::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(10,12,20,0.2),rgba(10,12,20,0.85))}
+.featured-split-right::before{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(10,12,20,0.2),rgba(10,12,20,0.85))}
+.featured-split::after{content:"VS";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:900;letter-spacing:0.2em;color:rgba(192,26,10,0.9);z-index:3;border:1px solid rgba(192,26,10,0.5);padding:4px 8px}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">
-      <span class="nav-the">The</span>
-      <span class="nav-name">Boxing <span>Blotter</span></span>
-    </a>
-    <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+    <a href="/" class="nav-brand"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
     <ul class="nav-links">
-      <li><a href="/programs/" class="active">Programs</a></li>
+      <li><a href="/programs/">Programs</a></li>
       <li><a href="/prospect-watch/">Prospect Watch</a></li>
       <li><a href="/unsung/">Unsung Heroes</a></li>
       <li><a href="/p4p.html">P4P</a></li>
@@ -318,447 +195,320 @@ body{background-color:#F0EAD6;font-family:'Barlow Condensed',sans-serif;color:#0
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="header-kicker">The Boxing Blotter</div>
-  <div class="header-title">Programs</div>
-  <div class="header-sub">Vol. I · 2026 &nbsp;·&nbsp; Documents Before · Scores During · Grades After</div>
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <div class="brand-strip-the">The</div>
+  <div class="brand-strip-name">Boxing <span>Blotter</span></div>
+  <div class="brand-strip-tag">Documents Before &middot; Scores During &middot; Grades After</div>
+  <div class="brand-strip-desc">For fans who want to know what they're watching — and appreciate what it took to get there.</div>
 </div>
 
-<!-- PROGRAM ARCHIVE -->
-<div class="program-grid">
 
-  <div class="volume-label" style="padding:0;margin-bottom:8px;">
-    <span class="vol-text">Vol. I · 2026</span>
-    <span class="vol-line"></span>
-    <span class="vol-text">29 Programs · 26 Recaps Filed</span>
-  </div>
-
-  <!-- No. 29 — Berlanga vs. Butler -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">29</span></div>
-    <div class="row-body">
-      <div class="row-date">July 26, 2026</div>
-      <div class="row-fight">Berlanga vs. Butler</div>
-      <div class="row-venue">Infosys Theater at Madison Square Garden, New York, NY &nbsp;&middot;&nbsp; Paramount+</div>
+<!-- FEATURED — Joshua-Prenga Program -->
+<section class="featured">
+  <div class="featured-bg"><img src="data:image/jpeg;base64,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" alt="Berlanga vs. Butler face-off"></div>
+  <div class="featured-content">
+    <div class="featured-kicker">Vol. I &middot; No. 29</div>
+    <div class="featured-label">Super Middleweight &middot; New York, NY</div>
+    <div class="featured-fight">Berlanga <span class="featured-vs">vs.</span> Butler</div>
+    <div class="featured-meta">
+      July 26, 2026 &nbsp;&middot;&nbsp; Infosys Theater at Madison Square Garden, New York, NY &nbsp;&middot;&nbsp; Paramount+ &middot; Berlanga's Get-Right Fight After Back-to-Back Losses
     </div>
-    <div class="row-actions">
-      <a href="berlanga-butler-nyc-july26-2026.html" class="btn btn-program">Program</a>
+    <div class="featured-btns">
+      <a href="programs/berlanga-butler-nyc-july26-2026.html" class="featured-btn featured-btn-primary">Program &rarr;</a>
     </div>
   </div>
-
-  <!-- No. 28 — Spence vs. Tszyu -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">28</span></div>
-    <div class="row-body">
-      <div class="row-date">July 25, 2026</div>
-      <div class="row-fight">Spence vs. Tszyu</div>
-      <div class="row-venue">Afterpay Arena, Sydney, Australia &nbsp;&middot;&nbsp; Prime Video PPV</div>
+</section>
+<!-- ARCHIVE -->
+<div class="archive-wrap">
+  <div class="archive-header" onclick="var l=this.nextElementSibling;l.classList.toggle('open');this.querySelector('.archive-toggle').textContent=l.classList.contains('open')?'Close Archive':'View All Programs'">
+    <div class="archive-header-left">
+      <span class="archive-label">Vol. I Archive</span>
+      <span class="archive-count">29 Programs &middot; 26 Recaps</span>
     </div>
-    <div class="row-actions">
-      <a href="spence-tszyu-sydney-july25-2026.html" class="btn btn-program">Program</a>
-    </div>
+    <span class="archive-toggle">View All Programs</span>
   </div>
+  <div class="archive-list">
 
-  <!-- No. 27 — Joshua vs. Prenga -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">27</span></div>
-    <div class="row-body">
-      <div class="row-date">July 25, 2026</div>
-      <div class="row-fight">Joshua vs. Prenga</div>
-      <div class="row-venue">Jeddah, Saudi Arabia &nbsp;&middot;&nbsp; DAZN PPV Worldwide</div>
+    <div class="program-row">
+      <div class="prog-num">29</div>
+      <div class="prog-body"><div class="prog-date">July 26, 2026</div><div class="prog-fight">Berlanga vs. Butler</div><div class="prog-venue">Infosys Theater at Madison Square Garden, New York, NY &middot; Paramount+</div></div>
+      <div class="prog-actions">
+      <a href="programs/berlanga-butler-nyc-july26-2026.html" class="btn btn-prog">Program</a>
     </div>
-    <div class="row-actions">
-      <a href="joshua-prenga-jeddah-july25-2026.html" class="btn btn-program">Program</a>
     </div>
+
+    <div class="program-row">
+      <div class="prog-num">28</div>
+      <div class="prog-body"><div class="prog-date">July 25, 2026</div><div class="prog-fight">Spence vs. Tszyu</div><div class="prog-venue">Afterpay Arena, Sydney, Australia &middot; Prime Video PPV</div></div>
+      <div class="prog-actions">
+      <a href="programs/spence-tszyu-sydney-july25-2026.html" class="btn btn-prog">Program</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">27</div>
+      <div class="prog-body"><div class="prog-date">July 25, 2026</div><div class="prog-fight">Joshua vs. Prenga</div><div class="prog-venue">Jeddah, Saudi Arabia &middot; DAZN PPV Worldwide</div></div>
+      <div class="prog-actions">
+      <a href="programs/joshua-prenga-jeddah-july25-2026.html" class="btn btn-prog">Program</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">26</div>
+      <div class="prog-body"><div class="prog-date">July 18, 2026</div><div class="prog-fight">Pacheco vs. Aleem</div><div class="prog-venue">Carson, CA &middot; WBC Silver &amp; WBO International Super Middleweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/pacheco-aleem-carson-july18-2026.html" class="btn btn-prog">Program</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">25</div>
+      <div class="prog-body"><div class="prog-date">July 4, 2026</div><div class="prog-fight">Mason vs. Bell</div><div class="prog-venue">Cleveland, OH &middot; WBO World Lightweight Title</div></div>
+      <div class="prog-actions">
+      <a href="programs/mason-bell-cleveland-july4-2026.html" class="btn btn-prog">Program</a>
+      <a href="programs/mason-bell-cleveland-july4-2026-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">24</div>
+      <div class="prog-body"><div class="prog-date">June 27, 2026</div><div class="prog-fight">Ennis vs. Zayas</div><div class="prog-venue">Brooklyn, NY &middot; WBO &amp; WBA Unified Junior Middleweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/ennis-zayas-brooklyn-june27-2026.html" class="btn btn-prog">Program</a>
+      <a href="programs/ennis-zayas-brooklyn-june27-2026-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">23</div>
+      <div class="prog-body"><div class="prog-date">June 20, 2026</div><div class="prog-fight">Collazo vs. Valdez</div><div class="prog-venue">Oceanside, CA &middot; Minimumweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/collazo-valdez-oceanside-june20-2026.html" class="btn btn-prog">Program</a>
+      <a href="programs/collazo-valdez-oceanside-june20-2026-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">22</div>
+      <div class="prog-body"><div class="prog-date">June 19, 2026</div><div class="prog-fight">Sylve vs. Diaz</div><div class="prog-venue">Long Beach, CA &middot; Super Lightweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/sylve-diaz-longbeach-june19-2026.html" class="btn btn-prog">Program</a>
+      <a href="programs/sylve-diaz-longbeach-june19-2026-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">21</div>
+      <div class="prog-body"><div class="prog-date">June 13, 2026</div><div class="prog-fight">Rodriguez vs. Vargas</div><div class="prog-venue">Glendale, AZ &middot; WBA Bantamweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/vol-i-no-21-bam-vs-vargas.html" class="btn btn-prog">Program</a>
+      <a href="programs/vol-i-no-21-bam-vs-vargas-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">20</div>
+      <div class="prog-body"><div class="prog-date">June 6, 2026</div><div class="prog-fight">Yabuki vs. Calixto</div><div class="prog-venue">Tokoname, Japan &middot; IBF Flyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/yabuki-calixto-recap.html" class="btn btn-recap">Recap</a>
+      <span class="badge badge-summary">Summary</span>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">19</div>
+      <div class="prog-body"><div class="prog-date">June 6, 2026</div><div class="prog-fight">Zuffa Boxing 7</div><div class="prog-venue">Bournemouth, England &middot; Cruiserweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/zuffa-boxing-7.html" class="btn btn-prog">Program</a>
+      <a href="programs/zuffa-boxing-7-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">18</div>
+      <div class="prog-body"><div class="prog-date">June 4, 2026</div><div class="prog-fight">Ramirez vs. Richards</div><div class="prog-venue">Montreal, Canada &middot; Light Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/ramirez-richards-montreal-june4-2026.html" class="btn btn-prog">Program</a>
+      <a href="programs/ramirez-richards-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">17</div>
+      <div class="prog-body"><div class="prog-date">May 30, 2026</div><div class="prog-fight">Bivol vs. Eifert</div><div class="prog-venue">Ekaterinburg, Russia &middot; Light Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/bivol-eifert.html" class="btn btn-prog">Program</a>
+      <a href="programs/bivol-eifert-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">16</div>
+      <div class="prog-body"><div class="prog-date">May 30, 2026</div><div class="prog-fight">Foster vs. Ford</div><div class="prog-venue">Houston, TX &middot; Lightweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/foster-ford.html" class="btn btn-prog">Program</a>
+      <a href="programs/foster-ford-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">15</div>
+      <div class="prog-body"><div class="prog-date">May 29, 2026</div><div class="prog-fight">Edwards vs. Nqothole</div><div class="prog-venue">York Hall, London &middot; Super Featherweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/edwards-nqothole.html" class="btn btn-prog">Program</a>
+      <a href="programs/edwards-nqothole-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">14</div>
+      <div class="prog-body"><div class="prog-date">May 23, 2026</div><div class="prog-fight">Usyk vs. Verhoeven</div><div class="prog-venue">Giza, Egypt &middot; Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/usyk-verhoeven.html" class="btn btn-prog">Program</a>
+      <a href="programs/usyk-verhoeven-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">13</div>
+      <div class="prog-body"><div class="prog-date">May 22, 2026</div><div class="prog-fight">Jones vs. Gualtieri</div><div class="prog-venue">San Jose, CA &middot; Super Featherweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/jones-gualtieri.html" class="btn btn-prog">Program</a>
+      <a href="programs/jones-gualtieri-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">12</div>
+      <div class="prog-body"><div class="prog-date">May 9, 2026</div><div class="prog-fight">Wardley vs. Dubois</div><div class="prog-venue">Manchester, England &middot; Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/wardley-dubois.html" class="btn btn-prog">Program</a>
+      <a href="programs/wardley-dubois-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">11</div>
+      <div class="prog-body"><div class="prog-date">May 9, 2026</div><div class="prog-fight">Leo vs. Aleem</div><div class="prog-venue">Atlanta, GA &middot; Super Middleweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/leo-aleem.html" class="btn btn-prog">Program</a>
+      <a href="programs/leo-aleem-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">10</div>
+      <div class="prog-body"><div class="prog-date">May 2, 2026</div><div class="prog-fight">Benavidez vs. Zurdo</div><div class="prog-venue">Las Vegas, NV &middot; Light Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/benavidez-zurdo.html" class="btn btn-prog">Program</a>
+      <a href="programs/benavidez-zurdo-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">9</div>
+      <div class="prog-body"><div class="prog-date">May 2, 2026</div><div class="prog-fight">Inoue vs. Nakatani</div><div class="prog-venue">Tokyo, Japan &middot; Super Bantamweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/inoue-nakatani.html" class="btn btn-prog">Program</a>
+      <a href="programs/inoue-nakatani-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">8</div>
+      <div class="prog-body"><div class="prog-date">April 11, 2026</div><div class="prog-fight">ProBox Atlantic City</div><div class="prog-venue">Atlantic City, NJ &middot; Multi-Bout Card</div></div>
+      <div class="prog-actions">
+      <a href="programs/probox-atlantic-city.html" class="btn btn-prog">Program</a>
+      <a href="programs/probox-atlantic-city-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">7</div>
+      <div class="prog-body"><div class="prog-date">April 11, 2026</div><div class="prog-fight">Fury vs. Makhmudov</div><div class="prog-venue">London, England &middot; Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/fury-makhmudov.html" class="btn btn-prog">Program</a>
+      <a href="programs/fury-makhmudov-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">6</div>
+      <div class="prog-body"><div class="prog-date">April 5, 2026</div><div class="prog-fight">Tszyu vs. Nurja</div><div class="prog-venue">Wollongong, Australia &middot; Junior Welterweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/tszyu-nurja.html" class="btn btn-prog">Program</a>
+      <a href="programs/tszyu-nurja-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">5</div>
+      <div class="prog-body"><div class="prog-date">April 5, 2026</div><div class="prog-fight">Zuffa Boxing 5</div><div class="prog-venue">Las Vegas, NV &middot; Multi-Bout Card</div></div>
+      <div class="prog-actions">
+      <a href="programs/zuffa-boxing5.html" class="btn btn-prog">Program</a>
+      <a href="programs/zuffa-boxing5-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">4</div>
+      <div class="prog-body"><div class="prog-date">April 4, 2026</div><div class="prog-fight">Wilder vs. Chisora</div><div class="prog-venue">London, England &middot; Heavyweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/wilder-chisora.html" class="btn btn-prog">Program</a>
+      <a href="programs/wilder-chisora-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">3</div>
+      <div class="prog-body"><div class="prog-date">March 28, 2026</div><div class="prog-fight">Fundora vs. Thurman</div><div class="prog-venue">Las Vegas, NV &middot; Junior Middleweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/fundora-thurman.html" class="btn btn-prog">Program</a>
+      <a href="programs/fundora-thurman-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">2</div>
+      <div class="prog-body"><div class="prog-date">March 21, 2026</div><div class="prog-fight">Martinez vs. Aleem</div><div class="prog-venue">San Bernardino, CA &middot; Super Middleweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/martinez-aleem.html" class="btn btn-prog">Program</a>
+      <a href="programs/martinez-aleem-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num">1</div>
+      <div class="prog-body"><div class="prog-date">March 21, 2026</div><div class="prog-fight">Adames vs. Williams</div><div class="prog-venue">Orlando, FL &middot; Junior Middleweight</div></div>
+      <div class="prog-actions">
+      <a href="programs/adames-williams.html" class="btn btn-prog">Program</a>
+      <a href="programs/adames-williams-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
+    <div class="program-row">
+      <div class="prog-num" style="font-size:14px;">★</div>
+      <div class="prog-body"><div class="prog-date">March 14, 2026</div><div class="prog-fight">Barboza vs. Sims</div><div class="prog-venue">Anaheim, CA &middot; Lightweight &middot; Recap Only</div></div>
+      <div class="prog-actions">
+      <a href="programs/barboza-sims-recap.html" class="btn btn-recap">Recap</a>
+    </div>
+    </div>
+
   </div>
-
-  <!-- No. 26 — Pacheco vs. Aleem -->
-
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">26</span></div>
-    <div class="row-body">
-      <div class="row-date">July 18, 2026</div>
-      <div class="row-fight">Pacheco vs. Aleem</div>
-      <div class="row-venue">Carson, CA &nbsp;&middot;&nbsp; WBC Silver &amp; WBO International Super Middleweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="pacheco-aleem-carson-july18-2026.html" class="btn btn-program">Program</a>
-    </div>
-  </div>
-
-  <!-- No. 25 — Mason vs. Bell -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">25</span></div>
-    <div class="row-body">
-      <div class="row-date">July 4, 2026</div>
-      <div class="row-fight">Mason vs. Bell</div>
-      <div class="row-venue">Cleveland, OH &nbsp;&middot;&nbsp; WBO World Lightweight Title</div>
-    </div>
-    <div class="row-actions">
-      <a href="mason-bell-cleveland-july4-2026.html" class="btn btn-program">Program</a>
-      <a href="mason-bell-cleveland-july4-2026-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 24 — Ennis vs. Zayas -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">24</span></div>
-    <div class="row-body">
-      <div class="row-date">June 27, 2026</div>
-      <div class="row-fight">Ennis vs. Zayas</div>
-      <div class="row-venue">Brooklyn, NY &nbsp;&middot;&nbsp; WBO/WBA Unified Junior Middleweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="ennis-zayas-brooklyn-june27-2026.html" class="btn btn-program">Program</a>
-      <a href="ennis-zayas-brooklyn-june27-2026-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 23 — Collazo vs. Valdez -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">23</span></div>
-    <div class="row-body">
-      <div class="row-date">June 20, 2026</div>
-      <div class="row-fight">Collazo vs. Valdez</div>
-      <div class="row-venue">Oceanside, CA &nbsp;&middot;&nbsp; WBA/WBO/Ring Minimumweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="collazo-valdez-oceanside-june20-2026.html" class="btn btn-program">Program</a>
-      <a href="collazo-valdez-oceanside-june20-2026-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 22 — Sylve vs. Diaz -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">22</span></div>
-    <div class="row-body">
-      <div class="row-date">June 19, 2026</div>
-      <div class="row-fight">Sylve vs. Diaz</div>
-      <div class="row-venue">Long Beach, CA &nbsp;&middot;&nbsp; Super Lightweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="sylve-diaz-longbeach-june19-2026.html" class="btn btn-program">Program</a>
-      <a href="sylve-diaz-longbeach-june19-2026-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 21 — Rodriguez vs. Vargas -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">21</span></div>
-    <div class="row-body">
-      <div class="row-date">June 13, 2026</div>
-      <div class="row-fight">Rodriguez vs. Vargas</div>
-      <div class="row-venue">Glendale, AZ &nbsp;&middot;&nbsp; WBA Bantamweight Championship</div>
-    </div>
-    <div class="row-actions">
-      <a href="vol-i-no-21-bam-vs-vargas.html" class="btn btn-program">Program</a>
-      <a href="vol-i-no-21-bam-vs-vargas-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 20 — Yabuki vs. Calixto -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">20</span></div>
-    <div class="row-body">
-      <div class="row-date">June 6, 2026</div>
-      <div class="row-fight">Yabuki vs. Calixto</div>
-      <div class="row-venue">Tokoname, Japan &nbsp;&middot;&nbsp; IBF Flyweight &nbsp;&middot;&nbsp; Recap Only</div>
-    </div>
-    <div class="row-actions">
-      <a href="yabuki-calixto-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 19 — Zuffa Boxing 7 -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">19</span></div>
-    <div class="row-body">
-      <div class="row-date">June 6, 2026</div>
-      <div class="row-fight">Zuffa Boxing 7</div>
-      <div class="row-venue">Bournemouth, England &nbsp;·&nbsp; Cruiserweight · UK Debut</div>
-    </div>
-    <div class="row-actions">
-      <a href="zuffa-boxing-7.html" class="btn btn-program">Program</a>
-      <a href="zuffa-boxing-7-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 18 — Ramirez-Richards -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">18</span></div>
-    <div class="row-body">
-      <div class="row-date">June 4, 2026</div>
-      <div class="row-fight">Ramirez vs. Richards</div>
-      <div class="row-venue">Montréal, Canada &nbsp;·&nbsp; Light Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="ramirez-richards-montreal-june4-2026.html" class="btn btn-program">Program</a>
-      <a href="ramirez-richards-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 17 — Bivol-Eifert -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">17</span></div>
-    <div class="row-body">
-      <div class="row-date">May 30, 2026</div>
-      <div class="row-fight">Bivol vs. Eifert</div>
-      <div class="row-venue">Ekaterinburg, Russia &nbsp;·&nbsp; Light Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="bivol-eifert.html" class="btn btn-program">Program</a>
-      <a href="bivol-eifert-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 16 — Foster-Ford -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">16</span></div>
-    <div class="row-body">
-      <div class="row-date">May 30, 2026</div>
-      <div class="row-fight">Foster vs. Ford</div>
-      <div class="row-venue">Houston, TX &nbsp;·&nbsp; Lightweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="foster-ford.html" class="btn btn-program">Program</a>
-      <a href="foster-ford-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 15 — Edwards-Nqothole -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">15</span></div>
-    <div class="row-body">
-      <div class="row-date">May 29, 2026</div>
-      <div class="row-fight">Edwards vs. Nqothole</div>
-      <div class="row-venue">York Hall, London &nbsp;·&nbsp; Super Featherweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="edwards-nqothole.html" class="btn btn-program">Program</a>
-      <a href="edwards-nqothole-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 14 — Usyk-Verhoeven -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">14</span></div>
-    <div class="row-body">
-      <div class="row-date">May 23, 2026</div>
-      <div class="row-fight">Usyk vs. Verhoeven</div>
-      <div class="row-venue">Giza, Egypt &nbsp;·&nbsp; Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="usyk-verhoeven.html" class="btn btn-program">Program</a>
-      <a href="usyk-verhoeven-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 13 — Jones-Gualtieri -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">13</span></div>
-    <div class="row-body">
-      <div class="row-date">May 22, 2026</div>
-      <div class="row-fight">Jones vs. Gualtieri</div>
-      <div class="row-venue">San Jose, CA &nbsp;·&nbsp; Super Featherweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="jones-gualtieri.html" class="btn btn-program">Program</a>
-      <a href="jones-gualtieri-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 12 — Wardley-Dubois -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">12</span></div>
-    <div class="row-body">
-      <div class="row-date">May 9, 2026</div>
-      <div class="row-fight">Wardley vs. Dubois</div>
-      <div class="row-venue">Manchester, England &nbsp;·&nbsp; Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="wardley-dubois.html" class="btn btn-program">Program</a>
-      <a href="wardley-dubois-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 11 — Leo-Aleem -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">11</span></div>
-    <div class="row-body">
-      <div class="row-date">May 9, 2026</div>
-      <div class="row-fight">Leo vs. Aleem</div>
-      <div class="row-venue">Atlanta, GA &nbsp;·&nbsp; Super Middleweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="leo-aleem.html" class="btn btn-program">Program</a>
-      <a href="leo-aleem-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 10 — Benavidez-Zurdo -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">10</span></div>
-    <div class="row-body">
-      <div class="row-date">May 2, 2026</div>
-      <div class="row-fight">Benavidez vs. Zurdo</div>
-      <div class="row-venue">Las Vegas, NV &nbsp;·&nbsp; Light Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="benavidez-zurdo.html" class="btn btn-program">Program</a>
-      <a href="benavidez-zurdo-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 9 — Inoue-Nakatani -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">9</span></div>
-    <div class="row-body">
-      <div class="row-date">May 2, 2026</div>
-      <div class="row-fight">Inoue vs. Nakatani</div>
-      <div class="row-venue">Tokyo, Japan &nbsp;·&nbsp; Super Bantamweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="inoue-nakatani.html" class="btn btn-program">Program</a>
-      <a href="inoue-nakatani-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 8 — ProBox Atlantic City -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">8</span></div>
-    <div class="row-body">
-      <div class="row-date">April 11, 2026</div>
-      <div class="row-fight">ProBox Atlantic City</div>
-      <div class="row-venue">Atlantic City, NJ &nbsp;·&nbsp; Multi-Bout Card</div>
-    </div>
-    <div class="row-actions">
-      <a href="probox-atlantic-city.html" class="btn btn-program">Program</a>
-      <a href="probox-atlantic-city-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 7 — Fury-Makhmudov -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">7</span></div>
-    <div class="row-body">
-      <div class="row-date">April 11, 2026</div>
-      <div class="row-fight">Fury vs. Makhmudov</div>
-      <div class="row-venue">London, England &nbsp;·&nbsp; Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="fury-makhmudov.html" class="btn btn-program">Program</a>
-      <a href="fury-makhmudov-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 6 — Tszyu-Nurja -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">6</span></div>
-    <div class="row-body">
-      <div class="row-date">April 5, 2026</div>
-      <div class="row-fight">Tszyu vs. Nurja</div>
-      <div class="row-venue">Wollongong, Australia &nbsp;·&nbsp; Junior Welterweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="tszyu-nurja.html" class="btn btn-program">Program</a>
-      <a href="tszyu-nurja-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 5 — Zuffa Boxing 5 -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">5</span></div>
-    <div class="row-body">
-      <div class="row-date">April 5, 2026</div>
-      <div class="row-fight">Zuffa Boxing 5</div>
-      <div class="row-venue">Las Vegas, NV &nbsp;·&nbsp; Multi-Bout Card</div>
-    </div>
-    <div class="row-actions">
-      <a href="zuffa-boxing5.html" class="btn btn-program">Program</a>
-      <a href="zuffa-boxing5-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 4 — Wilder-Chisora -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">4</span></div>
-    <div class="row-body">
-      <div class="row-date">April 4, 2026</div>
-      <div class="row-fight">Wilder vs. Chisora</div>
-      <div class="row-venue">London, England &nbsp;·&nbsp; Heavyweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="wilder-chisora.html" class="btn btn-program">Program</a>
-      <a href="wilder-chisora-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 3 — Fundora-Thurman -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">3</span></div>
-    <div class="row-body">
-      <div class="row-date">March 28, 2026</div>
-      <div class="row-fight">Fundora vs. Thurman</div>
-      <div class="row-venue">Las Vegas, NV &nbsp;·&nbsp; Junior Middleweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="fundora-thurman.html" class="btn btn-program">Program</a>
-      <a href="fundora-thurman-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 2 — Martinez-Aleem -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">2</span></div>
-    <div class="row-body">
-      <div class="row-date">March 21, 2026</div>
-      <div class="row-fight">Martinez vs. Aleem</div>
-      <div class="row-venue">San Bernardino, CA &nbsp;·&nbsp; Super Middleweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="martinez-aleem.html" class="btn btn-program">Program</a>
-      <a href="martinez-aleem-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- No. 1 — Adames-Williams -->
-  <div class="program-row">
-    <div class="row-num"><span class="row-num-text">1</span></div>
-    <div class="row-body">
-      <div class="row-date">March 21, 2026</div>
-      <div class="row-fight">Adames vs. Williams</div>
-      <div class="row-venue">Orlando, FL &nbsp;·&nbsp; Junior Middleweight</div>
-    </div>
-    <div class="row-actions">
-      <a href="adames-williams.html" class="btn btn-program">Program</a>
-      <a href="adames-williams-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
-  <!-- Barboza-Sims — standalone recap -->
-  <div class="program-row" style="opacity:0.75;">
-    <div class="row-num"><span class="row-num-text" style="font-size:11px;">★</span></div>
-    <div class="row-body">
-      <div class="row-date">March 14, 2026</div>
-      <div class="row-fight">Barboza vs. Sims</div>
-      <div class="row-venue">Anaheim, CA &nbsp;·&nbsp; Lightweight &nbsp;·&nbsp; Recap Only</div>
-    </div>
-    <div class="row-actions">
-      <a href="barboza-sims-recap.html" class="btn btn-recap">Recap</a>
-    </div>
-  </div>
-
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-logo"><img src="/assets/logo-dark.png" alt="The Boxing Blotter" style="height:80px;width:auto;opacity:0.9;"></div>
   <div class="footer-sub">
-    Documents Before · Scores During · Grades After<br>
-    <a href="/">boxingblotter.com</a> &nbsp;·&nbsp; @boxingblotter
+    Documents Before &middot; Scores During &middot; Grades After<br>
+    <a href="/">boxingblotter.com</a> &nbsp;&middot;&nbsp; @boxingblotter
   </div>
 </footer>
 
+
+<div style="background:#0F0C07;text-align:center;padding:18px 24px;border-top:1px solid #1A1510;">
+  <a href="/about.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,234,214,0.35);text-decoration:none;">About The Boxing Blotter</a>
+</div>
 </body>
 </html>
