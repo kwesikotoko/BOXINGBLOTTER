@@ -32,6 +32,51 @@
        guarantees the full photo shows, letterboxed on the sides
        instead of cropped top/bottom. Do not revert to cover for
        these two blocks.
+
+  PROGRAM TEMPLATE — corrected August 1, 2026 (v3)
+  Content-parity pass per Rule 71/72 — found this master file had drifted
+  behind the last several shipped issues:
+    7. Back-footer "Story First Blueprint" version line was hardcoded to
+       v3.10 — five major versions stale. Now reads v5.1. THIS LINE MUST
+       BE UPDATED BY HAND at every future Blueprint version bump — it is
+       plain text, not derived from anything, so nothing will catch it
+       going stale except a deliberate check. Make that check part of
+       every version bump going forward.
+    8. Location Palette Guide was missing Block 10 (NEW YORK, USA —
+       Garden Gold), built for Vol. I No. 29 and never ported back here.
+       Added below Block 9. The old per-issue "ACTIVE FOR VOL. I NO. X"
+       marker convention is retired as of this version — it required a
+       manual update every single issue and wasn't happening (the file
+       sat on "ACTIVE FOR VOL. I NO. 21" for eight issues). Replaced
+       with a permanent "ACTIVE — TEMPLATE DEFAULT" marker on Block 10
+       that doesn't go stale by definition. Swap the active block for
+       whichever city you're building, same as always — just don't
+       leave a numbered issue reference behind when you do.
+    9. .comain-photos.single variant (built for Hitchins' solo co-main
+       photo on No. 29) added to the master — was living only in that
+       one shipped file until now.
+    10. Tale of the Tape (.tape-stat rows) restored to the fuller
+        standard named in Rule 72 — Record, Stoppage Rate, and Style
+        added alongside the existing Age/Height/Reach/Stance/Base. Odds
+        and Shared Opponent are per-card optional rows — add by hand
+        only when the card has a betting line or a genuine shared
+        opponent worth naming; don't force either if there's nothing
+        there.
+    11. .flags-grid / .flag-card CSS added (ported from the Wilder-
+        Chisora build, first used Vol. I No. 4). This device has been
+        hand-built from scratch in every issue that's used it since —
+        it now has template scaffolding like every other device.
+        Optional-by-card-fit per Rule 72, not mandatory every issue.
+    12. "Vol. I · No. XX" numbering eliminated from every live template
+        placeholder (masthead, Prospect Watch section label, back-
+        footer) — replaced with flat "Volume [XX]". This was already
+        applied to index.html/programindex.html per the July 26, 2026
+        numbering-scheme change; individual program files were the
+        explicitly deferred piece, and the template is the first of
+        those to be updated. Historical mentions of "Vol. I No. X" in
+        this changelog itself (items 8-9 above, referring to No. 4 and
+        No. 29) are left as-is — they're an accurate record of what
+        those issues were actually called at the time, not live output.
 -->
 <html lang="en">
 <head>
@@ -217,10 +262,11 @@
 
 
 /* ------------------------------------------------------------
-   7. CALIFORNIA — Pacific Dusk  ← ACTIVE FOR VOL. I NO. 21
+   7. CALIFORNIA — Pacific Dusk
    Fading Pacific light. Highway heat. Twilight over the valley.
    Deep navy ink, warm canyon gold, sun-washed newsprint.
    ------------------------------------------------------------ */
+/*
 :root {
   --ink:        #0d1f3c;
   --slate:      #142840;
@@ -239,6 +285,7 @@
   --red:        #a82020;
   --sea:        #1a4a6a;
 }
+*/
 
 
 /* ------------------------------------------------------------
@@ -300,6 +347,40 @@
    Format: Number · City/Region — Palette Name
    Add the city description line, then the full :root block.
    ============================================================ */
+
+/* ------------------------------------------------------------
+   10. NEW YORK, USA — Garden Gold  ← ACTIVE — TEMPLATE DEFAULT
+   Marquee lights over 8th Avenue. Steel and concrete after dark.
+   Near-black charcoal ink, classic marquee gold, cool broadsheet
+   newsprint — the Garden on a fight night.
+
+   This is the template's default active block, not a claim about
+   which card is "current." Swap it for whichever city block you're
+   building — comment this one out, uncomment the one you need, same
+   as every other block. Just don't leave a specific issue number in
+   the marker when you do; that's what went stale last time. If a
+   future new-location block gets added below this one, move the
+   "ACTIVE — TEMPLATE DEFAULT" marker down to it instead of leaving
+   two active blocks or none.
+   ------------------------------------------------------------ */
+:root {
+  --ink:        #0e0f14;
+  --slate:      #16181f;
+  --slate-mid:  #1e212a;
+  --steel:      #2a2e3a;
+  --gold:       #d4af37;
+  --gold-light: #e8c860;
+  --gold-pale:  #f2dfa0;
+  --newsprint:  #f0eee8;
+  --aged:       #e2ded4;
+  --cream:      #eae6da;
+  --muted:      #5a5e68;
+  --rule:       #22242c;
+  --light-rule: #b8b4a8;
+  --white:      #ffffff;
+  --red:        #a41e1e;
+  --sea:        #23324a;
+}
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -503,6 +584,54 @@ body {
 .flag-banner-text {
   font-family: 'Barlow', sans-serif; font-size: 16px;
   color: #c0c8d0; line-height: 1.5;
+}
+
+/* FLAGS-GRID — optional-by-card-fit per Rule 72, not mandatory every
+   issue. Use for main-event key factors that work better as a set of
+   labeled, color-coded callouts than as prose paragraphs (e.g. Wilder-
+   Chisora's Form Decline / Danger / Home Floor / Equalizer flags).
+   .flag-label takes a modifier class — red (danger/negative), gold
+   (positive/home-floor), or dark (neutral/informational). */
+.flags-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.flag-card {
+  border: 1px solid var(--light-rule);
+  padding: 12px 14px;
+}
+.flag-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid;
+}
+.flag-label.red { color: var(--red); border-color: var(--red); }
+.flag-label.gold { color: var(--gold); border-color: var(--gold); }
+.flag-label.dark { color: var(--muted); border-color: var(--light-rule); }
+.flag-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.flag-body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+@media(max-width:680px) {
+  .flags-grid { grid-template-columns: 1fr; }
 }
 
 /* READ */
@@ -830,6 +959,17 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
   min-width: 0;
   min-height: 0;
 }
+/* Single-photo co-main variant — use class="comain-photos single" when
+   only one fighter photo is available for the co-main slot (built for
+   Hitchins' solo photo, Vol. I No. 29). Do not stretch a single photo
+   across the standard two-up width; use this variant instead. */
+.comain-photos.single {
+  height: 320px;
+}
+.comain-photos.single .comain-photo-wrap {
+  flex: 0 0 100%;
+  width: 100%;
+}
 .comain-photo-wrap img {
   width: 100%;
   height: 100%;
@@ -929,7 +1069,7 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
   <!-- MASTHEAD -->
   <header class="masthead">
     <div class="masthead-top">
-      <span class="masthead-meta">Vol. I · No. [XX] · Pre-Fight Edition</span>
+      <span class="masthead-meta">Volume [XX] · Pre-Fight Edition</span>
       <span class="masthead-meta">[VENUE] · [CITY, STATE]</span>
       <span class="masthead-meta">[DAY], [MONTH] [DATE], [YEAR]</span>
     </div>
@@ -982,6 +1122,9 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
         <div class="tape-stat"><span class="tape-stat-label">Reach</span><span class="tape-stat-val">[REACH]</span></div>
         <div class="tape-stat"><span class="tape-stat-label">Stance</span><span class="tape-stat-val">[STANCE]</span></div>
         <div class="tape-stat"><span class="tape-stat-label">Base</span><span class="tape-stat-val">[HOMETOWN]</span></div>
+        <div class="tape-stat"><span class="tape-stat-label">Stoppage Rate</span><span class="tape-stat-val">[XX%]</span></div>
+        <div class="tape-stat"><span class="tape-stat-label">Style</span><span class="tape-stat-val">[Style descriptor — 2-3 words]</span></div>
+        <!-- Optional: <div class="tape-stat"><span class="tape-stat-label">Shared Opp.</span><span class="tape-stat-val">[Result vs. shared opponent]</span></div> — only if a genuine shared opponent exists; delete otherwise -->
       </div>
 
       <div class="tape-center">
@@ -1009,6 +1152,9 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
         <div class="tape-stat"><span class="tape-stat-label">Reach</span><span class="tape-stat-val">[REACH]</span></div>
         <div class="tape-stat"><span class="tape-stat-label">Stance</span><span class="tape-stat-val">[STANCE]</span></div>
         <div class="tape-stat"><span class="tape-stat-label">Base</span><span class="tape-stat-val">[HOMETOWN]</span></div>
+        <div class="tape-stat"><span class="tape-stat-label">Stoppage Rate</span><span class="tape-stat-val">[XX%]</span></div>
+        <div class="tape-stat"><span class="tape-stat-label">Style</span><span class="tape-stat-val">[Style descriptor — 2-3 words]</span></div>
+        <!-- Optional: <div class="tape-stat"><span class="tape-stat-label">Shared Opp.</span><span class="tape-stat-val">[Result vs. shared opponent]</span></div> — only if a genuine shared opponent exists; delete otherwise -->
       </div>
     </div>
 
@@ -1039,6 +1185,24 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
       <p>[Paragraph 2 — Fighter B's résumé. Same treatment. Equal real estate.]</p>
       <p>[Paragraph 3 — Physical matchup. Tale of the Tape context. What the numbers mean.]</p>
       <p>[Paragraph 4 — The fight itself. Keys for each man. What the Blotter is watching. The upset scenario if live.]</p>
+    </div>
+
+    <!-- FLAGS-GRID — optional, include only if the main event has 3-4
+         distinct key factors that read better as labeled callouts than
+         folded into read-body prose (Rule 72). Delete this block
+         entirely if it doesn't add anything read-body isn't already
+         doing. Use 2 or 4 cards, not 1 or 3 — the grid is two columns. -->
+    <div class="flags-grid">
+      <div class="flag-card">
+        <div class="flag-label red">[Label · Fighter]</div>
+        <div class="flag-title">[Flag Title]</div>
+        <div class="flag-body">[One to three sentences. What this factor is and why it matters tonight.]</div>
+      </div>
+      <div class="flag-card">
+        <div class="flag-label gold">[Label · Fighter]</div>
+        <div class="flag-title">[Flag Title]</div>
+        <div class="flag-body">[Same treatment. Balance positive/negative flags across both fighters — don't stack all the red flags on one man unless that's genuinely the read.]</div>
+      </div>
     </div>
 
     <!-- AMATEUR THREAD — include only if amateur history is relevant and verified -->
@@ -1178,7 +1342,7 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
 
     <!-- PROSPECT WATCH FLAG — include only if a fighter on this card qualifies -->
     <div class="section-head">
-      <span class="section-label">Prospect Watch — Vol. I · Card Monitor</span>
+      <span class="section-label">Prospect Watch — Card Monitor</span>
       <div class="section-rule"></div>
     </div>
 
@@ -1251,8 +1415,8 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
     <div class="back-footer">
       <div class="back-brand">The Boxing Blotter</div>
       <div class="back-meta">
-        Vol. I · No. [XX] · Pre-Fight Edition · [MONTH DATE], [YEAR]<br>
-        Story First Blueprint v3.10 · Scout's Chair Standard<br>
+        Volume [XX] · Pre-Fight Edition · [MONTH DATE], [YEAR]<br>
+        Story First Blueprint v5.1 · Scout's Chair Standard<br>
         boxingblotter.com · @boxingblotter
       </div>
     </div>
