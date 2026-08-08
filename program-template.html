@@ -78,21 +78,28 @@
         No. 29) are left as-is — they're an accurate record of what
         those issues were actually called at the time, not live output.
 
-  PROGRAM TEMPLATE — corrected August 1, 2026 (v4)
-  One mobile-responsive fix, found building Vol. 30 (Roach Jr.-Zepeda):
-    13. .fighter-photos (the main event's own two-up photo block) had no
-        mobile override at all — only .comain-photos got the stacking
-        fix in v2/v3. On phone widths, main event photos were still
-        governed by the desktop flex-50%-width rule, squeezing both
-        images into narrow side-by-side columns instead of stacking
-        full-width the way co-main photos already did. Fixed by mirroring
-        the exact .comain-photos mobile block (flex-direction:column,
-        height:auto, padding-bottom:66% aspect box, absolutely-positioned
-        img at 100%/100% with object-fit:contain) onto .fighter-photos
-        and .fighter-photo-wrap inside the existing 680px media query.
-        Any future two-up photo block (main event, co-main, or new)
-        needs this same mobile pairing — a desktop fix without its
-        mobile counterpart is only half the fix, going forward.
+  PROGRAM TEMPLATE — corrected August 4, 2026 (v4)
+  Two fixes ported upstream from the Vol. 30 (Roach-Zepeda) working copy,
+  where they'd been patched locally but never made it back to this master
+  file — same failure shape Rule 67/71 exist to prevent:
+    13. .fighter-photos had no mobile stacking fix. The identical fix
+        already existed for .comain-photos (flex-direction:column,
+        aspect-ratio padding-bottom box, object-fit:contain) but was
+        never mirrored onto the main event's own two-up photo grid — on
+        phone screens main-event photos were getting squeezed into
+        narrow side-by-side columns while co-main photos stacked
+        correctly. Now mirrored exactly.
+    14. Prospect Watch block had no photo scaffolding at all. When a
+        prospect photo was supplied ad hoc (Curiel, Vol. 30), it was
+        hand-built with a fixed height:220px + object-fit:cover
+        container — which crops proportionally harder on narrow mobile
+        widths than on desktop (same fixed height, shrinking width),
+        risking cutting the fighter out of frame. Added .pw-photo-wrap
+        as a proper responsive aspect-ratio box (position:relative,
+        padding-bottom:52%, height:0, img absolutely positioned) so any
+        future prospect photo starts from the correct pattern instead
+        of reintroducing this bug. Optional — delete the placeholder
+        comment in the body when no photo is supplied for that build.
 -->
 <html lang="en">
 <head>
@@ -819,6 +826,28 @@ body {
   background: var(--ink); border-left: 4px solid var(--gold-light);
   padding: 18px 20px; margin-bottom: 14px;
 }
+/* Optional prospect photo — use only when a real photo is supplied.
+   Responsive aspect-ratio box, NOT a fixed height:220px + object-fit:
+   cover container. A fixed-height box crops proportionally more on
+   narrow mobile widths than on desktop (same width shrinks, height
+   doesn't), risking cutting a fighter out of frame — found and fixed
+   live on Curiel's card, Vol. 30. This pattern keeps crop ratio
+   constant at any screen width instead. */
+.pw-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 52%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: #060810;
+}
+.pw-photo-wrap img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
 .pw-label {
   font-family: 'DM Mono', monospace; font-size: 9px;
   color: var(--gold-light); letter-spacing: 0.2em;
@@ -1382,6 +1411,7 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
     </div>
 
     <div class="pw-block">
+      <!-- Optional: <div class="pw-photo-wrap"><img src="[BASE64 OR PATH]" alt="[PROSPECT NAME]"></div> — delete if no photo supplied for this prospect -->
       <div class="pw-label">Prospect Watch · [Status: MONITORING / FLAGGED / FORMAL ENTRY] · [WEIGHT CLASS]</div>
       <div class="pw-name">[PROSPECT NAME]</div>
       <div class="pw-basics">[W-L · KOs · Weight Class · Hometown · Age · Stance · Trainer]</div>
@@ -1451,7 +1481,7 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
       <div class="back-brand">The Boxing Blotter</div>
       <div class="back-meta">
         Volume [XX] · Pre-Fight Edition · [MONTH DATE], [YEAR]<br>
-        Story First Blueprint v5.1 · Scout's Chair Standard<br>
+        Story First Blueprint v5.2 · Scout's Chair Standard<br>
         boxingblotter.com · @boxingblotter
       </div>
     </div>
