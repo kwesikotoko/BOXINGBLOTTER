@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boxing Blotter — [FIGHTER A] vs. [FIGHTER B] · Recap · [VOLUME NUMBER]</title>
+<!--
+  RECAP-TEMPLATE.HTML — v2, built directly from the real, shipped markup of
+  Mason-Bell (Volume 25, July 4, 2026) — your most structurally complete
+  recap to date. Not invented from scratch. CSS classes below are verbatim
+  from that file; only the content is genericized.
+
+  LOCKED SECTION ORDER (confirmed against your actual best recap, not assumed):
+    1. Masthead / Championship Cover (incl. Final Score Block)
+    2. Hero photo
+    3. Game Story — narrative prose. This IS your round-by-round device;
+       there is no separate "Round by Round" section in current practice.
+    4. The Moment
+    5. Player Verdicts (Delivered / Exceeded / Missed / Unverified — exact
+       labels only)
+    6. Box Score — main event, verified stats, dash for unconfirmed
+    7. Card-Wide Results — undercard, Blotter Call vs. Result, one per fight
+       (Rule 49.3a Full Card Scan)
+    8. Blueprint Accuracy Report — includes the Call Ledger nested inside it,
+       not a separate top-level section. Grade A/B/C only, no modifiers.
+    9. Legacy — one block per forward-looking thread
+    10. Collector's Back Cover
+
+  Real bug found and fixed in this pass: the source file's Accuracy block and
+  Back Cover footer both hardcoded "Story First Blueprint v4.16" — six major
+  versions stale (current is v6.1 as of this build). Replaced with
+  [CURRENT VERSION] in both places below. Check this isn't hardcoded
+  anywhere else on the live site.
+
+  Upload this file fresh at the start of every Stage 2 recap build, same as
+  program-template.html on the program side. If a section here needs to be
+  dropped for a specific card, state the drop explicitly in that issue's
+  build notes — don't drop it silently.
+
+  CALL LEDGER DISPLAY POLICY (locked Aug 2026): the running Call Ledger
+  record is omitted from the public recap page by default — shown only
+  when Kwesi explicitly requests it for that issue. This governs public
+  display only. The Blueprint doc's internal Rule 55 ledger table must
+  still be audited and updated every time a recap ships, regardless of
+  whether the number appears on the page.
+-->
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LOCATION PALETTE GUIDE — Boxing Blotter Recap Template
+   Ported from program-template.html · Recap-specific instructions below
+
+   INSTRUCTIONS:
+   — This recap must use the SAME palette block as its paired pre-fight
+     program. Check which block is live in that card's program file and
+     uncomment the matching numbered block here. Comment out all others.
+   — If no pre-fight program was produced for this card (standing rule:
+     no program = no Blueprint Accuracy grade either), fall back to
+     Block 9 (Recap Edition) below — it exists for exactly this case.
+   — New location = new block built in program-template.html first, then
+     ported here to stay in sync. Never build a new location block only
+     in the recap template.
+   — Do not alter the generic variable names (--ink, --gold, etc.) The
+     components above depend on them. Swap the values, not the names.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. LAS VEGAS / USA — Amber Desert
+   Heat. Neon glow on sand. Fight capital of the world.
+   Warm amber primary, deep desert ink, sun-bleached newsprint.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #1a1208;
+  --slate:      #261a0a;
+  --slate-mid:  #322210;
+  --steel:      #4a3418;
+  --gold:       #d4890a;
+  --gold-light: #f0a820;
+  --gold-pale:  #f8d880;
+  --newsprint:  #f5edd8;
+  --aged:       #ecdcc0;
+  --cream:      #f0e6cc;
+  --muted:      #6a5a3a;
+  --rule:       #3a2810;
+  --light-rule: #c8b890;
+  --white:      #ffffff;
+  --red:        #b82020;
+  --sea:        #7a4a10;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   2. LONDON / UK — Ocean Navy
+   Grey Atlantic light. Old money. Broadsheet ink.
+   Deep ocean navy, cool newsprint, understated gold.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #0c1820;
+  --slate:      #122030;
+  --slate-mid:  #1a2c3e;
+  --steel:      #243848;
+  --gold:       #a88a40;
+  --gold-light: #c4a450;
+  --gold-pale:  #e0cc90;
+  --newsprint:  #edf4f8;
+  --aged:       #dce8ee;
+  --cream:      #e4eef4;
+  --muted:      #4a5a68;
+  --rule:       #1a2c3e;
+  --light-rule: #aabccc;
+  --white:      #ffffff;
+  --red:        #8c1c1c;
+  --sea:        #1a3a52;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   3. AUSTRALIA — Ocean Navy (Coastal)
+   Southern hemisphere light. Harbour blue. Sun on water.
+   Same navy base as London, warmer gold, brighter newsprint.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #0a1820;
+  --slate:      #102030;
+  --slate-mid:  #182c3e;
+  --steel:      #20364a;
+  --gold:       #b89030;
+  --gold-light: #d4ac48;
+  --gold-pale:  #ecd080;
+  --newsprint:  #f0f4f0;
+  --aged:       #dce8dc;
+  --cream:      #e8f0e8;
+  --muted:      #3a5248;
+  --rule:       #182c3e;
+  --light-rule: #a0b8b0;
+  --white:      #ffffff;
+  --red:        #922020;
+  --sea:        #1a4252;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   4. TOKYO / JAPAN — Crimson
+   Red lantern light on black. Precision. Controlled fury.
+   Deep crimson primary, near-black ink, warm aged newsprint.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #100808;
+  --slate:      #1c1010;
+  --slate-mid:  #281818;
+  --steel:      #3a2020;
+  --gold:       #c0292b;
+  --gold-light: #e03030;
+  --gold-pale:  #f08080;
+  --newsprint:  #f5edd8;
+  --aged:       #ecdcc0;
+  --cream:      #f0e6cc;
+  --muted:      #6a4040;
+  --rule:       #3a1818;
+  --light-rule: #c8a898;
+  --white:      #ffffff;
+  --red:        #c0292b;
+  --sea:        #5a1818;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   5. ATLANTA — Forest Green + Gold
+   Red clay. Southern weight. Deep Georgia green, HBCU gold.
+   Forest primary, warm ink, gold that earns its place.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #0c1810;
+  --slate:      #122018;
+  --slate-mid:  #1a2c20;
+  --steel:      #223828;
+  --gold:       #c8890a;
+  --gold-light: #e0a020;
+  --gold-pale:  #f0cc70;
+  --newsprint:  #f2edd8;
+  --aged:       #e8dec0;
+  --cream:      #eee8d0;
+  --muted:      #4a5a3a;
+  --rule:       #1a3020;
+  --light-rule: #a8b898;
+  --white:      #ffffff;
+  --red:        #8c1c1c;
+  --sea:        #1a4a2a;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   6. ATLANTIC CITY — Maroon + Gold
+   Boardwalk. Salt air. Old Atlantic fight nights.
+   Deep maroon primary, aged gold, weathered newsprint.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #140810;
+  --slate:      #201018;
+  --slate-mid:  #2c1820;
+  --steel:      #3a2028;
+  --gold:       #c8890a;
+  --gold-light: #e0a020;
+  --gold-pale:  #f0cc70;
+  --newsprint:  #f0e8d8;
+  --aged:       #e4d8c0;
+  --cream:      #eae0cc;
+  --muted:      #6a4050;
+  --rule:       #301020;
+  --light-rule: #c0a0a8;
+  --white:      #ffffff;
+  --red:        #6b1a2a;
+  --sea:        #4a1828;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   7. CALIFORNIA — Pacific Dusk
+   Fading Pacific light. Highway heat. Twilight over the valley.
+   Deep navy ink, warm canyon gold, sun-washed newsprint.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #0d1f3c;
+  --slate:      #142840;
+  --slate-mid:  #1c3450;
+  --steel:      #264060;
+  --gold:       #c8890a;
+  --gold-light: #e0a828;
+  --gold-pale:  #f0cc70;
+  --newsprint:  #f2ead8;
+  --aged:       #e8dcc4;
+  --cream:      #eee6d0;
+  --muted:      #4a5a6a;
+  --rule:       #1c3450;
+  --light-rule: #a8b8c8;
+  --white:      #ffffff;
+  --red:        #a82020;
+  --sea:        #1a4a6a;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   8. EGYPT — Pharaoh Night
+   Indigo desert sky. Ceremonial gold. Ancient weight.
+   Deep indigo-black ink, ceremonial gold, warm cream.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #090718;
+  --slate:      #100e24;
+  --slate-mid:  #181630;
+  --steel:      #22203e;
+  --gold:       #c8920c;
+  --gold-light: #e0b030;
+  --gold-pale:  #f0d870;
+  --newsprint:  #f4eedc;
+  --aged:       #eae0c4;
+  --cream:      #f0e8d0;
+  --muted:      #5a5070;
+  --rule:       #201e38;
+  --light-rule: #b0a8c8;
+  --white:      #ffffff;
+  --red:        #8c1c1c;
+  --sea:        #2a1870;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   9. RECAP EDITION — Red Masthead
+   Not location-based. Type-based. Post-fight record.
+   Crimson masthead on ink. Amber rules. The morning after.
+
+   FALLBACK ONLY: use this block when the card had no pre-fight program
+   (so there's no program palette to mirror). Every other recap must
+   match its paired program's location block instead — see instructions
+   at the top of this guide.
+
+   --hit-green / --miss-red are recap-only additions (Blueprint
+   Accuracy Report hit/miss coloring) — not part of the shared
+   program/recap variable set. If you use a location block (1-8, 10+)
+   instead of this one, add --hit-green: #1a6a2a and --miss-red: #8a1a1a
+   to that block's :root — they're required by the accuracy table CSS
+   regardless of which palette is active.
+   ------------------------------------------------------------ */
+/*
+:root {
+  --ink:        #141820;
+  --slate:      #1c2230;
+  --slate-mid:  #242d3e;
+  --steel:      #2e3a50;
+  --gold:       #c4861a;
+  --gold-light: #e0a030;
+  --gold-pale:  #f0d080;
+  --newsprint:  #f0ece0;
+  --aged:       #e4dece;
+  --cream:      #eae6d8;
+  --muted:      #4a5060;
+  --rule:       #2e3040;
+  --light-rule: #b0a898;
+  --white:      #ffffff;
+  --red:        #c0292b;
+  --sea:        #3a5068;
+  --hit-green:  #1a6a2a;
+  --miss-red:   #8a1a1a;
+}
+*/
+
+
+/* ============================================================
+   NEW LOCATION BLOCKS GO BELOW THIS LINE
+   Format: Number · City/Region — Palette Name
+   Add the city description line, then the full :root block.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   10. NEW YORK, USA — Garden Gold  ← ACTIVE — TEMPLATE DEFAULT
+   Marquee lights over 8th Avenue. Steel and concrete after dark.
+   Near-black charcoal ink, classic marquee gold, cool broadsheet
+   newsprint — the Garden on a fight night.
+
+   This is a placeholder default only — swap it for whichever block
+   matches this card's actual paired program before shipping. Comment
+   this one out, uncomment the one you need, same as every other block.
+   ------------------------------------------------------------ */
+:root {
+  --ink:        #0e0f14;
+  --slate:      #16181f;
+  --slate-mid:  #1e212a;
+  --steel:      #2a2e3a;
+  --gold:       #d4af37;
+  --gold-light: #e8c860;
+  --gold-pale:  #f2dfa0;
+  --newsprint:  #f0eee8;
+  --aged:       #e2ded4;
+  --cream:      #eae6da;
+  --muted:      #5a5e68;
+  --rule:       #22242c;
+  --light-rule: #b8b4a8;
+  --white:      #ffffff;
+  --red:        #a41e1e;
+  --sea:        #23324a;
+  --hit-green:  #1a6a2a;
+  --miss-red:   #8a1a1a;
+}
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.page { max-width: 900px; margin: 0 auto; background: var(--newsprint); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+
+/* NAV */
+.site-nav { position: sticky; top: 0; z-index: 100; background-color: #0c1018; border-bottom: 3px solid var(--gold); }
+.site-nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 32px; }
+.site-nav-brand { display: flex; align-items: center; text-decoration: none; font-family: "Playfair Display", serif; font-size: 18px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; letter-spacing: -0.01em; }
+.site-nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; align-items: center; }
+.site-nav-links a { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,234,214,0.65); text-decoration: none; }
+.site-nav-links a:hover { color: #F0EAD6; }
+.site-nav-toggle { display: none; background: none; border: none; color: #F0EAD6; font-size: 22px; cursor: pointer; padding: 0; }
+@media(max-width:700px) {
+  .site-nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background-color: #0c1018; padding: 16px 24px; gap: 14px; border-bottom: 1px solid rgba(255,255,255,.08); z-index: 99; }
+  .site-nav-links.open { display: flex; }
+  .site-nav-toggle { display: block; }
+  .site-nav-inner { padding: 10px 20px; }
+}
+
+/* MASTHEAD */
+.masthead { background: var(--ink); border-bottom: 4px solid var(--gold); }
+.masthead-top { display: flex; justify-content: space-between; padding: 10px 24px 6px; border-bottom: 1px solid #2a3040; }
+.masthead-meta { font-family: "DM Mono", monospace; font-size: 9px; color: #8a9298; text-transform: uppercase; letter-spacing: 0.08em; }
+.masthead-title { text-align: center; padding: 14px 24px 10px; }
+.blotter-name { font-family: "Playfair Display", serif; font-size: 52px; font-weight: 900; color: var(--newsprint); letter-spacing: -0.01em; line-height: 1; text-transform: uppercase; }
+.blotter-rule { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+.blotter-rule-line { flex: 1; height: 1px; background: var(--gold); }
+.blotter-tagline { font-family: "Barlow Condensed", sans-serif; font-size: 11px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; white-space: nowrap; }
+.edition-bar { background: var(--gold); padding: 5px 24px; display: flex; justify-content: space-between; }
+.edition-label { font-family: "Barlow Condensed", sans-serif; font-size: 11px; font-weight: 700; color: var(--white); letter-spacing: 0.15em; text-transform: uppercase; }
+
+/* HERO */
+.hero-wrap { position: relative; height: 420px; overflow: hidden; background: #060810; }
+.hero-wrap img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6,8,16,0.1) 0%, rgba(6,8,16,0.0) 40%, rgba(6,8,16,0.8) 100%); }
+.hero-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 28px; }
+.hero-result-line { font-family: "Barlow Condensed", sans-serif; font-size: 13px; font-weight: 700; color: var(--gold-light); letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 6px; }
+.hero-headline { font-family: "Playfair Display", serif; font-size: 34px; font-weight: 900; color: var(--newsprint); line-height: 1.05; }
+.hero-subline { font-family: "DM Mono", monospace; font-size: 10px; color: rgba(240,236,220,0.75); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+@media(max-width:600px) and (orientation:portrait) {
+  .hero-wrap { height: 320px; }
+  .hero-headline { font-size: 26px; }
+}
+
+/* BODY */
+.body { padding: 0 28px 28px; }
+.section-head { display: flex; align-items: center; gap: 10px; margin: 22px 0 13px; }
+.section-label { font-family: "Barlow Condensed", sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.section-rule { flex: 1; height: 1px; background: var(--rule); opacity: 0.2; }
+
+/* SCORE BLOCK */
+.score-block { background: var(--ink); padding: 18px 24px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin-bottom: 20px; border-top: 3px solid var(--gold); }
+.score-fighter { text-align: center; }
+.score-name { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; line-height: 1.1; }
+.score-record { font-family: "DM Mono", monospace; font-size: 10px; color: #8a98a8; margin-top: 4px; }
+.score-badge { display: inline-block; font-family: "DM Mono", monospace; font-size: 8px; padding: 2px 8px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; background: var(--gold); color: var(--ink); }
+.score-badge.win { background: #1a4a2a; color: #90d0a0; }
+.score-badge.loss { background: #4a1a1a; color: #d09090; }
+.score-center { text-align: center; padding: 0 8px; }
+.score-result { font-family: "Playfair Display", serif; font-size: 16px; font-weight: 900; color: var(--gold); line-height: 1; }
+.score-method { font-family: "DM Mono", monospace; font-size: 9px; color: #6a7a8a; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+.score-round { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 900; color: var(--newsprint); line-height: 1; margin-top: 2px; }
+.score-round-label { font-family: "DM Mono", monospace; font-size: 8px; color: #5a6a7a; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* PROSE */
+.read-headline { font-family: "Playfair Display", serif; font-size: 28px; font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 6px; }
+.read-deck { font-family: "Playfair Display", serif; font-size: 14px; font-style: italic; color: var(--muted); line-height: 1.45; margin-bottom: 14px; border-left: 3px solid var(--gold); padding-left: 12px; }
+.read-body { font-family: "Barlow", sans-serif; font-size: 16px; line-height: 1.65; color: var(--ink); column-count: 2; column-gap: 26px; margin-bottom: 14px; }
+.read-body p { margin-bottom: 10px; }
+.read-body p:first-child::first-letter { font-family: "Playfair Display", serif; font-size: 48px; font-weight: 900; float: left; line-height: 0.85; margin: 4px 6px 0 0; color: var(--gold); }
+@media(max-width:680px) { .read-body { column-count: 1; } }
+
+/* PULL QUOTE / FLAG */
+.flag-banner { background: var(--ink); border-left: 4px solid var(--gold); padding: 14px 18px; margin-bottom: 14px; }
+.flag-banner-label { font-family: "DM Mono", monospace; font-size: 8px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 5px; }
+.flag-banner-text { font-family: "Barlow", sans-serif; font-size: 16px; color: #c0c8d0; line-height: 1.55; }
+
+/* INTERIOR FIGHT PHOTOS */
+.fight-photo-wrap { width: 100%; margin: 14px 0 6px; overflow: hidden; background: #060810; }
+.fight-photo-wrap img { width: 100%; height: auto; max-height: 480px; object-fit: contain; display: block; margin: 0 auto; }
+.photo-caption-small { font-family: "DM Mono", monospace; font-size: 8px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+.cofight-photo-wrap { width: 100%; overflow: hidden; margin: 8px 0 10px; border: 1px solid var(--light-rule); background: #060810; }
+.cofight-photo-wrap img { width: 100%; height: auto; max-height: 380px; object-fit: contain; display: block; margin: 0 auto; }
+@media(max-width:768px) {
+  .fight-photo-wrap img { max-height: 360px; }
+  .cofight-photo-wrap img { max-height: 280px; }
+}
+
+/* THE MOMENT */
+.moment-block { background: var(--slate); color: var(--newsprint); padding: 18px 22px; margin-bottom: 16px; border-left: 4px solid var(--gold); }
+.moment-label { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 8px; }
+.moment-text { font-family: "Playfair Display", serif; font-size: 18px; font-style: italic; line-height: 1.4; }
+
+/* VERDICTS */
+.verdict-block { background: var(--aged); border-left: 4px solid var(--gold); padding: 12px 16px; margin-bottom: 10px; }
+.verdict-name { font-family: "Barlow Condensed", sans-serif; font-size: 14px; font-weight: 800; text-transform: uppercase; color: var(--ink); }
+.verdict-tag { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-left: 8px; }
+.verdict-body { font-family: "Barlow", sans-serif; font-size: 13px; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+
+/* BOX SCORE */
+.boxscore-block { background: var(--ink); padding: 18px 22px; margin-bottom: 16px; }
+.boxscore-label { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2e3a50; }
+.boxscore-table { width: 100%; border-collapse: collapse; }
+.boxscore-table th { font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a9298; padding: 6px 8px 6px 0; text-align: left; border-bottom: 1px solid #2e3a50; font-weight: 400; }
+.boxscore-table td { font-family: "Barlow", sans-serif; font-size: 12px; color: #c8d0d8; padding: 7px 8px 7px 0; border-bottom: 1px solid rgba(46,58,80,0.5); vertical-align: top; }
+.boxscore-note { font-family: "Barlow", sans-serif; font-size: 11px; color: #7a8a9a; font-style: italic; margin-top: 10px; line-height: 1.5; }
+
+/* UNDERCARD RESULTS */
+.cofight-result { background: var(--aged); border: 1px solid var(--light-rule); padding: 12px 16px; margin-bottom: 10px; }
+.cofight-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+.cofight-matchup { font-family: "Barlow Condensed", sans-serif; font-size: 15px; font-weight: 800; color: var(--ink); text-transform: uppercase; line-height: 1; }
+.cofight-matchup .rec-tag { font-family: "DM Mono", monospace; font-size: 10px; font-weight: 500; color: var(--gold); text-transform: none; letter-spacing: 0.02em; }
+.cofight-result-badge { font-family: "DM Mono", monospace; font-size: 8px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+.cofight-body { font-family: "Barlow", sans-serif; font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* WATCH IT BACK */
+.watch-block { background: var(--slate-mid); border: 1px solid #2e3a50; padding: 12px 16px; margin: 10px 0 14px; display: flex; align-items: center; gap: 10px; }
+.watch-icon { font-size: 16px; line-height: 1; color: var(--gold-light); }
+.watch-link { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--newsprint); text-decoration: none; border-bottom: 1px solid var(--gold-light); }
+.watch-link:hover { color: var(--gold-pale); }
+.watch-label { font-family: "Barlow", sans-serif; font-size: 11px; color: #b8c0c8; margin-right: 2px; }
+
+/* ACCURACY REPORT */
+.accuracy-block { background: var(--ink); padding: 20px 24px; margin-bottom: 16px; }
+.accuracy-label { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #2e3a50; }
+.accuracy-grade { font-family: "Playfair Display", serif; font-size: 52px; font-weight: 900; color: var(--gold); line-height: 1; }
+.accuracy-grade-label { font-family: "DM Mono", monospace; font-size: 9px; color: #5a6a7a; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 4px; }
+.accuracy-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.accuracy-table th { font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: #5a6a7a; padding: 6px 8px 6px 0; font-weight: 400; text-align: left; border-bottom: 1px solid #2e3a50; }
+.accuracy-table td { font-family: "Barlow", sans-serif; font-size: 11.5px; color: #b0b8c0; padding: 7px 8px 7px 0; border-bottom: 1px solid rgba(46,58,80,0.5); vertical-align: top; line-height: 1.45; }
+.accuracy-table td:first-child { font-family: "DM Mono", monospace; font-size: 10px; color: #7a8a9a; white-space: nowrap; padding-right: 14px; }
+.hit { color: #70c080 !important; }
+.miss { color: #c07070 !important; }
+.accuracy-record { font-family: "DM Mono", monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.12em; margin-top: 14px; padding-top: 10px; border-top: 1px solid #2e3a50; }
+.accuracy-note { font-family: "Barlow", sans-serif; font-size: 11.5px; color: #7a8a9a; line-height: 1.55; margin-top: 10px; font-style: italic; }
+
+/* LEGACY */
+.legacy-block { background: var(--slate); padding: 18px 22px; margin-bottom: 16px; border-left: 4px solid var(--gold); }
+.legacy-label { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 8px; }
+.legacy-headline { font-family: "Playfair Display", serif; font-size: 20px; font-weight: 900; color: var(--newsprint); margin-bottom: 8px; line-height: 1.2; }
+.legacy-body { font-family: "Barlow", sans-serif; font-size: 12.5px; color: #b0bac4; line-height: 1.68; }
+.legacy-body p { margin-bottom: 9px; }
+
+/* BACK COVER */
+.back-cover { background: var(--ink); padding: 22px 28px 26px; border-top: 4px solid var(--gold); }
+.back-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+.bc-title { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #2e3a50; }
+.bc-row { margin-bottom: 7px; }
+.bc-row-label { font-family: "Barlow Condensed", sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--newsprint); }
+.bc-row-val { font-family: "Barlow", sans-serif; font-size: 11px; color: #6a7a8a; margin-top: 1px; line-height: 1.4; }
+.back-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #2e3a50; padding-top: 14px; }
+.back-brand { font-family: "Playfair Display", serif; font-size: 20px; font-weight: 900; color: var(--newsprint); text-transform: uppercase; }
+.back-meta { font-family: "DM Mono", monospace; font-size: 9px; color: #4a5a6a; letter-spacing: 0.08em; text-align: right; line-height: 1.6; }
+@media(max-width:680px) {
+  .back-grid { grid-template-columns: 1fr; gap: 16px; }
+  .back-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .back-meta { text-align: left; }
+}
+
+.divider { border: none; height: 1px; background: var(--rule); opacity: 0.15; margin: 22px 0; }
+@media(max-width:480px) {
+  .blotter-name { font-size: 34px; word-break: break-word; }
+  .blotter-rule { display: block; }
+  .blotter-rule-line { display: none; }
+  .blotter-tagline {
+    display: block; width: 100%; max-width: 100%;
+    white-space: normal; word-break: break-word;
+    font-size: 9px; letter-spacing: 0.1em; text-align: center;
+  }
+  .masthead-top { flex-wrap: wrap; gap: 4px 12px; }
+  .edition-bar { flex-wrap: wrap; gap: 4px 12px; }
+  .edition-label { font-size: 9px; }
+}
+@media(max-width:400px) {
+  .section-label { white-space: normal; line-height: 1.35; }
+}
+@media(max-width:360px) {
+  .score-block { grid-template-columns: 1fr; text-align: center; gap: 10px; }
+  .score-center { padding: 6px 0; border-top: 1px solid #2a3040; border-bottom: 1px solid #2a3040; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="site-nav-brand">The Boxing Blotter</a>
+    <button class="site-nav-toggle" onclick="this.closest('nav').querySelector('.site-nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="site-nav-links">
+      <li><a href="/programs/">Programs</a></li>
+      <li><a href="/prospect-watch/">Grind and Climb</a></li>
+      <li><a href="/unsung/">Unsung Heroes</a></li>
+      <li><a href="/p4p.html">P4P</a></li>
+      <li><a href="/unfought/">Unfought</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-meta">[VOLUME NUMBER] &middot; Recap Edition</span>
+      <span class="masthead-meta">[VENUE] &middot; [CITY, STATE]</span>
+      <span class="masthead-meta">[DAY, MONTH DATE, YEAR]</span>
+    </div>
+    <div class="masthead-title">
+      <div class="blotter-name">The Boxing Blotter</div>
+      <div class="blotter-rule">
+        <div class="blotter-rule-line"></div>
+        <div class="blotter-tagline">Documents Before &middot; Scores During &middot; Grades After</div>
+        <div class="blotter-rule-line"></div>
+      </div>
+    </div>
+    <div class="edition-bar">
+      <span class="edition-label">[BROADCASTERS] &middot; [WEIGHT] LBS &middot; [TITLE(S) ON THE LINE] &middot; Final</span>
+      <span class="edition-label">@boxingblotter</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img class="hero-photo" src="PLACEHOLDER_IMAGE_URL" alt="[HERO PHOTO ALT TEXT]">
+    <div class="hero-overlay"></div>
+    <div class="hero-caption">
+      <div class="hero-result-line">[VENUE] &middot; [CITY, STATE] &middot; [DATE]</div>
+      <div class="hero-headline">[HERO HEADLINE]</div>
+      <div class="hero-subline">[WINNER] def. [LOSER] &middot; [METHOD] &middot; Round [N]</div>
+    </div>
+  </div>
+
+  <!-- FINAL SCORE BLOCK -->
+  <div style="padding: 0 28px;">
+    <div class="score-block">
+      <div class="score-fighter">
+        <div class="score-name">[WINNER NAME]</div>
+        <div class="score-record">[RECORD] &middot; [KOs] KOs</div>
+        <div class="score-badge win">Winner &middot; [TITLE STATUS, e.g. Retains WBO Lightweight Title]</div>
+      </div>
+      <div class="score-center">
+        <div class="score-result">[METHOD, e.g. TKO / UD / SD / MD]</div>
+        <div class="score-round">[ROUND]</div>
+        <div class="score-round-label">Round</div>
+        <div class="score-method">[TIME] &middot; [e.g. 2 Knockdowns / scorecards if decision]</div>
+      </div>
+      <div class="score-fighter">
+        <div class="score-name">[LOSER NAME]</div>
+        <div class="score-record">[RECORD] &middot; [KOs] KOs</div>
+        <div class="score-badge loss">[e.g. First Career Loss / streak-ending detail]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- GAME STORY -->
+    <div class="section-head">
+      <span class="section-label">Game Story</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="flag-banner">
+      <div class="flag-banner-label">&#9873; Blotter Flag &middot; Narrative Spine</div>
+      <div class="flag-banner-text">[One sentence stating what the pre-fight program called vs. what actually happened — the spine the rest of the recap hangs on. This fact should not be repeated verbatim elsewhere in the piece — see Blueprint anti-redundancy rule.]</div>
+    </div>
+
+    <div class="read-headline">[Headline — the story of the fight in one line]</div>
+    <div class="read-deck">[One-sentence deck: who, ages, titles/stakes, one line of context on why this matchup mattered.]</div>
+
+    <div class="read-body">
+      <p>[Game Story paragraph 1 — how the fight actually opened and developed. Cite real, sourced numbers (CompuBox etc.) where available, not invented stats.]</p>
+      <p>[Game Story paragraph 2 — the turning point, with round/time specificity.]</p>
+      <p>[Game Story paragraph 3 — how it ended, referee/stoppage detail if applicable, any notable ringside reaction.]</p>
+    </div>
+
+    <!-- Note: this template does not carry a separate "Round by Round" section — Game Story
+         (above) is the narrative round-by-round device actually in use. Do not add a duplicate
+         round-by-round table unless a specific card calls for one (e.g. a razor-close decision
+         where round-scoring itself is the story). -->
+
+    <!-- THE MOMENT -->
+    <div class="section-head">
+      <span class="section-label">The Moment</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="fight-photo-wrap">
+      <img src="PLACEHOLDER_IMAGE_URL" alt="[descriptive alt text of the defining sequence]">
+    </div>
+    <div class="photo-caption-small">[Caption] &middot; [Venue] &middot; Photo credit [TK/source]</div>
+
+    <div class="moment-block">
+      <div class="moment-label">Round [N] &middot; [Time]</div>
+      <div class="moment-text">[One or two sentences on the single defining sequence — this is the only place this specific beat should appear in full; other sections reference it, they don't re-tell it.]</div>
+    </div>
+
+    <!-- PLAYER VERDICTS -->
+    <div class="section-head">
+      <span class="section-label">Player Verdicts</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- One .verdict-block per featured fighter. verdict-tag must be exactly one of:
+         Delivered / Exceeded / Missed / Unverified — no variants (not "Exceeded
+         Expectations", not "Unverified vs. the Call"). Repeat this block per fighter. -->
+    <div class="verdict-block">
+      <span class="verdict-name">[Fighter Name]</span><span class="verdict-tag">[Delivered / Exceeded / Missed / Unverified]</span>
+      <div class="verdict-body">[One or two sentences: what was predicted, what happened, and the gap or match between them.]</div>
+    </div>
+
+    <!-- BOX SCORE -->
+    <div class="section-head">
+      <span class="section-label">Box Score &middot; Main Event</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="boxscore-block">
+      <div class="boxscore-label">[Source, e.g. CompuBox via The Ring] &middot; Dashes Mark Segments With No Published Split &mdash; Not Zeros</div>
+      <!-- Rule: use "&mdash;" for any unconfirmed/unpublished figure. Never a fabricated 0. -->
+      <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;"><table class="boxscore-table">
+        <thead>
+          <tr><th>Segment</th><th>[Fighter A]</th><th>[Fighter B]</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>[Segment description]</td><td>[stat]</td><td>[stat]</td></tr>
+          <tr><td>[Segment description]</td><td>&mdash;</td><td>&mdash;</td></tr>
+          <tr><td>Round 12 (finish)</td><td>2 knockdowns, TKO 0:45</td><td>&mdash;</td></tr>
+        </tbody>
+      </table></div>
+      <div class="boxscore-note">[Note on sourcing completeness/limitations, if any.]</div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- UNDERCARD RESULTS -->
+    <div class="section-head">
+      <span class="section-label">Card-Wide Results &middot; Blotter Call vs. Result</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- Repeat this photo+result pair for each undercard fight the Blotter covered.
+         Every fighter on the card the program made a call on gets an entry here —
+         Rule 49.3a Full Card Scan Obligation. -->
+    <div class="cofight-photo-wrap">
+      <img src="PLACEHOLDER_IMAGE_URL" alt="[descriptive alt text]">
+    </div>
+    <div class="photo-caption-small">[Matchup] &middot; [Venue] &middot; Photo credit [TK/source]</div>
+
+    <div class="cofight-result">
+      <div class="cofight-header">
+        <div class="cofight-matchup">[Fighter A] <span class="rec-tag">([record])</span> vs. [Fighter B] <span class="rec-tag">([record])</span></div>
+        <div class="cofight-result-badge">[Winner] [Method]</div>
+      </div>
+      <div class="cofight-body">[Called (pre-fight prediction) — hit/miss and how. One or two sentences on what it means for either fighter's trajectory.]</div>
+    </div>
+    <!-- ...repeat .cofight-result per fight... -->
+
+    <div class="watch-block">
+      <span class="watch-icon">&#9654;</span>
+      <span class="watch-label">Watch It Back:</span>
+      <a class="watch-link" href="[highlights URL]" target="_blank" rel="noopener">Full Card Highlights &middot; The Fight: [FIGHTER A] vs. [FIGHTER B]</a>
+    </div>
+
+    <hr class="divider">
+
+    <!-- BLUEPRINT ACCURACY REPORT -->
+    <div class="section-head">
+      <span class="section-label">Blueprint Accuracy Report &middot; [VOLUME NUMBER]</span>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- If no pre-fight program existed for this card: replace this entire .accuracy-block
+         with a single line — "No pre-fight program was produced for this card. No Blueprint
+         Accuracy grade is issued." — and skip straight to Legacy. Do not invent a grade. -->
+    <div class="accuracy-block">
+      <div class="accuracy-label">Story First Blueprint [CURRENT VERSION — pull from the actual master file in use, do not hardcode] &middot; Accuracy Audit &middot; Call Standard: Winner + Method</div>
+      <div style="display:flex; align-items:flex-end; gap:16px;">
+        <div>
+          <div class="accuracy-grade">[A / B / C — no plus/minus modifiers]</div>
+          <div class="accuracy-grade-label">Blueprint Grade</div>
+        </div>
+        <div style="font-family:'Barlow',sans-serif; font-size:12px; color:#7a8a9a; line-height:1.6; padding-bottom:4px;">[N] calls made &middot; [N] winners correct &middot; [N] method miss(es)<br>No fabricated stats &middot; All featured fighters accounted for</div>
+      </div>
+
+      <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;"><table class="accuracy-table">
+        <thead>
+          <tr>
+            <th>Fight</th>
+            <th>Blotter Call</th>
+            <th>Result</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- One row per fight the program made a call on. -->
+          <tr>
+            <td>[Fighter A] vs. [Fighter B]</td>
+            <td style="color:#b0b8c0;">[what was called]</td>
+            <td style="color:#b0b8c0;">[what happened]</td>
+            <td class="hit">[HIT / class="miss">MISS]</td>
+          </tr>
+        </tbody>
+      </table></div>
+      <!-- CALL LEDGER DISPLAY POLICY (locked Aug 2026): omitted from the public page by
+           default. Delete the line below unless Kwesi explicitly says to include the
+           running record for this issue. This is a PUBLIC-DISPLAY decision only — the
+           Blueprint doc's own Rule 55 ledger table still gets audited and updated every
+           single time regardless of whether this line ships on the page. Never skip the
+           internal update because the public line is omitted. -->
+      <div class="accuracy-record">Call Ledger (post-[VOLUME NUMBER]): [running W]&ndash;[running L] &middot; [pct]% &middot; @boxingblotter</div>
+      <div class="accuracy-note">[Honest acknowledgment of any miss and the lesson for the permanent file, per grading standard — required for a B grade or lower.]</div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- LEGACY — one .legacy-block per storyline worth tracking forward (main event, plus
+         any undercard fighter/thread with a real forward-looking question). Each fact here
+         should not have already been fully told elsewhere — this is where it does its work,
+         per the Blueprint's anti-redundancy rule. -->
+    <div class="legacy-block">
+      <div class="legacy-label">[Fighter name(s)]</div>
+      <div class="legacy-headline">[Headline framing where this leaves them]</div>
+      <div class="legacy-body">
+        <p>[Where this result sits in the fighter's/division's larger story — what it opens up or closes off next.]</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BACK COVER -->
+  <div class="back-cover">
+    <div class="back-grid">
+      <div>
+        <div class="bc-title">Final Card</div>
+        <div class="bc-row"><div class="bc-row-label">Venue</div><div class="bc-row-val">[Venue] &middot; [City, State]</div></div>
+        <div class="bc-row"><div class="bc-row-label">Date</div><div class="bc-row-val">[DAY, MONTH DATE, YEAR]</div></div>
+        <div class="bc-row"><div class="bc-row-label">Broadcast</div><div class="bc-row-val">[Broadcaster(s)]</div></div>
+        <div class="bc-row"><div class="bc-row-label">Promotion</div><div class="bc-row-val">[Promoter(s)]</div></div>
+      </div>
+
+      <div>
+        <div class="bc-title">Card Results</div>
+        <!-- One .bc-row per fight on the card. -->
+        <div class="bc-row"><div class="bc-row-label">[Fighter]</div><div class="bc-row-val">[Result]</div></div>
+      </div>
+
+      <div>
+        <div class="bc-title">Blueprint Notes</div>
+        <!-- Same omit-by-default policy as the Accuracy block's Call Ledger line above —
+             delete this row unless Kwesi explicitly requests it for this issue. -->
+        <div class="bc-row"><div class="bc-row-label">Call Ledger</div><div class="bc-row-val">[running W]&ndash;[running L] &middot; [pct]% through [VOLUME NUMBER]</div></div>
+        <!-- One .bc-row per Legacy thread, condensed to a phrase. -->
+        <div class="bc-row"><div class="bc-row-label">[Fighter]</div><div class="bc-row-val">[Legacy thread, condensed]</div></div>
+      </div>
+    </div>
+
+    <div class="back-footer">
+      <div class="back-brand">The Boxing Blotter</div>
+      <div class="back-meta">
+        [VOLUME NUMBER] &middot; Recap Edition &middot; [DATE]<br>
+        Story First Blueprint [CURRENT VERSION] &middot; Scout&rsquo;s Chair Standard<br>
+        boxingblotter.com &middot; @boxingblotter
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+
+<div style="background:#0c1018;text-align:center;padding:18px 24px;border-top:1px solid #1a2030;">
+  <a href="/about.html" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,234,214,0.25);text-decoration:none;">About The Boxing Blotter</a>
+</div>
+
+</body>
+</html>
