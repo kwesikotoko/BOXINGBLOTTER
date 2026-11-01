@@ -137,8 +137,14 @@
   approximation. Upload it and this can be closed in the same pattern
   as Block 10 (Garden Gold) was.
 
+  PROGRAM TEMPLATE — v6.1, November 1, 2026: the scale is renamed. Corner Scale is now the
+  Blotter Mark; the graphic is the Proofline; zone words On the mark / Near the mark / Level /
+  Off the mark / Void. Adds the "Our mark" marker, the tagline "Where our research says it
+  lands." under the full-width scales, and the .mark-how explainer box (Rule 113 items 12-13).
+  Nothing removed.
+
   PROGRAM TEMPLATE — v6, November 1, 2026 (Rule 67 log; nothing removed)
-    20. Corner Scale (Rule 113) ported: .cscale / .cscale-wrap / .cs-mini /
+    20. Proofline (Rule 113) ported: .cscale / .cscale-wrap / .cs-mini /
         .cs-line CSS and scaffolding. Main event and co-main carry the
         full-width scale; every other Call carries the compact strip.
         Program mode: occupied slots shaded, label (High or Lean) and
@@ -1078,6 +1084,10 @@ body {
 .cs-mini i.b { background: var(--red); }
 .cs-mini i.d { background: var(--steel); }
 .cs-mini i.call { opacity: 1; box-shadow: inset 0 0 0 1px var(--gold-light); }
+.cscale-tag { font-family: 'Playfair Display', serif; font-style: italic; font-size: 13px; color: var(--gold-pale); margin-top: 8px; }
+.mark-how { background: var(--ink); border-left: 4px solid var(--gold); padding: 14px 18px; margin-bottom: 14px; }
+.mark-how-label { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; }
+.mark-how p { font-family: 'Barlow', sans-serif; font-size: 14px; color: #c0c8d0; line-height: 1.55; }
 .cs-line { display: flex; align-items: center; gap: 10px; margin-top: 12px; padding-top: 10px; border-top: 1px solid #2e3a50; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #7a8a9a; }
 @media(max-width:600px) {
   .cs-mark .t { display: none; }
@@ -1650,15 +1660,23 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
            the Call and leaves the original visible. Defaults below show a stoppage Call; edit to match. -->
     <div class="cscale-wrap">
         <div class="cscale">
-          <div class="cscale-title">Corner Scale &middot; Main Event Call</div>
+          <div class="cscale-title">Blotter Mark &middot; Proofline &middot; Main Event</div>
           <div class="cscale-grid">
-            <div class="cs-mark"><span class="t">Pick</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
+            <div class="cs-mark"><span class="t">Our mark</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
             <div class="cs-cell a call">Stop</div><div class="cs-cell a">UD</div><div class="cs-cell a">MD</div><div class="cs-cell a">SD</div><div class="cs-cell d">Draw</div><div class="cs-cell b">SD</div><div class="cs-cell b">MD</div><div class="cs-cell b">UD</div><div class="cs-cell b">Stop</div>
             <div class="cs-group">[Pick] stops</div><div class="cs-group" style="grid-column: span 3;">[Pick] decision</div><div class="cs-group">Level</div><div class="cs-group" style="grid-column: span 3;">[Opp.] decision</div><div class="cs-group">[Opp.] stops</div>
           </div>
           <div class="cs-groupline">[Pick] stops &middot; [Pick] decision &middot; Level &middot; [Opp.] decision &middot; [Opp.] stops</div>
+          <div class="cscale-tag">Where our research says it lands.</div>
           <div class="cscale-read"><b>[High / Lean] &middot; [FIGHTER] by [method]</b> &middot; [One line: the Call and its reason, in the page's voice.]</div>
         </div>
+    </div>
+
+    <!-- HOW TO READ THE BLOTTER MARK — Rule 113 item 13. Once per program, under the main-event scale.
+         This is the plain-language explanation owed to the reader for Rule 113. Keep it short. -->
+    <div class="mark-how">
+      <div class="mark-how-label">How to Read the Blotter Mark</div>
+      <p>Each Call sits on a nine-slot line. Our pick is always on the left; his opponent is on the right; the middle slot is a draw. The shaded slots are our mark, where we think the fight lands. After the fight, the recap puts a second marker on the line where the ring actually landed, and counts the steps between the two. The closer the marks, the better the Call.</p>
     </div>
 
     <hr class="divider-heavy">
@@ -1728,13 +1746,14 @@ hr.divider-heavy { border: none; border-top: 3px double var(--rule); opacity: 0.
             The label is High or Lean (Rule 111). Slots are fixed at publish; a Rule 60 correction re-places
             the Call and leaves the original visible. Defaults below show a stoppage Call; edit to match. -->
           <div class="cscale">
-          <div class="cscale-title">Corner Scale &middot; Co-Main Call</div>
+          <div class="cscale-title">Blotter Mark &middot; Proofline &middot; Co-Main</div>
           <div class="cscale-grid">
-            <div class="cs-mark"><span class="t">Pick</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
+            <div class="cs-mark"><span class="t">Our mark</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
             <div class="cs-cell a call">Stop</div><div class="cs-cell a">UD</div><div class="cs-cell a">MD</div><div class="cs-cell a">SD</div><div class="cs-cell d">Draw</div><div class="cs-cell b">SD</div><div class="cs-cell b">MD</div><div class="cs-cell b">UD</div><div class="cs-cell b">Stop</div>
             <div class="cs-group">[Pick] stops</div><div class="cs-group" style="grid-column: span 3;">[Pick] decision</div><div class="cs-group">Level</div><div class="cs-group" style="grid-column: span 3;">[Opp.] decision</div><div class="cs-group">[Opp.] stops</div>
           </div>
           <div class="cs-groupline">[Pick] stops &middot; [Pick] decision &middot; Level &middot; [Opp.] decision &middot; [Opp.] stops</div>
+          <div class="cscale-tag">Where our research says it lands.</div>
           <div class="cscale-read"><b>[High / Lean] &middot; [FIGHTER] by [method]</b> &middot; [One line: the Call and its reason, in the page's voice.]</div>
         </div>
         </div>

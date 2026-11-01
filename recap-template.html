@@ -9,9 +9,13 @@
     v2   — built from the shipped markup of Mason-Bell (Vol. 25, July 4, 2026).
     v2.1 — Oct 31, 2026: Blocks 11 (Dublin) and 12 (San Antonio) added, commented
            out (carry-over item 72). Version bump was not logged at the time.
-    v3   — Nov 1, 2026: Corner Scale (Rule 113) added: .cscale block and .cs-mini
+    v3   — Nov 1, 2026: Proofline (Rule 113) added: .cscale block and .cs-mini
            strip CSS, the main-event scale inside the Accuracy Report, and an
-           "On the scale" column in the Accuracy table. Nothing removed.
+           "Proofline" column in the Accuracy table. Nothing removed.
+    v3.2 — Nov 1, 2026: scale renamed. Corner Scale is now the Blotter Mark; the graphic is the
+           Proofline. Zone words On the mark / Near the mark / Level / Off the mark / Void.
+           Title row with grade chip, "Our mark" marker, tagline "Where the ring says it landed.",
+           table column headed Proofline (Rule 113 items 12-13). Nothing removed.
     v3.1 — Nov 1, 2026: .cs-groupline added so the group labels collapse into one
            line of text under 600 px (Rule 113 item 11) instead of vanishing.
 
@@ -585,6 +589,9 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
 .cs-group { font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #7a8a9a; text-align: center; padding-top: 6px; border-top: 1px solid #2e3a50; margin-top: 6px; }
 .cscale-read { font-family: "Barlow", sans-serif; font-size: 12.5px; color: #b0b8c0; line-height: 1.5; margin-top: 10px; }
 .cscale-read b { color: var(--gold-light); font-weight: 600; }
+.cscale-titlebar { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.cs-grade { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: var(--gold-light); padding: 2px 8px; }
+.cscale-tag { font-family: "Playfair Display", serif; font-style: italic; font-size: 13px; color: var(--gold-pale); margin-top: 8px; }
 .cs-mini { display: inline-grid; grid-template-columns: repeat(9, 9px); gap: 1px; vertical-align: middle; }
 .cs-mini i { display: block; height: 12px; opacity: 0.35; position: relative; }
 .cs-mini i.a { background: var(--sea); }
@@ -856,13 +863,13 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
            slots 2-4; decision-or-stoppage = slots 1-4; the program's slots, unchanged). Mark the result
            slot with class "hit". Put the pick marker over the first Call slot and the result marker under
            the result slot. Steps = fewest slot moves from any Call slot to the result. Possible = 8 for a
-           stoppage Call, 5 for a decision or decision-or-stoppage Call. Zone words: On the number /
-           Right corner / Level / Wrong corner / Void. Void Calls (Rule 60, no contest) get no scale. -->
+           stoppage Call, 5 for a decision or decision-or-stoppage Call. Zone words: On the mark /
+           Near the mark / Level / Off the mark / Void. Void Calls (Rule 60, no contest) get no scale. -->
       <div class="cscale">
-        <div class="cscale-title">Corner Scale &middot; Main Event Call</div>
+        <div class="cscale-titlebar"><div class="cscale-title">Blotter Mark &middot; Proofline</div><div class="cs-grade">Grade [A / B / C]</div></div>
         <div class="cscale-grid">
           <!-- row 1: pick marker (one cell) -->
-          <div class="cs-mark"><span class="t">Pick</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
+          <div class="cs-mark"><span class="t">Our mark</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
           <!-- row 2: the nine slots -->
           <div class="cs-cell a call">Stop</div><div class="cs-cell a">UD</div><div class="cs-cell a">MD</div><div class="cs-cell a">SD</div><div class="cs-cell d">Draw</div><div class="cs-cell b">SD</div><div class="cs-cell b">MD</div><div class="cs-cell b">UD</div><div class="cs-cell b hit">Stop</div>
           <!-- row 3: result marker (one cell) -->
@@ -873,7 +880,8 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
           <div class="cs-group">[Pick] stops</div><div class="cs-group" style="grid-column: span 3;">[Pick] decision</div><div class="cs-group">Level</div><div class="cs-group" style="grid-column: span 3;">[Opp.] decision</div><div class="cs-group">[Opp.] stops</div>
         </div>
         <div class="cs-groupline">[Pick] stops &middot; [Pick] decision &middot; Level &middot; [Opp.] decision &middot; [Opp.] stops</div>
-        <div class="cscale-read"><b>[ZONE, e.g. Wrong corner]</b> &middot; [N] steps from the Call, out of a possible [8 or 5]. [One line: what was called, what happened.]</div>
+        <div class="cscale-tag">Where the ring says it landed.</div>
+        <div class="cscale-read"><b>[ZONE, e.g. Off the mark]</b> &middot; [N] steps from the Call, out of a possible [8 or 5]. [One line: what was called, what happened.]</div>
       </div>
 
       <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;"><table class="accuracy-table">
@@ -882,7 +890,7 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
             <th>Fight</th>
             <th>Blotter Call</th>
             <th>Result</th>
-            <th>On the scale</th>
+            <th>Proofline</th>
             <th>Verdict</th>
           </tr>
         </thead>
@@ -894,7 +902,7 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
             <td style="color:#b0b8c0;">[what happened]</td>
             <td><!-- compact strip: mark Call slots "call", result slot "hit"; zone word below -->
               <span class="cs-mini"><i class="a call"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="d"></i><i class="b"></i><i class="b"></i><i class="b"></i><i class="b hit"></i></span>
-              <span class="cs-zone">[On the number / Right corner / Level / Wrong corner] &middot; [N] steps</span></td>
+              <span class="cs-zone">[On the mark / Near the mark / Level / Off the mark] &middot; [N] steps</span></td>
             <td class="hit">[HIT / class="miss">MISS / LEVEL / VOID]</td>
           </tr>
         </tbody>
