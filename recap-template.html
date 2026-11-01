@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Boxing Blotter — [FIGHTER A] vs. [FIGHTER B] · Recap · [VOLUME NUMBER]</title>
 <!--
+  CHANGELOG (Rule 67, appended; nothing overwritten):
+    v2   — built from the shipped markup of Mason-Bell (Vol. 25, July 4, 2026).
+    v2.1 — Oct 31, 2026: Blocks 11 (Dublin) and 12 (San Antonio) added, commented
+           out (carry-over item 72). Version bump was not logged at the time.
+    v3   — Nov 1, 2026: Corner Scale (Rule 113) added: .cscale block and .cs-mini
+           strip CSS, the main-event scale inside the Accuracy Report, and an
+           "On the scale" column in the Accuracy table. Nothing removed.
+
   RECAP-TEMPLATE.HTML — v2, built directly from the real, shipped markup of
   Mason-Bell (Volume 25, July 4, 2026) — your most structurally complete
   recap to date. Not invented from scratch. CSS classes below are verbatim
@@ -557,6 +565,39 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
 .accuracy-record { font-family: "DM Mono", monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.12em; margin-top: 14px; padding-top: 10px; border-top: 1px solid #2e3a50; }
 .accuracy-note { font-family: "Barlow", sans-serif; font-size: 11.5px; color: #7a8a9a; line-height: 1.55; margin-top: 10px; font-style: italic; }
 
+/* CORNER SCALE (Rule 113) — v3, Nov 1, 2026 */
+.cscale { margin: 16px 0 6px; }
+.cscale-title { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; }
+.cscale-grid { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 3px; }
+.cs-mark { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; min-height: 18px; display: flex; align-items: flex-end; justify-content: center; white-space: nowrap; color: var(--gold-light); }
+.cs-mark.res { align-items: flex-start; color: var(--newsprint); }
+.cs-mark .g { display: none; }
+.cs-cell { height: 40px; display: flex; align-items: center; justify-content: center; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--newsprint); opacity: 0.38; }
+.cs-cell.a { background: var(--sea); }
+.cs-cell.b { background: var(--red); }
+.cs-cell.d { background: var(--steel); }
+.cs-cell.call { opacity: 1; box-shadow: inset 0 0 0 2px var(--gold-light); }
+.cs-cell.hit { opacity: 1; box-shadow: 0 0 0 2px var(--newsprint); position: relative; z-index: 1; }
+.cs-step { font-family: "DM Mono", monospace; font-size: 10px; color: #5a6a7a; text-align: center; padding-top: 6px; }
+.cs-step.on { color: var(--gold-light); }
+.cs-group { font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #7a8a9a; text-align: center; padding-top: 6px; border-top: 1px solid #2e3a50; margin-top: 6px; }
+.cscale-read { font-family: "Barlow", sans-serif; font-size: 12.5px; color: #b0b8c0; line-height: 1.5; margin-top: 10px; }
+.cscale-read b { color: var(--gold-light); font-weight: 600; }
+.cs-mini { display: inline-grid; grid-template-columns: repeat(9, 9px); gap: 1px; vertical-align: middle; }
+.cs-mini i { display: block; height: 12px; opacity: 0.35; position: relative; }
+.cs-mini i.a { background: var(--sea); }
+.cs-mini i.b { background: var(--red); }
+.cs-mini i.d { background: var(--steel); }
+.cs-mini i.call { opacity: 1; box-shadow: inset 0 0 0 1px var(--gold-light); }
+.cs-mini i.hit { opacity: 1; box-shadow: 0 0 0 1px var(--newsprint); z-index: 1; }
+.cs-zone { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-top: 3px; color: #7a8a9a; }
+@media(max-width:600px) {
+  .cs-mark .t { display: none; }
+  .cs-mark .g { display: inline; font-size: 11px; }
+  .cs-cell { font-size: 8px; letter-spacing: 0; height: 36px; }
+  .cs-group { display: none; }
+}
+
 /* LEGACY */
 .legacy-block { background: var(--slate); padding: 18px 22px; margin-bottom: 16px; border-left: 4px solid var(--gold); }
 .legacy-label { font-family: "DM Mono", monospace; font-size: 9px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 8px; }
@@ -806,12 +847,37 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
         <div style="font-family:'Barlow',sans-serif; font-size:12px; color:#7a8a9a; line-height:1.6; padding-bottom:4px;">[N] calls made &middot; [N] winners correct &middot; [N] method miss(es)<br>No fabricated stats &middot; All featured fighters accounted for</div>
       </div>
 
+      <!-- CORNER SCALE (Rule 113) — main-event call, full width. The pick's fighter is Corner A and
+           always on the left. Mark the Call's slots with class "call" (stoppage = slot 1; decision =
+           slots 2-4; decision-or-stoppage = slots 1-4; the program's slots, unchanged). Mark the result
+           slot with class "hit". Put the pick marker over the first Call slot and the result marker under
+           the result slot. Steps = fewest slot moves from any Call slot to the result. Possible = 8 for a
+           stoppage Call, 5 for a decision or decision-or-stoppage Call. Zone words: On the number /
+           Right corner / Level / Wrong corner / Void. Void Calls (Rule 60, no contest) get no scale. -->
+      <div class="cscale">
+        <div class="cscale-title">Corner Scale &middot; Main Event Call</div>
+        <div class="cscale-grid">
+          <!-- row 1: pick marker (one cell) -->
+          <div class="cs-mark"><span class="t">Pick</span><span class="g">&#9660;</span></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div><div class="cs-mark"></div>
+          <!-- row 2: the nine slots -->
+          <div class="cs-cell a call">Stop</div><div class="cs-cell a">UD</div><div class="cs-cell a">MD</div><div class="cs-cell a">SD</div><div class="cs-cell d">Draw</div><div class="cs-cell b">SD</div><div class="cs-cell b">MD</div><div class="cs-cell b">UD</div><div class="cs-cell b hit">Stop</div>
+          <!-- row 3: result marker (one cell) -->
+          <div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"></div><div class="cs-mark res"><span class="t">Result</span><span class="g">&#9650;</span></div>
+          <!-- row 4: steps from the Call (0 under the Call slot) -->
+          <div class="cs-step on">0</div><div class="cs-step">1</div><div class="cs-step">2</div><div class="cs-step">3</div><div class="cs-step">4</div><div class="cs-step">5</div><div class="cs-step">6</div><div class="cs-step">7</div><div class="cs-step on">8</div>
+          <!-- row 5: group labels (hidden on phones) -->
+          <div class="cs-group">[Pick] stops</div><div class="cs-group" style="grid-column: span 3;">[Pick] decision</div><div class="cs-group">Level</div><div class="cs-group" style="grid-column: span 3;">[Opp.] decision</div><div class="cs-group">[Opp.] stops</div>
+        </div>
+        <div class="cscale-read"><b>[ZONE, e.g. Wrong corner]</b> &middot; [N] steps from the Call, out of a possible [8 or 5]. [One line: what was called, what happened.]</div>
+      </div>
+
       <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;"><table class="accuracy-table">
         <thead>
           <tr>
             <th>Fight</th>
             <th>Blotter Call</th>
             <th>Result</th>
+            <th>On the scale</th>
             <th>Verdict</th>
           </tr>
         </thead>
@@ -821,7 +887,10 @@ body { background: #0c1018; font-family: "Barlow", sans-serif; color: var(--ink)
             <td>[Fighter A] vs. [Fighter B]</td>
             <td style="color:#b0b8c0;">[what was called]</td>
             <td style="color:#b0b8c0;">[what happened]</td>
-            <td class="hit">[HIT / class="miss">MISS]</td>
+            <td><!-- compact strip: mark Call slots "call", result slot "hit"; zone word below -->
+              <span class="cs-mini"><i class="a call"></i><i class="a"></i><i class="a"></i><i class="a"></i><i class="d"></i><i class="b"></i><i class="b"></i><i class="b"></i><i class="b hit"></i></span>
+              <span class="cs-zone">[On the number / Right corner / Level / Wrong corner] &middot; [N] steps</span></td>
+            <td class="hit">[HIT / class="miss">MISS / LEVEL / VOID]</td>
           </tr>
         </tbody>
       </table></div>
